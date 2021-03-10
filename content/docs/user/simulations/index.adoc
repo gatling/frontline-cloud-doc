@@ -1,194 +1,18 @@
 ---
-title: "Dashboard User Guide"
+title: "Simulations"
 description: ""
 lead: ""
-date: 2021-03-08T13:50:28+01:00
-lastmod: 2021-03-08T13:50:28+01:00
+date: 2021-03-10T09:29:43-05:00
+lastmod: 2021-03-10T09:29:43-05:00
 draft: false
 images: []
 menu:
   docs:
     parent: "user"
-weight: 110
+weight: 050
 ---
 
-:toc:
-
-== Login
-
-// FIXME: filled with new login method
-
-== Overview
-
-Once you are logged in, you are now able to navigate using the FrontLine navigation bar on the left side.
-
-{{< img src="navbar.png" alt="Navbar" >}}
-
-FrontLine is composed of:
-
-- The Profile section, letting a user manage his account settings
-- The Admin section, letting administrators manage teams, users, API tokens and artifacts
-- The Simulations section, where runs, trends and simulations can be seen and managed
-- The Documentation section, displaying all documentation guides, the link to the Swagger for our public API, and samples for your FrontLine tests
-- The About section, letting you know the current version of FrontLine and the expiration date of your license key
-
-We are now going to describe in depth each one of these sections.
-
-== Admin
-
-=== Managing Teams
-
-To access the Teams administration, click on *Admin* in the navigation bar, and choose *Teams*.
-
-{{< img src="teams.png" alt="Teams" >}}
-
-In the teams table, you can visualize the team name, the optional team quota, and the number of associated users, artifacts and simulations.
-You can also copy the team id by clicking on the icon:clipboard[] icon.
-
-==== Teams settings
-
-To open the teams settings, click on *Teams Settings* on the right side of the search bar.
-
-{{< img src="teams-settings.png" alt="Teams settings" caption="Teams settings" >}}
-
-The simulation quota of a team means the number of simulations a team is allowed to own. By default, there won't be any limitation, and your teams will be able to create simulations until you reach the number of simulations defined in your license.
-
-The checkbox *Simulations quotas* needs to be enabled if you want the quotas to be applied. The sum of the quotas needs to be less or equal to the number of simulations allowed by your license. Please note that if this option is enabled, you need to provide a quota for each team, or this team won't be able to create a simulation.
-
-==== Team
-
-To create a team, click on the *Create* button.
-
-{{< img src="create-team.png" alt="Creating a team" caption="Creating a team" >}}
-
-You can edit the team by clicking on the icon:pencil-alt[] icon and delete them using the checkboxes on the table's right part.
-Note that you can't edit a quota from this modal, it can only be done from the team settings modal.
-
-[[users]]
-=== Managing Users
-
-To access the Users administration, click on *Admin* in the navigation bar, and choose *Users*.
-
-==== Permissions
-
-There are 4 different user roles in FrontLine:
-
-- System Admin
-- Team Admin
-- Tester
-- Viewer
-
-[cols="5*",options="header"]
-|===
-
-v|
-^| Viewer
-^| Tester
-^| Team Admin
-^| System Admin
-
-v| Access own profile `1`
-^| icon:check[]
-^| icon:check[]
-^| icon:check[]
-^| icon:check[]
-
-v| Access Reports
-and Trends
-^| Own team
-^| Own team
-^| Own team
-^| Own team
-
-v| Start Simulation
-^|
-^| Own team
-^| Own team
-^| Own team
-
-v| Generate Public Links
-^|
-^| Own team
-^| Own team
-^| Own team
-
-v| Create Simulation
-^|
-^|
-^| Own team
-^| Own team
-
-v| Administrate Artifacts
-^|
-^|
-^| Own team
-^| Own team
-
-v| Administrate API Tokens, Users and Teams
-^|
-^|
-^|
-^| Own team
-
-|===
-
-Each role can be global or team-specific.
-
-==== User administration
-
-// FIXME: Update to Github OAuth
-{{< img src="users.png" alt="Users" >}}
-
-// FIXME: Update to Github OAuth creation
-To create a user, click on the *Create* button and ...
-
-{{< img src="create-user.png" alt="Creating a user" >}}
-
-You can edit the user by clicking on the icon:pencil-alt[] icon and delete them using the checkboxes on the table's right part.
-
-=== Managing API Tokens
-
-To access the API Tokens administration, click on *Admin* in the navigation bar, and choose *API token*.
-
-{{< img src="tokens.png" alt="Tokens" >}}
-
-To create an API token, click on the *Create* button. Once the API token is created, copy the token, as you won't be able to retrieve it again.
-
-{{< img src="create-token.png" alt="Create token" >}}
-
-There are three permissions available for an API Token:
-
-- The Start permission, allowing to start simulations (typically useful in a CI like Jenkins)
-- The Read permission, allowing to read all the data from runs (typically useful in Grafana)
-- The All permission, combining both of the previous permissions
-
-You can edit the API Token permissions by clicking on the icon:pencil-alt[] icon on the right part of the table. A permission can be set globally or to a specific team.
-To regenerate a token, click on the icon:undo[] icon.
-
-=== Managing Artifacts
-
-// FIXME: Filled
-
-== Accessing your profile
-
-You can view your profile at any time by clicking on the *My Profile* button in the navigation bar.
-
-// FIXME: GitHub Oauth changes (no password change)
-{{< img src="profile.png" alt="Profile" >}}
-
-The informations displayed are the following:
-
-- Username
-- First and Last name
-- Mail address
-- Different roles
-
-To update your profile, modify the fields you want to change, then click on the button *Update your informations*.
-
-You can't update your username here. You need to ask a System Admin to change your roles on the *Users Admin* page.
-
 [[simulations]]
-== Simulations
 
 To access the Simulations section, click on *Simulations* in the navbar.
 
@@ -212,7 +36,7 @@ Back to the Simulations section, at the top, there is an action bar which allow 
 
 {{< img src="action-bar.png" alt="Action bar" >}}
 
-=== Global Properties
+== Global Properties
 
 Global properties contains every JVM options and system properties used by all of your simulations by default.
 Editing those properties will be propagated to all the simulations.
@@ -225,14 +49,14 @@ If you want specific properties for a simulation, you will be allowed to ignore 
 
 {{< img src="override.png" alt="Override" >}}
 
-=== Creating a simulation
+== Creating a simulation
 
 WARNING: FrontLine has a hard run duration limit of 7 days and will abort any test running for longer than that.
 This limit exists for both performance (data who grow too humongous to be presented in the dashboard) and security (forgotten test running forever) reasons.
 
 In order to create a simulation click on the "Create" button in the simulations table. There are 6 steps to create a simulation, 3 of which are optional.
 
-==== Step 1: General
+=== Step 1: General
 
 {{< img src="create-simulation1.png" alt="Create simulation - Step 1" >}}
 
@@ -240,11 +64,11 @@ In order to create a simulation click on the "Create" button in the simulations 
 - *Team*: the team which owns the simulation.
 - *Class name*: the package and the name of your simulation scala class in the project that you want to start.
 
-==== Step 2: Build configuration
+=== Step 2: Build configuration
 
 // FIXME: Artifact step
 
-==== Step 3: Pools configuration
+=== Step 3: Pools configuration
 
 // FIXME: Explain available regions
 
@@ -260,7 +84,7 @@ If you have more hosts than needed on your Pool, the hosts will be chosen random
 
 After this step, you can save the simulation, or click on *More options* to access optional configuration.
 
-==== Step 4 & 5: JVM options & Java System Properties
+=== Step 4 & 5: JVM options & Java System Properties
 
 These steps allows you to defines JVM arguments and system properties used when running this particular simulation. You can choose to override the global properties.
 
@@ -273,7 +97,7 @@ You can exclude some properties from being copied if you prefix them with `sensi
 NOTE: You can configure the `gatling.frontline.groupedDomains` System property to group connection stats from multiple subdomains and avoid memory issues when hitting a very large number of subdomains.
 For example, setting this property as `.foo.com, .bar.com` will consolidate stats for `sub1.foo.com`, `sub2.foo.com`, `sub1.bar.com`, `sub2.bar.com` into `*****.foo.com` and `*****.bar.com`.
 
-==== Step 6: Time window
+=== Step 6: Time window
 
 Configuring a ramp up or ramp down means that the start and end of your simulation won't be used for calculating metrics and assertions.
 
@@ -285,7 +109,7 @@ Configuring a ramp up or ramp down means that the start and end of your simulati
 NOTE: Ramps parameters will only be applied if the run duration is longer than the sum of the two.
 
 [[simulation-table]]
-=== Simulations table
+== Simulations table
 
 Now that you have created a simulation, you can start it by clicking on the icon:play[] icon in the *Start* column of the table.
 
@@ -312,7 +136,7 @@ Assertions are the assumptions made at the beginning of the simulation to be ver
 
 {{< img src="assertions.png" alt="Assertions" >}}
 
-=== Useful tips
+== Useful tips
 
 - You can edit the simulation by clicking on the icon:pencil-alt[] icon next to his name
 - You can search a simulation by his name, or its team name
@@ -324,7 +148,7 @@ Assertions are the assumptions made at the beginning of the simulation to be ver
 Be aware that deleting a simulation will delete all the associated runs.
 
 [[run-trends]]
-=== Run / Trends
+== Run / Trends
 
 Runs list and trends can be accessed by clicking on the icon:history[] icon in the <<simulation-table, simulations table>>.
 
@@ -333,7 +157,7 @@ This view contains the list of your simulation's runs which can be filtered by n
 {{< img src="run-trends.png" alt="Run trends" >}}
 
 [[runs-table]]
-==== Runs table
+=== Runs table
 // FIXME: Update screen when build renamed
 {{< img src="run-table.png" alt="Run table" >}}
 
@@ -350,7 +174,7 @@ You can also click on the icon:info-circle[] icon to see a snapshot of the run c
 
 {{< img src="snapshot.png" alt="Snapshot" >}}
 
-==== Run Comparison
+=== Run Comparison
 
 {{< img src="compare-runs.png" alt="Compare runs" >}}
 
@@ -360,7 +184,7 @@ You can choose the specific metric you want to compare by clicking on the metric
 
 The delta and variance will be displayed, so you can check if there is a progression or a degradation in performance.
 
-==== Trends charts
+=== Trends charts
 
 The trends are charts that will display some globals statistics for each runs (eg: requests count) so that you can easily see how well your runs went compared to each other.
 Each run is represented by his number in the chart and the chart won't display the statistics of a failed run (eg: Timeout, broken, etc..).
@@ -373,7 +197,7 @@ You can chose how many runs will be compared by changing the limit (10, 25, 50, 
 {{< img src="trends-bar.png" alt="Trends bar" >}}
 
 [[reports]]
-=== Reports
+== Reports
 
 The reports can be accessed by clicking on the icon:chart-area[] icon in the <<simulation-table, simulation table>> or in the <<runs-table, runs table>>.
 
@@ -392,14 +216,14 @@ This page consists of:
 {{< img src="reports.png" alt="Reports" >}}
 
 [[top-navigation]]
-==== Top Navigation Bar
+=== Top Navigation Bar
 
 The navigation bar enable you to choose the simulation time range.
 // FIXME: Update screen new theme
 {{< img src="timewindow.png" alt="Timewindow" >}}
 
 [[timeline]]
-==== Timeline
+=== Timeline
 
 The timeline contains metrics of the full run providing an overview of the run.
 Global informations are available such as the resolution and the simulation name.
@@ -410,7 +234,7 @@ You can change the time range with control buttons or by selecting a region on t
 
 {{< img src="timeline.png" alt="Timeline" >}}
 
-==== Assertions
+=== Assertions
 
 The label below is used to display the status of the simulation (Ongoing, successful, timeout...).
 If your simulation has assertions, this label will be clickable to show the assertions results.
@@ -419,7 +243,7 @@ You can comment the run run by clicking on the icon:comment-alt[] icon.
 {{< img src="timeline-assertions.png" alt="Timeline assertions" >}}
 
 [[tabs]]
-==== Tabs
+=== Tabs
 
 Below the navigator chart, there are tabs to switch charts.
 Each tab has the same structure except the summary that is available only for requests and groups tabs.
@@ -427,7 +251,7 @@ Each tab has the same structure except the summary that is available only for re
 {{< img src="tabs.png" alt="Tabs" >}}
 
 [[run-bar]]
-==== Run Bar
+=== Run Bar
 
 This bar is a combination of buttons:
 
@@ -439,7 +263,7 @@ This bar is a combination of buttons:
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 
-===== Generate Public Links
+=== Generate Public Links
 
 A public link is a link of the current reports which will be accessible to anyone, without having to log-in to FrontLine. To generate a public link, click on the *Generate public link* button and choose the expiration date of your link.
 
@@ -455,7 +279,7 @@ Once you have chosen an expiration date, you can proceed by clicking on the gene
 You can copy the public link to share your reports to non-FrontLine users, or click on the "Go" Button to access it yourself. You can click on the "OK" button to close this modal.
 
 [[charts]]
-==== Charts
+=== Charts
 
 Each charts in FrontLine are connected to each other, so if you select a time window on a chart it will automatically change it
 for all other charts. Metrics are drawn in multiple charts.
@@ -473,7 +297,7 @@ Moreover, histograms and pies are hidden behind each counts charts, accessible b
 WARNING: If your kernel version is too low (around below 3.10) you might not be able to get data from the TCP connection by state graph on the Connections tab. If you want to be able to get these data, you should upgrade your kernel.
 
 [[summary]]
-==== Summary (Requests and Groups only)
+=== Summary (Requests and Groups only)
 
 This view is available only from requests and groups tabs.
 It is a summary of metrics drawn in the charts, and has two modes: flat, by default, and hierarchy.
@@ -485,7 +309,7 @@ On Flat mode you can filter the data by clicking any column name of the table.
 {{< img src="summary.png" alt="Summary" >}}
 
 [[export]]
-==== Export PDF
+=== Export PDF
 When clicking on the green button in the navigation bar, you will have access to a page where you can configure and then export a PDF report of a specific simulation.
 
 {{< img src="export-button.png" alt="Export button" >}}
@@ -538,9 +362,9 @@ There are two more actions you can do:
 * *as a save*: this option will save everything, including the content of the Text Area and the configuration of the graphs
 - *Load*: load a previously saved template or save.
 
-==== Useful Tips
+=== Useful Tips
 
-===== Zoom
+=== Zoom
 
 You can reset zoom by double clicking on a chart.
 It is possible to change the time range window by the following actions:
@@ -549,52 +373,34 @@ It is possible to change the time range window by the following actions:
 - Select a zone in any charts and timeline
 - Select a range time from the top navigation bar
 
-===== Markers
+=== Markers
 
 To ease your analysis, you can create markers on all the charts by right clicking on them. And click on the top of the marker to delete it.
 
 {{< img src="marker.png" alt="Marker" >}}
 
-===== Multiple Highlights
+=== Multiple Highlights
 
 In the top right menu, you can activate the *Multiple Highlights* setting which allows the tooltip to be displayed on every chart at the same time.
 
 {{< img src="multiplecheck.png" alt="Multiple check" >}}
 {{< img src="multiple.png" alt="Multiple" >}}
 
-===== Percentiles Mask
+=== Percentiles Mask
 
 In the top right menu, you can click on the *Percentiles* setting to be able to chose what percentiles to display in the chart.
 
 {{< img src="percentilesmask.png" alt="Percentiles mask" >}}
 {{< img src="percentileschart.png" alt="Percentiles chart" >}}
 
-===== Date Time / Elapsed Time
+=== Date Time / Elapsed Time
 
 In the top right menu, you can activate the *Date Time* setting to be able to switch from elapsed time to date time.
 
-===== Highlight Legend
+=== Highlight Legend
 
 By hovering the label on the percentiles chart legend, you will be able to highlight the curve on the chart, leading to a better view of that curve.
 The highlight legend options is enable to every "non stacked" graph.
 
 {{< img src="highlightchart.png" alt="Highlight chart" >}}
 
-== Documentation
-
-You can click on the Documentation icon in the navigation bar on the bottom left of the screen to display every link to the FrontLine documentation and samples.
-
-{{< img src="documentation.png" alt="Documentation" >}}
-
-== Plugins Download
-
-If you want to download one of your official FrontLine plugin, please click on the Plugins icon in the navigation bar. For more informations about the plugins, please refer to our plugins guide: https://gatling.io/docs/frontline/FrontLine-Plugins-Guide.pdf
-
-{{< img src="plugins-modal.png" alt="Plugins modal" >}}
-
-
-== About
-
-You can click on the About icon in the navigation bar to display the informations about your FrontLine version and about your license.
-
-{{< img src="about.png" alt="About" >}}

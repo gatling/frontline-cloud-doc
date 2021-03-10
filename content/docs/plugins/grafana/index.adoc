@@ -9,10 +9,8 @@ images: []
 menu:
   docs:
     parent: "plugins"
-weight: 200
+weight: 050
 ---
-
-:toc:
 
 == Requirements
 

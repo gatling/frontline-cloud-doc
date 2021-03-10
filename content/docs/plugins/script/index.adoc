@@ -9,10 +9,8 @@ images: []
 menu:
   docs:
     parent: "plugins"
-weight: 240
+weight: 040
 ---
-
-:toc:
 
 == Purpose of this script
 

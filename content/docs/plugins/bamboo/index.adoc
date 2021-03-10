@@ -9,10 +9,10 @@ images: []
 menu:
   docs:
     parent: "plugins"
-weight: 210
+weight: 030
 ---
 
-:toc:
+=
 
 == Purpose of this plugin
 

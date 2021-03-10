@@ -1,0 +1,33 @@
+---
+title: "Profile"
+description: ""
+lead: ""
+date: 2021-03-10T09:29:23-05:00
+lastmod: 2021-03-10T09:29:23-05:00
+draft: false
+images: []
+menu:
+  docs:
+    parent: "user"
+weight: 020
+---
+
+// FIXME: filled with new login method
+
+== Accessing your profile
+
+You can view your profile at any time by clicking on the *My Profile* button in the navigation bar.
+
+// FIXME: GitHub Oauth changes (no password change)
+{{< img src="profile.png" alt="Profile" >}}
+
+The informations displayed are the following:
+
+- Username
+- First and Last name
+- Mail address
+- Different roles
+
+To update your profile, modify the fields you want to change, then click on the button *Update your informations*.
+
+You can't update your username here. You need to ask a System Admin to change your roles on the *Users Admin* page.

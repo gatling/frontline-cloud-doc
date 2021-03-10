@@ -1,5 +1,5 @@
 ---
-title: "Developer Guide"
+title: "Developer"
 description: "This is only a test"
 lead: ""
 date: 2021-03-08T13:50:32+01:00
@@ -9,10 +9,8 @@ images: []
 menu:
   docs:
     parent: "user"
-weight: 100
+weight: 030
 ---
-
-:toc:
 
 == FrontLine Gatling Versions
 
