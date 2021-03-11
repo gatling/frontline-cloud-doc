@@ -276,5 +276,3 @@ val baseUrl = if (poolName == "London") "https://domain.co.uk" else "https://dom
 
 NOTE: This System property is only defined when deploying with FrontLine.
 It's not defined when running locally with any Gatling OSS launcher.
-
-// FIXME: Explain how tu create a simulation fatjar
