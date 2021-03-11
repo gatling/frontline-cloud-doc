@@ -66,7 +66,9 @@ In order to create a simulation click on the "Create" button in the simulations 
 
 === Step 2: Build configuration
 
-// FIXME: Artifact step
+In this step, you'll configure the artifact of the Simulation to execute.
+
+{{< img src="create-simulation2.png" alt="Create simulation - Step 2" >}}
 
 === Step 3: Pools configuration
 
