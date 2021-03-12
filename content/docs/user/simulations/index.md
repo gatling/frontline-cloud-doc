@@ -1,7 +1,7 @@
 ---
 title: "Simulations"
-description: ""
-lead: ""
+description: "Learn how to navigate through simulations and reports."
+lead: "Navigate through simulations and reports."
 date: 2021-03-10T09:29:43-05:00
 lastmod: 2021-03-10T09:29:43-05:00
 draft: false
@@ -11,6 +11,8 @@ menu:
     parent: "user"
 weight: 060
 ---
+
+## Managing Simulations
 
 To access the Simulations section, click on **Simulations** in the navbar.
 

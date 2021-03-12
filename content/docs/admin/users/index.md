@@ -1,7 +1,7 @@
 ---
 title: "Users"
-description: ""
-lead: ""
+description: "Learn how to administrate users and their permissions."
+lead: "Users that can authenticate and their permissions."
 date: 2021-03-10T08:47:07-05:00
 lastmod: 2021-03-10T08:47:07-05:00
 draft: false
@@ -12,9 +12,10 @@ menu:
 weight: 010
 ---
 
-To access the Users administration, click on **Admin** in the navigation bar, and choose **Users**.
 
-## Administration
+## Managing Users
+
+To access the Users administration, click on **Admin** in the navigation bar, and choose **Users**.
 
 {{< img src="users-table.png" alt="Users table" >}}
 

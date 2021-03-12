@@ -1,7 +1,6 @@
 ---
 title: "Help"
-description: ""
-lead: ""
+description: "Learn how to access documentations from the application."
 date: 2021-03-10T09:29:53-05:00
 lastmod: 2021-03-10T09:29:53-05:00
 draft: false

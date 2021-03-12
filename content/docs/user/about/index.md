@@ -1,7 +1,7 @@
 ---
 title: "About"
-description: ""
-lead: ""
+description: "License Informations."
+lead: "License Informations."
 date: 2021-03-10T09:29:59-05:00
 lastmod: 2021-03-10T09:29:59-05:00
 draft: false

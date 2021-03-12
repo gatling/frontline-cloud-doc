@@ -1,7 +1,7 @@
 ---
 title: "Grafana Datasource"
-description: ""
-lead: ""
+description: "Learn how to configure Grafana to monitor your simulations reports."
+lead: "Integrate your simulations reports to Grafana."
 date: 2021-03-08T13:50:08+01:00
 lastmod: 2021-03-08T13:50:08+01:00
 draft: false

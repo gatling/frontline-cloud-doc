@@ -1,7 +1,6 @@
 ---
 title: "Profile"
-description: ""
-lead: ""
+description: "Learn how to access your profile."
 date: 2021-03-10T09:29:23-05:00
 lastmod: 2021-03-10T09:29:23-05:00
 draft: false

@@ -1,7 +1,6 @@
 ---
 title: "Overview"
-description: ""
-lead: ""
+description: "Learn how to navigate."
 date: 2021-03-10T09:29:04-05:00
 lastmod: 2021-03-10T09:29:04-05:00
 draft: false

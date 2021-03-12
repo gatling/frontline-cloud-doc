@@ -1,7 +1,7 @@
 ---
 title: "Developer"
-description: ""
-lead: ""
+description: "Learn how to configure your projects and package it with Maven, SBT and Gradle."
+lead: "Configure and package your projects with Maven, SBT and Gradle."
 date: 2021-03-08T13:50:32+01:00
 lastmod: 2021-03-08T13:50:32+01:00
 draft: false

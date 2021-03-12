@@ -1,7 +1,7 @@
 ---
 title: "Manual scripting"
-description: ""
-lead: ""
+description: "Learn how to configure a script to handle your simulations."
+lead: "Integrate your simulations to your CI with a script."
 date: 2021-03-08T13:50:17+01:00
 lastmod: 2021-03-08T13:50:17+01:00
 draft: false

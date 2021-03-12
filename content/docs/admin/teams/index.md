@@ -1,7 +1,7 @@
 ---
 title: "Teams"
-description: ""
-lead: ""
+description: "Learn how to administrate teams."
+lead: "Teams allow you to group your users and scope their permissions accordingly."
 date: 2021-03-10T08:47:03-05:00
 lastmod: 2021-03-10T08:47:03-05:00
 draft: false

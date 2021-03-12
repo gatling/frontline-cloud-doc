@@ -1,7 +1,7 @@
 ---
 title: "Jenkins Plugin"
-description: ""
-lead: ""
+description: "Learn how to configure Jenkins plugin and integrate your simulations."
+lead: "Integrate your simulations to your Jenkins CI."
 date: 2021-03-08T13:50:14+01:00
 lastmod: 2021-03-08T13:50:14+01:00
 draft: false

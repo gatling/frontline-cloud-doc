@@ -1,7 +1,7 @@
 ---
 title: "Teamcity Plugin"
-description: ""
-lead: ""
+description: "Learn how to configure TeamCity plugin and integrate your simulations."
+lead: "Integrate your simulations to your TeamCity CI."
 date: 2021-03-08T13:50:20+01:00
 lastmod: 2021-03-08T13:50:20+01:00
 draft: false

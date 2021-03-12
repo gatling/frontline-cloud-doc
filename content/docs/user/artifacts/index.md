@@ -1,7 +1,7 @@
 ---
 title: "Artifacts"
-description: ""
-lead: ""
+description: "Learn how to create and upload an artifact."
+lead: "Upload your bundled simulation."
 date: 2021-03-10T09:29:36-05:00
 lastmod: 2021-03-10T09:29:36-05:00
 draft: false
@@ -11,6 +11,8 @@ menu:
     parent: "user"
 weight: 050
 ---
+
+## Managing
 
 To access the Artifacts section, click on **Artifacts** in the navbar.
 
