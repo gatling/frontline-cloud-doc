@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "user"
-weight: 050
+weight: 060
 ---
 
 To access the Simulations section, click on **Simulations** in the navbar.

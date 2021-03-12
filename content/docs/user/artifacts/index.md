@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "user"
-weight: 040
+weight: 050
 ---
 
 To access the Artifacts section, click on **Artifacts** in the navbar.
