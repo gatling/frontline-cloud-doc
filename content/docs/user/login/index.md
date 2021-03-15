@@ -11,19 +11,20 @@ menu:
 weight: 010
 ---
 
-In order to log in to FrontLine, you need to have a Github account linked to FrontLine.
+In order to log in, you need an account with the same username as your GitHub account.
 
-Ask the administrator to [create one](/docs/admin/users/#administration).
-(*if you're the first user, the Gatling support team has already created yours.*)
+If you're the root administrator, we've already created your account.
+
+Otherwise, please reach out to your root administrator to [create your account](/docs/admin/users/#administration).
 
 {{< img src="login-github.png" alt="Login button" >}}
 
-Pressing the **Signup with Github** button will redirect you to Github, where you will be asked to authorize the application.
+Pressing the **Signup with GitHub** button will redirect you to GitHub, where you will be asked to authorize the application.
 
-You need to **authorize** it. We only ask access to your profile informations.
+You need to **authorize** it. We only ask access to your profile.
 
-{{< img src="login-github-oauth.png" alt="OAuth Github page"  >}}
+{{< img src="login-github-oauth.png" alt="OAuth GitHub page"  >}}
 
 {{< alert danger >}}
-The Github authorization page is opened in a new tab. If no tab opened, make sure that your browser didn't block it.
+The GitHub authorization page is opened in a new tab. If no tab opened, make sure that your browser didn't block it.
 {{< /alert >}}
