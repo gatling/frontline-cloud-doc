@@ -5,7 +5,7 @@ titleSeparator = "-"
 description = "FrontLine Cloud Documentation"
 
 ## Homepage
-redirectTo = "/docs/user/developer/"
+redirectTo = "/docs/user/login/"
 
 ## Open Graph + Twitter Cards
 images = ["gatling-logo.png"]

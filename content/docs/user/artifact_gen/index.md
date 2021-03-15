@@ -1,7 +1,7 @@
 ---
-title: "Developer"
-description: "Learn how to configure your projects and package it with Maven, SBT and Gradle."
-lead: "Configure and package your projects with Maven, SBT and Gradle."
+title: "Artifact Generation"
+description: "Learn how to generate an artifact for FrontLine from Gatling zip bundle or a maven, sbt or gradle project."
+lead: "Generate an artifact from your Gatling bundle or a maven, sbt or gradle project."
 date: 2021-03-08T13:50:32+01:00
 lastmod: 2021-03-08T13:50:32+01:00
 draft: false
@@ -20,11 +20,11 @@ FrontLine is compatible with Gatling 3.3, 3.4 and 3.5.
 
 ### Gatling zip bundle
 
-Please copy the `artifact.sh` or `artifact.bat` files in the `bin` directory of your Gatling unzipped bundle.
-Those files haven't been bundled into an official Gatling release yet, but you can download them from [the Gatling repository on GitHub](https://github.com/gatling/gatling/tree/master/gatling-bundle/src/universal/bin).
+Please copy the [`artifact.sh`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.sh) or [`artifact.bat`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.bat) files in the `bin` directory of your Gatling unzipped bundle.
+Those files will be shipped in the bundle in a future official Gatling release.
 
 Please run the script matching your operating system and generate the `target/artifact.jar` file.
-You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts).
+You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts_conf).
 
 ### Maven Project
 
@@ -98,7 +98,7 @@ In your `pom.xml`, you have to add:
 ```
 
 Please run the `mvn clean package -DskipTests` command  in your terminal and generate the `target/<artifactId>-<version>-shaded.jar` file.
-You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts).
+You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts_conf).
 
 {{< alert ip >}}
 You can also exclude dependencies you don't want to ship and make the artifact lighter, eg:
@@ -191,7 +191,7 @@ addSbtPlugin("io.gatling.frontline" % "sbt-frontline" % "{{< var frontLineSbtPlu
 ```
 
 Please run the `sbt test:assembly` (or `sbt it:assembly` if you've configured the plugin for integration tests) command in your terminal and generate the `target/<artifactId>-<version>.jar` file.
-You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts).
+You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts_conf).
 
 {{< alert ip >}}
 The `gatling-sbt` is optional.
@@ -225,7 +225,7 @@ gatling {
 ```
 
 Please run the `gradle frontLineJar` command in your terminal and generate the `build/libs/artifactId.jar` file.
-You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts).
+You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts_conf).
 
 ### Multi-Module Support
 
