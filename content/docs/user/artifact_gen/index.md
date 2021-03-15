@@ -100,7 +100,7 @@ In your `pom.xml`, you have to add:
 Please run the `mvn clean package -DskipTests` command  in your terminal and generate the `target/<artifactId>-<version>-shaded.jar` file.
 You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts_conf).
 
-{{< alert ip >}}
+{{< alert tip >}}
 You can also exclude dependencies you don't want to ship and make the artifact lighter, eg:
 
 ```xml
