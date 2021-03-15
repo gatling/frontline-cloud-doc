@@ -12,20 +12,27 @@ menu:
 weight: 040
 ---
 
-## FrontLine Gatling Versions
+## Generating Artifacts for FrontLine
 
-FrontLine actually uses custom versions of the Gatling components. Those binaries are not open sources and their usage is restricted to FrontLine.
-When you'll be deploying tests with FrontLine, it will replace your Gatling OSS dependencies with their custom counterparts.
+FrontLine deploys packages containing your compiled Simulations and resources.
+Those packages have to be generated upstream.
+FrontLine is compatible with Gatling 3.3, 3.4 and 3.5.
 
-## Configuring Gatling Projects
+### Gatling zip bundle
 
-### Maven
+Please copy the `artifact.sh` or `artifact.bat` files in the `bin` directory of your Gatling unzipped bundle.
+Those files haven't been bundled into an official Gatling release yet, but you can download them from [the Gatling repository on GitHub](https://github.com/gatling/gatling/tree/master/gatling-bundle/src/universal/bin).
 
-In your `pom.xml`, you have to add in:
+Please run the script matching your operating system and generate the `target/artifact.jar` file.
+You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts).
 
-- pull Gatling dependencies
-- add the maven plugin for Scala, so your code gets compiled
-- add the maven plugin for FrontLine, so it can package your code into a deployable artifact
+### Maven Project
+
+In your `pom.xml`, you have to add:
+
+- the Gatling dependencies
+- the maven plugin for Scala, so your code gets compiled
+- the maven plugin for FrontLine, so it can package your code into a deployable artifact
 
 ```xml
 <dependencies>
@@ -90,9 +97,11 @@ In your `pom.xml`, you have to add in:
 </build>
 ```
 
-You can run `mvn package -DskipTests` in your terminal and check you get a jar containing all the dependencies of the simulation.
+Please run the `mvn clean package -DskipTests` command  in your terminal and generate the `target/<artifactId>-<version>-shaded.jar` file.
+You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts).
 
-You can also exclude dependencies you don't want to ship, eg:
+{{< alert ip >}}
+You can also exclude dependencies you don't want to ship and make the artifact lighter, eg:
 
 ```xml
 <plugin>
@@ -117,12 +126,14 @@ You can also exclude dependencies you don't want to ship, eg:
 </plugin>
 ```
 
-### SBT
+{{< /alert >}}
 
-In a sbt project, you have to:
+### SBT Project
 
-- pull Gatling dependencies
-- add the sbt plugin for FrontLine, so it can package your code into a deployable artifact
+In a sbt project, you have to add:
+
+- Gatling dependencies
+- the sbt plugin for FrontLine, so it can package your code into a deployable artifact
 
 A `build.sbt` file should look like this:
 
@@ -179,13 +190,14 @@ addSbtPlugin("io.gatling" % "gatling-sbt" % "{{< var gatlingSbtPluginVersion >}}
 addSbtPlugin("io.gatling.frontline" % "sbt-frontline" % "{{< var frontLineSbtPluginVersion >}}")
 ```
 
-You can run `sbt test:assembly` (or `sbt it:assembly` if you've configured the plugin for integration tests) in your terminal and check you get a jar containing all the dependencies of the simulation.
+Please run the `sbt test:assembly` (or `sbt it:assembly` if you've configured the plugin for integration tests) command in your terminal and generate the `target/<artifactId>-<version>.jar` file.
+You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts).
 
 {{< alert ip >}}
 The `gatling-sbt` is optional.
 {{< /alert >}}
 
-### Gradle
+### Gradle Project
 
 In a Gradle project, you have to:
 
@@ -212,7 +224,8 @@ gatling {
 }
 ```
 
-You can run `gradle frontLineJar` in your terminal and check you get a jar containing all the dependencies of the simulation.
+Please run the `gradle frontLineJar` command in your terminal and generate the `build/libs/artifactId.jar` file.
+You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts).
 
 ### Multi-Module Support
 
@@ -236,9 +249,7 @@ val feeder = csv("src/test/resources/foo.csv")
 val feeder = csv("foo.csv")
 ```
 
-## Specific Gatling Features
-
-### Load Sharding
+## Load Sharding
 
 Injection rates and throttling rates are automatically distributed amongst nodes.
 
