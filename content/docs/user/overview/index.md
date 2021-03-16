@@ -17,10 +17,16 @@ Once you are logged in, you are now able to navigate using the FrontLine navigat
 
 FrontLine is composed of:
 
-- The Profile section, letting a user manage his account settings
-- The Admin section, letting administrators manage teams, users, API tokens and artifacts
-- The Simulations section, where runs, trends and simulations can be seen and managed
-- The Documentation section, displaying all documentation guides, the link to the Swagger for our public API, and samples for your FrontLine tests
-- The About section, letting you know the current version of FrontLine and the expiration date of your license key
+- **Profile**, manage account settings
+- **Users**, manage users informations, teams and permissions - *accessible to system admin*
+- **Teams**, manage teams - *accessible to system admin*
+- **API Tokens**, manage token to access the API - *accessible to system admin*
+- **Artifacts**, manage simulations artifacts - **ccessible from test admin*
+- **Simulations**, manage simulations, runs and reports - *accessible from test admin*
+
+- **Plugins**, displaying all plugins downloads links
+- **Documentation**, displaying all documentation guides, the link to the Swagger for our public API, and samples for your FrontLine tests
+- **About**, current version of FrontLine and restrictions on simulations, injectors and teams
+- **Log out**
 
 We are now going to describe in depth each one of these sections.
