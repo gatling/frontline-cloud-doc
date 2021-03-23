@@ -22,7 +22,7 @@ schemaLogo = "gatling-logo.png"
 schemaTwitter = "https://twitter.com/GatlingTool"
 schemaLinkedIn = "https://www.linkedin.com/company/gatling/"
 schemaGitHub = "https://github.com/gatling"
-schemaSection = "blog"
+schemaSection = "tutorials"
 
 ## Sitelinks Search Box
 siteLinksSearchBox = false

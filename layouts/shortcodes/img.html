@@ -1,8 +1,11 @@
 {{ $path := printf "**%s" (.Get "src") -}}
 {{ $image := .Page.Resources.GetMatch $path -}}
-{{ if not $image }}
+{{ if not $image -}}
   {{ $image = .Page.Parent.Resources.GetMatch $path -}}
-{{ end }}
+  {{ if not $image -}}
+  	{{ errorf "[%s] no image matching %s." .Page.Path $path -}}
+  {{ end -}}
+{{ end -}}
 {{ $lqip := $image.Resize $.Site.Params.lqipWidth -}}
 
 {{ $imgSrc := "" -}}
