@@ -14,7 +14,7 @@ weight: 040
 
 ## Managing API Tokens
 
-To access the API Tokens administration, click on **Admin** in the navigation bar, and choose **API token**.
+To access the API Tokens administration, click on the {{< icon key >}} icon in the navigation bar.
 
 {{< img src="tokens.png" alt="Tokens" >}}
 

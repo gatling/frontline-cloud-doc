@@ -15,7 +15,7 @@ weight: 010
 
 ## Managing Users
 
-To access the Users administration, click on **Admin** in the navigation bar, and choose **Users**.
+To access the Users administration, click on the {{< icon user-cog >}} icon in the navigation bar.
 
 {{< img src="users-table.png" alt="Users table" >}}
 

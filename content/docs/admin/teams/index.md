@@ -14,7 +14,7 @@ weight: 020
 
 ## Managing Teams
 
-To access the Teams administration, click on **Admin** in the navigation bar, and choose **Teams**.
+To access the Teams administration, click on the {{< icon users >}} icon in the navigation bar.
 
 {{< img src="teams.png" alt="Teams" >}}
 
