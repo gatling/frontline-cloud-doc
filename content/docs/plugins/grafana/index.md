@@ -14,7 +14,7 @@ weight: 050
 
 ## Requirements
 
-Download and install link:http://grafana.org/download/[Grafana].
+Download and install [Grafana](http://grafana.org/download/).
 
 ## Grafana datasource installation
 
