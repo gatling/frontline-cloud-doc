@@ -24,6 +24,6 @@ The information displayed are the following:
 - Mail address
 - Different roles
 
-To update your profile, modify the fields you want to change, then click on the button **Update your informations**.
+To update your profile, modify the fields you want to change, then click on the button **Update your information**.
 
 You can't update your username here. You need to ask a System Admin to change your roles on the **Users Admin** page.

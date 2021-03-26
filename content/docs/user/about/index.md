@@ -12,6 +12,6 @@ menu:
 weight: 080
 ---
 
-You can click on the About icon in the navigation bar to display the informations about your FrontLine version and about your license.
+You can click on the About icon in the navigation bar to display the information about your FrontLine version and about your license.
 
 {{< img src="about.png" alt="About" >}}

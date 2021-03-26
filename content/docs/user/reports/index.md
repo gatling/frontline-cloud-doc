@@ -38,7 +38,7 @@ The navigation bar enable you to choose the simulation time range.
 ### Timeline
 
 The timeline contains metrics of the full run providing an overview of the run.
-Global informations are available such as the resolution and the simulation name.
+Global information are available such as the resolution and the simulation name.
 
 The resolution indicates the number of seconds per data point in the graph.
 

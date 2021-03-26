@@ -19,7 +19,7 @@ To access the Users administration, click on **Admin** in the navigation bar, an
 
 {{< img src="users-table.png" alt="Users table" >}}
 
-To create a user, click on the **Create** button and fill the user informations:
+To create a user, click on the **Create** button and fill the user information:
 
 - **Username**: must match user Github username in order to connect and *cannot be updated*.
 - **Firstname** | **Lastname** | **Email**: explicit

@@ -18,7 +18,7 @@ Once you are logged in, you are now able to navigate using the FrontLine navigat
 FrontLine is composed of:
 
 - **Profile**, manage account settings
-- **Users**, manage users informations, teams and permissions - *accessible to system admin*
+- **Users**, manage users information, teams and permissions - *accessible to system admin*
 - **Teams**, manage teams - *accessible to system admin*
 - **API Tokens**, manage token to access the API - *accessible to system admin*
 - **Artifacts**, manage simulations artifacts - *accessible from test admin*
