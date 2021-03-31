@@ -13,21 +13,29 @@ contributors: []
 
 {{< include introduction.md >}}
 
-## Create an artifact
-
 There are multiple ways to create a Gatling artifact, which will be used by FrontLine to launch a run. We can use either a build tool (Maven, Sbt, Gradle) or the Gatling bundle.
 
 In this tutorial, we'll use the Gatling bundle. Make sure that you have a JDK 8 or 11 installed on your computer.
 
-Download the latest version of the Gatling bundle here: https://gatling.io/open-source/start-testing and extract the archive.
+## Download the zip bundle
+[`Click here to download the latest version of the Gatling bundle`](https://gatling.io/open-source/start-testing) and extract the archive.
 
-On a Windows computer: copy this [`artifact.bat`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.bat) file in the `bin` directory of the decompressed archive. On a Linux or MacOs computer: copy this [`artifact.sh`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.sh) file instead in the `bin` directory of the decompressed archive.
+## Download and copy the extra script
+
+* On Windows: [`click here to download this artifact.bat`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.bat).
+* On Linux or MacOS: [`click here to download this artifact.sh`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.sh).
+
+Copy this file in the `bin` directory of the decompressed archive.
 
 {{< img src="bundle.png" alt="Launch artifact.bat" >}}
+
+## Generate the artifact
 
 Run the `artifact.bat` or `artifact.sh` file, Gatling will start creating our first artifact!
 
 {{< include upload.md "target/artifact.jar" >}}
+
+## Upload the artifact
 
 Upload it to FrontLine, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
 
