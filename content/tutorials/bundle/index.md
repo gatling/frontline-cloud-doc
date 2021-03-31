@@ -1,5 +1,5 @@
 ---
-title: "Getting started with the Gatling bundle"
+title: "Bundle"
 slug: "getting-started-with-gatling-bundle"
 description: "Learning how to setup FrontLine Cloud using the Gatling bundle"
 lead: ""
@@ -7,6 +7,9 @@ date: 2021-03-19T17:03:31+01:00
 lastmod: 2021-03-19T17:03:31+01:00
 draft: false
 images: []
+menu:
+  tutorials:
+    parent: "Getting started"
 weight: 50
 contributors: []
 ---
