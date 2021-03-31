@@ -1,5 +1,6 @@
 ---
-title: "sbt"
+title: "Getting started with sbt"
+menutitle: "sbt"
 description: "Learning how to setup FrontLine using sbt"
 lead: ""
 date: 2021-03-19T17:03:31+01:00

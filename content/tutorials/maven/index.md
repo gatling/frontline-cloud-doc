@@ -1,5 +1,6 @@
 ---
-title: "Maven"
+title: "Getting started with Maven"
+menutitle: "Maven"
 description: "Learning how to setup FrontLine Cloud using Maven"
 lead: ""
 date: 2021-03-19T17:03:31+01:00

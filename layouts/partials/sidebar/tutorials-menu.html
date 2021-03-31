@@ -3,11 +3,17 @@
   <h3>{{ .Name }}</h3>
   {{ if .HasChildren -}}
   <ul class="list-unstyled">
-    {{ range .Children -}}
+    {{- range .Children -}}
       {{- $active := or ($currentPage.IsMenuCurrent "tutorials" .) ($currentPage.HasMenuCurrent "tutorials" .) -}}
       {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
-      <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | absURL }}">{{ .Name }}</a></li>
-    {{ end -}}
+      {{- $menutitle := "" -}}
+      {{- if .Page.Params.menutitle -}}
+          {{- $menutitle = .Page.Params.menutitle -}}
+      {{- else -}}
+          {{- $menutitle = .Name -}}
+      {{- end -}}
+      <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | absURL }}">{{ $menutitle }}</a></li>
+    {{- end -}}
   </ul>
   {{ end -}}
 {{ end -}}

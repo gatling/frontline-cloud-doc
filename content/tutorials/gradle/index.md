@@ -1,5 +1,6 @@
 ---
-title: "Gradle"
+title: "Getting started with Gradle"
+menutitle: "Gradle"
 description: "Learning how to setup FrontLine Cloud using Gradle"
 lead: ""
 date: 2021-03-19T17:03:31+01:00
