@@ -9,9 +9,8 @@ images: []
 menu:
   docs:
     parent: "admin"
-weight: 010
+weight: 20010
 ---
-
 
 ## Managing Users
 

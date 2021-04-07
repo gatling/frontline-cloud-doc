@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "plugins"
-weight: 050
+weight: 30050
 ---
 
 ## Requirements

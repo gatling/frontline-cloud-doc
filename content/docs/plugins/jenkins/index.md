@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "plugins"
-weight: 010
+weight: 30010
 ---
 
 ## Purpose of this plugin

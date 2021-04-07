@@ -8,7 +8,7 @@ images: []
 menu:
   docs:
     parent: "user"
-weight: 010
+weight: 10010
 ---
 
 In order to log in, you need an account with the same username as your GitHub account.

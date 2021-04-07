@@ -8,7 +8,7 @@ images: []
 menu:
   docs:
     parent: "user"
-weight: 030
+weight: 10030
 ---
 
 ## Accessing your profile
