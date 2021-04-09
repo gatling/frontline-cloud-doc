@@ -132,15 +132,23 @@ You can also exclude dependencies you don't want to ship and make the artifact l
 
 In a sbt project, you have to add:
 
-- Gatling dependencies
-- the sbt plugin for FrontLine, so it can package your code into a deployable artifact
+- the Gatling dependencies
+- the sbt plugin for FrontLine, so that it can package your code into a deployable artifact
 
-A `build.sbt` file should look like this:
+{{< alert warning >}}
+We only support sbt 1+, not sbt 0.13.
+{{< /alert >}}
+
+{{< alert warning >}}
+We recommend disabling Coursier for now. There are several bugs in the sbt/Coursier integration that make our plugin work in a suboptimal fashion.
+{{< /alert >}}
+
+Your `build.sbt` file should look like this:
 
 ```scala
 enablePlugins(GatlingPlugin, FrontLinePlugin)
 
-// If you want to package simulations from the 'it' scope instead
+// If you want to package simulations from the 'it' scope instead. You will need the gatling-sbt plugin, see further below.
 // inConfig(IntegrationTest)(_root_.io.gatling.frontline.sbt.FrontLinePlugin.frontlineSettings(IntegrationTest))
 
 scalaVersion := "{{< var scalaVersion >}}"
@@ -155,33 +163,11 @@ libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % g
 libraryDependencies += "io.gatling"            % "gatling-test-framework"    % gatlingVersion % "test"
 ```
 
-{{< alert warning >}}
-We only support sbt 1+, not sbt 0.13.
-{{< /alert >}}
-
-{{< alert warning >}}
-If you use the 'it' config, you have to use a custom build command as the defauit one is for the 'test' config: `sbt -J-Xss100M ;clean;it:assembly -batch --error`
-{{< /alert >}}
-
-{{< alert warning >}}
-We recommend disabling Coursier for now. There are several bugs in the sbt/Coursier integration that makes our plugin work in a suboptimal fashion.
-{{< /alert >}}
-
 {{< alert tip >}}
-The `gatling-test-framework`dependencies is only needed if you intend to run locally and use the gatling-sbt plugin.
+The `gatling-test-framework` dependency is only needed if you intend to run locally and use the `gatling-sbt` plugin.
 {{< /alert >}}
-
-{{< alert tip >}}
-If you use very long method calls chains in your Gatling code, you might have to increase sbt's thread stack size:
-{{< /alert >}}
-
-```bash
-$ export SBT_OPTS="-Xss100M"
-```
 
 You will also need the following lines in the `project/plugins.sbt` file:
-
-.project/plugins.sbt:
 
 ```scala
 // only if you intend to use the gatling-sbt plugin for running Gatling locally
@@ -190,11 +176,31 @@ addSbtPlugin("io.gatling" % "gatling-sbt" % "{{< var gatlingSbtPluginVersion >}}
 addSbtPlugin("io.gatling.frontline" % "sbt-frontline" % "{{< var frontLineSbtPluginVersion >}}")
 ```
 
-Please run the `sbt test:assembly` (or `sbt it:assembly` if you've configured the plugin for integration tests) command in your terminal and generate the `target/<artifactId>-<version>.jar` file.
-You'll have to upload this file in the new [Artifacts section](/docs/user/artifacts_conf).
+{{< alert tip >}}
+The `gatling-sbt` plugin is optional.
+{{< /alert >}}
 
-{{< alert ip >}}
-The `gatling-sbt` is optional.
+To package your code, please run one of the following commands in your terminal.
+
+In general (typically, your Gatling simulations are written inside the `src/test/scala` directory):
+
+```bash
+$ sbt test:assembly
+```
+
+If you are using the integration test (`it`) configuration provided by the `gatling-sbt` plugin (typically, your Gatling simulations are written inside the `src/it/scala` directory):
+
+```bash
+$ sbt it:assembly
+```
+
+Either command will generate the `target/<artifactId>-<version>.jar` file, which you will then have to upload in the new [Artifacts section](/docs/user/artifacts_conf).
+
+{{< alert warning >}}
+If you use very long method calls chains in your Gatling code, you might have to increase sbt's thread stack size before you can run the `assembly` command:
+```bash
+$ export SBT_OPTS="-Xss100M"
+```
 {{< /alert >}}
 
 ### Gradle Project
