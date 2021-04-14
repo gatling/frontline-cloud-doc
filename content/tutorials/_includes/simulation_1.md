@@ -1,5 +1,3 @@
-## Create a FrontLine simulation
-
 Now that we've created our artifact on FrontLine, it is time to create a simulation. A simulation is a configuration of a Gatling test on FrontLine.
 
 Let's get back to the main page by clicking on the Gatling icon of the navbar.

@@ -37,6 +37,8 @@ Copy this file in the `bin` directory of the decompressed archive.
 
 Run the `artifact.bat` or `artifact.sh` file, Gatling will start creating our first artifact!
 
+## Upload the artifact to FrontLine
+
 {{< include upload.md "target/artifact.jar" >}}
 
 ## Upload the artifact
@@ -49,9 +51,19 @@ We now have to click on the Upload button to upload it to FrontLine. After a few
 
 {{< img src="upload.png" alt="Start the upload" >}}
 
+## Create a FrontLine simulation
+
 {{< include simulation_1.md "computerdatabase.BasicSimulation" >}}
 
 {{< img src="create_simulation_step_1.png" alt="General configuration" >}}
 
 {{< include simulation_2.md "frontline.sample.BasicSimulation" >}}
+
+## Start load testing!
+
+{{< include run.md >}}
+
+## Additional resources
+
+{{< include resources.md >}}
 

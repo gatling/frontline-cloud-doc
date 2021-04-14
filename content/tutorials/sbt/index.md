@@ -22,6 +22,8 @@ We can use either a build tool (Maven, sbt, Gradle) or the Gatling bundle.
 In this tutorial, we'll use the sbt build tool, so make sure you have sbt configured and Java installed.
 We'll use sbt from the terminal, but you can also do it easily with an IDE like IntelliJ.
 
+## Download the sample Gatling simulation
+
 {{< include download_samples.md >}}
 
 Extract the archive, then navigate to the sbt folder.
@@ -47,6 +49,8 @@ sbt test:assembly
 sbt will download the necessary dependencies and package our simulation.
 That's it, we created our first Gatling artifact!
 
+## Upload the artifact to FrontLine
+
 {{< include upload.md "frontline-samples/sbt/target/sbt-frontline-1.0.0.jar" >}}
 
 Upload it to FrontLine, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
@@ -58,8 +62,18 @@ After a few seconds, the upload will be complete, and our artifact will be succe
 
 {{< img src="upload.png" alt="Start the upload" >}}
 
+## Create a FrontLine simulation
+
 {{< include simulation_1.md "frontline.sample.BasicSimulation" >}}
 
 {{< img src="create_simulation_step_1.png" alt="General configuration" >}}
 
 {{< include simulation_2.md "frontline.sample.BasicSimulation" >}}
+
+## Start load testing!
+
+{{< include run.md >}}
+
+## Additional resources
+
+{{< include resources.md >}}

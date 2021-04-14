@@ -1,5 +1,3 @@
-## Upload the artifact to FrontLine
-
 Let's get back to FrontLine. To navigate to the artifacts page, click on the {{< icon archive >}} icon on the Sidenav (navigation bar on the left of the screen).
 
 {{< img src="artifact_navigation.png" alt="Sidenav navigation" >}}
