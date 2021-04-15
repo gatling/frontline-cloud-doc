@@ -18,7 +18,14 @@ To access the Artifacts section, click on **Artifacts** in the navbar.
 
 The Simulations view contains all the artifacts you have configured with the given name, team, and filename of uploaded artifact if not empty.
 
+Gatling version of the artifact is displayed in a badge next to the filename.
+
 {{< img src="artifact-table.png" alt="Artifact table" >}}
+
+{{< alert tip >}}
+Artifacts uploaded before the upload validation has been implemented may have a "corrupted" badge:
+check how to [generate an artifact](/docs/user/artifact_gen/), and upload it again.
+{{< / alert >}}
 
 ## Creation
 
