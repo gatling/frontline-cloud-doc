@@ -117,10 +117,9 @@ FrontLine offers a large amount of metrics:
     - `tcpConn`: TCP connection events count per second.
     - `cpuSys`: CPU system usage in percent.
     - `cpuUser`: CPU user usage in percent.
-- **Bandwidth metrics:**
+- **Connections metrics:**
     - `bitsSent`: Bits sent per second.
     - `bitsReceived`: Bits received per second.
-- **Connections metrics:**
     - `connectionOpened`: Connection opened count per second.
     - `connectionClosed`: Connection closed count per second.
     - `connectionTcpState`: TCP connection count by state.
