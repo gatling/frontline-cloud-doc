@@ -31,7 +31,9 @@ In order to create a simulation click on the "Create" button in the simulations 
 
 ## Upload
 
-In order to filled the artifact with your bundled simulation, click on the {{< icon upload >}} icon on the right side of the table.
+### Option 1: Manual Upload
+
+In order to fill the artifact with your bundled simulation, click on the {{< icon upload >}} icon on the right side of the table.
 
 {{< alert tip >}}
   In order to package a bundle of your simulation, refer to the [Developer documentation](/docs/user/artifact_gen/).
@@ -47,6 +49,22 @@ You can upload multiple artifact concurrently, progress can be tracked from anyw
 
 {{< img src="artifact-upload-sidenav.png" alt="Artifact upload progress button" >}}
 {{< img src="artifact-upload-progress.png" alt="Artifact upload progress" >}}
+
+### Option 2: API Upload
+
+You can also upload artifacts programmatically with our REST API.
+
+You'll need:
+* an [API token]({{< ref "/docs/admin/api-tokens" >}}) with at least the `Artifacts` permission
+* the Artifact's ID you can copy from the WebUI.
+
+You can then upload your artifact, eg with `curl`:
+
+```
+curl -X PUT -T <ARTIFACT_LOCAL_PATH> \
+  "https://<DOMAIN>/api/public/artifacts/<ARTIFACT_ID>/content?filename=<ARTIFACT_FILE_NAME>" \
+  -H "Authorization:<API_TOKEN>"
+```
 
 ## Usage
 

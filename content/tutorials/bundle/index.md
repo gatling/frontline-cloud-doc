@@ -39,9 +39,9 @@ Run the `artifact.bat` or `artifact.sh` file, Gatling will start creating our fi
 
 ## Upload the artifact to FrontLine
 
-{{< include upload.md "target/artifact.jar" >}}
+### Option 1: Manual Upload
 
-## Upload the artifact
+{{< include upload_manual.md "target/artifact.jar" >}}
 
 Upload it to FrontLine, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
 
@@ -50,6 +50,10 @@ Upload it to FrontLine, either by drag-and-dropping it to the modal, or by click
 We now have to click on the Upload button to upload it to FrontLine. After a few seconds, the upload will be complete, and our artifact will be successfully ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
+
+### Option2: API Upload
+
+{{< include upload_api.md "target/artifact.jar" >}}
 
 ## Create a FrontLine simulation
 
