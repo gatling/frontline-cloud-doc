@@ -35,7 +35,7 @@ Copy this file in the `bin` directory of the decompressed archive.
 
 ## Generate the artifact
 
-Run the `artifact.bat` or `artifact.sh` file, Gatling will start creating our first artifact!
+Run the `artifact.bat` or `artifact.sh` file, Gatling will start creating your first artifact!
 
 ## Upload the artifact to FrontLine
 
@@ -47,7 +47,7 @@ Upload it to FrontLine, either by drag-and-dropping it to the modal, or by click
 
 {{< img src="choose_artifact.png" alt="Choose the generated artifact" >}}
 
-We now have to click on the Upload button to upload it to FrontLine. After a few seconds, the upload will be complete, and our artifact will be successfully ready to use!
+You now have to click on the Upload button to upload it to FrontLine. After a few seconds, the upload will be complete, and your artifact will be ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
 

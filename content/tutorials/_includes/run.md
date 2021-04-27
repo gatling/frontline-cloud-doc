@@ -1,4 +1,4 @@
-We're now ready to start load testing on FrontLine. To start the simulation we created previously, click on the {{< icon play >}} icon.
+You're now ready to start load testing on FrontLine. To start the simulation you've created previously, click on the {{< icon play >}} icon.
 
 {{< img src="start_simulation.png" alt="Start the simulation" >}}
 

@@ -17,10 +17,10 @@ contributors: []
 {{< include introduction.md >}}
 
 There are multiple ways to create a Gatling artifact, which will be used by FrontLine to launch a run.
-We can use either a build tool (Maven, Sbt, Gradle) or the Gatling bundle.
+You can use either a build tool (Maven, Sbt, Gradle) or the Gatling bundle.
 
 In this tutorial, we'll use the Gradle build tool, so make sure you have Gradle configured.
-We'll use Gradle from the terminal, but you can also do it easily with an IDE like IntelliJ.
+You'll use Gradle from the terminal, but you can also do it easily with an IDE like IntelliJ.
 
 ## Download the sample Gatling simulation
 
@@ -46,8 +46,8 @@ gradle frontLineJar
 
 {{< img src="gradle_command.png" alt="Maven command" >}}
 
-Gradle will download the necessary dependencies and package our simulation.
-That's it, we created our first Gatling artifact!
+Gradle will download the necessary dependencies and package your simulation.
+That's it, you've created your first Gatling artifact!
 
 ## Upload the artifact to FrontLine
 
@@ -59,8 +59,8 @@ Upload it to FrontLine, either by drag-and-dropping it to the modal, or by click
 
 {{< img src="choose_artifact.png" alt="Choose the generated artifact" >}}
 
-We now have to click on the Upload button to upload it to FrontLine.
-After a few seconds, the upload will be complete, and our artifact will be successfully ready to use!
+You now have to click on the Upload button to upload it to FrontLine.
+After a few seconds, the upload will be complete, and your artifact will be ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
 

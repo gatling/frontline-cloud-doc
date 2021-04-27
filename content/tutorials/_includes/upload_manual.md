@@ -6,8 +6,8 @@ Click on the create button in order to create an artifact in FrontLine. Choose t
 
 {{< img src="create_artifact_button.png" alt="Create an artifact" >}}
 
-We now have to upload the artifact we generated earlier with Maven. Click on the {{< icon cloud-upload-alt >}} icon.
+You now have to upload the artifact you've generated earlier with Maven. Click on the {{< icon cloud-upload-alt >}} icon.
 
 {{< img src="open_upload.png" alt="Open upload modal" >}}
 
-The artifact we generated earlier is located here: `{param}`
+The artifact you've generated earlier is located here: `{param}`

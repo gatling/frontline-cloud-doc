@@ -17,10 +17,10 @@ contributors: []
 {{< include introduction.md >}}
 
 There are multiple ways to create a Gatling artifact, which will be used by FrontLine to launch a run.
-We can use either a build tool (Maven, sbt, Gradle) or the Gatling bundle.
+You can use either a build tool (Maven, sbt, Gradle) or the Gatling bundle.
 
 In this tutorial, we'll use the sbt build tool, so make sure you have sbt configured and Java installed.
-We'll use sbt from the terminal, but you can also do it easily with an IDE like IntelliJ.
+You'll use sbt from the terminal, but you can also do it easily with an IDE like IntelliJ.
 
 ## Download the sample Gatling simulation
 
@@ -46,8 +46,8 @@ sbt test:assembly
 
 {{< img src="sbt_command.png" alt="sbt command" >}}
 
-sbt will download the necessary dependencies and package our simulation.
-That's it, we created our first Gatling artifact!
+sbt will download the necessary dependencies and package your simulation.
+That's it, you've created your first Gatling artifact!
 
 ## Upload the artifact to FrontLine
 
@@ -59,8 +59,8 @@ Upload it to FrontLine, either by drag-and-dropping it to the modal, or by click
 
 {{< img src="choose_artifact.png" alt="Choose the generated artifact" >}}
 
-We now have to click on the Upload button to upload it to FrontLine.
-After a few seconds, the upload will be complete, and our artifact will be successfully ready to use!
+You now have to click on the Upload button to upload it to FrontLine.
+After a few seconds, the upload will be complete, and your artifact will be ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
 
