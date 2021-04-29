@@ -1,24 +1,6 @@
-[[docs]]
-  name = "User"
-  weight = 1
-  identifier = "user"
-  url = "/docs/user/"
-
-[[docs]]
-  name = "Administrators"
-  weight = 2
-  identifier = "admin"
-  url = "/docs/admin/"
-
-[[docs]]
-  name = "Plugins"
-  weight = 3
-  identifier = "plugins"
-  url = "/docs/plugins/"
-
 [[main]]
-  name = "Docs"
-  url = "/docs/"
+  name = "Reference"
+  url = "/reference/"
   weight = 10
 
 [[main]]

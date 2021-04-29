@@ -1,6 +1,4 @@
-baseurl: /
-theme:
-  - github.com/gatling/gatling-docs-theme
+baseurl: http://localhost:1313/docs/cloud/
 
 disableAliases: true
 disableHugoGeneratorInject: true
@@ -69,7 +67,7 @@ module:
   private: '*.*'
   proxy: direct
   imports:
-    - path: github.com/gatling/gatling-docs-theme
+    - path: github.com/gatling/gatling.io-doc-theme
   mounts:
     - source: assets
       target: assets

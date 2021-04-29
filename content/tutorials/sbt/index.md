@@ -2,16 +2,9 @@
 title: "Getting started with sbt"
 menutitle: "sbt"
 description: "Learning how to setup FrontLine using sbt"
-lead: ""
 date: 2021-03-19T17:03:31+01:00
 lastmod: 2021-03-19T17:03:31+01:00
-draft: false
-images: []
-menu:
-  tutorials:
-    parent: "Getting started"
 weight: 50
-contributors: []
 ---
 
 {{< include introduction.md >}}
