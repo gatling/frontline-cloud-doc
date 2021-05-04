@@ -25,7 +25,7 @@ Now, go to the artifact repository you've created previously and copy its id.
 You can now upload your artifact, eg with `curl`:
 
 ```
-curl -X PUT -T <ARTIFACT_LOCAL_PATH> \
+curl -X PUT --upload-file <ARTIFACT_LOCAL_PATH> \
   "https://<DOMAIN>/api/public/artifacts/<ARTIFACT_ID>/content?filename=<ARTIFACT_FILE_NAME>" \
   -H "Authorization:<API_TOKEN>"
 ```
@@ -33,7 +33,7 @@ curl -X PUT -T <ARTIFACT_LOCAL_PATH> \
 For example:
 
 ```
-curl -X PUT -T {param} \
+curl -X PUT --upload-file {param} \
   "https://yourorg.beta.gatling.io/api/public/artifacts/8ba9511a-0376-409e-a4f3-a8d8f85624c7/content?filename=artifact.jar" \
   -H "Authorization:jAsAFAWes-Lif6BaMYN0JngAUCzdRw_dS1oUodYUvsdi8JwE0m3OzF_SV1rwkND8q"
 ```

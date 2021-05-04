@@ -68,7 +68,7 @@ You'll need:
 You can then upload your artifact, eg with `curl`:
 
 ```
-curl -X PUT -T <ARTIFACT_LOCAL_PATH> \
+curl -X PUT --upload-file <ARTIFACT_LOCAL_PATH> \
   "https://<DOMAIN>/api/public/artifacts/<ARTIFACT_ID>/content?filename=<ARTIFACT_FILE_NAME>" \
   -H "Authorization:<API_TOKEN>"
 ```
