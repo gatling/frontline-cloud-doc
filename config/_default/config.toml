@@ -21,6 +21,9 @@ isPlainText = true
 noUgly = true
 rel  = "sitemap"
 
+[minify.tdewolff.html]
+keepWhitespace=true
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.extensions]
