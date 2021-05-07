@@ -1,6 +1,6 @@
 ---
 title: "Login"
-description: "Learn how to connect."
+description: "Learn how to connect to FrontLine with Github."
 date: 2021-03-10T09:29:04-05:00
 lastmod: 2021-03-10T09:29:04-05:00
 weight: 10010

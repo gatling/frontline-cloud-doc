@@ -1,7 +1,7 @@
 ---
 title: "Artifact Generation"
-description: "Learn how to generate an artifact for FrontLine from Gatling zip bundle or a maven, sbt or gradle project."
-lead: "Generate an artifact from your Gatling bundle or a maven, sbt or gradle project."
+description: "Learn how to generate an artifact for FrontLine from Gatling zip bundle or a maven, SBT or gradle project."
+lead: "Generate an artifact from your Gatling bundle or with a maven, SBT or gradle project."
 date: 2021-03-08T13:50:32+01:00
 lastmod: 2021-03-08T13:50:32+01:00
 weight: 10040
