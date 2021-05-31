@@ -26,7 +26,8 @@ There are three permissions available for an API Token:
 
 - The Start permission, allowing to start simulations
 - The Read permission, allowing to read all the data from runs (typically useful in Grafana)
-- The All permission, combining both of the previous permissions
+- The Artifacts permission, allowing to upload artifacts
+- The All permission, combining all three of the previous permissions
 
 {{< alert tip >}}
 The permission needed for our CI plugins is All.
