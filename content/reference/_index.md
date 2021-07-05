@@ -12,4 +12,5 @@ cascade:
     gatlingSbtPluginVersion: "3.2.2"
     frontLineSbtPluginVersion: "1.3.2"
     frontLineGradlePluginVersion: "1.4.0"
+    externalPluginsVersion: "1.14.2"
 ---
