@@ -1,7 +1,7 @@
 main:
   - name: Cloud
-    identifier: cloud
-    url: reference/current
+    identifier: reference
+    url: reference/
     weight: 30
 
 social:
