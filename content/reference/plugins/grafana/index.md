@@ -1,7 +1,7 @@
 ---
 title: "Grafana Datasource"
-description: "Learn how to configure the FrontLine Grafana datasource to display your simulations reports."
-lead: "Display FrontLine simulations reports in Grafana."
+description: "Learn how to configure the Gatling Enterprise Grafana datasource to display your simulations reports."
+lead: "Display Gatling Enterprise simulations reports in Grafana."
 date: 2021-03-08T13:50:08+01:00
 lastmod: 2021-03-08T13:50:08+01:00
 weight: 30050
@@ -13,7 +13,7 @@ Download and install [Grafana](http://grafana.org/download/).
 
 ## Grafana datasource installation
 
-The FrontLine datasource for Grafana is packaged as a zip bundle that you can found at this URL:
+The Gatling Enterprise datasource for Grafana is packaged as a zip bundle that can be found at this URL:
 
 ```
 https://downloads.gatling.io/releases/frontline-grafana-bundle/{{< var externalPluginsVersion >}}/frontline-grafana-bundle-{{< var externalPluginsVersion >}}-bundle.zip
@@ -21,13 +21,14 @@ https://downloads.gatling.io/releases/frontline-grafana-bundle/{{< var externalP
 
 You can install it using the grafana-cli:
 
-`grafana-cli --pluginUrl GRAFANA_DATASOURCE_BUNDLE_URL plugins install frontline`
-
-Please note that the plugin is unsigned, and may recent versions of Grafana may reject it. In this case, [you need to add the plugin to the list of allowed unsigned plugin](https://grafana.com/docs/grafana/latest/administration/configuration/#allow_loading_unsigned_plugins).
+```console
+grafana-cli --pluginUrl GRAFANA_DATASOURCE_BUNDLE_URL plugins install gatling_enterprise
+```
+Please note that the plugin is unsigned, and recent versions of Grafana may reject it. In this case, [you need to add the plugin to the list of allowed unsigned plugins](https://grafana.com/docs/grafana/latest/administration/configuration/#allow_loading_unsigned_plugins).
 
 Grafana configuration sample:
 ```
-allow_loading_unsigned_plugins = frontline
+allow_loading_unsigned_plugins = gatling_enterprise
 ```
 
 ## Adding the datasource
@@ -40,24 +41,24 @@ allow_loading_unsigned_plugins = frontline
 If this link is missing in the side menu, it means that your current user does not have the `Admin` role for the current organization.
 {{< /alert >}}
 
-- Click the `Add data source` link in the top header.
-- Select `FrontLine`.
+- Click the __Add data source__ link in the top header.
+- Select __Gatling Enterprise__.
 
 | Name      | Description                                                                           |
 |-----------|---------------------------------------------------------------------------------------|
 | Name      | The datasource name.                                                                  |
 | Default   | Should be checked if you want that datasource to be selected by default in new panels |
-| URL       | URL of your FrontLine server, for example: https://demo-beta.gatling.io      |
+| URL       | URL of your Gatling Enterprise server, please enter: https://cloud.gatling.io      |
 | Access    | Server  access via Grafana backend, Browser  access directly from browser.            |
-| Auth      | FrontLine datasource ignore these fields.                                             |
-| API Token | Token generated through the FrontLine dashboard.                                      |
+| Auth      | Gatling Enterprise datasource ignore these fields.                                             |
+| API Token |  [API token]({{< ref "../../admin/api_tokens" >}}) needed to authenticate to Gatling Enterprise. The API token needs the Read permission.                                      |
 
 {{< img src="configure-datasource.png" alt="pdfheight=20%" >}}
 
 ## Templating
 
 {{< alert tip >}}
-Our team provides some dashboards that you can import if you don't want to bother about setting up all the charts and these template variables.
+Gatling Corp provides some dashboards that you can import if you don't want to bother about setting up all the charts and these template variables.
 {{< /alert >}}
 
 {{< alert tip >}}
@@ -65,7 +66,7 @@ Samples are in the `dashboardSamples` directory in your Grafana bundle.
 They are built with a datasource named *FrontLine*. Make sure this datasource exists or modify the json file accordingly.
 {{< /alert >}}
 
-To use the FrontLine datasource in Grafana, you will need to set template variables.
+To use the Gatling Enterprise datasource in Grafana, you will need to set template variables.
 
 These are global dashboard parameters that can be used in your graphs with the query builder.
 
@@ -85,13 +86,13 @@ At the end, your template variables should be something like:
 
 {{< img src="dashboard.png" alt="" >}}
 
-## FrontLine Metrics
+## Gatling Enterprise Metrics
 
 {{< alert tip >}}
-You can get the list of metrics and test the results via FrontLine's Swagger UI, available through `Documentation` and `FrontLine API Documentation` in the FrontLine dashboard.
+You can get the list of metrics and test the results via Gatling Enterprise's [Public API]({{< ref "../../user/api" >}}).
 {{< /alert >}}
 
-FrontLine offers a large amount of metrics:
+Gatling Enterprise offers a large amount of metrics:
 
 - **Requests metrics:**
     - `req.<Percentiles>`: Response time percentiles metric.

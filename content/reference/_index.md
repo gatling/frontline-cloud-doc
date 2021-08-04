@@ -12,5 +12,5 @@ cascade:
     frontLineMavenPluginVersion: "1.2.3"
     frontLineSbtPluginVersion: "1.3.4"
     frontLineGradlePluginVersion: "1.4.3"
-    externalPluginsVersion: "1.14.2"
+    externalPluginsVersion: "1.14.3"
 ---
