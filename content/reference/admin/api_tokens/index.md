@@ -7,26 +7,29 @@ lastmod: 2021-03-10T08:47:16-05:00
 weight: 20030
 ---
 
-## Managing API Tokens
+API Tokens administration is accessible in the navigation bar.
 
-To access the API Tokens administration, click on the {{< icon key >}} icon in the navigation bar.
+## Managing API Tokens
 
 {{< img src="tokens.png" alt="Tokens" >}}
 
-To create an API token, click on the **Create** button. Once the API token is created, copy the token, as you won't be able to retrieve it again.
+To create an API token, click on the **Create** button.
+Once the API token is created, make sure to copy the token, as you won't be able to retrieve it again later.
 
 {{< img src="create-token.png" alt="Create token" >}}
 
-There are three permissions available for an API Token:
+There are four permissions available for API Tokens:
 
-- The Start permission, allowing to start simulations
 - The Read permission, allowing to read all the data from runs (typically useful in Grafana)
+- The Start permission, allowing to start simulations runs
 - The Artifacts permission, allowing to upload artifacts
 - The All permission, combining all three of the previous permissions
 
+You can set a permission globally or within a specific team only.
+
 {{< alert tip >}}
-The permission needed for our CI plugins is All.
+**CI Plugins** need the **All** permission
 {{< /alert >}}
 
-You can edit the API Token permissions by clicking on the {{< icon pencil-alt >}} icon on the right part of the table. A permission can be set globally or to a specific team.
+You can edit the API Token permissions by clicking on the {{< icon pencil-alt >}} icon on the right part of the table. 
 To regenerate a token, click on the {{< icon undo >}} icon.
