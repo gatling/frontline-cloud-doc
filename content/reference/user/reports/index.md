@@ -59,7 +59,6 @@ Each tab has the same structure except the summary that is available only for re
 This bar is a combination of buttons:
 
 - **Start / Abort**: Use this button to start a new run of the simulation, or stop the ongoing run (not available if you have a Viewer permission)
-- **Grafana**: Link to the Grafana dashboard if you have filled in the configuration in frontline.conf
 - **Generate public link**: To create a public link
 - **Switch to Summary**: Switch to [summary]({{< ref "../reports#summary" >}}) view for Requests & Groups tabs
 - buttons to filter the metrics drawn in the charts area

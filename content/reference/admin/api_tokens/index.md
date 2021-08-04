@@ -20,7 +20,7 @@ To create an API token, click on the **Create** button. Once the API token is cr
 There are three permissions available for an API Token:
 
 - The Start permission, allowing to start simulations
-- The Read permission, allowing to read all the data from runs (typically useful in Grafana)
+- The Read permission, allowing to read all the data from runs
 - The Artifacts permission, allowing to upload artifacts
 - The All permission, combining all three of the previous permissions
 
