@@ -7,6 +7,6 @@ lastmod: 2021-03-10T09:29:59-05:00
 weight: 10100
 ---
 
-You can click on the About icon in the navigation bar to display the information about your FrontLine version and about your license.
+You can click on the About icon in the navigation bar to display the information about your Gatling version and your product version.
 
 {{< img src="about.png" alt="About" >}}
