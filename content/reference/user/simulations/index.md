@@ -15,13 +15,13 @@ The Simulations view contains all the simulations you have configured and the re
 
 {{< img src="simulations-table.png" alt="Simulation table" >}}
 
-If you don't have any simulations configured yet and don't know how to start, you can download some FrontLine pre-configured projects by clicking on the "Download sample simulations" green button.
+If you don't have any simulations configured yet and don't know how to start, you can download some Gatling Enterprise pre-configured projects by clicking on the "Sample simulations" button.
 
 {{< img src="samples.png" alt="Samples" >}}
 
-Those samples are ready to use maven, sbt and gradle projects with proper configuration for FrontLine. You can also download those samples with the download link in the Documentation section.
+Those samples are ready to use maven, sbt and gradle projects with proper configuration for Gatling Enterprise. You can also download those samples with the download link in the Documentation section.
 
-Back to the Simulations section, at the top, there is an action bar which allow several actions:
+Back to the Simulations section, at the top-right, there is an action bar which allows several actions:
 
 - Create a simulation
 - Search by simulation or team name
@@ -46,7 +46,7 @@ If you want specific properties for a simulation, you will be allowed to ignore 
 ## Creating a simulation
 
 {{< alert warning >}}
-FrontLine has a hard run duration limit of 7 days and will abort any test running for longer than that.
+Gatling Enterprise has a hard run duration limit of 7 days and will stop any test running for longer than that.
 This limit exists for both performance (data who grow too humongous to be presented in the dashboard) and security (forgotten test running forever) reasons.
 {{< /alert >}}
 
@@ -68,9 +68,9 @@ In this step, you'll configure the artifact of the Simulation to execute.
 
 ### Step 3: Pools configuration
 
-In this step, you'll configure the pools used for the FrontLine injectors.
+In this step, you'll configure the pools used for the Gatling Enterprise injectors.
 
-FrontLine private beta pools are available in the following regions:
+Gatling Enterprise private beta pools are available in the following regions:
 
 - Europe (Paris)
 - US East (N. Virginia)
@@ -79,7 +79,7 @@ FrontLine private beta pools are available in the following regions:
 {{< img src="create-simulation3.png" alt="Create simulation - Step 3" >}}
 
 - **Weight distribution**: on even, every injector will produce the same load. On custom, you have to set the weight in % of each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight should be 100%.
-- **Pools**: defines the pools to be used when initiating the FrontLine injectors.
+- **Pools**: defines the pools to be used when initiating the Gatling Enterprise injectors.
 
 You can add many pools with a different number of hosts to run your simulation.
 
@@ -131,7 +131,7 @@ A run have the following life cycle:
 
 {{< anchor logs >}}
 
-By clicking on the {{< icon file-alt >}} icon in the **Build Start** column, Frontline will display the build logs of the simulation. There is a limit of 1000 logs for a run.
+By clicking on the {{< icon file-alt >}} icon in the **Build Start** column, Gatling Enterprise will display the build logs of the simulation. There is a limit of 1000 logs for a run.
 
 {{< img src="logs.png" alt="Logs" >}}
 
@@ -146,7 +146,7 @@ Assertions are the assumptions made at the beginning of the simulation to be ver
 - You can search a simulation by his name, or its team name
 - You can sort the simulations by any column except the **Start** one
 - A **Delete** button will appear on the action bar when you select a simulation, you will be able to delete all the selected simulations
-- When a simulation is running, you can abort the run by clicking on the Abort button
+- When a simulation is running, you can stop the run by clicking on the Stop button
 - You can copy a simulation ID by clicking on the {{< icon clipboard >}} icon next to his name
 
 Be aware that deleting a simulation will delete all the associated runs.
