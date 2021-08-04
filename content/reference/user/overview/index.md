@@ -1,28 +1,39 @@
 ---
 title: "Overview"
 description: "Learn how to navigate."
-lead: "FrontLine navigation"
+lead: "Gatling Enterprise Overview"
 date: 2021-03-10T09:29:04-05:00
 lastmod: 2021-03-10T09:29:04-05:00
 weight: 10020
 ---
 
-Once you are logged in, you are now able to navigate using the FrontLine navigation bar on the left side.
+{{< img src="overview.png" alt="Overview" caption="Overview" >}}
 
-{{< img src="navbar.png" alt="Navbar" >}}
+## Navigation Bar
 
-FrontLine is composed of:
+Gatling Enterprise navigation bar on the left side can be deployed using the Burger Navigation Menu button. {{< icon bars >}}
 
-- **Profile**, manage account settings
-- **Users**, manage users information, teams and permissions - *accessible to system admin*
-- **Teams**, manage teams - *accessible to system admin*
-- **API Tokens**, manage token to access the API - *accessible to system admin*
-- **Artifacts**, manage simulations artifacts - *accessible from test admin*
-- **Simulations**, manage simulations, runs and reports - *accessible from test admin*
+Gatling Enterprise navigation bar is composed of:
 
-- **Plugins**, displaying all plugins downloads links
+- [**Users**]({{< ref "../../admin/users" >}}), manage users teams and roles - *accessible to system admins only*
+- [**Teams**]({{< ref "../../admin/teams" >}}), manage teams - *accessible to system admins only*
+- [**API Tokens**]({{< ref "../../admin/api_tokens" >}}), manage token to access the API - *accessible to system admins only*
+- [**Artifacts**]({{< ref "../artifact_conf" >}}), manage simulations artifacts - *accessible to test admins and system admins*
+- [**Simulations**]({{< ref "../simulations" >}}), manage simulations, runs and reports - *accessible to anyone with at least a viewer role*
+- [**Dedicated IPs**]({{< ref "../dedicated_ips" >}}), table of pools dedicated IP's- *accessible to test admins and system admins* 
+---
+- [**Plugins**]({{< ref "../../plugins" >}}), displaying all plugins downloads links
 - **Documentation**, displaying all documentation guides, the link to the Swagger for our public API, and samples for your FrontLine tests
-- **About**, current version of FrontLine and restrictions on simulations, injectors and teams
-- **Log out**
+- **About**, current versions of Gatling Enterprise
 
-We are now going to describe in depth each one of these sections.
+## Navigation dropdown
+
+On the upper right corner, you can open a dropdown menu by clicking on the organization logo.
+
+Navigation dropdown menu is composed of:
+- [**Organization**]({{< ref "../organization" >}}), system administrators, credits and plans 
+- [**Profile**]({{< ref "../profile" >}}), edit your profile and see your roles
+- **Logout**, disconnect from your account
+
+{{< img src="navbar-dropdown.png" alt="Navbar Dropdown" caption="Navigation dropdown menu" >}}
+
