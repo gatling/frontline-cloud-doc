@@ -5,21 +5,21 @@ First, you need to create an API Token as our REST API is secured.
 
 Back in FrontLine, click on **API Tokens** in the left navigation bar.
 
-{{< img src="api_token_navigation.png" alt="Sidenav navigation" >}}
+{{< img src="api-token-navigation.png" alt="Sidenav navigation" >}}
 
 Click on the Create button in order to create an API Token.
 Make sure to grant either `Artifacts` or `All` permissions.
 Choose the name you want, then click Save.
 
-{{< img src="api_token_create_1.png" alt="Create an API Token" >}}
+{{< img src="api-token-create-1.png" alt="Create an API Token" >}}
 
 Make sure to save the API Token value somewhere, as it's only displayed one time (but can be regenerated later on).
 
-{{< img src="api_token_create_2.png" alt="Save an API Token value" >}}
+{{< img src="api-token-create-2.png" alt="Save an API Token value" >}}
 
 Now, go to the artifact repository you've created previously and copy its id.
 
-{{< img src="artifact_copy_id.png" alt="Copy an Artifact's id" >}}
+{{< img src="artifact-copy-id.png" alt="Copy an Artifact's id" >}}
 
 You can now upload your artifact through the API, eg with `curl`:
 
