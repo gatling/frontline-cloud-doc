@@ -2,8 +2,8 @@
 title: "Manual scripting"
 description: "Learn how to configure a script to run your simulations."
 lead: "Run your Gatling Enterprise simulations from your CI."
-date: 2021-03-08T13:50:17+01:00
-lastmod: 2021-03-08T13:50:17+01:00
+date: 2021-03-08T12:50:17+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 30040
 ---
 

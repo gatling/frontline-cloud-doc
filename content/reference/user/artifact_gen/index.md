@@ -2,8 +2,8 @@
 title: "Artifact Generation"
 description: "Learn how to generate an artifact for Gatling Enterprise from the Gatling zip bundle, or from a Maven, SBT, or Gradle project."
 lead: "Generate an artifact from your Gatling bundle or with a Maven, SBT, or Gradle project."
-date: 2021-03-08T13:50:32+01:00
-lastmod: 2021-03-08T13:50:32+01:00
+date: 2021-03-08T12:50:32+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 10040
 ---
 

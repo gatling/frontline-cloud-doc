@@ -2,8 +2,8 @@
 title: "Teamcity Plugin"
 description: "Learn how to configure the Gatling Enterprise TeamCity plugin and run your simulations."
 lead: "Run your Gatling Enterprise simulations from your TeamCity CI."
-date: 2021-03-08T13:50:20+01:00
-lastmod: 2021-03-08T13:50:20+01:00
+date: 2021-03-08T12:50:20+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 30020
 ---
 

@@ -2,8 +2,8 @@
 title: "Public APIs"
 description: "Swagger documentation of the Gatling Enterprise public API."
 lead: "Usage of the Gatling Enterprise public API"
-date: 2021-03-08T13:50:24+01:00
-lastmod: 2021-03-08T13:50:24+01:00
+date: 2021-03-08T12:50:24+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 10090
 ---
 

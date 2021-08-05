@@ -2,8 +2,8 @@
 title: "Help"
 description: "Learn how to access documentations from the application."
 lead: "Access the documentations from Gatling Enterprise"
-date: 2021-03-10T09:29:53-05:00
-lastmod: 2021-03-10T09:29:53-05:00
+date: 2021-03-10T14:29:53+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 10110
 ---
 

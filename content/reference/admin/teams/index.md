@@ -2,8 +2,8 @@
 title: "Teams"
 description: "Learn how to administrate teams."
 lead: "Teams allow you to group your users and scope their permissions accordingly."
-date: 2021-03-10T08:47:03-05:00
-lastmod: 2021-03-10T08:47:03-05:00
+date: 2021-03-10T13:47:03+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 20020
 ---
 

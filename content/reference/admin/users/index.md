@@ -2,8 +2,8 @@
 title: "Users"
 description: "Learn how to administrate users and their permissions."
 lead: "Users that can authenticate and their permissions."
-date: 2021-03-10T08:47:07-05:00
-lastmod: 2021-03-10T08:47:07-05:00
+date: 2021-03-10T13:47:07+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 20010
 ---
 

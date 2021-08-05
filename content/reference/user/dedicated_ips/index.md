@@ -2,8 +2,8 @@
 title: "Dedicated IPs"
 description: "Dedicated IP addresses for your pools"
 lead: "Dedicated IP addresses for your pools"
-date: 2021-03-10T09:29:04-05:00
-lastmod: 2021-03-10T09:29:04-05:00
+date: 2021-03-10T14:29:04+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 10061
 ---
 

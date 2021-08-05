@@ -2,8 +2,8 @@
 title: "Reports"
 description: "Learn how to analyze test reports and discover the slow parts of your application."
 lead: "Analyze the reports and discover the slow parts of your application."
-date: 2021-03-10T09:29:43-05:00
-lastmod: 2021-03-10T09:29:43-05:00
+date: 2021-03-10T14:29:43+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 10080
 ---
 

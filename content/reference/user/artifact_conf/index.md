@@ -2,8 +2,8 @@
 title: "Artifact Configuration"
 description: "Learn how to configure and upload an artifact to Gatling Enterprise."
 lead: "Configure and upload your artifact to Gatling Enterprise."
-date: 2021-03-10T09:29:36-05:00
-lastmod: 2021-03-10T09:29:36-05:00
+date: 2021-03-10T14:29:36+00:00
+lastmod: 2021-08-05T13:13:30+00:00
 weight: 10050
 ---
 
