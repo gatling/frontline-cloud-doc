@@ -1,16 +1,16 @@
 Let's get back to Gatling Enterprise. 
 To navigate to the artifacts page, click on the **Artifacts** on the left navigation bar.
 
-{{< img src="artifact_navigation.png" alt="Sidenav navigation" >}}
+{{< img src="artifact-navigation.png" alt="Sidenav navigation" >}}
 
 Click on the create button in order to create an artifact. 
-Choose the name and the team you want, then click save.
+Choose the name and the team you want, then click **save**.
 
-{{< img src="create_artifact_button.png" alt="Create an artifact" >}}
+{{< img src="create-artifact-button.png" alt="Create an artifact" >}}
 
 You now have to upload the artifact you've generated earlier with Maven. Click on the {{< icon cloud-upload-alt >}} icon.
 
-{{< img src="open_upload.png" alt="Open upload modal" >}}
+{{< img src="open-upload.png" alt="Open upload modal" >}}
 
 The artifact you've generated earlier is located here: `{param}`
 
