@@ -2,7 +2,7 @@
 title: "Getting started with the Gatling bundle"
 menutitle: "Bundle"
 slug: "getting-started-with-gatling-bundle"
-description: "Learning how to setup FrontLine Cloud using the Gatling bundle"
+description: "Learn how to setup Gatling Enterprise using the Gatling bundle"
 date: 2021-03-19T17:03:31+01:00
 lastmod: 2021-03-19T17:03:31+01:00
 weight: 50
@@ -10,11 +10,13 @@ weight: 50
 
 {{< include introduction.md >}}
 
-There are multiple ways to create a Gatling artifact, which will be used by FrontLine to launch a run. We can use either a build tool (Maven, Sbt, Gradle) or the Gatling bundle.
-
-In this tutorial, we'll use the Gatling bundle. Make sure that you have a JDK 8 or 11 installed on your computer.
-
 ## Download the zip bundle
+
+There are multiple ways to create a Gatling artifact, which will be used by FrontLine to launch a run. 
+We can use either a build tool (Maven, Sbt, Gradle) or the Gatling bundle.
+
+In this tutorial, we'll use the **Gatling bundle**. Make sure that you have a JDK 8 or 11 installed on your computer.
+
 [`Click here to download the latest version of the Gatling bundle`](https://gatling.io/open-source/start-testing) and extract the archive.
 
 ## Download and copy the extra script
@@ -44,11 +46,11 @@ You now have to click on the Upload button to upload it to FrontLine. After a fe
 
 {{< img src="upload.png" alt="Start the upload" >}}
 
-### Option2: API Upload
+### Option 2: API Upload
 
 {{< include upload_api.md "target/artifact.jar" >}}
 
-## Create a FrontLine simulation
+## Create a simulation
 
 {{< include simulation_1.md "computerdatabase.BasicSimulation" >}}
 

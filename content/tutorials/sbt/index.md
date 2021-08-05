@@ -1,7 +1,7 @@
 ---
 title: "Getting started with sbt"
 menutitle: "sbt"
-description: "Learning how to setup FrontLine using sbt"
+description: "Learn how to setup Gatling Enterprise using sbt"
 date: 2021-03-19T17:03:31+01:00
 lastmod: 2021-03-19T17:03:31+01:00
 weight: 50
@@ -9,17 +9,19 @@ weight: 50
 
 {{< include introduction.md >}}
 
-There are multiple ways to create a Gatling artifact, which will be used by FrontLine to launch a run.
-You can use either a build tool (Maven, sbt, Gradle) or the Gatling bundle.
-
-In this tutorial, we'll use the sbt build tool, so make sure you have sbt configured and Java installed.
-You'll use sbt from the terminal, but you can also do it easily with an IDE like IntelliJ.
-
 ## Download the sample Gatling simulation
+
+There are multiple ways to create a Gatling artifact, which will be used by Gatling Enterprise to launch a run.
+You can use either a build tool (Maven, Sbt, Gradle) or the Gatling bundle.
+
+In this tutorial, we'll use the **SBT** build tool, so make sure you have SBT configured.
+
+You'll use SBT from the terminal, but you can also do it easily with an IDE like IntelliJ.
+
 
 {{< include download_samples.md >}}
 
-Extract the archive, then navigate to the sbt folder.
+Extract the archive, then navigate to the **sbt** folder.
 This folder contains a basic Gatling simulation which can be used with FrontLine.
 
 ## Check the sbt build configuration
@@ -42,17 +44,17 @@ sbt test:assembly
 sbt will download the necessary dependencies and package your simulation.
 That's it, you've created your first Gatling artifact!
 
-## Upload the artifact to FrontLine
+## Upload the artifact 
 
 ### Option 1: Manual Upload
 
 {{< include upload_manual.md "frontline-samples/sbt/target/sbt-frontline-1.0.0.jar" >}}
 
-Upload it to FrontLine, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
+Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
 
 {{< img src="choose_artifact.png" alt="Choose the generated artifact" >}}
 
-You now have to click on the Upload button to upload it to FrontLine.
+You now have to click on the Upload button to upload it.
 After a few seconds, the upload will be complete, and your artifact will be ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
@@ -61,7 +63,7 @@ After a few seconds, the upload will be complete, and your artifact will be read
 
 {{< include upload_api.md "frontline-samples/sbt/target/sbt-frontline-1.0.0.jar" >}}
 
-## Create a FrontLine simulation
+## Create a simulation
 
 {{< include simulation_1.md "frontline.sample.BasicSimulation" >}}
 
