@@ -6,4 +6,4 @@ In this last step, you'll be asked where you want the injection to take place. P
 
 {{< img src="create_simulation_step_3.png" alt="Injection configuration" >}}
 
-That's it, you've created your first simulation on FrontLine!
+That's it, you've created your first simulation on Gatling Enterprise!

@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Maven"
 menutitle: "Maven"
-description: "Learning how to setup FrontLine Cloud using Maven"
+description: "Learn how to setup Gatling Enterprise using Maven"
 date: 2021-03-19T17:03:31+01:00
 lastmod: 2021-03-19T17:03:31+01:00
 weight: 50
@@ -9,18 +9,18 @@ weight: 50
 
 {{< include introduction.md >}}
 
-There are multiple ways to create a Gatling artifact, which will be used by FrontLine to launch a run.
-You can use either a build tool (Maven, Sbt, Gradle) or the Gatling bundle.
-
-In this tutorial, we'll use the Maven build tool, so make sure you have Maven configured.
-You'll use Maven from the terminal, but you can also do it easily with an IDE like IntelliJ.
-
 ## Download the sample Gatling simulation
+
+There are multiple ways to create a Gatling artifact, which will be used by Gatling Enterprise to launch a run.
+You can use either a build tool (Maven, SBT, Gradle) or the Gatling bundle.
+
+In this tutorial, we'll use the **Maven** build tool, so make sure you have Maven configured.
+We will use Maven from the terminal, but you can also easily run Maven commands from an IDE such as IntelliJ IDEA.
 
 {{< include download_samples.md >}}
 
-Extract the archive, then navigate to the maven folder.
-This folder contains a basic Gatling simulation which can be used with FrontLine.
+Extract the archive, then navigate to the **maven** folder.
+This folder contains a basic Gatling simulation configured to be used with Gatling Enterprise.
 
 ## Check the Maven build configuration
 
@@ -37,23 +37,22 @@ Open a terminal in the maven folder and execute the following command to create 
 mvn clean package -DskipTests
 ```
 
-{{< img src="maven_command.png" alt="Maven command" >}}
+{{< img src="maven-command.png" alt="Maven command" >}}
 
 Maven will download the necessary dependencies and package your simulation.
 That's it, you've created your first Gatling artifact!
 
-## Upload the artifact to FrontLine
+## Upload the artifact
 
 ### Option 1: Manual Upload
 
 {{< include upload_manual.md "frontline-samples/maven/target/maven-sample-1.0.0-shaded.jar" >}}
 
-Upload it to FrontLine, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
+Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
 
-{{< img src="choose_artifact.png" alt="Choose the generated artifact" >}}
+{{< img src="choose-artifact.png" alt="Choose the generated artifact" >}}
 
-You now have to click on the Upload button to upload it to FrontLine.
-After a few seconds, the upload will be complete, and your artifact will be ready to use!
+Click on the Upload button. After a few seconds, the upload will complete, and your artifact will be ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
 
@@ -61,11 +60,11 @@ After a few seconds, the upload will be complete, and your artifact will be read
 
 {{< include upload_api.md "frontline-samples/maven/target/maven-sample-1.0.0-shaded.jar" >}}
 
-## Create a FrontLine simulation
+## Create a simulation
 
 {{< include simulation_1.md "frontline.sample.BasicSimulation" >}}
 
-{{< img src="create_simulation_step_1.png" alt="General configuration" >}}
+{{< img src="create-simulation-step-1.png" alt="General configuration" >}}
 
 {{< include simulation_2.md "frontline.sample.BasicSimulation" >}}
 

@@ -1,7 +1,6 @@
-Once you've connected to FrontLine, you'll be redirected to the simulations page.
-For this tutorial, we'll use the samples included with FrontLine.
-Click on the Download samples button.
+Once you're connected to Gatling Enterprise, you'll be redirected to the [simulations]({{< ref "../../../reference/user/simulations" >}}) page.
+We'll use the samples available by clicking on the **Sample simulations** button.
 
-{{< img src="download_samples.png" alt="Download samples" >}}
+{{< img src="download_samples.png" alt="Sample simulations" caption="Sample simulations">}}
 
 

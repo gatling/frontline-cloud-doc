@@ -1,6 +1,20 @@
-In this tutorial, we'll describe every step you need to take in order to have a working basic configuration on FrontLine.
+## Introduction
 
-Once you connect to the instance provided by Gatling Corp, you'll see this page.
-You need to signup with the Github account you provided Gatling Corp.
+In this tutorial, we'll describe every step to run your first Simulation with Gatling Enterprise.
 
-{{< img src="login.png" alt="Login" >}}
+It all begins on [cloud.gatling.io](https://cloud.gatling.io), where you will need a GitHub account in order to sign up.
+
+{{< img src="login.png" alt="Login" caption="Login" >}}
+
+Once signed up and connected, you'll have to create your own organization.
+
+{{< img src="organization-creation.png" alt="Organization Creation" caption="Organization Creation" >}}
+
+{{< alert warning >}}
+**Once in an organization, you cannot join another one for now.**
+{{< /alert >}}
+
+A new [organization]({{< ref "../../../reference/user/organization" >}}) is given **free credits** in order to **launch your first simulation run**.
+
+
+
