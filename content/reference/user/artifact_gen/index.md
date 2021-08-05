@@ -1,7 +1,7 @@
 ---
 title: "Artifact Generation"
-description: "Learn how to generate an artifact for FrontLine from Gatling zip bundle or a maven, SBT or gradle project."
-lead: "Generate an artifact from your Gatling bundle or with a maven, SBT or gradle project."
+description: "Learn how to generate an artifact for Gatling Enterprise from the Gatling zip bundle, or from a Maven, SBT, or Gradle project."
+lead: "Generate an artifact from your Gatling bundle or with a Maven, SBT, or Gradle project."
 date: 2021-03-08T13:50:32+01:00
 lastmod: 2021-03-08T13:50:32+01:00
 weight: 10040
@@ -9,25 +9,31 @@ weight: 10040
 
 ## Generating Artifacts for FrontLine
 
-FrontLine deploys packages containing your compiled Simulations and resources.
+Gatling Enterprise deploys packages containing your compiled Simulations and resources.
 Those packages have to be generated upstream.
-FrontLine is compatible with Gatling 3.3, 3.4 and 3.5.
+Gatling Enterprise is compatible with Gatling 3.3, 3.4, 3.5 and 3.6.
 
 ### Gatling zip bundle
 
-Please copy the [`artifact.sh`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.sh) or [`artifact.bat`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.bat) files in the `bin` directory of your Gatling unzipped bundle.
-Those files will be shipped in the bundle in a future official Gatling release.
+Run the script `artifact.sh` (on Linux or macOS) or `artifact.bat` (on Windows), found in the `bin` directory of your unzipped Gatling bundle.
+This will generate a `target/artifact.jar` file. You can then upload this file in the [Artifacts section]({{< ref "../artifact_conf" >}}).
 
-Please run the script matching your operating system and generate the `target/artifact.jar` file.
-You'll have to upload this file in the new [Artifacts section]({{< ref "../artifact_conf" >}}).
+{{< alert warning >}}
+The scripts are included in the Gatling bundle version 3.6.0 or superior. For older versions, you will need to download and copy the
+[`artifact.sh`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.sh)
+or [`artifact.bat`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.bat)
+files to the `bin` directory of your unzipped Gatling bundle.
+{{< /alert >}}
 
 ### Maven Project
 
-In your `pom.xml`, you have to add:
+In your `pom.xml` file, you must add:
 
 - the Gatling dependencies
-- the maven plugin for Scala, so your code gets compiled
-- the maven plugin for FrontLine, so it can package your code into a deployable artifact
+- the Scala Maven plugin for Maven (`scala-maven-plugin`), which compiles your code
+- the Gatling Enterprise Maven plugin (`frontline-maven-plugin`), which packages your code into a deployable artifact
+
+The `pom.xml` file should contain this:
 
 ```xml
 <dependencies>
@@ -92,11 +98,11 @@ In your `pom.xml`, you have to add:
 </build>
 ```
 
-Please run the `mvn clean package -DskipTests` command  in your terminal and generate the `target/<artifactId>-<version>-shaded.jar` file.
-You'll have to upload this file in the new [Artifacts section]({{< ref "../artifact_conf" >}}).
+Run the `mvn clean package -DskipTests` command. This will generate the `target/<artifactId>-<version>-shaded.jar` file.
+You can then upload this file in the [Artifacts section]({{< ref "../artifact_conf" >}}).
 
 {{< alert tip >}}
-You can also exclude dependencies you don't want to ship and make the artifact lighter, eg:
+To make the artifact lighter, you can also exclude dependencies you don't want to ship, eg:
 
 ```xml
 <plugin>
@@ -125,16 +131,16 @@ You can also exclude dependencies you don't want to ship and make the artifact l
 
 ### SBT Project
 
-In a sbt project, you have to add:
+In your SBT project configuration, you must add:
 
 - the Gatling dependencies
-- the sbt plugin for FrontLine, so that it can package your code into a deployable artifact
+- the Gatling Enterprise SBT plugin (`"io.gatling.frontline" % "sbt-frontline"`), which packages your code into a deployable artifact
 
 {{< alert warning >}}
 We only support sbt 1+, not sbt 0.13.
 {{< /alert >}}
 
-Your `build.sbt` file should look like this:
+The `build.sbt` file should contain this:
 
 ```scala
 enablePlugins(GatlingPlugin, FrontLinePlugin)
@@ -150,7 +156,7 @@ scalacOptions := Seq(
 val gatlingVersion = "{{< var gatlingVersion >}}"
 
 libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test"
-// only required if you intend to use the gatling-sbt plugin
+// only required if you intend to use the gatling-sbt plugin:
 libraryDependencies += "io.gatling"            % "gatling-test-framework"    % gatlingVersion % "test"
 ```
 
@@ -161,9 +167,9 @@ The `gatling-test-framework` dependency is only needed if you intend to run loca
 You will also need the following lines in the `project/plugins.sbt` file:
 
 ```scala
-// only if you intend to use the gatling-sbt plugin for running Gatling locally
+// only if you intend to use the gatling-sbt plugin for running Gatling locally:
 addSbtPlugin("io.gatling" % "gatling-sbt" % "{{< var gatlingSbtPluginVersion >}}")
-// so sbt can build a package for FrontLine
+// so that sbt can build a package for Gatling Enterprise:
 addSbtPlugin("io.gatling.frontline" % "sbt-frontline" % "{{< var frontLineSbtPluginVersion >}}")
 ```
 
@@ -185,7 +191,7 @@ If you are using the integration test (`it`) configuration provided by the `gatl
 sbt it:assembly
 ```
 
-Either command will generate the `target/<artifactId>-<version>.jar` file, which you will then have to upload in the new [Artifacts section]({{< ref "../artifact_conf" >}}).
+Either command will generate the `target/<artifactId>-<version>.jar` file, which you can then upload in the [Artifacts section]({{< ref "../artifact_conf" >}}).
 
 {{< alert warning >}}
 If you use very long method calls chains in your Gatling code, you might have to increase sbt's thread stack size before you can run the `assembly` command:
@@ -196,14 +202,13 @@ export SBT_OPTS="-Xss100M"
 
 ### Gradle Project
 
-In a Gradle project, you have to:
+In your `build.gradle` file, you must add:
 
-- pull Gatling dependencies
-- add the gradle plugin for FrontLine, so it can package your code into a deployable artifact
+- the Gatling dependencies
+- the Gatling Enterprise Gradle plugin (`io.gatling.frontline.gradle`), which packages your code into a deployable artifact
 
-A `build.gradle` file should look like this:
+The `build.gradle` file should contain this:
 
-.build.gradle:
 ```groovy
 plugins {
   // The following line allows to load io.gatling.gradle plugin and directly apply it
@@ -221,22 +226,22 @@ gatling {
 }
 ```
 
-Please run the `gradle frontLineJar` command in your terminal and generate the `build/libs/artifactId.jar` file.
-You'll have to upload this file in the new [Artifacts section]({{< ref "../artifact_conf" >}}).
+Run the `gradle frontLineJar` command. It will generate the `build/libs/artifactId.jar` file.
+You can then upload this file in the [Artifacts section]({{< ref "../artifact_conf" >}}).
 
 ### Multi-Module Support
 
-If your project is a multi-module one, make sure that only the one containing the Gatling Simulations gets configured with the Gatling related plugins describes above.
-FrontLine will take care of deploying all available jars so you can have Gatling module depend on the other ones.
+If you have a multi-module project, make sure to only configure the modules which contain Gatling Simulations with the Gatling related plugins described above.
+Your Gatling modules can, however, depend on other modules.
 
 ## Note on Feeders
 
-A typical mistake with Gatling and FrontLine is to rely on having an exploded maven/gradle/sbt project structure and try loading files from the project filesystem.
+A typical mistake with Gatling and Gatling Enterprise is to rely on having an exploded Maven/Gradle/SBT project structure, and to try to load files from the project filesystem.
 
-This filesystem structure will be gone once FrontLine will have compiled your project and uploaded your binaries on the injectors.
+This filesystem structure will be gone once your project has been packaged and deployed to Gatling Enterprise.
 
-If your feeder files are packaged with your test sources, you must resolve them from the classpath.
-This way will always work, both locally and with FrontLine.
+If your feeder files are packaged with your test sources, you must resolve them from the classpath. This will work both
+when you run simulations locally and when you deploy them to Gatling Enterprise.
 
 ```scala
 // incorrect
@@ -258,30 +263,30 @@ If you want data to be unique cluster-wide, you have to explicitly tell Gatling 
 val feeder = csv("foo.csv").shard
 ```
 
-Assuming a CSV file contains 1000 entries, and 3 Gatling nodes, the entries will be distributed the following way:
+Assuming the CSV file contains 1000 entries, and you run your simulation on 3 Gatling nodes, the entries will be distributed as follows:
 
 - First node will access the first 333 entries
 - Second node will access the next 333 entries
 - Third node will access the last 334 entries
 
 {{< alert tip >}}
-`shard` is available in Gatling OSS DSL but is a noop there. It's only effective when running tests with FrontLine.
+`shard` is available in Gatling OSS DSL but is a noop there. It's only effective when running tests with Gatling Enterprise.
 {{< /alert >}}
 
 ## Resolving Injector Location in Simulation
 
-When running a distributed test from multiple locations, you could be interested in knowing where a given injector is deployed in order to trigger specific behaviors depending on location.
+When running a distributed test from multiple locations, you could be interested in knowing where a given injector is deployed in order to trigger specific behaviors depending on the location.
 
-For example, you might want to hit `https://mydomain.co.uk` `baseUrl` if injector is deployed on AWS London, and `https://mydomain.com` otherwise.
+For example, you might want to hit `https://example.fr` if the injector is deployed in the `Europe - Paris` AWS region, and `https://example.com` otherwise.
 
-You can resolve in your simulation code the name of the pool a given injector is deployed on:
+In your simulation code, you can resolve the name of the pool in which the injector running the code is deployed:
 
 ```scala
 val poolName = System.getProperty("gatling.frontline.poolName")
-val baseUrl = if (poolName == "London") "https://domain.co.uk" else "https://domain.com"
+val baseUrl = if (poolName == "Europe - Paris") "https://example.fr" else "https://example.com"
 ```
 
 {{< alert tip >}}
-This System property is only defined when deploying with FrontLine.
-It's not defined when running locally with any Gatling OSS launcher.
+This System property is only defined when deploying with Gatling Enterprise.
+It is not defined when running locally with any Gatling OSS launcher.
 {{< /alert >}}
