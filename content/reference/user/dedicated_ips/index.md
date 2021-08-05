@@ -7,7 +7,7 @@ lastmod: 2021-08-05T13:13:30+00:00
 weight: 10061
 ---
 
-Dedicated IPs allows you to have control over the injectors IP addresses.
+Dedicated IPs allow you to have control over the injectors' IP addresses.
 This is useful, for instance, if your target system performs some sort of IP address filtering.
 
 {{< img src="dedicated-ips.png" alt="Dedicated IPs" caption="Dedicated IPs" >}}
@@ -27,7 +27,7 @@ Please provide:
 A sales person will contact you.
 {{< /alert >}}
 
-The Dedicated IPs table shows your reserved dedicated IP addresses. Each one belongs to a specific pool.
+The Dedicated IPs table shows your available dedicated IP addresses. Each one belongs to a specific pool.
 
 ## Usage
 

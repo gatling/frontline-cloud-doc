@@ -9,7 +9,7 @@ weight: 10060
 
 ## Managing Simulations
 
-To access the Simulations section, click on **Simulations** in the navbar.
+To access the Simulations section, click on **Simulations** in the navigation bar.
 
 The Simulations view contains all the simulations you have configured and the result of their last run.
 
@@ -46,8 +46,9 @@ If you want specific properties for a simulation, you will be allowed to ignore 
 ## Creating a simulation
 
 {{< alert warning >}}
-Gatling Enterprise has a hard run duration limit of 7 days and will stop any test running for longer than that.
-This limit exists for both performance (data who grow too humongous to be presented in the dashboard) and security (forgotten test running forever) reasons.
+Gatling Enterprise has a hard limit for run durations of 7 days and will stop any test running for longer than that.
+This limit exists for both performance reasons (to avoid data growing too large to be presented in the dashboard) and security
+reasons (to avoid a forgotten test running forever).
 {{< /alert >}}
 
 In order to create a simulation click on the "Create" button in the simulations table. There are 6 steps to create a simulation, 3 of which are optional.
@@ -58,7 +59,7 @@ In order to create a simulation click on the "Create" button in the simulations 
 
 - **Name**: the name that will appear on the simulations table.
 - **Team**: the team which owns the simulation.
-- **Class name**: the package and the name of your simulation scala class in the project that you want to start.
+- **Class name**: the package and class name of the simulation scala class you want to start within your project.
 
 ### Step 2: Build configuration
 
@@ -70,7 +71,7 @@ In this step, you'll configure the artifact of the Simulation to execute.
 
 In this step, you'll configure the pools used for the Gatling Enterprise injectors.
 
-Gatling Enterprise private beta pools are available in the following regions:
+Gatling Enterprise pools are available in the following regions:
 
 - Europe (Paris)
 - US East (N. Virginia)
@@ -78,12 +79,12 @@ Gatling Enterprise private beta pools are available in the following regions:
 
 {{< img src="create-simulation3.png" alt="Create simulation - Step 3" >}}
 
-- **Weight distribution**: on even, every injector will produce the same load. On custom, you have to set the weight in % of each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight should be 100%.
+- **Weight distribution**: if set to even, every injector will produce the same load. If set to custom, you must set the weight in % for each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
 - **Pools**: defines the pools to be used when initiating the Gatling Enterprise injectors.
 
-You can add many pools with a different number of hosts to run your simulation.
+You can add several pools with different numbers of injectors to run your simulation.
 
-After this step, you can save the simulation, or click on *More options* to access optional configuration.
+After this step, you can save the simulation, or click on *More options* to access optional configurations.
 
 ### Step 4 & 5: JVM options & Java System Properties
 
@@ -112,20 +113,20 @@ Configuring a ramp up or ramp down means that the start and end of your simulati
 - **Ramp Down**: the number of seconds you want to exclude at the end of the run.
 
 {{< alert tip >}}
-Ramps parameters will only be applied if the run duration is longer than the sum of the two.
+Ramp up/down parameters will only be applied if the run duration is longer than the sum of the two.
 {{< /alert >}}
 
 ## Simulations table
 
-Now that you have created a simulation, you can start it by clicking on the {{< icon play >}} icon in the **Start** column of the table.
+Once you have created a simulation, you can start it by clicking on the {{< icon play >}} icon in the **Start** column of the table.
 
 {{< img src="start.png" alt="Start" >}}
 
-A run have the following life cycle:
+A run has the following life cycle:
 
 - **Building**: in which it will download the simulation artifact and prepare the hosts
-- **Deploying**: in which it will deploy the simulation to run on all the hosts
-- **Injecting**: in which the simulation is running and viewable from the Reports
+- **Deploying**: in which it will deploy the simulation to run on all the injectors
+- **Injecting**: in which the simulation is running and can be viewed from the Reports
 
 {{< img src="injecting.png" alt="Injecting" >}}
 
@@ -142,11 +143,11 @@ Assertions are the assumptions made at the beginning of the simulation to be ver
 
 ## Useful tips
 
-- You can edit the simulation by clicking on the {{< icon pencil-alt >}} icon next to his name
-- You can search a simulation by his name, or its team name
+- You can edit the simulation by clicking on the {{< icon pencil-alt >}} icon next to its name
+- You can search a simulation by its name, or its team name
 - You can sort the simulations by any column except the **Start** one
 - A **Delete** button will appear on the action bar when you select a simulation, you will be able to delete all the selected simulations
-- When a simulation is running, you can stop the run by clicking on the Stop button
-- You can copy a simulation ID by clicking on the {{< icon clipboard >}} icon next to his name
+- When a simulation is running, you can stop the ongoing run by clicking on the Stop button
+- You can copy a simulation ID by clicking on the {{< icon clipboard >}} icon next to its name
 
 Be aware that deleting a simulation will delete all the associated runs.

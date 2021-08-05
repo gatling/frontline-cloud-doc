@@ -7,10 +7,11 @@ lastmod: 2021-08-05T13:13:30+00:00
 weight: 10040
 ---
 
-## Generating Artifacts for FrontLine
+## Generating Artifacts for Gatling Enterprise
 
-Gatling Enterprise deploys packages containing your compiled Simulations and resources.
-Those packages have to be generated upstream.
+Gatling Enterprise deploys packages containing your compiled Simulations and resources. Those packages have to be generated
+upstream, using one of the methods below, before you can run them with Gatling Enterprise.
+
 Gatling Enterprise is compatible with Gatling 3.3, 3.4, 3.5 and 3.6.
 
 ### Gatling zip bundle
@@ -30,7 +31,7 @@ files to the `bin` directory of your unzipped Gatling bundle.
 In your `pom.xml` file, you must add:
 
 - the Gatling dependencies
-- the Scala Maven plugin for Maven (`scala-maven-plugin`), which compiles your code
+- the Scala Maven plugin (`scala-maven-plugin`), which compiles your code
 - the Gatling Enterprise Maven plugin (`frontline-maven-plugin`), which packages your code into a deployable artifact
 
 The `pom.xml` file should contain this:

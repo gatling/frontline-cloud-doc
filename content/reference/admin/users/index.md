@@ -27,7 +27,7 @@ To edit a user, click on the {{< icon pencil-alt >}} icon. To remove them from y
 
 ## Permissions
 
-There are 4 different user roles in FrontLine:
+There are 4 different user roles in Gatling Enterprise:
 
 - System Admin
 - Team Admin

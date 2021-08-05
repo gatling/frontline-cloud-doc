@@ -16,11 +16,11 @@ on the organization button at the top-right of the screen.
 
 {{< img src="profile.png" alt="Profile view" >}}
 
-The following information is shown:
+The profile page shows:
 
-- First and Last name
-- Email address
-- Your roles (for all teams and for specific teams)
+- Your first name and last name.
+- Your email address.
+- Your roles (for all teams and for specific teams).
 
 To update your profile, modify the fields you want to change, then click on the button **Update your information**.
 

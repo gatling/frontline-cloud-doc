@@ -11,29 +11,29 @@ weight: 10020
 
 ## Navigation Bar
 
-Gatling Enterprise navigation bar on the left side can be deployed using the Burger Navigation Menu button. {{< icon bars >}}
+The Gatling Enterprise navigation bar on the left side can be deployed using the Burger Navigation Menu button. {{< icon bars >}}
 
-Gatling Enterprise navigation bar is composed of:
+The Gatling Enterprise navigation bar is composed of:
 
-- [**Users**]({{< ref "../../admin/users" >}}), manage users teams and roles - *accessible to system admins only*
-- [**Teams**]({{< ref "../../admin/teams" >}}), manage teams - *accessible to system admins only*
-- [**API Tokens**]({{< ref "../../admin/api_tokens" >}}), manage token to access the API - *accessible to system admins only*
-- [**Artifacts**]({{< ref "../artifact_conf" >}}), manage simulations artifacts - *accessible to test admins and system admins*
-- [**Simulations**]({{< ref "../simulations" >}}), manage simulations, runs and reports - *accessible to anyone with at least a viewer role*
-- [**Dedicated IPs**]({{< ref "../dedicated_ips" >}}), table of pools dedicated IP's- *accessible to test admins and system admins* 
+- [**Users**]({{< ref "../../admin/users" >}}): manage users teams and roles - *accessible to system admins only*
+- [**Teams**]({{< ref "../../admin/teams" >}}): manage teams - *accessible to system admins only*
+- [**API Tokens**]({{< ref "../../admin/api_tokens" >}}): manage token to access the API - *accessible to system admins only*
+- [**Artifacts**]({{< ref "../artifact_conf" >}}): manage simulations artifacts - *accessible to test admins and system admins*
+- [**Simulations**]({{< ref "../simulations" >}}): manage simulations, runs and reports - *accessible to anyone with at least a viewer role*
+- [**Dedicated IPs**]({{< ref "../dedicated_ips" >}}): table of pools dedicated IP's- *accessible to test admins and system admins* 
 ---
-- [**Plugins**]({{< ref "../../plugins" >}}), displaying all plugins downloads links
-- **Documentation**, displaying all documentation guides, the link to the Swagger for our public API, and samples for your FrontLine tests
-- **About**, current versions of Gatling Enterprise
+- [**Plugins**]({{< ref "../../plugins" >}}): shows all plugin download links
+- **Documentation**: shows all documentation guides, the link to the public API Swagger documentation, and Gatling test samples for use with Gatling Enterprise
+- **About**: current version of Gatling Enterprise
 
 ## Navigation dropdown
 
-On the upper right corner, you can open a dropdown menu by clicking on the organization logo.
+In the upper right corner, click on the organization logo to open a dropdown menu.
 
-Navigation dropdown menu is composed of:
-- [**Organization**]({{< ref "../organization" >}}), system administrators, credits and plans 
-- [**Profile**]({{< ref "../profile" >}}), edit your profile and see your roles
-- **Logout**, disconnect from your account
+The navigation dropdown menu is composed of:
+- [**Organization**]({{< ref "../organization" >}}): system administrators, credits, and plans 
+- [**Profile**]({{< ref "../profile" >}}): edit your profile and see your roles
+- **Logout**: disconnect from your account
 
 {{< img src="navbar-dropdown.png" alt="Navbar Dropdown" caption="Navigation dropdown menu" >}}
 

@@ -9,16 +9,18 @@ weight: 10070
 
 ## Run / Trends
 
-Runs list and trends can be accessed by clicking on the {{< icon history >}} icon in the [simulations table]({{< ref "../simulations#simulations-table" >}}).
+The runs list and trends for a simulation can be accessed by clicking on the {{< icon history >}} icon in the [simulations table]({{< ref "../simulations#simulations-table" >}}).
 
-This view contains the list of your simulation's runs which can be filtered by name and/or status and the Trends which are displaying information between those runs.
+This view contains the list of your simulation's runs which can be filtered by name and/or status and the trends which are displaying information between those runs.
 {{< img src="run-trends.png" alt="Run trends" >}}
 
 ### Runs table
 
 {{< img src="run-table.png" alt="Run table" >}}
 
-Like the result of the latest run in the [simulations table]({{< ref "simulations#simulations-table" >}}) you have access to the [logs]({{< ref "../simulations#logs" >}}) of the run by clicking on the {{< icon file-alt >}} icon and you can sort the table by each columns. The logs are only available for run which are not flagged as "Successful".
+Just like for the result of the latest run in the [simulations table]({{< ref "simulations#simulations-table" >}}), you
+have access to the [logs]({{< ref "../simulations#logs" >}}) of the run by clicking on the {{< icon file-alt >}} icon
+and you can sort the table by each columns. The logs are only available for runs which are not flagged as "Successful".
 
 If there is one, You can click on the {{< icon search >}} icon next to the status to display the [assertions]({{< ref "../reports#assertions" >}}) of the run.
 You can delete runs by selecting them and click on the **Delete** button in the action bar above the table.
@@ -43,8 +45,8 @@ The delta and variance will be displayed, so you can check if there is a progres
 
 ### Trends charts
 
-The trends are charts that will display some globals statistics for each runs (eg: requests count) so that you can easily see how well your runs went compared to each other.
-Each run is represented by his number in the chart and the chart won't display the statistics of a failed run (eg: Timeout, broken, etc..).
+The trends are charts that will display some globals statistics for each run (eg: requests count) so that you can easily see how well your runs went compared to each other.
+Each run is represented by its number in the chart and the chart won't display the statistics of a failed run (eg: Timeout, broken, etc..).
 
 {{< img src="trends.png" alt="Trends" >}}
 
