@@ -44,8 +44,6 @@ That's it, you've created your first Gatling artifact!
 
 ## Upload the artifact 
 
-### Option 1: Manual Upload
-
 {{< include upload_manual.md "frontline-samples/gradle/build/libs/gradle.jar" >}}
 
 {{< img src="choose_artifact.png" alt="Choose the generated artifact" >}}
@@ -53,10 +51,6 @@ That's it, you've created your first Gatling artifact!
 Click on the Upload button. After a few seconds, the upload will complete, and your artifact will be ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
-
-### Option 2: API Upload
-
-{{< include upload_api.md "frontline-samples/gradle/build/libs/gradle.jar" >}}
 
 ## Create a simulation
 

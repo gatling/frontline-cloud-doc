@@ -34,8 +34,6 @@ Run the `artifact.bat` or `artifact.sh` file, Gatling will start creating your f
 
 ## Upload the artifact 
 
-### Option 1: Manual Upload
-
 {{< include upload_manual.md "target/artifact.jar" >}}
 
 Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
@@ -45,10 +43,6 @@ Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or
 Click on the Upload button. After a few seconds, the upload will complete, and your artifact will be ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
-
-### Option 2: API Upload
-
-{{< include upload_api.md "target/artifact.jar" >}}
 
 ## Create a simulation
 

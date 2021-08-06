@@ -44,8 +44,6 @@ That's it, you've created your first Gatling artifact!
 
 ## Upload the artifact 
 
-### Option 1: Manual Upload
-
 {{< include upload_manual.md "frontline-samples/sbt/target/sbt-frontline-1.0.0.jar" >}}
 
 Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
@@ -55,10 +53,6 @@ Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or
 Click on the Upload button. After a few seconds, the upload will complete, and your artifact will be ready to use!
 
 {{< img src="upload.png" alt="Start the upload" >}}
-
-### Option 2: API Upload
-
-{{< include upload_api.md "frontline-samples/sbt/target/sbt-frontline-1.0.0.jar" >}}
 
 ## Create a simulation
 
