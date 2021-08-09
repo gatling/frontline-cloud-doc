@@ -14,7 +14,7 @@ Once signed up and connected, you'll have to create your own organization.
 **Once in an organization, you cannot join another one for now.**
 {{< /alert >}}
 
-A new [organization]({{< ref "../../../reference/user/organization" >}}) is given **free credits** in order to **launch your first simulation run**.
+A new [organization]({{< ref "../../reference/user/organization" >}}) is given **free credits** in order to **launch your first simulation run**.
 
 
 
