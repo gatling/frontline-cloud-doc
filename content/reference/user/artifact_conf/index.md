@@ -11,7 +11,7 @@ weight: 10050
 
 To access the Artifacts section, click on **Artifacts** in the navigation bar.
 
-The Artifacts view contains all the artifacts you have configured with the given name, team, and filename of uploaded artifact if not empty.
+The Artifacts view contains all the artifacts you have configured with their given name, team, and filename of uploaded artifact if not empty.
 
 The Gatling version of the artifact is displayed in a badge next to the filename.
 
