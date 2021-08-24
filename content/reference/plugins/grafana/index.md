@@ -22,13 +22,13 @@ https://downloads.gatling.io/releases/frontline-grafana-bundle/{{< var externalP
 You can install it using the grafana-cli:
 
 ```console
-grafana-cli --pluginUrl GRAFANA_DATASOURCE_BUNDLE_URL plugins install gatling_enterprise
+grafana-cli --pluginUrl GRAFANA_DATASOURCE_BUNDLE_URL plugins install frontline
 ```
 Please note that the plugin is unsigned, and recent versions of Grafana may reject it. In this case, [you need to add the plugin to the list of allowed unsigned plugins](https://grafana.com/docs/grafana/latest/administration/configuration/#allow_loading_unsigned_plugins).
 
 Grafana configuration sample:
 ```
-allow_loading_unsigned_plugins = gatling_enterprise
+allow_loading_unsigned_plugins = frontline
 ```
 
 ## Adding the datasource
@@ -46,7 +46,7 @@ If this link is missing in the side menu, it means that your current user does n
 
 | Name      | Description                                                                           |
 |-----------|---------------------------------------------------------------------------------------|
-| Name      | The datasource name.                                                                  |
+| Name      | The datasource name. Type `Gatling Enterprise` if you want to use our samples.                                                                  |
 | Default   | Should be checked if you want that datasource to be selected by default in new panels |
 | URL       | URL of your Gatling Enterprise server, please enter: https://cloud.gatling.io      |
 | Access    | Server  access via Grafana backend, Browser  access directly from browser.            |
@@ -63,7 +63,7 @@ Gatling Corp provides some dashboards that you can import if you don't want to b
 
 {{< alert tip >}}
 Samples are in the `dashboardSamples` directory in your Grafana bundle.
-They are built with a datasource named *FrontLine*. Make sure this datasource exists or modify the json file accordingly.
+They are built with a datasource named *Gatling Enterprise*. Make sure this datasource exists or modify the json file accordingly.
 {{< /alert >}}
 
 To use the Gatling Enterprise datasource in Grafana, you will need to set template variables.
