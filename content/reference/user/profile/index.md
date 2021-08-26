@@ -11,8 +11,7 @@ weight: 10030
 
 {{< img src="profile-menu.png" alt="My profile button" >}}
 
-You can view your profile at any time by clicking on the **My profile** button, from the drop-down menu available by clicking
-on the organization button at the top-right of the screen.
+You can view your profile at any time by clicking on the **My profile** button, accessible from the drop-down menu at the top-right of the screen under your organization’s initials.
 
 {{< img src="profile.png" alt="Profile view" >}}
 
@@ -24,6 +23,6 @@ The profile page shows:
 
 To update your profile, modify the fields you want to change, then click on the button **Update your information**.
 
-You cannot change your roles here. You need to ask a System Admin [to change them]{{< ref "../../admin/users#managing-users" >}}.
+You cannot change your roles here. You will need to ask a System Admin [to change them]{{< ref "../../admin/users#managing-users" >}}.
 You can [see the list of your System Admins]({{< ref "../organization#admin-users" >}}) on the **Organization** page, accessible
 from the drop-down menu at the top-right of the screen.
