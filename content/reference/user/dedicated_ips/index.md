@@ -8,7 +8,7 @@ weight: 10061
 ---
 
 Dedicated IPs allow you to have control over the injectors' IP addresses.
-This is useful, for instance, if your target system performs some sort of IP address filtering.
+This is useful, for example, if your target system performs some sort of IP address filtering.
 
 {{< img src="dedicated-ips.png" alt="Dedicated IPs" caption="Dedicated IPs" >}}
 
@@ -35,4 +35,4 @@ You can enable the use of dedicated IPs when [configuring simulation pools]({{< 
 
 When starting a run of a simulation configured to use dedicated IPs,
 if you have enough dedicated IPs available to satisfy the size of the configured pools,
-they will be reserved for the run duration. Otherwise, the run won't start.
+they will be reserved for the run duration.  If you don’t have enough dedicated IPs available, the run won't start.
