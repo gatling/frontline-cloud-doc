@@ -10,17 +10,17 @@ weight: 10040
 ## Generating Artifacts for Gatling Enterprise
 
 Gatling Enterprise deploys packages containing your compiled Simulations and resources. Those packages have to be generated
-upstream, using one of the methods below, before you can run them with Gatling Enterprise.
+upstream, using one of the methods below, before you can run them with Gatling Enterprise. This package is known as an Artifact.
 
 Gatling Enterprise is compatible with Gatling 3.3, 3.4, 3.5 and 3.6.
 
 ### Gatling zip bundle
 
-Run the script `artifact.sh` (on Linux or macOS) or `artifact.bat` (on Windows), found in the `bin` directory of your unzipped Gatling bundle.
+Once you have created a simulation you want to upload, run the script `artifact.sh` (on Linux or macOS) or `artifact.bat` (on Windows), found in the `bin` directory of your unzipped Gatling bundle.
 This will generate a `target/artifact.jar` file. You can then upload this file in the [Artifacts section]({{< ref "../artifact_conf" >}}).
 
 {{< alert warning >}}
-The scripts are included in the Gatling bundle version 3.6.0 or superior. For older versions, you will need to download and copy the
+These scripts are included in the Gatling bundle version 3.6.0 or later. For older versions, you will need to download and copy the
 [`artifact.sh`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.sh)
 or [`artifact.bat`](https://raw.githubusercontent.com/gatling/gatling/master/gatling-bundle/src/universal/bin/artifact.bat)
 files to the `bin` directory of your unzipped Gatling bundle.
@@ -239,7 +239,7 @@ Your Gatling modules can, however, depend on other modules.
 
 A typical mistake with Gatling and Gatling Enterprise is to rely on having an exploded Maven/Gradle/SBT project structure, and to try to load files from the project filesystem.
 
-This filesystem structure will be gone once your project has been packaged and deployed to Gatling Enterprise.
+This filesystem structure will not be accessible once your project has been packaged and deployed to Gatling Enterprise.
 
 If your feeder files are packaged with your test sources, you must resolve them from the classpath. This will work both
 when you run simulations locally and when you deploy them to Gatling Enterprise.
