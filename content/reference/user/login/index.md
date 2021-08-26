@@ -6,7 +6,9 @@ lastmod: 2021-08-05T13:13:30+00:00
 weight: 10010
 ---
 
-To log in, you need a GitHub account.
+Thanks so much for trying Gatling Cloud.  To access Gatling Cloud you can sign up for a free trial plan here or visit https://cloud.gatling.io/ to log in.
+
+To log in, you will need a GitHub account.
 
 If you want to connect with an existing organization, please reach out to a System Admin to [join an organization]({{< ref "../../admin/users#managing-users" >}}).
 
@@ -14,7 +16,7 @@ If you want to connect with an existing organization, please reach out to a Syst
 
 Pressing the **Continue with GitHub** button will redirect you to GitHub, where you will be asked to authorize the application.
 
-You need to **authorize** it. We only ask access to your public profile and email address.
+You will need to **authorize** it. We only require access to your public profile and email address.
 
 {{< img src="login-github-oauth.png" alt="OAuth GitHub page" >}}
 
@@ -22,9 +24,9 @@ You need to **authorize** it. We only ask access to your public profile and emai
 The GitHub authorization page opens in a new tab. If no tab opens, make sure that your browser doesn't block it.
 {{< /alert >}}
 
-If a System Admin added you to their organization, you're logged in.
+If a System Admin has added you to their organization, should now be logged in.
 
-Otherwise, you need to Signup.
+If you are new to Gatling Cloud, you need to Signup.
 
 {{< img src="signup-gatling.png" alt="OAuth GitHub page" >}}
 
@@ -39,6 +41,6 @@ You shouldn't create an organization if you want to join an existing one.
 {{< /alert >}}
 
 {{< alert danger >}}
-Creating an organization is irreversible. If you want to leave your organization, contact [support](https://gatlingcorp.atlassian.net/servicedesk/customer/portal/8).
+Creating an organization is irreversible. If you want to leave your organization, please contact [support](https://gatlingcorp.atlassian.net/servicedesk/customer/portal/8).
 {{< /alert >}}
 
