@@ -11,15 +11,15 @@ weight: 10060
 
 To access the Simulations section, click on **Simulations** in the navigation bar.
 
-The Simulations view contains all the simulations you have configured and the result of their last run.
+The Simulations view contains all the simulations configured by your organization and the results of their last run.
 
 {{< img src="simulations-table.png" alt="Simulation table" >}}
 
-If you don't have any simulations configured yet and don't know how to start, you can download some Gatling Enterprise pre-configured projects by clicking on the "Sample simulations" button.
+If you don't have any simulations configured yet and don't know where to start, you can download some Gatling Enterprise pre-configured projects by clicking on the "Sample simulations" button.
 
 {{< img src="samples.png" alt="Samples" >}}
 
-Those samples are ready to use maven, sbt and gradle projects with proper configuration for Gatling Enterprise. You can also download those samples with the download link in the Documentation section.
+Those samples are ready to use Maven, SBT and Gradle projects that are properly configured for Gatling Enterprise. You can also download those samples with the download link in the Documentation section.
 
 Back to the Simulations section, at the top-right, there is an action bar which allows several actions:
 
@@ -32,8 +32,8 @@ Back to the Simulations section, at the top-right, there is an action bar which 
 
 ## Global Properties
 
-Global properties contains every JVM options and system properties used by all of your simulations by default.
-Editing those properties will be propagated to all the simulations.
+Global properties contains every JVM option and the system properties used by all of your simulations by default.
+Editing those properties will be propagated to all the simulations. You can access it by clicking on the top right corner of the page.
 
 If you don't want to use the default properties, check `Use custom global properties` and enter your own.
 
@@ -77,6 +77,8 @@ Gatling Enterprise pools are available in the following regions:
 - US East (N. Virginia)
 - US West (N. California)
 
+In order for the best results from your simulation you should select the injectors that best represent your user base.
+
 {{< img src="create-simulation3.png" alt="Create simulation - Step 3" >}}
 
 - **Weight distribution**: if set to even, every injector will produce the same load. If set to custom, you must set the weight in % for each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
@@ -88,7 +90,7 @@ After this step, you can save the simulation, or click on *More options* to acce
 
 ### Step 4 & 5: JVM options & Java System Properties
 
-These steps allows you to defines JVM arguments and system properties used when running this particular simulation. You can choose to override the global properties.
+These steps allow you to define the JVM arguments and system properties used when running this particular simulation. You can choose to override the global properties.
 
 {{< img src="create-simulation4.png" alt="Create simulation - Step 4" >}}
 {{< img src="create-simulation5.png" alt="Create simulation - Step 5" >}}
@@ -105,7 +107,7 @@ For example, setting this property as `.foo.com, .bar.com` will consolidate stat
 
 ### Step 6: Time window
 
-Configuring a ramp up or ramp down means that the start and end of your simulation won't be used for calculating metrics and assertions.
+Configuring a ramp up or ramp down means that the beginning and end of your simulation won't be used for calculating metrics and assertions.
 
 {{< img src="create-simulation6.png" alt="Create simulation - Step 6" >}}
 
@@ -126,13 +128,15 @@ A run has the following life cycle:
 
 - **Building**: in which it will download the simulation artifact and prepare the hosts
 - **Deploying**: in which it will deploy the simulation to run on all the injectors
-- **Injecting**: in which the simulation is running and can be viewed from the Reports
+- **Injecting**: in which the simulation is running and can be viewed from the Reports. 
 
 {{< img src="injecting.png" alt="Injecting" >}}
 
 {{< anchor logs >}}
 
 By clicking on the {{< icon file-alt >}} icon in the **Build Start** column, Gatling Enterprise will display the build logs of the simulation. There is a limit of 1000 logs for a run.
+
+Viewing the Log can also be helpful in determining why a run failed and what errors you will need to correct to successfully run your simulation.
 
 {{< img src="logs.png" alt="Logs" >}}
 
