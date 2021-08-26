@@ -19,7 +19,7 @@ If you don't have any simulations configured yet and don't know where to start, 
 
 {{< img src="samples.png" alt="Samples" >}}
 
-Those samples are ready to use Maven, SBT and Gradle projects that are properly configured for Gatling Enterprise. You can also download those samples with the download link in the Documentation section.
+Those samples are ready to use Maven, sbt and Gradle projects that are properly configured for Gatling Enterprise. You can also download those samples with the download link in the Documentation section.
 
 Back to the Simulations section, at the top-right, there is an action bar which allows several actions:
 
