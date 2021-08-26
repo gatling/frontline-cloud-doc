@@ -6,7 +6,7 @@ lastmod: 2021-08-05T13:13:30+00:00
 weight: 10010
 ---
 
-Thanks so much for trying Gatling Cloud.  To access Gatling Cloud you can sign up for a free trial plan here or visit https://cloud.gatling.io/ to log in.
+Thanks so much for trying Gatling Cloud. To access Gatling Cloud you can sign up for a free trial plan here or visit https://cloud.gatling.io/ to log in.
 
 To log in, you will need a GitHub account.
 
