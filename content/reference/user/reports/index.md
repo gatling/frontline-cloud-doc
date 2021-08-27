@@ -1,7 +1,7 @@
 ---
 title: "Reports"
 description: "Learn how to analyze test reports and discover the slow parts of your application."
-lead: "Analyze the reports and discover the slow parts of your application."
+lead: "Analyze your reports and discover the bottlenecks in your application."
 date: 2021-03-10T14:29:43+00:00
 lastmod: 2021-08-05T13:13:30+00:00
 weight: 10080
@@ -9,8 +9,8 @@ weight: 10080
 
 The reports can be accessed by clicking on the {{< icon chart-area >}} icon in the [simulations table]({{< ref "../simulations#simulations-table" >}}) or in the [runs table]({{< ref "../trends#runs-table" >}}).
 
-This view introduce all the metrics available for a specific run.
-This page consists of:
+This view displays all of the metrics available for a specific run.
+The Reports page consists of:
 
 - [The run bar]({{< ref "#run-bar" >}})
 - [The top navigator menu]({{< ref "#top-navigator-menu" >}})
@@ -28,25 +28,25 @@ This page consists of:
 
 ### Run Bar
 
-This bar is a combination of buttons:
+This bar is a combination of buttons including:
 
 - **Start / Stop**: Use this button to start a new run of the simulation, or stop the ongoing run (not available if you have a Viewer permission)
-- **Generate public link**: To create a [public link]({{< ref "../reports#public-links" >}})
+- **Generate public link**: To create a [public link]({{< ref "../reports#public-links" >}}) that can be viewed by anyone it is sent to.
 - **Export**: To [export]({{< ref "../reports#export" >}}) reports
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 
 ### Top Navigator Menu {#top-navigator-menu}
 
-The navigation menu allows you to choose the simulation time range.
+The navigation menu allows you to choose the simulation time range. You can also view a custom time range by dragging the cursors. 
 
 {{< img src="timewindow.png" alt="Timewindow" >}}
 
 ### Assertions {#assertions}
 
-The label below shows the status of the simulation (Ongoing, successful, timeout...).
+The image below shows the status of the simulation (Ongoing, successful, timeout...).
 If your simulation has assertions, you can click this label.
-You can comment the run by clicking on the {{< icon comment-alt >}} icon.
+You can add comments to the run by clicking on the {{< icon comment-alt >}} icon.
 
 {{< img src="timeline-assertions.png" alt="Timeline assertions" >}}
 
@@ -73,13 +73,13 @@ Each tab has the same structure except the summary that is available only for re
 This filter bar is a combination of buttons:
 
 - **Switch to Summary**: Switch to [summary]({{< ref "../reports#summary" >}}) view for Requests & Groups tabs
-- buttons to filter the metrics drawn in the charts area
+- buttons to filter the metrics displayed in the charts area
 
 {{< img src="filter-bar.png" alt="Filter bar" >}}
 
 ### Charts
 
-All charts in Gatling Enterprise are connected to each other, so if you select a time window on a chart it will automatically change it
+All charts in Gatling Enterprise runs are interactive, so if you select a time window on a chart it will automatically change the time window
 for all other charts. Metrics are drawn in multiple charts.
 
 {{< img src="charts.png" alt="Charts" >}}
@@ -88,28 +88,28 @@ Some of them have an icon to update the chart settings:
 
 {{< img src="distrib-chart.png" alt="Distribution chart" >}}
 
-Moreover, histograms and pies are hidden behind each count chart, accessible by clicking their top right corner icon below.
+You can also switch from area to pie and column charts using the icon.
 
 {{< img src="pie-button.png" alt="Pie button" >}}
 
 {{< alert warning >}}
-If your kernel version is too low (around below 3.10) you might not be able to get data from the TCP connection by state graph on the Connections tab. If you want to be able to get these data, you should upgrade your kernel.
+If your kernel version is too low (around below 3.10) you might not be able to get data from the TCP connection by state graph on the Connections tab. If you want to access this data, you should upgrade your kernel.
 {{< /alert >}}
 
 ### Summary (Requests and Groups only) {#summary}
 
-This view is available only from requests and groups tabs.
-It is a summary of metrics drawn in the charts, and has two modes: flat, by default, and hierarchy.
+This view is available only from the Requests and Groups tabs.
+The summary of the data which is laid out in this table which can be viewed in flat mode (default) or hierarchy mode
 The summary is also connected to the timeline and the time window selected, so if you change the time window the summary
-will refresh his data to match the time window.
+will refresh the data to match the time window.
 
-On Flat mode you can filter the data by clicking any column name of the table.
+In flat mode, you can click on the title of each column to arrange the data in ascending or descending order. 
 
 {{< img src="summary.png" alt="Summary" >}}
 
 ### Generate Public Links {#public-links}
 
-A public link is a link of the current reports which will be accessible to anyone, without having to log-in to Gatling Enterprise. To generate a public link, click on the *Generate public link* button and choose the expiration date of your link.
+A public link is a link of the current reports which will be accessible to anyone, without having to log in to Gatling Enterprise. To generate a public link, click on the *Generate public link* button and choose the expiration date of your link.
 
 {{< img src="generate-public-link.png" alt="Generate public links" >}}
 
@@ -155,12 +155,12 @@ Those elements are composed of:
   - **Status**: adds an editable text element with a predefined text set to the status of the selected run.
   - **Comments**: adds an editable text element with a predefined text set to the comments of the selected run.
   - **Assertions**: adds a table with the assertions of the selected run.
-  - **Summary**: add sthe summary table of the selected run in a new landscape page.
+  - **Summary**: adds the summary table of the selected run in a new landscape page.
 - **Chart**: adds a chart element that you can interact with before exporting it to PDF.
 - **Counts**: adds a count chart element that you can interact with before exporting it to PDF.
 
-As you can see below, every charts (or other elements) can be interact with individually. You can zoom on it, or select the run, the scenario,
-the group, etc.. whose you want your data to be fetch. You do not need to have the same settings for each element.
+As you can see below, every chart (or other element) can be interacted with individually. You can zoom in on sections, or select the run, the scenario,
+the group, etc.. whose data you want to fetch. You do not need to have the same settings for each element.
 
 {{< img src="export-charts.png" alt="Export charts" >}}
 
@@ -168,9 +168,9 @@ After adding all desired elements in the report you can click on the *Export PDF
 
 {{< img src="export-actions.png" alt="Export actions" >}}
 
-There are two more actions you can do:
+There are two more actions available to you:
 
-- **Save**: save the current Export configuration:
+- **Save**: saves the current Export configuration:
   - **as a template**: this option will save the element list without the content
   - **as a save**: this option will save everything, including the content of the Text Area and the configuration of the graphs
 - **Load**: load a previously saved template or save.
@@ -179,16 +179,16 @@ There are two more actions you can do:
 
 #### Zoom
 
-You can reset zoom by a double click on a chart.
-It is possible to change the time range window by the following actions:
+You can reset the zoom status by double clicking on a chart.
+It is possible to change the time range window by doing any of the following actions:
 
-- Clicking zoom icons of the control buttons
-- Select a zone in any charts and timeline
-- Select a range time from the top navigation bar
+- Clicking the zoom icons of the control buttons
+- Selecting a zone in any charts or timelines
+- Selecting a range of time from the top navigation bar
 
 #### Markers
 
-To ease your analysis, you can create markers on all the charts by right clicking on them. And click on the top of the marker to delete it.
+To ease your analysis, you can create markers on all the charts by right clicking on them. You can click on the top of the marker to delete it.
 
 {{< img src="marker.png" alt="Marker" >}}
 
@@ -201,14 +201,14 @@ In the top right menu, you can activate the *Multiple Highlights* setting which 
 
 #### Percentiles Mask
 
-In the top right menu, you can click on the **Percentiles** setting to be able to chose what percentiles to display in the chart.
+In the top right menu, you can click on the **Percentiles** setting to be able to choose which percentiles to display in the chart.
 
 {{< img src="percentilesmask.png" alt="Percentiles mask" >}}
 {{< img src="percentileschart.png" alt="Percentiles chart" >}}
 
 #### Date Time / Elapsed Time
 
-In the top right menu, you can activate the **Date Time** setting to be able to switch from elapsed time to date time.
+In the top right menu, you can activate the **Date Time** setting which lets you switch from elapsed time to date time.
 
 {{< img src="multiplecheck-date.png" alt="Multiple check" >}}
 {{< img src="multiple-date.png" alt="Multiple" >}}
