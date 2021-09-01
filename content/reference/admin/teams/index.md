@@ -13,7 +13,7 @@ To access the Teams administration, click on the {{< icon users >}} icon in the 
 
 {{< img src="teams.png" alt="Teams" >}}
 
-In the teams table, you can visualize the team name, and the number of associated users, artifacts and simulations.
+In the teams table, you can visualize the team name, and the number of associated users, packages and simulations.
 You can also copy the team id by clicking on the {{< icon clipboard >}} icon.
 
 ### Team

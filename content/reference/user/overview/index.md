@@ -18,7 +18,7 @@ The Gatling Enterprise navigation bar is composed of:
 - [**Users**]({{< ref "../../admin/users" >}}): manage users teams and roles - *accessible to system admins only*
 - [**Teams**]({{< ref "../../admin/teams" >}}): manage teams - *accessible to system admins only*
 - [**API Tokens**]({{< ref "../../admin/api_tokens" >}}): manage token to access the API - *accessible to system admins only*
-- [**Artifacts**]({{< ref "../artifact_conf" >}}): manage simulations artifacts - *accessible to test admins and system admins*
+- [**Packages**]({{< ref "../package_conf" >}}): manage simulations packages - *accessible to test admins and system admins*
 - [**Simulations**]({{< ref "../simulations" >}}): manage simulations, runs and reports - *accessible to anyone with at least a viewer role*
 - [**Dedicated IPs**]({{< ref "../dedicated_ips" >}}): a table of pools of the dedicated IP's- *accessible to test admins and system admins* 
 ---

@@ -22,7 +22,7 @@ There are four permissions available for API Tokens:
 
 - The Read permission, allowing to read all the data from runs (typically useful in Grafana)
 - The Start permission, allowing to start simulations runs
-- The Artifacts permission, allowing to upload artifacts
+- The Packages permission, allowing to upload packages
 - The All permission, combining all three of the previous permissions
 
 You can set a permission globally or within a specific team only.

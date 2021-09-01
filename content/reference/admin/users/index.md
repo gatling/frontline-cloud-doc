@@ -41,7 +41,7 @@ There are 4 different user roles in Gatling Enterprise:
 | Start Simulation                         |                    | Own team           | Own team           | Own team           |
 | Generate Public Links                    |                    | Own team           | Own team           | Own team           |
 | Create Simulation                        |                    |                    | Own team           | Own team           |
-| Administrate Artifacts                   |                    |                    | Own team           | Own team           |
+| Administrate Packages                   |                    |                    | Own team           | Own team           |
 | Administrate API Tokens, Users and Teams |                    |                    |                    | Own team           |
 
 Each role can be global or team-specific.

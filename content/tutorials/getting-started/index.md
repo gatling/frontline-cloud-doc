@@ -149,9 +149,9 @@ Running a test locally is also a great way to do debugging before sending it to 
 
 ## Step 3 - Generate a package {#generate-package}
 
-Gatling Enterprise requires a package built from a Gatling project in order to run a test. This package is called an `artifact`.
+Gatling Enterprise requires a package built from a Gatling project in order to run a test.
 
-To create an artifact, run the `artifact.bat` (if Windows) or `artifact.sh` (if Linux/MacOS) file, Gatling will start creating your first artifact:
+To create a package, run the `artifact.bat` (if Windows) or `artifact.sh` (if Linux/MacOS) file, Gatling will start creating your first package:
 
 ```console
 $ ./bin/artifact.sh
@@ -164,7 +164,7 @@ This script can also be clicked or double clicked from any file explorer. You'll
 
 {{< loom "ca115b7607224376a2f6cefdb0cfc479" >}}
 
-When using other tools, the command to type and the name of the outputted file will differ:
+When using other tools, the command to type and the name of the package will differ:
 
 {{< code-toggle console >}}
 bundle: ./bin/artifact.sh
@@ -173,7 +173,7 @@ maven: mvn clean package -DskipTests
 sbt: sbt test:assembly
 {{</ code-toggle >}}
 
-The name of the file being:
+The name of the package being:
 
 {{< code-toggle console >}}
 bundle: target/artifact.jar
@@ -184,13 +184,22 @@ sbt: target/${name_of_the_project}-1.0.0.jar
 
 ## Step 4 - Upload the package {#upload-package}
 
-On Gatling Enterprise, click on the artifacts icon and on create. Give a name to your package, you can choose to make it available to all teams or to limit access to a specific one, then hit save.
+On Gatling Enterprise, click on the packages icon and on create. Give a name to your package, you can choose to make it available to all teams or to limit access to a specific one, then hit save.
 
-Next, upload the package you generated earlier by clicking on the cloud icon. The artifact you generated earlier is located here: `target/artifact.jar`
+Next, upload the package you generated earlier by clicking on the cloud icon. The package you generated earlier is located here: `target/artifact.jar`
 
 Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
 
 {{< loom "7511a5a75a8f4f61baf4987bdb6ec306" >}}
+
+When using other tools, the name of the package will differ:
+
+{{< code-toggle console >}}
+bundle: target/artifact.jar
+gradle: build/libs/gradle.jar
+maven: target/${name_of_the_project}-1.0.0-shaded.jar
+sbt: target/${name_of_the_project}-1.0.0.jar
+{{</ code-toggle >}}
 
 ## Step 5 - Create a simulation {#create-simulation}
 
@@ -245,5 +254,5 @@ You have successfully started load testing, you can read our documentation if yo
 
 - [Gatling documentation](https://gatling.io/docs/gatling/)
 - [Gatling Enterprise documentation]({{< ref "../../" >}})
-- [Documentation about the creation of an artifact]({{< ref "../../reference/user/artifact_gen" >}})
+- [Documentation about the creation of a package]({{< ref "../../reference/user/package_gen" >}})
 - [Documentation about how to use the reports]({{< ref "../../reference/user/reports" >}})
