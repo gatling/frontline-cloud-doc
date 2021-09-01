@@ -1,23 +1,25 @@
 ---
-title: "Artifact Generation"
-description: "Learn how to generate an artifact for Gatling Enterprise from the Gatling zip bundle, or from a Maven, SBT, or Gradle project."
-lead: "Generate an artifact from your Gatling bundle or with a Maven, SBT, or Gradle project."
+title: "Package Generation"
+description: "Learn how to generate a package for Gatling Enterprise from the Gatling zip bundle, or from a Maven, SBT, or Gradle project."
+lead: "Generate a package from your Gatling bundle or with a Maven, SBT, or Gradle project."
+aliases:
+ - artifact_gen
 date: 2021-03-08T12:50:32+00:00
 lastmod: 2021-08-05T13:13:30+00:00
 weight: 10040
 ---
 
-## Generating Artifacts for Gatling Enterprise
+## Generating Packages for Gatling Enterprise
 
 Gatling Enterprise deploys packages containing your compiled Simulations and resources. Those packages have to be generated
-upstream, using one of the methods below, before you can run them with Gatling Enterprise. This package is known as an Artifact.
+upstream, using one of the methods below, before you can run them with Gatling Enterprise.
 
 Gatling Enterprise is compatible with Gatling 3.3, 3.4, 3.5 and 3.6.
 
 ### Gatling zip bundle
 
 Once you have created a simulation you want to upload, run the script `artifact.sh` (on Linux or macOS) or `artifact.bat` (on Windows), found in the `bin` directory of your unzipped Gatling bundle.
-This will generate a `target/artifact.jar` file. You can then upload this file in the [Artifacts section]({{< ref "../artifact_conf" >}}).
+This will generate a `target/artifact.jar` file. You can then upload this file in the [Packages section]({{< ref "../package_conf" >}}).
 
 {{< alert warning >}}
 These scripts are included in the Gatling bundle version 3.6.0 or later. For older versions, you will need to download and copy the
@@ -32,7 +34,7 @@ In your `pom.xml` file, you must add:
 
 - the Gatling dependencies
 - the Scala Maven plugin (`scala-maven-plugin`), which compiles your code
-- the Gatling Enterprise Maven plugin (`frontline-maven-plugin`), which packages your code into a deployable artifact
+- the Gatling Enterprise Maven plugin (`frontline-maven-plugin`), which packages your code
 
 The `pom.xml` file should contain this:
 
@@ -100,10 +102,10 @@ The `pom.xml` file should contain this:
 ```
 
 Run the `mvn clean package -DskipTests` command. This will generate the `target/<artifactId>-<version>-shaded.jar` file.
-You can then upload this file in the [Artifacts section]({{< ref "../artifact_conf" >}}).
+You can then upload this file in the [Packages section]({{< ref "../package_conf" >}}).
 
 {{< alert tip >}}
-To make the artifact lighter, you can also exclude dependencies you don't want to ship, eg:
+To make the package lighter, you can also exclude dependencies you don't want to ship, eg:
 
 ```xml
 <plugin>
@@ -135,7 +137,7 @@ To make the artifact lighter, you can also exclude dependencies you don't want t
 In your SBT project configuration, you must add:
 
 - the Gatling dependencies
-- the Gatling Enterprise SBT plugin (`"io.gatling.frontline" % "sbt-frontline"`), which packages your code into a deployable artifact
+- the Gatling Enterprise SBT plugin (`"io.gatling.frontline" % "sbt-frontline"`), which packages your code
 
 {{< alert warning >}}
 We only support sbt 1+, not sbt 0.13.
@@ -192,7 +194,7 @@ If you are using the integration test (`it`) configuration provided by the `gatl
 sbt it:assembly
 ```
 
-Either command will generate the `target/<artifactId>-<version>.jar` file, which you can then upload in the [Artifacts section]({{< ref "../artifact_conf" >}}).
+Either command will generate the `target/<artifactId>-<version>.jar` file, which you can then upload in the [Artifacts section]({{< ref "../package_conf" >}}).
 
 {{< alert warning >}}
 If you use very long method calls chains in your Gatling code, you might have to increase sbt's thread stack size before you can run the `assembly` command:
@@ -206,7 +208,7 @@ export SBT_OPTS="-Xss100M"
 In your `build.gradle` file, you must add:
 
 - the Gatling dependencies
-- the Gatling Enterprise Gradle plugin (`io.gatling.frontline.gradle`), which packages your code into a deployable artifact
+- the Gatling Enterprise Gradle plugin (`io.gatling.frontline.gradle`), which packages your code
 
 The `build.gradle` file should contain this:
 
@@ -228,7 +230,7 @@ gatling {
 ```
 
 Run the `gradle frontLineJar` command. It will generate the `build/libs/artifactId.jar` file.
-You can then upload this file in the [Artifacts section]({{< ref "../artifact_conf" >}}).
+You can then upload this file in the [Packages section]({{< ref "../package_conf" >}}).
 
 ### Multi-Module Support
 

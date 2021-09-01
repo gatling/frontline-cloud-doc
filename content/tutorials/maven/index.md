@@ -27,7 +27,7 @@ This folder contains a basic Gatling simulation configured to be used with Gatli
 You can check in the `pom.xml` file that this project uses a special `frontline-maven-plugin` plugin to generate the artifact in the proper format.
 
 If you have some existing projects you want to use, you'll have to configure this plugin there too.
-If so, please have a look at the [Reference Documentation]({{< ref "../../reference/user/artifact_gen#maven-project" >}}) for more information.
+If so, please have a look at the [Reference Documentation]({{< ref "../../reference/user/package_gen#maven-project" >}}) for more information.
 
 ## Generate the artifact
 

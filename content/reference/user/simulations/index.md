@@ -63,7 +63,7 @@ In order to create a simulation click on the "Create" button in the simulations 
 
 ### Step 2: Build configuration
 
-In this step, you'll configure the artifact of the Simulation to execute.
+In this step, you'll configure the package of the Simulation to execute.
 
 {{< img src="create-simulation2.png" alt="Create simulation - Step 2" >}}
 
@@ -126,7 +126,7 @@ Once you have created a simulation, you can start it by clicking on the {{< icon
 
 A run has the following life cycle:
 
-- **Building**: in which it will download the simulation artifact and prepare the hosts
+- **Building**: in which it will download the simulation package and prepare the hosts
 - **Deploying**: in which it will deploy the simulation to run on all the injectors
 - **Injecting**: in which the simulation is running and can be viewed from the Reports. 
 
