@@ -15,21 +15,30 @@ lastmod: 2021-08-30T16:00:00+02:00
 
 In this tutorial, we'll describe every step to help you run your first test with Gatling Enterprise.
 
-{{< alert tip >}}
+{{< alert info >}}
 **Requirements**
 
 * A valid [GitHub](https://github.com/) account
 * A Java Development Kit (JDK) installed in version 8 or 11
-* The [Gatling bundle](https://gatling.io/open-source/#downloadgatling) as a starter or an existing Maven/Gradle/SBT Gatling project
+{{< /alert >}}
+
+{{< alert tip >}}
+**Recommendations**
+
+* The [Gatling bundle](https://gatling.io/open-source/#downloadgatling) is beginner friendly and is the best choice if you're just getting started.
+* For long term projects, consider using a Gradle, Maven or SBT Gatling project. You can download some Gatling Enterprise ready sample projects from the Cloud dashboard directly!
 {{< /alert >}}
 
 Gatling is a code based load testing tool. It is based on the Scala programming language and is an Open-Source project that is free to use! Gatling is used to power Gatling Enterprise in order to make it a full-fledged load testing tool with even more features, such as live reports, advanced metrics and large scale clustered tests. The tests you code with Gatling are compatible with Gatling Enterprise without any changes.
 
 Gatling requires a Java installation so make sure that you have a JDK 8 or 11 installed on your computer. [Adoptium](https://adoptium.net) provides good packages that contain everything you need.
 
-While there are a lot of ways to start working on your first test, **if you are new to this, we recommend using the Gatling bundle**. It is self sufficient and doesn't require knowledge in any of the usual Java/Scala build tools, i.e. Gradle, Maven or SBT.
+While there are a lot of ways to create your first test, **if you are new to load testing or not a developer, we recommend using the Gatling bundle as it is beginner friendly**. It is self sufficient and doesn't require knowledge of the usual Java/Scala build tools, i.e. Gradle, Maven or SBT.
 
-If you already have experience with these tools, they are the long-term better option as they will allow integrating Gatling into an already existing tool chain and continuous integration tools such as Jenkins. For now, we'll go with the Gatling bundle for simplicity!
+If you already have experience with these tools, they are the better options long-term as they will allow integrating Gatling into an already existing tool chain:
+
+* Code editors, such as IntelliJ and Visual Studio Code
+* Continuous integration tools, such as Jenkins
 
 ## Step 1 - Sign up and log in {#sign-up-and-log-in}
 
@@ -55,10 +64,18 @@ Press "Continue with GitHub", where you will be asked to authorize the applicati
 
 One last thing, new [organizations]({{< ref "../../reference/user/organization" >}}) are given **free credits** to **launch their first test**.
 
-## Step 2 - Download the Gatling bundle {#download-gatling-bundle}
+## Step 2 - Preparing the project {#preparing-project}
 
 {{< alert tip >}}
-If you already know about Gatling and/or you are using a Gradle/Maven/SBT project, you can directly skip to the [generate a package]({{< ref "#generate-package" >}}) section.
+If you already know about Gatling and/or you are using a Gradle, Maven or SBT project, you'll need to update the configuration to make it compatible with Gatling Enterprise first:
+
+* [Configuring a Gradle project]({{< ref "../../reference/user/package_gen/#gradle-project" >}})
+* [Configuring a Maven project]({{< ref "../../reference/user/package_gen/#maven-project" >}})
+* [Configuring a SBT project]({{< ref "../../reference/user/package_gen/#sbt-project" >}})
+
+Or, you can download preconfigured sample projects from Gatling Enterprise by clicking on the "Sample simulations" button on the top right in the Simulations page.
+
+Now, you can directly skip to the [generate a package]({{< ref "#generate-package" >}}) section.
 {{< /alert >}}
 
 Click [here](https://gatling.io/open-source/#downloadgatling) to download the latest version of the Gatling bundle and extract the archive.
@@ -178,8 +195,8 @@ The name of the package being:
 {{< code-toggle console >}}
 bundle: target/artifact.jar
 gradle: build/libs/gradle.jar
-maven: target/${name_of_the_project}-1.0.0-shaded.jar
-sbt: target/${name_of_the_project}-1.0.0.jar
+maven: target/<project_name>-<project_version>-shaded.jar
+sbt: target/<project_name>-<project_version>.jar
 {{</ code-toggle >}}
 
 ## Step 4 - Upload the package {#upload-package}
@@ -211,9 +228,9 @@ Choose a name for your simulation and define the team that will have access to t
 
 Under Class name, it is important you enter the name of the script that was uploaded in the package, otherwise the run of your simulation will fail in the next step. In this case, the ready-made script called `BasicSimulation.scala` is located in the bundle: user-files > simulations > computer database. Therefore, you need to enter `computerdatabase.BasicSimulation` as the class name. Once you've entered the script name click on the "Next" button.
 
-Next, you'll need to select your package name. It is important to select the package that contains the simulation you'd like to run.  When you've selected your package, click on the "Next" button.
+Next, you'll need to select your package name. It is important to select the package that contains the simulation you'd like to run. When you've selected your package, click on the "Next" button.
 
-In the final step, you can choose where you want the injection to take place. Select a location, eg: "US East - N. Virginia (AWS)" and click on the "Save" button.  The traffic in your simulation will be coming from the region you've selected. The three next steps are optional and you can learn more about them [here]({{< ref "../../reference/user/simulations/" >}}), but for now, let's just simply click "save".
+In the final step, you can choose where you want the injection to take place. Select a location, eg: "US East - N. Virginia (AWS)" and click on the "Save" button. The traffic in your simulation will be coming from the region you've selected. The three next steps are optional and you can learn more about them [here]({{< ref "../../reference/user/simulations/" >}}), but for now, let's just simply click "save".
 
 {{< loom "8f52e27d235c4a9c9b9c820055f7b3ac" >}}
 
