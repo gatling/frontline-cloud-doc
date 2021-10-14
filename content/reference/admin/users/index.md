@@ -13,15 +13,18 @@ To access the Users administration, click on the {{< icon user >}} icon in the n
 
 {{< img src="users-table.png" alt="Users table" >}}
 
-To invite a user to your organization, click on the **Create** button and fill in the user information:
+To invite a user to your organization, click on the **Invite** button and fill in the user information:
 
-- **GitHub Username**: must match the user GitHub username in order to connect and *cannot be updated*.
-- **Firstname** | **Lastname** | **Email address**: explicit.  The user will be able to change these once connected.
-- **Roles**: either choose a global role, or select none and specify each role by team according to the permissions you want to grant.
+- **Email address**: The email address to which the invitation will be sent. The invited user doesn't have to use the same address in their user profile once connected.
+- **Organization role**: either choose a global role, or select none and specify each role by team according to the permissions you want to grant.
 
-The user invited will have to connect with its Github account. A user can join only one organization at the moment.
+{{< img src="users-create.png" alt="User create" >}}
 
-{{< img src="users-create.png" alt="User creation" >}}
+The invited user will receive an email with an invitation link to join the organization.
+
+{{< img src="invitation.png" alt="User invitation" >}}
+
+When they click on  **Accept the invitation**, they will be able to join the organization using their existing Gatling Enterprise Cloud user account if they already have one, or else they will have to create a new account.
 
 To edit a user, click on the {{< icon pencil-alt >}} icon. To remove them from your organization, select them using the checkbox on the left of the table and click on the **Remove** button.
 

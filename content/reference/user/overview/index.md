@@ -33,7 +33,7 @@ In the upper right corner, click on the organization logo to open a dropdown men
 The navigation dropdown menu is composed of:
 - [**Organization**]({{< ref "../organization" >}}): system administrators, credits, and plans 
 - [**Profile**]({{< ref "../profile" >}}): edit your profile and see your roles
-- **Logout**: disconnect from your account
+- **Sign out**: disconnect from your account
 
 {{< img src="navbar-dropdown.png" alt="Navbar Dropdown" caption="Navigation dropdown menu" >}}
 

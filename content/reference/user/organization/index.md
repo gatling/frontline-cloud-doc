@@ -6,13 +6,20 @@ lastmod: 2021-08-05T13:13:30+00:00
 weight: 10081
 ---
 
-To view information about your organization, click on the **Organization name link**.
+To view information about your organization, click on the **Organization settings** button.
 
-{{< img src="organization-page-link.png" alt="Organization page link" >}}
+{{< img src="menu.png" alt="Organization settings" >}}
 
-## Profile information
+## Switch between multiple organizations
 
-{{< img src="organization-profile.png" alt="Organization profile information" >}}
+If you've been invited to multiple organizations, 
+you can switch between them by clicking on the organization name in the top right corner.
+
+{{< img src="multiple-organizations.png" alt="Multiple organizations" >}}
+
+## Profile
+
+{{< img src="profile.png" alt="Organization profile information" >}}
 
 * **Avatar** - Composed by default from the two first characters of your **Organization name**.
 * **Organization Name** - The display name for your organization.
@@ -25,20 +32,20 @@ Click on the pen icon to edit the **Organization name**.
 
 ## Credit consumption
 
-{{< img src="organization-credit.png" alt="Organization credit informations" >}}
+{{< img src="credits-consumption.png" alt="Organization credit informations" >}}
 
 * **Blue** - Available credits.
 * **Orange** - Consumed credits.
 
-### Admin users
+## Admin users
 
 Shows all System Admins in your organization.
 
-{{< img src="organization-admin-user.png" alt="Organization users admin" >}}
+{{< img src="admin-users.png" alt="Organization users admin" >}}
 
 For each System Admin, you will find their GitHub username, first name, and last name.
 
-### Credits
+## Credits
 
 {{< alert warning >}}
 This section is only available to System Admins.
@@ -46,17 +53,17 @@ This section is only available to System Admins.
 
 Credits consumption history.
 
-{{< img src="organization-credits-row.png" alt="Organization credits view in row" >}}
+{{< img src="credits.png" alt="Organization credits view in row" >}}
 
 By clicking on a row, you will see all the details of the credit consumption for each month.
 
-{{< img src="organization-credits-detail.png" alt="Organization credits view in detail" >}}
+{{< img src="credits-detail.png" alt="Organization credits view in detail" >}}
 
 * **Type** - Which type of event occurred, with a link redirecting to the run when credits were used to run a simulation.
 * **Date** - The day the event took effect.
 * **Credits** - Number of credits gained or used from the event.
 
-### Plans
+## Plans
 
 {{< alert warning >}}
 This section is only available to the System Admin.
@@ -64,9 +71,21 @@ This section is only available to the System Admin.
 
 Plans view history.
 
-{{< img src="organization-plan.png" alt="Organization plan" >}}
+{{< img src="plans.png" alt="Organization plan" >}}
 
 * **Status** - Current status of the payment plan: **Terminated**, **Active**, or **PaymentFailure**.
 * **From** - Start date of the plan.
 * **To** - End date of the plan, if there is one.
 * **Credits** - Number of credits awarded each month by the plan.
+
+## Invitations
+
+{{< alert warning >}}
+This section is only available to the System Admin.
+{{< /alert >}}
+
+{{< img src="invitations.png" alt="Invitations" >}}
+
+* **Email** - Recipient of the invitation.
+* **Sent** - Date where the invitation was sent.
+* **Expire** - After this date, the invitation will no longer be valid, and you'll need to generate a new invitation.

@@ -17,16 +17,14 @@ In this tutorial, we'll describe every step to help you run your first test with
 
 {{< alert info >}}
 **Requirements**
-
-* A valid [GitHub](https://github.com/) account
 * A Java Development Kit (JDK) installed in version 8 or 11
 {{< /alert >}}
 
 {{< alert tip >}}
 **Recommendations**
 
-* The [Gatling bundle](https://gatling.io/open-source/#downloadgatling) is beginner friendly and is the best choice if you're just getting started.
-* For long term projects, consider using a Gradle, Maven or SBT Gatling project. You can download some Gatling Enterprise ready sample projects from the Cloud dashboard directly!
+* The [Gatling bundle](https://gatling.io/open-source/#downloadgatling) is beginner-friendly and is the best choice if you're just getting started.
+* For long term projects, consider using a **Gradle**, **Maven** or **SBT** Gatling project. You can download some sample projects ready for Gatling Enterprise Cloud directly from the dashboard!
 {{< /alert >}}
 
 Gatling is a code based load testing tool. It is based on the Scala programming language and is an Open-Source project that is free to use! Gatling is used to power Gatling Enterprise in order to make it a full-fledged load testing tool with even more features, such as live reports, advanced metrics and large scale clustered tests. The tests you code with Gatling are compatible with Gatling Enterprise without any changes.
@@ -46,21 +44,19 @@ Before we start, make sure to go to [cloud.gatling.io](https://cloud.gatling.io)
 
 Gatling Enterprise handles users by putting them in organizations. This will allow you to work with multiple people on the same test projects, so they can either run new tests or view the results of previous ones.
 
-A user can be part of either a team within an organization or have access to the organization as a whole. In all cases, a user must be part of an organization. Hence, once signed up and connected, you'll need to create one:
+A user can either be part of a team within an organization, or have access to that organization as a whole. 
+In all cases, a user must be part of an organization. Hence, once signed up and connected, you'll need to create one:
 
-**If you are the first person in your organization to join Gatling, sign up and create an account**. In this case, you will need to create an organization:
+{{< img src="login.png" alt="Login / Register" caption="Login with your account" >}}
 
-{{< youtube IHVYt8GvfM0 >}}
+**If you are the first person in your organization to join Gatling, login and create an organization:**
+{{< img src="organization-creation.png" alt="Organization creation" caption="Create an organization" >}}
 
-{{< alert warning >}}
-Be careful with this step as your account cannot be connected to multiple organizations. If you want to join an existing organization, please reach out to a system administrator of your team for you to be added.
-{{< /alert >}}
+**If you have been invited to an organization by a System Administrator already.**
 
-**If you have been added to an organization by a System Administrator already.**
+{{< img src="invitation.png" alt="Email invitation" caption="Click on accept invitation" >}}
+{{< img src="invitation-prompt.png" alt="Invitation cancellation" caption="Click on continue to access the organization" >}}
 
-Press "Continue with GitHub", where you will be asked to authorize the application. The GitHub authorization page opens in a new tab. If no tab opens, make sure it is not being blocked by your browser.
-
-{{< img src="github.png" alt="Continue with GitHub" caption="Continue with GitHub button at the bottom of the Login form" >}}
 
 One last thing, new [organizations]({{< ref "../../reference/user/organization" >}}) are given **free credits** to **launch their first test**.
 
@@ -80,7 +76,8 @@ Now, you can directly skip to the [generate a package]({{< ref "#generate-packag
 
 Click [here](https://gatling.io/open-source/#downloadgatling) to download the latest version of the Gatling bundle and extract the archive.
 
-{{< youtube qdhLMwHlvhU >}}
+[comment]: <> (FIXME: Video need to be updated)
+[comment]: <> ({{< youtube qdhLMwHlvhU >}})
 
 Taken from the [bundle structure documentation](https://gatling.io/docs/gatling/reference/current/general/bundle_structure/), we learn that the important parts of the bundle are as such:
 
