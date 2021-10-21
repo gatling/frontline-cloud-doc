@@ -40,7 +40,7 @@ If you already have experience with these tools, they are the better options lon
 
 ## Step 1 - Sign up and log in {#sign-up-and-log-in}
 
-Before we start, make sure to go to [cloud.gatling.io](https://cloud.gatling.io) where you will need a [GitHub](https://github.com) account in order to sign up.
+Before we start, make sure to go to [cloud.gatling.io](https://cloud.gatling.io) where you will need to create an account either by registering with your email address or a [GitHub](https://github.com) account in order to sign up. Once you've created your account you will need to verify your email address.  You should receive a verification email from us, be sure to check your spam folder if you don't see it.
 
 Gatling Enterprise handles users by putting them in organizations. This will allow you to work with multiple people on the same test projects, so they can either run new tests or view the results of previous ones.
 
