@@ -33,11 +33,11 @@ To edit a user, click on the {{< icon pencil-alt >}} icon. To remove them from y
 There are 4 different user roles in Gatling Enterprise:
 
 - System Admin
-- Team Admin
+- Test Admin
 - Tester
 - Viewer
 
-|                                          | Viewer             | Tester             | Team Admin         | System Admin       |
+|                                          | Viewer             | Tester             | Test Admin         | System Admin       |
 |------------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|
 | Access own profile and Organization page | {{< icon check >}} | {{< icon check >}} | {{< icon check >}} | {{< icon check >}} |
 | Access Reports and Trends                | Own team           | Own team           | Own team           | Own team           |
