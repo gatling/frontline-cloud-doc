@@ -8,8 +8,8 @@ cascade:
     mavenJarPluginVersion: "3.2.0"
     scalaMavenPluginVersion: "4.4.1"
     gatlingSbtPluginVersion: "3.2.2"
-    frontLineMavenPluginVersion: "1.2.3"
     frontLineSbtPluginVersion: "1.3.4"
     frontLineGradlePluginVersion: "1.4.3"
     externalPluginsVersion: "1.15.3"
+    gatlingMavenPluginVersion: "4.0.0"
 ---

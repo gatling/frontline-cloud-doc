@@ -30,88 +30,24 @@ files to the `bin` directory of your unzipped Gatling bundle.
 
 ### Maven Project
 
-In your `pom.xml` file, you must add:
+Check [Gatling Maven Plugin](https://gatling.io/docs/gatling/reference/current/extensions/maven_plugin/) documentation to setup your project.
 
-- the Gatling dependencies
-- the Scala Maven plugin (`scala-maven-plugin`), which compiles your code
-- the Gatling Enterprise Maven plugin (`frontline-maven-plugin`), which packages your code
+{{< alert warning >}}
+Gatling Maven Plugin version must be at least 4.0.0
+{{< /alert >}}
 
-The `pom.xml` file should contain this:
+#### Gatling Enterprise Packaging
 
-```xml
-<dependencies>
-  <dependency>
-    <groupId>io.gatling.highcharts</groupId>
-    <artifactId>gatling-charts-highcharts</artifactId>
-    <version>{{< var gatlingVersion >}}</version>
-    <scope>test</scope>
-  </dependency>
-</dependencies>
-
-<build>
-  <!-- so maven compiles src/test/scala and not only src/test/java -->
-  <testSourceDirectory>src/test/scala</testSourceDirectory>
-  <plugins>
-    <plugin>
-      <artifactId>maven-jar-plugin</artifactId>
-      <version>{{< var mavenJarPluginVersion >}}</version>
-    </plugin>
-    <!-- so maven can compile your scala code -->
-    <plugin>
-      <groupId>net.alchim31.maven</groupId>
-      <artifactId>scala-maven-plugin</artifactId>
-      <version>{{< var scalaMavenPluginVersion >}}</version>
-      <executions>
-        <execution>
-          <goals>
-            <goal>testCompile</goal>
-          </goals>
-          <configuration>
-            <recompileMode>all</recompileMode>
-            <jvmArgs>
-              <jvmArg>-Xss100M</jvmArg>
-            </jvmArgs>
-            <args>
-              <arg>-target:jvm-1.8</arg>
-              <arg>-deprecation</arg>
-              <arg>-feature</arg>
-              <arg>-unchecked</arg>
-              <arg>-language:implicitConversions</arg>
-              <arg>-language:postfixOps</arg>
-            </args>
-          </configuration>
-        </execution>
-      </executions>
-    </plugin>
-
-    <!-- so maven can build a package for FrontLine -->
-    <plugin>
-      <groupId>io.gatling.frontline</groupId>
-      <artifactId>frontline-maven-plugin</artifactId>
-      <version>{{< var frontLineMavenPluginVersion >}}</version>
-      <executions>
-        <execution>
-          <goals>
-            <goal>package</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-  </plugins>
-</build>
-```
-
-Run the `mvn clean package -DskipTests` command. This will generate the `target/<artifactId>-<version>-shaded.jar` file.
-You can then upload this file in the [Packages section]({{< ref "../package_conf" >}}).
+`mvn gatling:enterprisePackage` command will generate the `target/<artifactId>-<version>-shaded.jar` package.
 
 {{< alert tip >}}
 To make the package lighter, you can also exclude dependencies you don't want to ship, eg:
 
 ```xml
 <plugin>
-  <groupId>io.gatling.frontline</groupId>
-  <artifactId>frontline-maven-plugin</artifactId>
-  <version>{{< var frontLineMavenPluginVersion >}}</version>
+  <groupId>io.gatling</groupId>
+  <artifactId>gatling-maven-plugin</artifactId>
+  <version>{{< var gatlingMavenPluginVersion >}}</version>
   <executions>
     <execution>
       <goals>
@@ -120,8 +56,8 @@ To make the package lighter, you can also exclude dependencies you don't want to
       <configuration>
         <excludes>
           <exclude>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_{{< var scalaMajorVersion >}}</artifactId>
+            <groupId>groupId</groupId>
+            <artifactId>artifactId</artifactId>
           </exclude>
         </excludes>
       </configuration>
@@ -132,105 +68,100 @@ To make the package lighter, you can also exclude dependencies you don't want to
 
 {{< /alert >}}
 
+#### Gatling Enterprise Upload
+
+To upload generated package, refer to the [packages section]({{< ref "../package_conf" >}}).
+
+Alternatively, you can configure Gatling Maven Plugin to upload your package on Gatling Enterprise.
+
+You'll need to [create a package]({{< ref "../package_conf" >}}), and [create an API token]({{< ref "../../admin/api_tokens/#managing-api-tokens" >}}) with at lease `Packages` permission on te package team.
+
+API Token need to be configured as:
+- `GATLING_ENTERPRISE_API_TOKEN` environment variable
+- `gatling.enterprise.apiToken` java property
+
+Artifact ID must be configured on the plugin:
+```xml
+<plugin>
+  <groupId>io.gatling</groupId>
+  <artifactId>gatling-maven-plugin</artifactId>
+  <version>${gatling-maven-plugin.version}</version>
+  <configuration>
+    <packageId>00000000-0000-0000-0000-000000000000</packageId>
+  </configuration>
+</plugin>
+```
+
 ### SBT Project
 
-In your SBT project configuration, you must add:
-
-- the Gatling dependencies
-- the Gatling Enterprise SBT plugin (`"io.gatling.frontline" % "sbt-frontline"`), which packages your code
+Check [Gatling SBT Plugin](https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/) documentation to setup your project.
 
 {{< alert warning >}}
-We only support sbt 1+, not sbt 0.13.
+Gatling SBT Plugin version must be at least 4.0.0
 {{< /alert >}}
 
-The `build.sbt` file should contain this:
+#### Gatling Enterprise Packaging
 
-```scala
-enablePlugins(GatlingPlugin, FrontLinePlugin)
-
-// If you want to package simulations from the 'it' scope instead. You will need the gatling-sbt plugin, see further below.
-// inConfig(IntegrationTest)(_root_.io.gatling.frontline.sbt.FrontLinePlugin.frontlineSettings(IntegrationTest))
-
-scalaVersion := "{{< var scalaVersion >}}"
-scalacOptions := Seq(
-  "-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation",
-  "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
-
-val gatlingVersion = "{{< var gatlingVersion >}}"
-
-libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test"
-// only required if you intend to use the gatling-sbt plugin:
-libraryDependencies += "io.gatling"            % "gatling-test-framework"    % gatlingVersion % "test"
-```
-
-{{< alert tip >}}
-The `gatling-test-framework` dependency is only needed if you intend to run locally and use the `gatling-sbt` plugin.
-{{< /alert >}}
-
-You will also need the following lines in the `project/plugins.sbt` file:
-
-```scala
-// only if you intend to use the gatling-sbt plugin for running Gatling locally:
-addSbtPlugin("io.gatling" % "gatling-sbt" % "{{< var gatlingSbtPluginVersion >}}")
-// so that sbt can build a package for Gatling Enterprise:
-addSbtPlugin("io.gatling.frontline" % "sbt-frontline" % "{{< var frontLineSbtPluginVersion >}}")
-```
-
-{{< alert tip >}}
-The `gatling-sbt` plugin is optional.
-{{< /alert >}}
-
-To package your code, please run one of the following commands in your terminal.
-
-In general (typically, your Gatling simulations are written inside the `src/test/scala` directory):
-
-```shell
-sbt test:assembly
-```
-
-If you are using the integration test (`it`) configuration provided by the `gatling-sbt` plugin (typically, your Gatling simulations are written inside the `src/it/scala` directory):
-
-```shell
-sbt it:assembly
-```
-
-Either command will generate the `target/<artifactId>-<version>.jar` file, which you can then upload in the [Artifacts section]({{< ref "../package_conf" >}}).
+`sbt "Gatling / enterprisePackage"` or `GatlingIt / enterprisePackage` command will generate the `target/${project}-${version}.jar` package.
 
 {{< alert warning >}}
-If you use very long method calls chains in your Gatling code, you might have to increase sbt's thread stack size before you can run the `assembly` command:
+If you use very long method calls chains in your Gatling code, you might have to increase sbt's thread stack size before packaging:
 ```bash
 export SBT_OPTS="-Xss100M"
 ```
 {{< /alert >}}
 
-### Gradle Project
+#### Gatling Enterprise Upload
 
-In your `build.gradle` file, you must add:
+To upload generated package, refer to the [packages section]({{< ref "../package_conf" >}}).
 
-- the Gatling dependencies
-- the Gatling Enterprise Gradle plugin (`io.gatling.frontline.gradle`), which packages your code
+Alternatively, you can configure Gatling Maven Plugin to upload your package on Gatling Enterprise.
 
-The `build.gradle` file should contain this:
+You'll need to [create a package]({{< ref "../package_conf" >}}), and [create an API token]({{< ref "../../admin/api_tokens/#managing-api-tokens" >}}) with at lease `Packages` permission on te package team.
 
-```groovy
-plugins {
-  // The following line allows to load io.gatling.gradle plugin and directly apply it
-  id 'io.gatling.frontline.gradle' version '{{< var frontLineGradlePluginVersion >}}'
-}
+API Token need to be configured as:
+- `GATLING_ENTERPRISE_API_TOKEN` environment variable
+- `gatling.enterprise.apiToken` java property
 
-// This is needed to let io.gatling.gradle plugin to loads gatling as a dependency
-repositories {
-  jcenter()
-  mavenCentral()
-}
-
-gatling {
-  toolVersion = '{{< var gatlingVersion >}}'
-}
+Artifact ID must be configured on the plugin:
+```scala
+Gatling / enterprisePackageId = "00000000-0000-0000-0000-000000000000"
+// or
+GatlingIt / enterprisePackageId = "00000000-0000-0000-0000-000000000000"
 ```
 
-Run the `gradle frontLineJar` command. It will generate the `build/libs/artifactId.jar` file.
-You can then upload this file in the [Packages section]({{< ref "../package_conf" >}}).
+### Gradle Project
+
+Check [Gatling Gradle Plugin](https://gatling.io/docs/gatling/reference/current/extensions/gradle_plugin/) documentation to setup your project.
+
+{{< alert warning >}}
+Gatling Gradle Plugin version must be at least 3.7.0
+{{< /alert >}}
+
+#### Gatling Enterprise Packaging
+
+`gradle gatlingEnterprisePackage` command will generate the `build/libs/gradle.jar` package.
+
+#### Gatling Enterprise Upload
+
+To upload generated package, refer to the [packages section]({{< ref "../package_conf" >}}).
+
+Alternatively, you can configure Gatling Maven Plugin to upload your package on Gatling Enterprise.
+
+You'll need to [create a package]({{< ref "../package_conf" >}}), and [create an API token]({{< ref "../../admin/api_tokens/#managing-api-tokens" >}}) with at lease `Packages` permission on te package team.
+
+API Token need to be configured as:
+- `GATLING_ENTERPRISE_API_TOKEN` environment variable
+- `gatling.enterprise.apiToken` java property
+
+Artifact ID must be configured on the plugin:
+```groovy
+gatling {
+    enterprise {
+        artifactId '00000000-0000-0000-0000-000000000000'
+    }
+}
+```
 
 ### Multi-Module Support
 
