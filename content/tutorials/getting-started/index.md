@@ -100,7 +100,7 @@ $ ./bin/gatling.sh
 If working properly, you should see something like this:
 
 ```
-GATLING_HOME is set to xxx/gatling-charts-highcharts-bundle-3.6.1
+GATLING_HOME is set to xxx/gatling-charts-highcharts-bundle-{{< var gatlingBundleVersion >}}
 Choose a simulation number:
      [0] computerdatabase.BasicSimulation
      [1] computerdatabase.advanced.AdvancedSimulationStep01
@@ -150,7 +150,7 @@ Generating reports...
 ================================================================================
 
 Reports generated in 0s.
-Please open the following file: .../gatling-charts-highcharts-bundle-3.6.1/results/basicsimulation-20210826135452662/index.html
+Please open the following file: .../gatling-charts-highcharts-bundle-{{< var gatlingBundleVersion >}}/results/basicsimulation-20210826135452662/index.html
 ```
 
 You can open the url at the end of the output, which will show a report of the test that was just run:
@@ -169,12 +169,12 @@ To create a package, run the `artifact.bat` (if Windows) or `artifact.sh` (if Li
 
 ```
 $ ./bin/artifact.sh
-GATLING_HOME is set to .../gatling-charts-highcharts-bundle-3.6.1
-GATLING_VERSION is set to '3.6.1'
+GATLING_HOME is set to .../gatling-charts-highcharts-bundle-{{< var gatlingBundleVersion >}}
+GATLING_VERSION is set to '{{< var gatlingBundleVersion >}}'
 Creating jar...done
 ```
 
-This script can also be clicked or double-clicked from any file explorer. You'll see the result in the folder `target`, which should now have a file named `artifact.jar`.
+This script can also be clicked or double clicked from any file explorer. You'll see the result in the folder `target`, which should now have a file named `artifact.jar`.
 
 {{< youtube _fq3giAIibw >}}
 
@@ -182,29 +182,18 @@ When using other tools, the command to type and the name of the package will dif
 
 {{< code-toggle console >}}
 bundle: ./bin/artifact.sh
-gradle: gradle frontLineJar
-maven: mvn clean package -DskipTests
-sbt: sbt test:assembly
-{{</ code-toggle >}}
-
-The name of the package being:
-
-{{< code-toggle shell >}}
-bundle: target/artifact.jar
-gradle: build/libs/gradle.jar
-maven: target/${project}-${version}-shaded.jar
-sbt: target/${project}-${version}.jar
+gradle: gradle gatlingEnterprisePackage
+maven: mvn gatling:enterprisePackage
+sbt: sbt "Gatling / enterprisePackage"
 {{</ code-toggle >}}
 
 ## Step 4 - Upload the package {#upload-package}
 
-On Gatling Enterprise, click on the packages icon and on create. Give a name to your package, you can choose to make it available to all teams or to limit access to a specific one, then hit save.
+On Gatling Enterprise, click on the [Packages section]({{< ref "../../reference/user/package_conf/" >}}) and on create. Give a name to your package, you can choose to make it available to all teams or to limit access to a specific one, then hit save.
 
 Next, upload the package you generated earlier by clicking on the cloud icon. The package you generated earlier is located here: `target/artifact.jar`
 
 Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
-
-{{< youtube V_ajFy-wC9w >}}
 
 When using other tools, the name of the package will differ:
 
@@ -219,33 +208,42 @@ sbt: target/${project}-${version}.jar
 
 To get a grasp of how to run a simulation with Gatling, you will find a ready to use script in the bundle. So let's get started with your first simulation!
 
-In the Simulation section, click on "Add" if there are no other simulations or on "Create" if other simulations have already been created before.
+In the [Simulations section]({{< ref "../../reference/user/simulations/" >}}), click on **Create**.
 
-Choose a name for your simulation and define the team that will have access to this simulation (if none has been created yet, just click on "Default").
+Choose a name for your simulation and define the team that will have access to this simulation (if none has been created yet, a default one named **Default team** exist).
 
-Under Class name, it is important you enter the name of the script that was uploaded in the package, otherwise the run of your simulation will fail in the next step. In this case, the ready-made script called `BasicSimulation.scala` is located in the bundle: user-files > simulations > computer database. Therefore, you need to enter `computerdatabase.BasicSimulation` as the class name. Once you've entered the script name click on the "Next" button.
+Under Class name, it is important you enter the name of the script that was uploaded in the package, otherwise the run of your simulation will fail in the next step. 
 
-Next, you'll need to select your package name. It is important to select the package that contains the simulation you'd like to run. When you've selected your package, click on the "Next" button.
+In this case, the ready-made script called `BasicSimulation.scala` is located in the bundle: `user-files > simulations > computerdatabase`
 
-In the final step, you can choose where you want the injection to take place. Select a location, eg: "US East - N. Virginia (AWS)" and click on the "Save" button. The traffic in your simulation will be coming from the region you've selected. The three next steps are optional and you can learn more about them [here]({{< ref "../../reference/user/simulations/" >}}), but for now, let's just simply click "save".
+Therefore, you need to enter `computerdatabase.BasicSimulation` as the class name. 
 
-{{< youtube Y4aScJtXido >}}
+Then, click on the **Next** button.
+
+Next, you'll need to select your package name. It is important to select the package that contains the simulation you'd like to run. Then, click on the **Next** button.
+
+In the final step, you can choose where you want the injection to take place, and click on the **Save** button.
+
+Your simulation will send the traffic from the region you've selected.
+
+The three next steps are optional and you can learn more about them [in the dedicated section]({{< ref "../../reference/user/simulations/" >}}), but for now, let's just simply click **Save**.
 
 {{< alert tip >}}
 If you would like to write your own script as a first test, you can modify the BasicSimulation file in the space as shown in the video. If you would like to learn more about creating different types of tests and writing your own scripts check out the [Gatling Academy](https://gatling.io/academy/). Please bear in mind you get 5 credits for free but if your test needs more, it will stop before it should finish.
 {{< /alert >}}
 
-{{< youtube Xj0FSo3Qgn0 >}}
-
 That's it, you have created your first simulation on Gatling Enterprise!
 
 ## Step 6 - Start load testing! {#start-load-testing}
 
-You are now ready to start load testing. To start the simulation you have just created, click on the Start icon. As soon as the simulation is running ("injecting" but not during the building and deploying statuses), you will be able to access the report, even while it is building.
+You are now ready to start load testing.
 
-{{< youtube SmljQFGLD3Y >}}
+To start the newly created simulation, click on the **Start** icon. 
 
-Now that you know how to create and run a simulation on Gatling, we suggest you jump on to the tutorials Interface tour and get the most out of the [reports]({{< ref "../../reference/user/reports" >}}).
+The simulation status will change to **building**, then to **deploying** then to **injecting**.
+You can now access the report (even during injection phase).
+
+Now that you know how to create and run a simulation on Gatling, we suggest you jump on to the [overview]({{< ref "../../reference/user/overview" >}}) and get the most out of the [reports]({{< ref "../../reference/user/reports" >}}).
 
 ## Going further
 
