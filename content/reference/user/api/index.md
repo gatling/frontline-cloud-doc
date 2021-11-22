@@ -15,12 +15,9 @@ This API is protected with [API tokens]({{< ref "../../admin/api_tokens" >}}), w
 
 You can access the Swagger documentation using the link `FrontLine API documentation` on the Documentation modal accessible on the navigation bar (bottom left of the screen).
 
-How to retrieve simulation, run and package IDs:
-
-- Simulation IDs are available in the Simulations Table, to the left of the simulation name. To copy the id, click on the {{< icon clipboard >}} icon.
-- Run IDs are available in the Runs Table: `Simulations > Runs history`. To copy the id, click on the {{< icon clipboard >}} icon to the right of the run number.
-- Team IDs are available in the Teams Table. To copy the id, click on the {{< icon clipboard >}} icon.
-- Package IDs are available in the Packages Table. To copy the id, click on the {{< icon clipboard >}} icon.
+IDs can be retrieved on table either under kebab menu, or on the right of the table:
+{{< img src="kebab-copy.png" alt="Simulation copy ID" >}}
+{{< img src="right-copy.png" alt="Run copy ID" >}}
 
 Some information before using the public API:
 
