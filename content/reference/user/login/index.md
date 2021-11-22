@@ -8,46 +8,51 @@ weight: 10010
 
 Thanks so much for trying Gatling Enterprise Cloud. To access the cloud visit [https://cloud.gatling.io/](https://cloud.gatling.io/) to log in.
 
-To log in, you can either:
+{{< img src="login.png" alt="Login" >}}
 
-#### Create your own account
+## Registration 
 
-{{< img src="login-register.png" alt="Login register" >}}
+### Create your own account
 
-Click on the **Register** link to open the sign up form.
-
-{{< img src="login-signup.png" alt="Login Signup" >}}
+Click on the **register** link to open the sign up form.
 
 Fill out the form and press **Register** to create your account and receive an validation email.
 
-{{< alert warning >}}
-You must use a valid email to create a new account.
-{{< /alert >}}
+### Connect with an identity provider
 
-{{< img src="invitation.png" alt="Login button" >}}
-
-Click on **link to e-mail address verification** or use the link to finalize your account on Gatling Entreprise Cloud.
-
-#### Connect with a GitHub account
-
-{{< img src="login-github.png" alt="Login Github" >}}
-
-Pressing the **Continue with GitHub** button will redirect you to GitHub, where you will be asked to authorize the application.
+Click on the identity provider you want to connect with (e.g: GitHub, Google).
+You'll be redirected and asked to authorize the application.
 
 You will need to **authorize** it. We only require access to your public profile and email address.
 
-{{< img src="login-github-oauth.png" alt="OAuth GitHub page" >}}
+{{< img src="login-github-oauth.png" alt="GitHub authorization page" caption="Access authorization example with GitHub" >}}
 
-{{< alert danger >}}
-The GitHub authorization page opens in a new tab. If no tab opens, make sure that your browser doesn't block it.
+{{< alert warning >}}
+Authorization page opens in a new tab. If no tab opens, make sure that your browser doesn't block it.
 {{< /alert >}}
 
-If a System Admin has invited you to their organization, you should now be able to accept the invitation you received by email.
+Then, you will have to fill in your profile information (some values may be pre-filled from your identity provider's data, but you can still modify them).
 
-Otherwise, you will be redirected to the **Organization creation** page.
+{{< img src="idp-signup.png" alt="Update informations"  >}}
+
+### Email validation
+
+In any case, you will be asked to confirm your account email
+
+{{< img src="invitation.png" alt="Login button" >}}
+
+Click on **link to e-mail address verification** or use the link to finalize your registration on Gatling Entreprise Cloud.
+
+{{< alert info >}}
+If you registered following an invitation, you will be redirected to this one afterwards.
+{{< /alert >}}
+
+## Login
+
+On your first login, if you haven't accepted any invitation, you will be redirected to the **Organization creation** page.
 
 {{< img src="organization-creation.png" alt="Organization creation page" >}}
 
-{{< alert warning >}}
+{{< alert danger >}}
 Creating an organization is irreversible. If you want to delete your organization, please contact [support](https://gatlingcorp.atlassian.net/servicedesk/customer/portal/8).
 {{< /alert >}}
