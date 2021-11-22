@@ -18,6 +18,10 @@ To invite a user to your organization, click on the **Invite** button and fill i
 - **Email address**: The email address to which the invitation will be sent. The invited user doesn't have to use the same address in their user profile once connected.
 - **Organization role**: either choose a global role, or select none and specify each role by team according to the permissions you want to grant.
 
+{{< alert warning >}}
+Only global system admins can generate invitations.
+{{< /alert >}}
+
 {{< img src="users-create.png" alt="User create" >}}
 
 The invited user will receive an email with an invitation link to join the organization.
