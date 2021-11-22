@@ -68,6 +68,14 @@ curl -X PUT --upload-file <PACKAGE_LOCAL_PATH> \
   -H "Authorization:<API_TOKEN>"
 ```
 
+### Option 3: Plugin configuration
+
+Maven, SBT and Gradle plugin offer commands to upload the generated package if properly configured.
+Check the [Maven](https://gatling.io/docs/gatling/reference/current/extensions/maven_plugin/#package-and-upload), 
+[Gradle](https://gatling.io/docs/gatling/reference/current/extensions/gradle_plugin/#package-and-upload), 
+[SBT](https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/#package-and-upload) 
+plugin extensions for more information.
+
 ## Usage
 
 You can configure which package to use for a simulation in the simulation's **Build** step.
