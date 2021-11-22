@@ -12,7 +12,7 @@ weight: 10070
 The runs list and trends for a simulation can be accessed by clicking on the {{< icon history >}} icon in the [simulations table]({{< ref "../simulations#simulations-table" >}}).
 
 This view contains the list of your simulation's runs which can be filtered by name and/or status and the trends which are displaying information between those runs.
-{{< img src="run-trends.png" alt="Run trends" >}}
+{{< img src="trends-overview.png" alt="Run trends" >}}
 
 ### Runs table
 
