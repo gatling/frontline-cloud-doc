@@ -100,7 +100,7 @@ $ ./bin/gatling.sh
 If working properly, you should see something like this:
 
 ```
-GATLING_HOME is set to xxx/gatling-charts-highcharts-bundle-{{< var gatlingBundleVersion >}}
+GATLING_HOME is set to xxx/gatling-charts-highcharts-bundle-{{< var gatlingVersion >}}
 Choose a simulation number:
      [0] computerdatabase.BasicSimulation
      [1] computerdatabase.advanced.AdvancedSimulationStep01
@@ -150,7 +150,7 @@ Generating reports...
 ================================================================================
 
 Reports generated in 0s.
-Please open the following file: .../gatling-charts-highcharts-bundle-{{< var gatlingBundleVersion >}}/results/basicsimulation-20210826135452662/index.html
+Please open the following file: .../gatling-charts-highcharts-bundle-{{< var gatlingVersion >}}/results/basicsimulation-20210826135452662/index.html
 ```
 
 You can open the url at the end of the output, which will show a report of the test that was just run:
@@ -169,8 +169,8 @@ To create a package, run the `artifact.bat` (if Windows) or `artifact.sh` (if Li
 
 ```
 $ ./bin/artifact.sh
-GATLING_HOME is set to .../gatling-charts-highcharts-bundle-{{< var gatlingBundleVersion >}}
-GATLING_VERSION is set to '{{< var gatlingBundleVersion >}}'
+GATLING_HOME is set to .../gatling-charts-highcharts-bundle-{{< var gatlingVersion >}}
+GATLING_VERSION is set to '{{< var gatlingVersion >}}'
 Creating jar...done
 ```
 
