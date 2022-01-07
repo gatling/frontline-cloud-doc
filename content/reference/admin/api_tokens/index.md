@@ -18,17 +18,19 @@ Once the API token is created, make sure to copy the token, as you won't be able
 
 {{< img src="create-token.png" alt="Create token" >}}
 
-There are four permissions available for API Tokens:
+There are three permissions available for API Tokens:
 
-- The Read permission, allowing to read all the data from runs (typically useful in Grafana)
-- The Start permission, allowing to start simulations runs
-- The Packages permission, allowing to upload packages
-- The All permission, combining all three of the previous permissions
+- The Read permission, allowing to read all the data (typically useful in Grafana)
+- The Start permission, allowing to start simulations + Read permissions (typically useful in a CI plugin)
+- The Configure permission, allowing to create / upload packages and create simulations + Start permissions (typically useful in our build plugins)
 
 You can set a permission globally or within a specific team only.
 
 {{< alert tip >}}
-**CI Plugins** need the **All** permission
+**CI Plugins** need the **Start** permission
+{{< /alert >}}
+{{< alert tip >}}
+**Build Plugins** need the **Configure** permission
 {{< /alert >}}
 
 You can edit the API Token permissions by clicking on the {{< icon pencil-alt >}} icon on the right part of the table. 

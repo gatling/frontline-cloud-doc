@@ -33,7 +33,7 @@ The plugin needs some global configuration. Go **Administration**, then **frontl
 
 The **Gatling Enterprise Address** is the address of Gatling Enterprise, please enter: https://cloud.gatling.io.
 
-The [Gatling Enterprise API Token]({{< ref "../../admin/api_tokens" >}}) is needed to authenticate to Gatling Enterprise. The API token needs the All permission.
+The [Gatling Enterprise API Token]({{< ref "../../admin/api_tokens" >}}) is needed to authenticate to Gatling Enterprise. The API token needs the Start permission.
 
 {{< img src="administration.png" alt="" >}}
 

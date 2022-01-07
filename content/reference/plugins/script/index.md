@@ -22,7 +22,7 @@ jq is needed to run this script. It is a JSON processor available for download [
 You need to give 3 parameters to the script:
 
 - gatling enterprise url: please enter: https://cloud.gatling.io
-- api token: The [API token]({{< ref "../../admin/api_tokens" >}}) will allow the script to authenticate to Gatling Enterprise. The API token needs the All permission.
+- api token: The [API token]({{< ref "../../admin/api_tokens" >}}) will allow the script to authenticate to Gatling Enterprise. The API token needs the Start permission.
 - simulation id: id of the simulation you want to start. You can get this id on the simulation table, with the {{< icon clipboard >}} icon.
 
 ## Script
