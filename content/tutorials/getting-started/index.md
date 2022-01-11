@@ -164,9 +164,11 @@ Or, you can download preconfigured sample projects from Gatling Enterprise by cl
 Now, you can directly skip to the [generate a package]({{< ref "#generate-package" >}}) section.
 {{< /alert >}}
 
-## Step 3 - Generate a Package {#generate-package}
+## Step 3 - Create a simulation
 
-#### Using the Bundle {#generate-package-bundle}
+### Using the bundle {#create-simulation-bundle}
+
+#### Step 3.1 - Generate a Package {#generate-package}
 
 Gatling Enterprise requires a package built from a Gatling project in order to run a test.
 
@@ -183,18 +185,7 @@ This script can also be clicked or double clicked from any file explorer. You'll
 
 {{< youtube _fq3giAIibw >}}
 
-#### Using maven, gradle or sbt {#generate-package-buildtools}
-
-When using other tools, the command to type and the name of the package will differ:
-
-{{< code-toggle console >}}
-bundle: ./bin/artifact.sh
-gradle: gradle gatlingEnterprisePackage
-maven: mvn gatling:enterprisePackage
-sbt: sbt "Gatling / enterprisePackage"
-{{</ code-toggle >}}
-
-## Step 4 - Upload the Package {#upload-package}
+#### Step 3.2 - Upload the Package {#upload-package}
 
 On Gatling Enterprise, click on the [Packages section]({{< ref "../../reference/user/package_conf/" >}}) and on create. Give a name to your package, you can choose to make it available to all teams or to limit access to a specific one, then hit save.
 
@@ -202,16 +193,7 @@ Next, upload the package you generated earlier by clicking on the cloud icon. Th
 
 Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
 
-When using other tools, the name of the package will differ:
-
-{{< code-toggle shell >}}
-bundle: target/artifact.jar
-gradle: build/libs/gradle.jar
-maven: target/${project}-${version}-shaded.jar
-sbt: target/${project}-${version}.jar
-{{</ code-toggle >}}
-
-## Step 5 - Create a Simulation {#create-simulation}
+#### Step 3.3 - Create a Simulation {#create-simulation}
 
 To get a grasp of how to run a simulation with Gatling, you will find a ready to use script in the bundle. So let's get started with your first simulation!
 
@@ -219,11 +201,11 @@ In the [Simulations section]({{< ref "../../reference/user/simulations/" >}}), c
 
 Choose a name for your simulation and define the team that will have access to this simulation (if none has been created yet, a default one named **Default team** exist).
 
-Under Class name, it is important you enter the name of the script that was uploaded in the package, otherwise the run of your simulation will fail in the next step. 
+Under Class name, it is important you enter the name of the script that was uploaded in the package, otherwise the run of your simulation will fail in the next step.
 
 In this case, the ready-made script called `BasicSimulation.scala` is located in the bundle: `user-files > simulations > computerdatabase`
 
-Therefore, you need to enter `computerdatabase.BasicSimulation` as the class name. 
+Therefore, you need to enter `computerdatabase.BasicSimulation` as the class name.
 
 Then, click on the **Next** button.
 
@@ -241,11 +223,47 @@ If you would like to write your own script as a first test, you can modify the B
 
 That's it, you have created your first simulation on Gatling Enterprise!
 
-## Step 6 - Start Load Testing! {#start-load-testing}
+### Using maven, gradle or sbt {#create-simulation-buildtools}
+
+#### Step 3.1 - Create an API token
+
+On Gatling Enterprise, click on the [API Tokens section]({{< ref "../../reference/admin/api_tokens/" >}}) and on create. Give a name to your API token, and give him `Configure` as Organization role, then hit save.
+
+Next, copy the content of the API token, you won't be able to access it once you close the modal.
+
+#### Step 3.2 - Create and start a simulation
+
+Maven, gradle or sbt can create interactively a simulation, upload its package and start it.
+
+Type the command corresponding to your build plugin, don't forget to replace the API token:
+
+{{< code-toggle console >}}
+bundle: Not available yet
+gradle: gradle gatlingEnterpriseStart -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN>
+maven: mvn gatling:enterpriseStart -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN>
+sbt: sbt "Gatling / enterpriseStart" -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN>
+{{</ code-toggle >}}
+
+
+The command will ask you first about the classname of your simulation. Type the number corresponding to your choice and press enter.
+
+In the same fashion, choose the team, simulation name, package name and the load injectors region. Choose a number of load injectors appropriate to your use case, as it'll increase your billing.
+
+The command will create and start the simulation, then give you the ID of the created simulation. You will be able to start again the same simulation if you specify this ID:
+
+{{< code-toggle console >}}
+bundle: Not available yet
+gradle: gradle gatlingEnterpriseStart -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN> -Dgatling.enterprise.simulationId=<CREATED_SIMULATION_ID>
+maven: mvn gatling:enterpriseStart -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN> -Dgatling.enterprise.simulationId=<CREATED_SIMULATION_ID>
+sbt: sbt "Gatling / enterpriseStart" -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN> -Dgatling.enterprise.simulationId=<CREATED_SIMULATION_ID>
+{{</ code-toggle >}}
+
+
+## Step 4 - Start Load Testing! {#start-load-testing}
 
 You are now ready to start load testing.
 
-To start the newly created simulation, click on the **Start** icon. 
+To start the newly created simulation, click on the **Start** icon (it should already be started if you're using maven, sbt or gradle).
 
 The simulation status will change to **building**, then to **deploying** then to **injecting**.
 You can now access the report (even during injection phase).
