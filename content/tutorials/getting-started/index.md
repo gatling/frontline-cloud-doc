@@ -172,16 +172,16 @@ Now, you can directly skip to the [generate a package]({{< ref "#generate-packag
 
 Gatling Enterprise requires a package built from a Gatling project in order to run a test.
 
-To create a package, run the `artifact.bat` (if Windows) or `artifact.sh` (if Linux/MacOS) file, Gatling will start creating your first package:
+To create a package, run the `enterprisePackage.bat` (if Windows) or `enterprisePackage.sh` (if Linux/MacOS) file, Gatling will start creating your first package:
 
 ```
-$ ./bin/artifact.sh
+$ ./bin/enterprisePackage.sh
 GATLING_HOME is set to .../gatling-charts-highcharts-bundle-{{< var gatlingVersion >}}
 GATLING_VERSION is set to '{{< var gatlingVersion >}}'
 Creating jar...done
 ```
 
-This script can also be clicked or double clicked from any file explorer. You'll see the result in the folder `target`, which should now have a file named `artifact.jar`.
+This script can also be clicked or double clicked from any file explorer. You'll see the result in the folder `target`, which should now have a file named `package.jar`.
 
 {{< youtube _fq3giAIibw >}}
 
@@ -189,7 +189,7 @@ This script can also be clicked or double clicked from any file explorer. You'll
 
 On Gatling Enterprise, click on the [Packages section]({{< ref "../../reference/user/package_conf/" >}}) and on create. Give a name to your package, you can choose to make it available to all teams or to limit access to a specific one, then hit save.
 
-Next, upload the package you generated earlier by clicking on the cloud icon. The package you generated earlier is located here: `target/artifact.jar`
+Next, upload the package you generated earlier by clicking on the cloud icon. The package you generated earlier is located here: `target/package.jar`
 
 Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
 
