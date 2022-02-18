@@ -25,6 +25,11 @@ You need to give 3 parameters to the script:
 - api token: The [API token]({{< ref "../../admin/api_tokens" >}}) will allow the script to authenticate to Gatling Enterprise. The API token needs the Start permission.
 - simulation id: id of the simulation you want to start. You can get this id on the simulation table, with the {{< icon clipboard >}} icon.
 
+The script can be called like this:
+```shell
+./start_simulation.sh https://cloud.gatling.io YOUR_API_TOKEN YOUR_SIMULATION_ID
+```
+
 ## Script
 
 It can be found [here](https://downloads.gatling.io/releases/frontline-ci-script/{{< var externalPluginsVersion >}}/frontline-ci-script-{{< var externalPluginsVersion >}}.zip)

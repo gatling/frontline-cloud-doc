@@ -9,7 +9,7 @@ weight: 21130
 
 ## Documentation
 
-You can click on the Documentation icon in the navigation bar at the bottom left of the screen to display every link to the Gatling Enterprise documentation and samples.
+You can click on the Documentation icon in the navigation bar at the bottom left of the screen to display links to the Gatling Enterprise documentations including this website and the Swagger API.
 
 {{< img src="documentation.png" alt="Documentation" >}}
 
