@@ -33,7 +33,7 @@ Authorization page opens in a new tab. If no tab opens, make sure that your brow
 
 Then, you will have to fill in your profile information (some values may be pre-filled from your identity provider's data, but you can still modify them).
 
-{{< img src="idp-signup.png" alt="Update informations"  >}}
+{{< img src="idp-signup.png" alt="Update information"  >}}
 
 ### Email validation
 
@@ -41,11 +41,7 @@ In any case, you will be asked to confirm your account email
 
 {{< img src="invitation.png" alt="Login button" >}}
 
-Click on **link to e-mail address verification** or use the link to finalize your registration on Gatling Entreprise Cloud.
-
-{{< alert info >}}
-If you registered following an invitation, you will be redirected to this one afterwards.
-{{< /alert >}}
+Click on **Accept the invitation** or use the link to finalize your registration on Gatling Enterprise Cloud.
 
 ## Login
 
@@ -54,5 +50,5 @@ On your first login, if you haven't accepted any invitation, you will be redirec
 {{< img src="organization-creation.png" alt="Organization creation page" >}}
 
 {{< alert danger >}}
-Creating an organization is irreversible. If you want to delete your organization, please contact [support](https://gatlingcorp.atlassian.net/servicedesk/customer/portal/8).
+Creating an organization is irreversible. If you want to delete your organization, please contact the [support](https://gatlingcorp.atlassian.net/servicedesk/customer/portal/8).
 {{< /alert >}}

@@ -15,15 +15,16 @@ The Gatling Enterprise navigation bar on the left side can be deployed using the
 
 The Gatling Enterprise navigation bar is composed of:
 
+- [**Organization**]({{< ref "../organization" >}}): view organization details, credits usage and admin users
 - [**Users**]({{< ref "../../admin/users" >}}): manage users teams and roles - *accessible to system admins only*
 - [**Teams**]({{< ref "../../admin/teams" >}}): manage teams - *accessible to system admins only*
 - [**API Tokens**]({{< ref "../../admin/api_tokens" >}}): manage token to access the API - *accessible to system admins only*
 - [**Packages**]({{< ref "../package_conf" >}}): manage simulations packages - *accessible to test admins and system admins*
-- [**Simulations**]({{< ref "../simulations" >}}): manage simulations, runs and reports - *accessible to anyone with at least a viewer role*
-- [**Dedicated IPs**]({{< ref "../dedicated_ips" >}}): a table of pools of the dedicated IP's- *accessible to test admins and system admins* 
+- [**Simulations**]({{< ref "../simulations" >}}): manage simulations, runs and reports
+- [**Dedicated IPs**]({{< ref "../dedicated_ips" >}}): a table of the dedicated IP's- *accessible to test admins and system admins* 
 ---
 - [**Plugins**]({{< ref "../../plugins" >}}): shows all plugin download links
-- **Documentation**: shows all documentation guides, the link to the public API Swagger documentation, and Gatling test samples for use with Gatling Enterprise
+- **Documentation**: shows all documentation guides and the link to the public API Swagger documentation
 - **About**: current version of Gatling Enterprise
 
 ## Navigation dropdown
@@ -31,9 +32,9 @@ The Gatling Enterprise navigation bar is composed of:
 In the upper right corner, click on the organization logo to open a dropdown menu.
 
 The navigation dropdown menu is composed of:
-- [**Organization**]({{< ref "../organization" >}}): system administrators, credits, and plans 
+- [**Organization**]({{< ref "../organization" >}}): system administrators, credits, and plans
+- **Organization list**: switch between your different organizations
 - [**Profile**]({{< ref "../profile" >}}): edit your profile and see your roles
 - **Sign out**: disconnect from your account
 
 {{< img src="navbar-dropdown.png" alt="Navbar Dropdown" caption="Navigation dropdown menu" >}}
-
