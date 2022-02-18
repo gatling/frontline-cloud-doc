@@ -22,11 +22,15 @@ To invite a user to your organization, click on the **Invite** button and fill i
 Only global system admins can generate invitations.
 {{< /alert >}}
 
-{{< img src="users-create.png" alt="User create" >}}
+{{< img src="users-invite.png" alt="User create" >}}
+
+You can now click on the **Invited** tab to see the invitation.
+
+{{< img src="users-invited.png" alt="User invited" >}}
 
 The invited user will receive an email with an invitation link to join the organization.
 
-{{< img src="invitation.png" alt="User invitation" >}}
+{{< img src="invitation.png" alt="User email invitation" >}}
 
 When they click on  **Accept the invitation**, they will be able to join the organization using their existing Gatling Enterprise Cloud user account if they already have one, or else they will have to create a new account.
 
