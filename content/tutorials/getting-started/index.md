@@ -18,7 +18,7 @@ In this tutorial, we'll describe every step to help you run your first test with
 
 {{< alert info >}}
 **Requirements**
-* A Java Development Kit (JDK) installed in version 8, 11 or 17
+* A Java Development Kit (JDK) installed in version 8, 11 or 17. [Azul System's Zulu](https://www.azul.com/downloads/?package=jdk) provides good packages that contain everything you need.
 {{< /alert >}}
 
 {{< alert tip >}}
@@ -30,8 +30,6 @@ In this tutorial, we'll describe every step to help you run your first test with
 
 Gatling is a code based load testing tool. It is based on the Scala programming language and is an Open-Source project that is free to use! Gatling is used to power Gatling Enterprise in order to make it a full-fledged load testing tool with even more features, such as live reports, advanced metrics and large scale clustered tests. The tests you code with Gatling are compatible with Gatling Enterprise without any changes.
 
-Gatling requires a Java installation so make sure that you have a JDK 8, 11 or 17 installed on your computer. [Azul System's Zulu](https://www.azul.com/downloads/?package=jdk) provides good packages that contain everything you need.
-
 While there are a lot of ways to create your first test, **if you are new to load testing or not a developer, we recommend using the Gatling bundle as it is beginner-friendly**. It is self-sufficient and doesn't require knowledge of the usual Java/Kotlin/Scala build tools, i.e. Gradle, Maven or SBT.
 
 If you already have experience with these tools, they are the better options long-term as they will allow integrating Gatling into an already existing tool chain:
@@ -41,7 +39,7 @@ If you already have experience with these tools, they are the better options lon
 
 ## Step 1 - Sign up and log in {#sign-up-and-log-in}
 
-Before we start, make sure to go to [cloud.gatling.io](https://cloud.gatling.io) where you will need to create an account either by registering with your email address or a [GitHub](https://github.com) account in order to sign up. Once you've created your account you will need to verify your email address.  You should receive a verification email from us, be sure to check your spam folder if you don't see it.
+Before we start, make sure to go to [cloud.gatling.io](https://cloud.gatling.io) where you will need to create an account either by registering with your email address or a [GitHub](https://github.com) / [Gmail](https://www.google.com/gmail) account in order to sign up. Once you've created your account you will need to verify your email address.  You should receive a verification email from us, be sure to check your spam folder if you don't see it.
 
 Gatling Enterprise handles users by putting them in organizations. This will allow you to work with multiple people on the same test projects, so they can either run new tests or view the results of previous ones.
 
