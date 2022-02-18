@@ -77,15 +77,3 @@ Plans view history.
 * **From** - Start date of the plan.
 * **To** - End date of the plan, if there is one.
 * **Credits** - Number of credits awarded each month by the plan.
-
-## Invitations
-
-{{< alert warning >}}
-This section is only available to the System Admin.
-{{< /alert >}}
-
-{{< img src="invitations.png" alt="Invitations" >}}
-
-* **Email** - Recipient of the invitation.
-* **Sent** - Date where the invitation was sent.
-* **Expire** - After this date, the invitation will no longer be valid, and you'll need to generate a new invitation.

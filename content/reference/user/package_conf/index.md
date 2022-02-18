@@ -11,9 +11,9 @@ weight: 21050
 
 ## Managing
 
-To access the Packages section, click on **Packages** in the navigation bar.
+To access the Packages section, click on **Packages** in the navigation bar. You need the **Test Admin** role to access this page.
 
-The Packages view contains all the packages you have configured with the given name, team, and filename of the uploaded package if not empty.
+The Packages view contains all the packages you have configured with the given name, team, filename of the uploaded package if not empty and the date of the last upload.
 
 The Gatling version of the package is displayed in a badge next to the filename.
 

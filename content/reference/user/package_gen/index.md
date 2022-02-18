@@ -116,7 +116,7 @@ Assuming the CSV file contains 1000 entries, and you run your simulation on 3 Ga
 
 When running a distributed test from multiple locations, you could be interested in knowing where a given injector is deployed in order to trigger specific behaviors depending on the location.
 
-For example, you might want to hit `https://example.fr` if the injector is deployed in the `Europe - Paris` AWS region, and `https://example.com` otherwise.
+For example, you might want to hit `https://example.fr` if the injector is deployed in the `Europe - Paris` region, and `https://example.com` otherwise.
 
 In your simulation code, you can resolve the name of the pool in which the injector running the code is deployed:
 
