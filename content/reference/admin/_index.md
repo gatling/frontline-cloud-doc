@@ -6,4 +6,5 @@ ordering:
   - users
   - teams
   - api_tokens
+  - custom_sso
 ---
