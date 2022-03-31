@@ -50,6 +50,10 @@ If you want specific properties for a simulation, you will be allowed to ignore 
 
 ## Creating a simulation
 
+You have to upload a package first before creating a simulation.
+
+See how to [generate a package]({{< ref "../package_gen" >}}) and [create it]({{< ref "../package_conf/#creation" >}}) on Gatling Enterprise Cloud.
+
 {{< alert warning >}}
 Gatling Enterprise has a hard limit for run durations of 7 days and will stop any test running for longer than that.
 This limit exists for both performance reasons (to avoid data growing too large to be presented in the dashboard) and security
@@ -60,19 +64,14 @@ In order to create a simulation click on the "Create" button in the simulations 
 
 ### Step 1: General
 
-{{< img src="create-simulation1.png" alt="Create simulation - Step 1" >}}
+{{< img src="create-simulation-general.png" alt="Create simulation - Step 1" >}}
 
 - **Name**: the name that will appear on the simulations table.
 - **Team**: the team which owns the simulation.
-- **Class name**: the package and class name of the simulation scala class you want to start within your project.
+- **Package**: the [uploaded package]({{< ref "../package_conf/#upload" >}}) (it must belong to the configured team)
+- **Class name**: the simulation's fully qualified name, detected in configured package
 
-### Step 2: Build configuration
-
-In this step, you'll configure the package of the Simulation to execute.
-
-{{< img src="create-simulation2.png" alt="Create simulation - Step 2" >}}
-
-### Step 3: Pools configuration
+### Step 2: Pools configuration
 
 In this step, you'll configure the pools used for the Gatling Enterprise injectors.
 
@@ -84,7 +83,7 @@ Gatling Enterprise pools are available in the following regions:
 
 In order for the best results from your simulation you should select the injectors that best represent your user base.
 
-{{< img src="create-simulation3.png" alt="Create simulation - Step 3" >}}
+{{< img src="create-simulation-pools.png" alt="Create simulation - Step 2" >}}
 
 - **Weight distribution**: if set to even, every injector will produce the same load. If set to custom, you must set the weight in % for each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
 - **Pools**: defines the pools to be used when initiating the Gatling Enterprise injectors.
@@ -93,12 +92,12 @@ You can add several pools with different numbers of injectors to run your simula
 
 After this step, you can save the simulation, or click on *More options* to access optional configurations.
 
-### Step 4 & 5: JVM options & Java System Properties
+### Step 3 & 4: JVM options & Java System Properties
 
 These steps allow you to define the JVM arguments and system properties used when running this particular simulation. You can choose to override the global properties.
 
-{{< img src="create-simulation4.png" alt="Create simulation - Step 4" >}}
-{{< img src="create-simulation5.png" alt="Create simulation - Step 5" >}}
+{{< img src="create-simulation-jvm-options.png" alt="Create simulation - Step 3" >}}
+{{< img src="create-simulation-system-props.png" alt="Create simulation - Step 4" >}}
 
 {{< alert tip >}}
 JVM options and Java System Properties will be saved in a snapshot that will be available in the run. This information will be visible by anyone who has read access.
@@ -110,11 +109,11 @@ You can configure the `gatling.frontline.groupedDomains` System property to grou
 For example, setting this property as `.foo.com, .bar.com` will consolidate stats for `sub1.foo.com`, `sub2.foo.com`, `sub1.bar.com`, `sub2.bar.com` into `*****.foo.com` and `*****.bar.com`.
 {{< /alert >}}
 
-### Step 6: Time window
+### Step 5: Time window
 
 Configuring a ramp up or ramp down means that the beginning and end of your simulation won't be used for calculating metrics and assertions.
 
-{{< img src="create-simulation6.png" alt="Create simulation - Step 6" >}}
+{{< img src="create-simulation-timewindow.png" alt="Create simulation - Step 5" >}}
 
 - **Ramp Up**: the number of seconds you want to exclude at the beginning of the run.
 - **Ramp Down**: the number of seconds you want to exclude at the end of the run.
