@@ -30,9 +30,9 @@ The Reports page consists of:
 
 This bar is a combination of buttons including:
 
-- **Start / Stop**: Use this button to start a new run of the simulation, or stop the ongoing run (not available if you have a Viewer permission)
-- **Generate public link**: To create a [public link]({{< ref "#public-links" >}}) that can be viewed by anyone it is sent to.
-- **Export**: To [export]({{< ref "#export-pdf" >}}) reports
+- **Start / Stop**: Start a new run of the simulation, or stop the ongoing run
+- **Share**: Create a [public link]({{< ref "#public-links" >}}) to share this reports to anyone you want.
+- **Export PDF**: [Export a PDF]({{< ref "#export-pdf" >}}) of your reports
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 
@@ -41,14 +41,6 @@ This bar is a combination of buttons including:
 The navigation menu allows you to choose the simulation time range. You can also view a custom time range by dragging the cursors. 
 
 {{< img src="timewindow.png" alt="Timewindow" >}}
-
-## Assertions
-
-The image below shows the status of the simulation (Ongoing, successful, timeout...).
-If your simulation has assertions, you can click this label.
-You can add comments to the run by clicking on the {{< icon comment-alt >}} icon.
-
-{{< img src="timeline-assertions.png" alt="Timeline assertions" >}}
 
 ## Timeline
 
@@ -60,6 +52,14 @@ The resolution indicates the number of seconds per data point in the graph.
 You can change the time range with control buttons or by selecting a region on the timeline:
 
 {{< img src="timeline.png" alt="Timeline" >}}
+
+## Assertions
+
+The image below shows the status of the simulation (ongoing, successful, timeout...).
+If your simulation has some assertions configured, you can click this label.
+You can add comments to the run by clicking on the {{< icon comment-alt >}} icon.
+
+{{< img src="timeline-assertions.png" alt="Timeline assertions" >}}
 
 ## Tabs
 
@@ -125,7 +125,7 @@ You can copy the public link to share your report to non-Gatling Enterprise user
 
 When clicking on the blue export button in the navigator menu, you will have access to a page where you can configure and then export a PDF report of a specific simulation run.
 
-{{< img src="export-button.png" alt="Export button" >}}
+{{< img src="run-bar.png" alt="Export button" >}}
 
 This report is initialized with:
 
@@ -196,8 +196,7 @@ To ease your analysis, you can create markers on all the charts by right clickin
 
 In the top right menu, you can activate the *Multiple Highlights* setting which allows the tooltip to be displayed on every chart at the same time.
 
-{{< img src="multiplecheck.png" alt="Multiple check" >}}
-{{< img src="multiple.png" alt="Multiple" >}}
+{{< img src="multiplehighlight.png" alt="Multiple" >}}
 
 ### Percentiles Mask
 
@@ -210,8 +209,7 @@ In the top right menu, you can click on the **Percentiles** setting to be able t
 
 In the top right menu, you can activate the **Date Time** setting which lets you switch from elapsed time to date time.
 
-{{< img src="multiplecheck-date.png" alt="Multiple check" >}}
-{{< img src="multiple-date.png" alt="Multiple" >}}
+{{< img src="datetime.png" alt="Multiple" >}}
 
 ### Highlight Legend
 
