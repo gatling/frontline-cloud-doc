@@ -19,17 +19,17 @@ This view contains the list of your simulation's runs which can be filtered by n
 {{< img src="run-table.png" alt="Run table" >}}
 
 As with the results of the latest run in the [simulations table]({{< ref "simulations#simulations-table" >}}), you
-can access the [logs]({{< ref "../simulations#logs" >}}) of the run by clicking on the {{< icon file-alt >}} icon
+can access the [logs]({{< ref "../simulations#logs" >}}) of the run by clicking on the {{< icon terminal >}} icon
 and you can sort the table by each of the columns. The logs are only available for runs which are not flagged as "Successful".
 
-If there is one, You can click on the {{< icon search >}} icon next to the status to display the [assertions]({{< ref "../reports#assertions" >}}) of the run.
+If there is one, You can click on the {{< icon eye >}} icon next to the status to display the [assertions]({{< ref "../reports#assertions" >}}) of the run.
 You can delete runs by selecting them and clicking on the **Delete** button in the action bar above the table.
 
 You can add comments to a run by clicking on the {{< icon comment-alt >}} icon on the right side of the table.
 
 {{< img src="comment.png" alt="Comment" >}}
 
-You can also click on the {{< icon info-circle >}} icon to see a snapshot of the run configuration. The system properties beginning with `sensitive.` will not be displayed.
+You can also click on the {{< icon info-circle >}} icon to see a snapshot of the run configuration. The Java system properties beginning with `sensitive.` and environment variables beginning with `SENSITIVE_` will not be displayed.
 
 {{< img src="snapshot.png" alt="Snapshot" >}}
 

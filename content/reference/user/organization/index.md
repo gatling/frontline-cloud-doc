@@ -34,6 +34,10 @@ Click on the pen icon to edit the **Organization name**.
 
 {{< img src="credits-consumption.png" alt="Organization credit informations" >}}
 
+{{< alert info >}}
+A credit represents a minute of usage of one Gatling load injector.
+{{< /alert >}}
+
 * **Blue** - Available credits.
 * **Orange** - Consumed credits.
 
@@ -66,7 +70,7 @@ By clicking on a row, you will see all the details of the credit consumption for
 ## Plans
 
 {{< alert warning >}}
-This section is only available to the System Admin.
+This section is only available to System Admins.
 {{< /alert >}}
 
 Plans view history.
@@ -77,3 +81,19 @@ Plans view history.
 * **From** - Start date of the plan.
 * **To** - End date of the plan, if there is one.
 * **Credits** - Number of credits awarded each month by the plan.
+
+## Offers
+
+{{< alert warning >}}
+This section is only available to Organization System Admins.
+{{< /alert >}}
+
+This page shows all available offers for your organization. You can choose the number of credits for your offer. A credit represents a minute of usage of one Gatling Load injector.
+
+{{< img src="offers.png" alt="Available Offers" >}}
+
+Click on the **Subscribe now** button in order to buy the desired offer. If you want to change your current offer, or buy the **Corporate** one, please click on **Contact us**.
+
+Once the payment has been made, you'll be able to see your invoices and update your payment information by clicking on **Consult invoice**.
+
+{{< img src="consult-invoice.png" alt="Consult Invoice" >}}

@@ -16,10 +16,10 @@ To access the Users administration, click on the {{< icon user >}} icon in the n
 To invite a user to your organization, click on the **Invite** button and fill in the user information:
 
 - **Email address**: The email address to which the invitation will be sent. The invited user doesn't have to use the same address in their user profile once connected.
-- **Organization role**: either choose a global role, or select none and specify each role by team according to the permissions you want to grant.
+- **Organization role**: either choose an organization role (which will be applied to every team), or select none and specify each role by team according to the permissions you want to grant.
 
 {{< alert warning >}}
-Only global system admins can generate invitations.
+Only organization system admins can generate invitations.
 {{< /alert >}}
 
 {{< img src="users-invite.png" alt="User create" >}}
@@ -45,14 +45,15 @@ There are 4 different user roles in Gatling Enterprise:
 - Tester
 - Viewer
 
-|                                          | Viewer             | Tester             | Test Admin         | System Admin       |
-|------------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|
-| Access own profile and Organization page | {{< icon check >}} | {{< icon check >}} | {{< icon check >}} | {{< icon check >}} |
-| Access Reports and Trends                | Own team           | Own team           | Own team           | Own team           |
-| Start Simulation                         |                    | Own team           | Own team           | Own team           |
-| Generate Public Links                    |                    | Own team           | Own team           | Own team           |
-| Create Simulation                        |                    |                    | Own team           | Own team           |
-| Administrate Packages                   |                    |                    | Own team           | Own team           |
-| Administrate API Tokens, Users and Teams |                    |                    |                    | Own team           |
+|                                          | Viewer             | Tester             | Test Admin         | System Admin             |
+|------------------------------------------|:------------------:|:------------------:|:------------------:|:------------------------:|
+| Access own profile and Organization page | {{< icon check >}} | {{< icon check >}} | {{< icon check >}} | {{< icon check >}}       |
+| Access Reports and Trends                | Own team           | Own team           | Own team           | Own team                 |
+| Start Simulation                         |                    | Own team           | Own team           | Own team                 |
+| Generate Public Links                    |                    | Own team           | Own team           | Own team                 |
+| Create Simulation                        |                    |                    | Own team           | Own team                 |
+| Administrate Packages                    |                    |                    | Own team           | Own team                 |
+| Administrate API Tokens, Users and Teams |                    |                    |                    | Own team                 |
+| Subscribe and view Offers                |                    |                    |                    | Global System Admin only |
 
-Each role can be global or team-specific.
+Each role can be global to the organization or team-specific.

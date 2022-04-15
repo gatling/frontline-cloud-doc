@@ -25,7 +25,7 @@ The Gatling Enterprise navigation bar is composed of:
 ---
 - [**Plugins**]({{< ref "../../plugins" >}}): shows all plugin download links
 - **Documentation**: shows all documentation guides and the link to the public API Swagger documentation
-- **About**: current version of Gatling Enterprise
+- **About**: current version of Gatling Enterprise, and supported Gatling versions
 
 ## Navigation dropdown
 

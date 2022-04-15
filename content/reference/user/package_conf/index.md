@@ -78,6 +78,6 @@ plugin extensions for more information.
 
 ## Usage
 
-You can configure which package to use for a simulation in the simulation's **Build** step.
+You can configure which package to use for a simulation in the simulation's **General** step.
 
 {{< img src="package-simulation-step.png" alt="Package upload filled" >}}

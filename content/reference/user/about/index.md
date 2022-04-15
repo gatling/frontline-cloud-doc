@@ -7,6 +7,6 @@ lastmod: 2021-08-05T13:13:30+00:00
 weight: 21120
 ---
 
-You can click on the About icon in the navigation bar to display the information about your Gatling version and your product version.
+You can click on the About icon in the navigation bar to display the Gatling Enterprise version, and the supported versions of Gatling.
 
 {{< img src="about.png" alt="About" >}}

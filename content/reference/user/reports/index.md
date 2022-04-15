@@ -31,8 +31,8 @@ The Reports page consists of:
 This bar is a combination of buttons including:
 
 - **Start / Stop**: Start a new run of the simulation, or stop the ongoing run
-- **Share**: Create a [public link]({{< ref "#public-links" >}}) to share this reports to anyone you want.
-- **Export PDF**: [Export a PDF]({{< ref "#export-pdf" >}}) of your reports
+- **Share**: Create a [shareable link]({{< ref "#shareable-links" >}}) to share this reports to anyone you want.
+- **Print to PDF**: [Print a PDF]({{< ref "#export-pdf" >}}) of your reports
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 
@@ -107,23 +107,23 @@ In flat mode, you can click on the title of each column to arrange the data in a
 
 {{< img src="summary.png" alt="Summary" >}}
 
-## Generate Public Links {#public-links}
+## Generate Shareable Links {#shareable-links}
 
-A public link is a link of the current reports which will be accessible to anyone, without having to log in to Gatling Enterprise. To generate a public link, click on the *Generate public link* button and choose the expiration date of your link.
+A shareable link is a link of the current reports which will be accessible to anyone, without having to log in to Gatling Enterprise. To generate a shareable link, click on the *Share* button and choose the expiration date of your link.
 
 {{< img src="generate-public-link.png" alt="Generate public links" >}}
 
-The maximum allowed lifetime for a public link is 1 year.
+The maximum allowed lifetime for a shareable link is 1 year.
 
 Choose an expiration date, then click the generate button.
 
 {{< img src="successful-generation-public-link.png" alt="Successful public link generation" >}}
 
-You can copy the public link to share your report to non-Gatling Enterprise users, or click on the "Go" Button to access it yourself. You can click on the "OK" button to close this modal.
+You can copy the shareable link to share your report to non-Gatling Enterprise users, or click on the "Go" Button to access it yourself. You can click on the "OK" button to close this modal.
 
-## Export PDF
+## Print to PDF
 
-When clicking on the blue export button in the navigator menu, you will have access to a page where you can configure and then export a PDF report of a specific simulation run.
+When clicking on the blue "Print to PDF" button in the navigator menu, you will have access to a page where you can configure and then print a PDF report of a specific simulation run.
 
 {{< img src="run-bar.png" alt="Export button" >}}
 
@@ -164,7 +164,7 @@ the group, etc.. whose data you want to fetch. You do not need to have the same 
 
 {{< img src="export-charts.png" alt="Export charts" >}}
 
-After adding all desired elements in the report you can click on the *Export PDF* button on the top right to get your PDF file.
+After adding all desired elements in the report you can click on the *Preview & Print to PDF* button on the top right to get your PDF file.
 
 {{< img src="export-actions.png" alt="Export actions" >}}
 

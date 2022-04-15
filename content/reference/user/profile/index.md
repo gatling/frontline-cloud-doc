@@ -19,9 +19,9 @@ The profile page shows:
 
 - Your first name and last name.
 - Your email address.
-- Your roles in the current organization.
+- Your roles for each organization.
 
-You can permanently leave the current organization by clicking on the **Leave organization** button.
+You can permanently leave an organization by clicking on the **Leave organization** button.
 
 To update your profile settings, click on the account settings button.
 

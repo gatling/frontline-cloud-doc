@@ -37,7 +37,7 @@ Back to the Simulations section, at the top-right, there is an action bar which 
 
 ## Global Properties
 
-Global properties contains every JVM option and the system properties used by all of your simulations by default.
+Global properties contains every JVM options, Java system properties and environment variables used by all of your simulations by default.
 Editing those properties will be propagated to all the simulations. You can access it by clicking on the top right corner of the page.
 
 If you don't want to use the default properties, check `Use custom global properties` and enter your own.
@@ -80,34 +80,44 @@ Gatling Enterprise pools are available in the following regions:
 - Europe (Paris)
 - US East (N. Virginia)
 - US West (N. California)
+- AP SouthEast (Sydney)
 
 In order for the best results from your simulation you should select the injectors that best represent your user base.
 
 {{< img src="create-simulation-pools.png" alt="Create simulation - Step 2" >}}
 
-- **Weight distribution**: if set to even, every injector will produce the same load. If set to custom, you must set the weight in % for each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
 - **Pools**: defines the pools to be used when initiating the Gatling Enterprise injectors.
+- **Weight distribution**: if set to even, every injector will produce the same load. If set to custom, you must set the weight in % for each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
+- **Address**: Choose "Dedicated" if you want to enable [dedicated IPs]({{< ref "../dedicated_ips" >}}) for your injectors.
 
 You can add several pools with different numbers of injectors to run your simulation.
 
-After this step, you can save the simulation, or click on *More options* to access optional configurations.
+After this step, you can save the simulation, or click on *Next* to access optional configurations.
 
-### Step 3 & 4: JVM options & Java System Properties
+### Step 3 & 4: JVM options & Injector Parameters
 
-These steps allow you to define the JVM arguments and system properties used when running this particular simulation. You can choose to override the global properties.
+These steps allow you to define the JVM options, Java system properties and environment variables used when running this particular simulation. You can choose to override the global properties.
 
 {{< img src="create-simulation-jvm-options.png" alt="Create simulation - Step 3" >}}
 {{< img src="create-simulation-system-props.png" alt="Create simulation - Step 4" >}}
 
 {{< alert tip >}}
-JVM options and Java System Properties will be saved in a snapshot that will be available in the run. This information will be visible by anyone who has read access.
-You can exclude some properties from being copied if you prefix them with `sensitive.`.
+JVM options, Java System Properties and environment variables will be saved in a snapshot that will be available in the run. This information will be visible by anyone who has read access.
+You can exclude some system properties from being copied if you prefix them with `sensitive.`, and environment variables if you prefix them with `SENSITIVE_`.
 {{< /alert >}}
 
 {{< alert tip >}}
-You can configure the `gatling.frontline.groupedDomains` System property to group connection stats from multiple subdomains and avoid memory issues when hitting a very large number of subdomains.
+You can configure the `gatling.frontline.groupedDomains` Java System property to group connection stats from multiple subdomains and avoid memory issues when hitting a very large number of subdomains.
+
 For example, setting this property as `.foo.com, .bar.com` will consolidate stats for `sub1.foo.com`, `sub2.foo.com`, `sub1.bar.com`, `sub2.bar.com` into `*****.foo.com` and `*****.bar.com`.
 {{< /alert >}}
+
+{{< alert tip >}}
+System properties can be retrieved in your Gatling simulation with `System.getProperty("YOUR_PROPERTY_KEY")`.
+
+Environment variables can be retrieved in your Gatling simulation with `System.getEnv("YOUR_ENV_VAR_KEY")`.
+{{< /alert >}}
+
 
 ### Step 5: Time window
 
@@ -141,6 +151,8 @@ A run has the following life cycle:
 By clicking on the second icon on last column, Gatling Enterprise will display the build logs of the simulation. There is a limit of 1000 logs for a run.
 
 Viewing the Log can also be helpful in determining why a run failed and what errors you will need to correct to successfully run your simulation.
+
+The logs can also be viewed in the Reports, while the simulation is building.
 
 {{< img src="logs.png" alt="Logs" >}}
 
