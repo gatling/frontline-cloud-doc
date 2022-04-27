@@ -32,4 +32,4 @@ The script can be called like this:
 
 ## Script
 
-It can be found [here](https://downloads.gatling.io/releases/frontline-ci-script/{{< var externalPluginsVersion >}}/frontline-ci-script-{{< var externalPluginsVersion >}}.zip)
+It can be found [here](https://downloads.gatling.io/releases/frontline-ci-script/{{< var ciPluginsVersion >}}/frontline-ci-script-{{< var ciPluginsVersion >}}.zip)
