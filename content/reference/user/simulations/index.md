@@ -35,18 +35,18 @@ Back to the Simulations section, at the top-right, there is an action bar which 
 
 {{< img src="action-bar.png" alt="Action bar" >}}
 
-## Global Properties
+## Default Injector Parameters
 
-Global properties contains every JVM options, Java system properties and environment variables used by all of your simulations by default.
+Default injector parameters contains every Java system properties and environment variables used by all of your simulations by default.
 Editing those properties will be propagated to all the simulations. You can access it by clicking on the top right corner of the page.
 
 If you don't want to use the default properties, check `Use custom global properties` and enter your own.
 
-{{< img src="properties.png" alt="Properties" >}}
+{{< img src="default-injector-properties.png" alt="Properties" >}}
 
-If you want specific properties for a simulation, you will be allowed to ignore those properties by checking the `Override Global Properties` box when creating or editing the simulation:
+If you want specific properties for a simulation, you will be allowed to ignore those properties by checking the `Ignore defaults` box when creating or editing the simulation:
 
-{{< img src="override.png" alt="Override" >}}
+{{< img src="override-injector-properties.png" alt="Override" >}}
 
 ## Creating a simulation
 
@@ -94,12 +94,11 @@ You can add several pools with different numbers of injectors to run your simula
 
 After this step, you can save the simulation, or click on *Next* to access optional configurations.
 
-### Step 3 & 4: JVM options & Injector Parameters
+### Step 3: Injector Parameters
 
-These steps allow you to define the JVM options, Java system properties and environment variables used when running this particular simulation. You can choose to override the global properties.
+This step allows you to define the Java system properties and environment variables used when running this particular simulation. Properties/variables entered here will add to the defaults, unless you choose to ignore the defaults. If you keep the defaults, and you add a property/variable with the same key as one from the defaults, the simulation's value will be used (it overrides the default).
 
-{{< img src="create-simulation-jvm-options.png" alt="Create simulation - Step 3" >}}
-{{< img src="create-simulation-system-props.png" alt="Create simulation - Step 4" >}}
+{{< img src="create-simulation-injector-parameters.png" alt="Create simulation - Step 3" >}}
 
 {{< alert tip >}}
 JVM options, Java System Properties and environment variables will be saved in a snapshot that will be available in the run. This information will be visible by anyone who has read access.
@@ -119,11 +118,11 @@ Environment variables can be retrieved in your Gatling simulation with `System.g
 {{< /alert >}}
 
 
-### Step 5: Time window
+### Step 4: Time window
 
 Configuring a ramp up or ramp down means that the beginning and end of your simulation won't be used for calculating metrics and assertions.
 
-{{< img src="create-simulation-timewindow.png" alt="Create simulation - Step 5" >}}
+{{< img src="create-simulation-timewindow.png" alt="Create simulation - Step 4" >}}
 
 - **Ramp Up**: the number of seconds you want to exclude at the beginning of the run.
 - **Ramp Down**: the number of seconds you want to exclude at the end of the run.
