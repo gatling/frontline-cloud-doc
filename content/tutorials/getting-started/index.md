@@ -211,7 +211,7 @@ Next, you'll need to select your package name. It is important to select the pac
 
 In the final step, you can choose where you want the injection to take place, and click on the **Save** button.
 
-Your simulation will send the traffic from the region you've selected.
+Your simulation will send the traffic from the location you've selected.
 
 The three next steps are optional and you can learn more about them [in the dedicated section]({{< ref "../../reference/user/simulations/" >}}), but for now, let's just simply click **Save**.
 
@@ -245,7 +245,7 @@ sbt: sbt "Gatling / enterpriseStart" -Dgatling.enterprise.apiToken=<CREATED_API_
 
 The command will ask you first about the classname of your simulation. Type the number corresponding to your choice and press enter.
 
-In the same fashion, choose the team, simulation name, package name and the load generators region. Choose a number of load generators appropriate to your use case, as it'll increase your billing.
+In the same fashion, choose the team, simulation name, package name and the load generators location. Choose a number of load generators appropriate to your use case, as it'll increase your billing.
 
 The command will create and start the simulation, then give you the ID of the created simulation. You will be able to start again the same simulation if you specify this ID:
 

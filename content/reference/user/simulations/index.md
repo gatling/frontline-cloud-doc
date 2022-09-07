@@ -71,11 +71,11 @@ In order to create a simulation click on the "Create" button in the simulations 
 - **Package**: the [uploaded package]({{< ref "../package_conf/#upload" >}}) (it must belong to the configured team)
 - **Class name**: the simulation's fully qualified name, detected in configured package
 
-### Step 2: Pools configuration
+### Step 2: Locations configuration
 
-In this step, you'll configure the pools used for the Gatling Enterprise load generators.
+In this step, you'll configure the locations used for the Gatling Enterprise load generators.
 
-Gatling Enterprise pools are available in the following regions:
+Gatling Enterprise locations are available in the following regions:
 
 - AP Pacific (Mumbai)
 - AP SouthEast (Sydney)
@@ -88,13 +88,13 @@ Gatling Enterprise pools are available in the following regions:
 
 In order for the best results from your simulation you should select the load generators that best represent your user base.
 
-{{< img src="create-simulation-pools.png" alt="Create simulation - Step 2" >}}
+{{< img src="create-simulation-locations.png" alt="Create simulation - Step 2" >}}
 
-- **Pools**: defines the pools to be used when initiating the Gatling Enterprise load generators.
-- **Weight distribution**: if set to even, every load generator will produce the same load. If set to custom, you must set the weight in % for each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
+- **Locations**: defines the locations to be used when initiating the Gatling Enterprise load generators.
+- **Weight distribution**: if set to even, every load generator will produce the same load. If set to custom, you must set the weight in % for each location (e.g. the first location does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
 - **Address**: Choose "Dedicated" if you want to enable [dedicated IPs]({{< ref "../dedicated_ips" >}}) for your load generators.
 
-You can add several pools with different numbers of load generators to run your simulation.
+You can add several locations with different numbers of load generators to run your simulation.
 
 After this step, you can save the simulation, or click on *Next* to access optional configurations.
 

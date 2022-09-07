@@ -126,13 +126,13 @@ Assuming the CSV file contains 1000 entries, and you run your simulation on 3 Ga
 
 When running a distributed test from multiple locations, you could be interested in knowing where a given load generator is deployed in order to trigger specific behaviors depending on the location.
 
-For example, you might want to hit `https://example.fr` if the load generator is deployed in the `Europe - Paris` region, and `https://example.com` otherwise.
+For example, you might want to hit `https://example.fr` if the load generator is deployed in the `Europe - Paris` location, and `https://example.com` otherwise.
 
-In your simulation code, you can resolve the name of the pool in which the load generator running the code is deployed:
+In your simulation code, you can resolve the name of the location in which the load generator running the code is deployed:
 
 ```scala
-val poolName = System.getProperty("gatling.frontline.poolName")
-val baseUrl = if (poolName == "Europe - Paris") "https://example.fr" else "https://example.com"
+val locationName = System.getProperty("gatling.frontline.poolName") // pool is the former name of location
+val baseUrl = if (locationName == "Europe - Paris") "https://example.fr" else "https://example.com"
 ```
 
 {{< alert tip >}}
