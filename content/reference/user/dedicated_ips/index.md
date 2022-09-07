@@ -7,7 +7,7 @@ lastmod: 2021-08-05T13:13:30+00:00
 weight: 21070
 ---
 
-Dedicated IPs allow you to have control over the injectors' IP addresses.
+Dedicated IPs allow you to have control over the load generators' IP addresses.
 This is useful, for example, if your target system performs some sort of IP address filtering.
 
 {{< img src="dedicated-ips.png" alt="Dedicated IPs" caption="Dedicated IPs" >}}

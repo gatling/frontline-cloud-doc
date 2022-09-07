@@ -35,7 +35,7 @@ Click on the pen icon to edit the **Organization name**.
 {{< img src="credits-consumption.png" alt="Organization credit informations" >}}
 
 {{< alert info >}}
-A credit represents a minute of usage of one Gatling load injector.
+A credit represents a minute of usage of one Gatling load generator.
 {{< /alert >}}
 
 * **Blue** - Available credits.
@@ -88,7 +88,7 @@ Plans view history.
 This section is only available to Organization System Admins.
 {{< /alert >}}
 
-This page shows all available offers for your organization. You can choose the number of credits for your offer. A credit represents a minute of usage of one Gatling Load injector.
+This page shows all available offers for your organization. You can choose the number of credits for your offer. A credit represents a minute of usage of one Gatling Load generator.
 
 {{< img src="offers.png" alt="Available Offers" >}}
 

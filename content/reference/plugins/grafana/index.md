@@ -111,7 +111,7 @@ Gatling Enterprise offers a large amount of metrics:
     - `usr+`: Users arrival count per second.
     - `usr-`: Users termination count per second.
     - `usrActive`: Concurrent users count per second.
-- **Injectors metrics:**
+- **Load Generators metrics:**
     - `gcCount`: GC count per second.
     - `gcTime`: GC time per second.
     - `heapUsed`: Heap used in Mb.
@@ -175,7 +175,7 @@ The returned percentiles are: min, p25, p50, p75, p80, p85, p90, p95, p99, p999,
 
 ### Part 2
 
-| Metrics name                   | remote             | hostname           | injector           | scope              |
+| Metrics name                   | remote             | hostname           | load generator     | scope              |
 ---------------------------------|--------------------|--------------------|--------------------|--------------------|
 | `req.<Percentiles>`            |                    |                    |                    | {{< icon check >}} |
 | `requests`                     |                    |                    |                    |                    |

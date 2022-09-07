@@ -245,7 +245,7 @@ sbt: sbt "Gatling / enterpriseStart" -Dgatling.enterprise.apiToken=<CREATED_API_
 
 The command will ask you first about the classname of your simulation. Type the number corresponding to your choice and press enter.
 
-In the same fashion, choose the team, simulation name, package name and the load injectors region. Choose a number of load injectors appropriate to your use case, as it'll increase your billing.
+In the same fashion, choose the team, simulation name, package name and the load generators region. Choose a number of load generators appropriate to your use case, as it'll increase your billing.
 
 The command will create and start the simulation, then give you the ID of the created simulation. You will be able to start again the same simulation if you specify this ID:
 

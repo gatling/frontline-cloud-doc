@@ -35,18 +35,18 @@ Back to the Simulations section, at the top-right, there is an action bar which 
 
 {{< img src="action-bar.png" alt="Action bar" >}}
 
-## Default Injector Parameters
+## Default Load Generator Parameters
 
-Default injector parameters contains every Java system properties and environment variables used by all of your simulations by default.
+Default load generator parameters contains every Java system properties and environment variables used by all of your simulations by default.
 Editing those properties will be propagated to all the simulations. You can access it by clicking on the top right corner of the page.
 
 If you don't want to use the default properties, check `Use custom global properties` and enter your own.
 
-{{< img src="default-injector-properties.png" alt="Properties" >}}
+{{< img src="default-load-generator-properties.png" alt="Properties" >}}
 
 If you want specific properties for a simulation, you will be allowed to ignore those properties by checking the `Ignore defaults` box when creating or editing the simulation:
 
-{{< img src="override-injector-properties.png" alt="Override" >}}
+{{< img src="override-load-generator-properties.png" alt="Override" >}}
 
 ## Creating a simulation
 
@@ -73,7 +73,7 @@ In order to create a simulation click on the "Create" button in the simulations 
 
 ### Step 2: Pools configuration
 
-In this step, you'll configure the pools used for the Gatling Enterprise injectors.
+In this step, you'll configure the pools used for the Gatling Enterprise load generators.
 
 Gatling Enterprise pools are available in the following regions:
 
@@ -86,23 +86,23 @@ Gatling Enterprise pools are available in the following regions:
 - US West (N. California)
 - US West (Oregon)
 
-In order for the best results from your simulation you should select the injectors that best represent your user base.
+In order for the best results from your simulation you should select the load generators that best represent your user base.
 
 {{< img src="create-simulation-pools.png" alt="Create simulation - Step 2" >}}
 
-- **Pools**: defines the pools to be used when initiating the Gatling Enterprise injectors.
-- **Weight distribution**: if set to even, every injector will produce the same load. If set to custom, you must set the weight in % for each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
-- **Address**: Choose "Dedicated" if you want to enable [dedicated IPs]({{< ref "../dedicated_ips" >}}) for your injectors.
+- **Pools**: defines the pools to be used when initiating the Gatling Enterprise load generators.
+- **Weight distribution**: if set to even, every load generator will produce the same load. If set to custom, you must set the weight in % for each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
+- **Address**: Choose "Dedicated" if you want to enable [dedicated IPs]({{< ref "../dedicated_ips" >}}) for your load generators.
 
-You can add several pools with different numbers of injectors to run your simulation.
+You can add several pools with different numbers of load generators to run your simulation.
 
 After this step, you can save the simulation, or click on *Next* to access optional configurations.
 
-### Step 3: Injector Parameters
+### Step 3: Load Generator Parameters
 
 This step allows you to define the Java system properties and environment variables used when running this particular simulation. Properties/variables entered here will add to the defaults, unless you choose to ignore the defaults. If you keep the defaults, and you add a property/variable with the same key as one from the defaults, the simulation's value will be used (it overrides the default).
 
-{{< img src="create-simulation-injector-parameters.png" alt="Create simulation - Step 3" >}}
+{{< img src="create-simulation-load-generator-parameters.png" alt="Create simulation - Step 3" >}}
 
 {{< alert tip >}}
 JVM options, Java System Properties and environment variables will be saved in a snapshot that will be available in the run. This information will be visible by anyone who has read access.
@@ -144,7 +144,7 @@ Once you have created a simulation, you can start it by clicking on the {{< icon
 A run has the following life cycle:
 
 - **Building**: in which it will download the simulation package and prepare the hosts
-- **Deploying**: in which it will deploy the simulation to run on all the injectors
+- **Deploying**: in which it will deploy the simulation to run on all the load generators
 - **Injecting**: in which the simulation is running and can be viewed from the Reports. 
 
 {{< img src="injecting.png" alt="Injecting" >}}

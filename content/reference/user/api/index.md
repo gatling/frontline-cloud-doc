@@ -21,6 +21,6 @@ IDs can be retrieved on table either under kebab menu, or on the right of the ta
 
 Some information before using the public API:
 
-- You have to provide the run ID as a query parameter to fetch other run metadata (injectors, remotes, hostnames, scenarios, groups, requests)
+- You have to provide the run ID as a query parameter to fetch other run metadata (load generators, remotes, hostnames, scenarios, groups, requests)
 - The `from` and `to` query parameters for the `/series` endpoint are the lower and upper timestamp bounds of the time window you want to query. You can fetch the total run time window from the `/runs` endpoint (`injectStart`, `injectEnd`).
 - The returned percentiles by the API are: min, p25, p50, p75, p80, p85, p90, p95, p99, p999, p9999 and max.
