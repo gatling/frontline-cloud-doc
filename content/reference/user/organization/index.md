@@ -88,7 +88,7 @@ Plans view history.
 This section is only available to Organization System Admins.
 {{< /alert >}}
 
-This page shows all available offers for your organization. You can choose the number of credits for your offer. A credit represents a minute of usage of one Gatling Load generator.
+This page shows all available offers for your organization. You can choose the number of credits for your offer. A credit represents a minute of usage of one Gatling load generator.
 
 {{< img src="offers.png" alt="Available Offers" >}}
 
