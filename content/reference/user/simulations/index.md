@@ -92,7 +92,7 @@ In order for the best results from your simulation you should select the load ge
 
 - **Locations**: defines the locations to be used when initiating the Gatling Enterprise load generators.
 - **Weight distribution**: if set to even, every load generator will produce the same load. If set to custom, you must set the weight in % for each location (e.g. the first location does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
-- **Address**: Choose "Dedicated" if you want to enable [dedicated IPs]({{< ref "../dedicated_ips" >}}) for your load generators.
+- **Address**: Choose "Dedicated" if you want to enable [dedicated IP addresses]({{< ref "../dedicated_ips" >}}) for your load generators.
 
 You can add several locations with different numbers of load generators to run your simulation.
 

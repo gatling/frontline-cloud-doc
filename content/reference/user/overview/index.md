@@ -21,7 +21,7 @@ The Gatling Enterprise navigation bar is composed of:
 - [**API Tokens**]({{< ref "../../admin/api_tokens" >}}): manage token to access the API - *accessible to system admins only*
 - [**Packages**]({{< ref "../package_conf" >}}): manage simulations packages - *accessible to test admins and system admins*
 - [**Simulations**]({{< ref "../simulations" >}}): manage simulations, runs and reports
-- [**Dedicated IPs**]({{< ref "../dedicated_ips" >}}): a table of the dedicated IP's- *accessible to test admins and system admins* 
+- [**Dedicated IP Addresses**]({{< ref "../dedicated_ips" >}}): a table of the dedicated IP's- *accessible to test admins and system admins* 
 ---
 - [**Plugins**]({{< ref "../../plugins" >}}): shows all plugin download links
 - **Documentation**: shows all documentation guides and the link to the public API Swagger documentation
