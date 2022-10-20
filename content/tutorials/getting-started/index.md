@@ -71,7 +71,7 @@ Click [here](https://gatling.io/open-source/#downloadgatling) to download the la
 Taken from the [bundle structure documentation](https://gatling.io/docs/gatling/reference/current/general/bundle_structure/), we learn that the important parts of the bundle are as such:
 
 * `bin` contains launch scripts for Gatling and more, this is where you execute Gatling and package the tests for Gatling Enterprise, which we'll see later on
-* `user-files/simulations` contains your scala test files, this is where you describe what you want your virtual users to do, and what you want to do with them
+* `user-files/simulations` contains your java test files, this is where you describe what you want your virtual users to do, and what you want to do with them
 * `results` contains log files of each tests and reports generated in sub directories if launched with Gatling
 
 {{< alert info >}}
@@ -87,17 +87,20 @@ $ ./bin/gatling.sh
 If working properly, you should see something like this:
 
 ```
-GATLING_HOME is set to xxx/gatling-charts-highcharts-bundle-{{< var gatlingVersion >}}
-Choose a simulation number:
-     [0] computerdatabase.BasicSimulation
-     [1] computerdatabase.advanced.AdvancedSimulationStep01
-     [2] computerdatabase.advanced.AdvancedSimulationStep02
-     [3] computerdatabase.advanced.AdvancedSimulationStep03
-     [4] computerdatabase.advanced.AdvancedSimulationStep04
-     [5] computerdatabase.advanced.AdvancedSimulationStep05
+Do you want to run the simulation locally, on Gatling Enterprise, or just package it?
+Type the number corresponding to your choice and press enter
+[0] <Quit>
+[1] Run the Simulation locally
+[2] Package and upload the Simulation to Gatling Enterprise Cloud, and run it there
+[3] Package the Simulation for Gatling Enterprise
+[4] Show help and exit
 ```
+Here we want to run the simulation locally, so type `1`
 
-So far we didn't create any test of our own but the Gatling bundle provides some example for you to start with. Here, the bundle is prompting you to choose one of the sample tests so it can run it. You can, for example, type `0`, after which the Gatling bundle will prompt you for an optional description of the test being run:
+So far we didn't create any test of our own but the Gatling bundle provides an example for you to start with.
+In case you have multiple simulations, you will have to select one, here we have only one for now so this choice is obviously skipped. 
+
+Then the Gatling bundle will prompt you for an optional description of the test being run:
 
 ```
 Select run description (optional)
@@ -112,33 +115,39 @@ Simulation computerdatabase.BasicSimulation started...
 By default, Gatling works in console mode, outputting where the test is that every 5 seconds. After Gatling is done, you should see something like this:
 
 ```
-Simulation computerdatabase.BasicSimulation completed in 23 seconds
+Simulation computerdatabase.ComputerDatabaseSimulation completed in 17 seconds
 Parsing log file(s)...
 Parsing log file(s) done
 Generating reports...
 
 ================================================================================
 ---- Global Information --------------------------------------------------------
-> request count                                         13 (OK=13     KO=0     )
-> min response time                                     84 (OK=84     KO=-     )
-> max response time                                    168 (OK=168    KO=-     )
-> mean response time                                    93 (OK=93     KO=-     )
-> std deviation                                         22 (OK=22     KO=-     )
-> response time 50th percentile                         87 (OK=87     KO=-     )
-> response time 75th percentile                         87 (OK=87     KO=-     )
-> response time 95th percentile                        121 (OK=121    KO=-     )
-> response time 99th percentile                        159 (OK=159    KO=-     )
-> mean requests/sec                                  0.542 (OK=0.542  KO=-     )
+> request count                                        105 (OK=104    KO=1     )
+> min response time                                     96 (OK=96     KO=101   )
+> max response time                                    657 (OK=657    KO=101   )
+> mean response time                                   145 (OK=146    KO=101   )
+> std deviation                                        108 (OK=109    KO=0     )
+> response time 50th percentile                        106 (OK=106    KO=101   )
+> response time 75th percentile                        112 (OK=112    KO=101   )
+> response time 95th percentile                        420 (OK=420    KO=101   )
+> response time 99th percentile                        443 (OK=443    KO=101   )
+> mean requests/sec                                  5.833 (OK=5.778  KO=0.056 )
 ---- Response Time Distribution ------------------------------------------------
-> t < 800 ms                                            13 (100%)
-> 800 ms < t < 1200 ms                                   0 (  0%)
-> t > 1200 ms                                            0 (  0%)
-> failed                                                 0 (  0%)
+> t < 800 ms                                           104 ( 99%)
+> 800 ms <= t < 1200 ms                                  0 (  0%)
+> t ≥ 1200 ms                                            0 (  0%)
+> failed                                                 1 (  1%)
+---- Errors --------------------------------------------------------------------
+> status.find.is(201), but actually found 200                         1 (100,0%)
 ================================================================================
 
 Reports generated in 0s.
-Please open the following file: .../gatling-charts-highcharts-bundle-{{< var gatlingVersion >}}/results/basicsimulation-20210826135452662/index.html
+Please open the following file: .../gatling-charts-highcharts-bundle-{{< var gatlingVersion >}}/results/computerdatabasesimulation-20221020093736074/index.html
+
 ```
+{{< alert tip >}}
+Some errors are generated randomly to demonstrate the retry mechanism, nothing to worry about here.
+{{< /alert >}}
 
 You can open the url at the end of the output, which will show a report of the test that was just run:
 
@@ -166,96 +175,136 @@ Now, you can directly skip to the [generate a package]({{< ref "#generate-packag
 
 ### Using the bundle {#create-simulation-bundle}
 
-#### Step 3.1 - Generate a Package {#generate-package}
-
-Gatling Enterprise requires a package built from a Gatling project in order to run a test.
-
-To create a package, run the `enterprisePackage.bat` (if Windows) or `enterprisePackage.sh` (if Linux/MacOS) file, Gatling will start creating your first package:
-
-```
-$ ./bin/enterprisePackage.sh
-GATLING_HOME is set to .../gatling-charts-highcharts-bundle-{{< var gatlingVersion >}}
-GATLING_VERSION is set to '{{< var gatlingVersion >}}'
-Creating jar...done
-```
-
-This script can also be clicked or double clicked from any file explorer. You'll see the result in the folder `target`, which should now have a file named `package.jar`.
-
-{{< youtube _fq3giAIibw >}}
-
-#### Step 3.2 - Upload the Package {#upload-package}
-
-On Gatling Enterprise, click on the [Packages section]({{< ref "../../reference/user/package_conf/" >}}) and on create. Give a name to your package, you can choose to make it available to all teams or to limit access to a specific one, then hit save.
-
-Next, upload the package you generated earlier by clicking on the cloud icon. The package you generated earlier is located here: `target/package.jar`
-
-Upload it to Gatling Enterprise, either by drag-and-dropping it to the modal, or by clicking on the modal to open the file manager.
-
-#### Step 3.3 - Create a Simulation {#create-simulation}
-
-To get a grasp of how to run a simulation with Gatling, you will find a ready to use script in the bundle. So let's get started with your first simulation!
-
-In the [Simulations section]({{< ref "../../reference/user/simulations/" >}}), click on **Create**.
-
-Choose a name for your simulation and define the team that will have access to this simulation (if none has been created yet, a default one named **Default team** exist).
-
-Under Class name, it is important you enter the name of the script that was uploaded in the package, otherwise the run of your simulation will fail in the next step.
-
-In this case, the ready-made script called `BasicSimulation.scala` is located in the bundle: `user-files > simulations > computerdatabase`
-
-Therefore, you need to enter `computerdatabase.BasicSimulation` as the class name.
-
-Then, click on the **Next** button.
-
-Next, you'll need to select your package name. It is important to select the package that contains the simulation you'd like to run. Then, click on the **Next** button.
-
-In the final step, you can choose where you want the injection to take place, and click on the **Save** button.
-
-Your simulation will send the traffic from the location you've selected.
-
-The three next steps are optional and you can learn more about them [in the dedicated section]({{< ref "../../reference/user/simulations/" >}}), but for now, let's just simply click **Save**.
-
-{{< alert tip >}}
-If you would like to write your own script as a first test, you can modify the BasicSimulation file in the space as shown in the video. If you would like to learn more about creating different types of tests and writing your own scripts check out the [Gatling Academy](https://gatling.io/academy/). Please bear in mind you get 60 credits for free but if your test needs more, it will stop before it should finish.
-{{< /alert >}}
-
-That's it, you have created your first simulation on Gatling Enterprise!
-
-### Using maven, gradle or sbt {#create-simulation-buildtools}
-
 #### Step 3.1 - Create an API token
 
 On Gatling Enterprise, click on the [API Tokens section]({{< ref "../../reference/admin/api_tokens/" >}}) and on create. Give a name to your API token, and give him `Configure` as Organization role, then hit save.
 
 Next, copy the content of the API token, you won't be able to access it once you close the modal.
 
-#### Step 3.2 - Create and start a simulation
+#### Step 3.2 - Create and run your first simulation on the cloud
 
-Maven, gradle or sbt can create interactively a simulation, upload its package and start it.
+The bundle, maven, gradle or sbt can create interactively a simulation, upload its package and start it.
 
-Type the command corresponding to your build plugin, don't forget to replace the API token:
+Type the command corresponding to your environment, don't forget to replace <CREATED_API_TOKEN> by the value of your API token:
+
+{{< alert tip >}}
+Windows users must replace `gatling.sh` by `gatling.bat`
+{{< /alert >}}
 
 {{< code-toggle console >}}
-bundle: Not available yet
+bundle: ./bin/gatling.sh --api-token <CREATED_API_TOKEN>
 gradle: gradle gatlingEnterpriseStart -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN>
 maven: mvn gatling:enterpriseStart -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN>
 sbt: sbt "Gatling / enterpriseStart" -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN>
 {{</ code-toggle >}}
 
+```
+Do you want to create a new simulation or start an existing one?
+Type the number corresponding to your choice and press enter
+[0] <Quit>
+[1] Create a new Simulation on Gatling Enterprise, then start it
+[2] Start an existing Simulation on Gatling Enterprise
+```
 
-The command will ask you first about the classname of your simulation. Type the number corresponding to your choice and press enter.
+Let's create a new simulation, type `1`, then press **Enter**.
 
-In the same fashion, choose the team, simulation name, package name and the load generators location. Choose a number of load generators appropriate to your use case, as it'll increase your billing.
+```
+Proceeding to the create simulation step
+Choose one simulation class in your package:
+Type the number corresponding to your choice and press enter
+[0] <Quit>
+[1] computerdatabase.ComputerDatabaseSimulation
+```
 
-The command will create and start the simulation, then give you the ID of the created simulation. You will be able to start again the same simulation if you specify this ID:
+Select your Simulation class (the only available here) with `1`, then press **Enter**.
+
+```
+Choose a team from the list:
+Type the number corresponding to your choice and press enter
+[0] <Quit>
+[1] Team 'Default team', id='b236af88-1c24-4623-b872-cb8993651c15'
+```
+
+Select the default team with `1`, then press **Enter**.   
+This will allow access to the simulation to users within this team.
+
+```
+Enter a simulation name, or just hit enter to accept the default name (ComputerDatabaseSimulation)
+Waiting for user input...
+```
+
+Enter the name of your simulation, for instance `GettingStartedSimulation`, then press **Enter**.
+
+```
+Do you want to create a new package or upload your project to an existing one?
+Type the number corresponding to your choice and press enter
+[0] <Quit>
+[1] Create a new package on Gatling Enterprise
+[2] Choose an existing package on Gatling Enterprise
+```
+The package is an archive containing your simulation classes.
+Choose `1` to create a package, then press **Enter**.  
+It will be reusable by other simulations later on. 
+
+```
+Enter a package name, or just hit enter to accept the default name (gatling:bundle)
+Waiting for user input...
+```
+
+Enter the name of your package : `GettingStartedPackage`, then press **Enter**.
+
+```
+Choose the load generators location
+Type the number corresponding to your choice and press enter
+[0] <Quit>
+[1] Location AP - Hong kong
+[2] Location AP - Tokyo
+[3] Location AP Pacific - Mumbai
+[4] Location AP SouthEast - Sydney
+[5] Location Europe - Dublin
+[6] Location Europe - Paris
+[7] Location SA East - São Paulo
+[8] Location US East - N. Virginia
+[9] Location US West - N. California
+[10] Location US West - Oregon
+```
+
+Here we configure the Simulation itself.
+Choose the location where you want to spawn your load generators and generate traffic from.  
+For demonstration purposes we will choose `6`, then press **Enter**.
+
+```
+Enter the number of load generators
+```
+
+Define how many instances of load generators will be spawned in this region. Care, each load generator instance will consume credits while it runs.   
+Let's select only `1` load generator, then press **Enter**.
+
+```
+Start simulation using simulation class name: computerdatabase.ComputerDatabaseSimulation
+Created simulation named gettingStartedSimulation with ID '<simulation-id>'
+
+Specify --simulation-id <simulation-id> if you want to start a simulation on Gatling Enterprise,
+or --simulation computerdatabase.ComputerDatabaseSimulation if you want to create a new simulation on Gatling Enterprise.
+See https://gatling.io/docs/gatling/reference/current/core/configuration/#cli-options/ for more information.
+
+Simulation successfully started; once running, reports will be available at https://cloud.gatling.io/o/<organization-id>/simulations/reports/<report-id>
+```
+
+Click on the provided link to see the live reporting of your simulation run. 
+
+You will be able to start again the same simulation if you specify its ID:
 
 {{< code-toggle console >}}
-bundle: Not available yet
+bundle: ./bin/gatling.sh --api-token <CREATED_API_TOKEN> --simulation-id <CREATED_SIMULATION_ID>
 gradle: gradle gatlingEnterpriseStart -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN> -Dgatling.enterprise.simulationId=<CREATED_SIMULATION_ID>
 maven: mvn gatling:enterpriseStart -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN> -Dgatling.enterprise.simulationId=<CREATED_SIMULATION_ID>
 sbt: sbt "Gatling / enterpriseStart" -Dgatling.enterprise.apiToken=<CREATED_API_TOKEN> -Dgatling.enterprise.simulationId=<CREATED_SIMULATION_ID>
 {{</ code-toggle >}}
 
+{{< alert tip >}}
+Windows users must replace `gatling.sh` by `gatling.bat`
+{{< /alert >}}
 
 ## Step 4 - Start Load Testing! {#start-load-testing}
 
