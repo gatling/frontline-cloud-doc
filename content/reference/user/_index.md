@@ -10,6 +10,7 @@ ordering:
   - package_conf
   - simulations
   - dedicated_ips
+  - private_locations
   - trends
   - reports
   - organization
