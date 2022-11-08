@@ -43,3 +43,10 @@ alertText: ""
 
 # Edit Page
 editPage: true
+
+includeCode:
+  default: java
+  labels:
+    java: Java
+    kt: Kotlin
+    scala: Scala

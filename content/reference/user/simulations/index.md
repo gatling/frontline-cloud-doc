@@ -75,8 +75,16 @@ In order to create a simulation click on the "Create" button in the simulations 
 
 In this step, you'll configure the locations used for the Gatling Enterprise load generators.
 
-Gatling Enterprise locations are available in the following regions:
+You can either use the public locations provided by Gatling Enterprise Cloud, or use your own [private locations]({{< ref "../../admin/private_locations" >}})
 
+{{< alert info >}}
+It is not currently possible to mix public and private locations in the same simulation.
+{{< /alert >}}
+
+Gatling Enterprise public locations are available in the following regions:
+
+- AP Pacific (Hong kong)
+- AP Pacific (Tokyo)
 - AP Pacific (Mumbai)
 - AP SouthEast (Sydney)
 - Europe (Dublin)
@@ -86,13 +94,15 @@ Gatling Enterprise locations are available in the following regions:
 - US West (N. California)
 - US West (Oregon)
 
+If you want to use private locations, please refer to the [specific documentation]({{< ref "../../admin/private_locations" >}})
+
 In order for the best results from your simulation you should select the load generators that best represent your user base.
 
 {{< img src="create-simulation-locations.png" alt="Create simulation - Step 2" >}}
 
-- **Locations**: defines the locations to be used when initiating the Gatling Enterprise load generators.
-- **Weight distribution**: if set to even, every load generator will produce the same load. If set to custom, you must set the weight in % for each location (e.g. the first location does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
-- **Address**: Choose "Dedicated" if you want to enable [dedicated IP addresses]({{< ref "../dedicated_ips" >}}) for your load generators.
+- **Location**: defines the locations to be used when initiating the Gatling Enterprise load generators.
+- **Custom weight distribution**: by default, every load generator will produce the same load. If enabled, you must set the weight in % for each location (e.g. the first location does 20% of the requests, and the second does 80%). The sum of the weight must be 100%.
+- **Dedicated IP Addresses**: Check if you want to enable [dedicated IP addresses]({{< ref "../dedicated_ips" >}}) for your load generators. Only available for public locations.
 
 You can add several locations with different numbers of load generators to run your simulation.
 

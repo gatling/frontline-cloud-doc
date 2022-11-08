@@ -7,4 +7,5 @@ ordering:
   - teams
   - api_tokens
   - custom_sso
+  - private_locations
 ---

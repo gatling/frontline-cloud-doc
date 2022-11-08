@@ -31,7 +31,7 @@ The Dedicated IP addresses table shows your available dedicated IP addresses. Ea
 
 ## Usage
 
-You can enable the use of dedicated IP addresses when [configuring simulation locations]({{< ref "../simulations#step-3-locations-configuration" >}}).
+You can enable the use of dedicated IP addresses when [configuring simulation locations]({{< ref "../simulations#step-2-locations-configuration" >}}).
 
 When starting a run of a simulation configured to use dedicated IP addresses,
 if you have enough dedicated IP addresses available to satisfy the size of the configured locations,
