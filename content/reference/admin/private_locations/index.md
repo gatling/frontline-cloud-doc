@@ -57,8 +57,8 @@ It's defined by a unique identifier, a description (provided later on by its con
 
 The status has three possible values:
 - **Uninitialized:** the control plane has never contacted the application
-- **Up:** The control plane is properly configured, has uploaded the names of its configured private locations, and periodically calls the application to fetch new runs.
-- **Down:** The control plane has been up, but hasn't called the application for a while.
+- **Up:** the control plane is properly configured, has uploaded the names of its configured private locations, and periodically calls the application to fetch new runs.
+- **Down:** the control plane has been up, but hasn't called the application for a while.
 
 ### Control plane deployment
 
