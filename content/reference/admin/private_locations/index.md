@@ -53,7 +53,7 @@ You can see the control plane you just created under the Control planes tab.
 
 {{< img src="control-planes-uninitialized.png" alt="Control Planes table" >}}
 
-It's defined by a unique identifier, a description (provided later on by its configuration) and a status.g
+It's defined by a unique identifier, a description (provided later on by its configuration) and a status.
 
 The status has three possible values:
 - **Uninitialized:** the control plane has never contacted the application
