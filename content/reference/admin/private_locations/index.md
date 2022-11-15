@@ -77,7 +77,7 @@ Only control plane and locations ID, description and type are transferred to Gat
 ## Managing Control Planes on Gatling Enterprise Cloud
 
 Once configured and running, your control plane status should go {{< badge success >}}Up{{< /badge >}} within a few seconds, details are available by clicking on the {{< icon eye >}} button.
-Tokens can be refresh by clicking on the {{< icon undo >}} button.
+Tokens can be refreshed by clicking on the {{< icon undo >}} button.
 
 {{< img src="control-plane-details.png" alt="Control Planes details" >}}
 
