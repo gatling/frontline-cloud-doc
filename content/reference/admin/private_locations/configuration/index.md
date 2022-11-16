@@ -1,10 +1,10 @@
 ---
-title: "Private Locations"
+title: "Configuring Private Locations"
 description: "Load Generators on your private AWS account"
 lead: "Private Locations on your AWS account"
 date: 2021-11-07T14:29:04+00:00
 lastmod: 2021-11-07T14:29:04+00:00
-weight: 22050
+weight: 22051
 ---
 
 A location describes where to start load generators:
