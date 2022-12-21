@@ -63,16 +63,21 @@ The status has three possible values:
 ### Control plane deployment
 
 The control plane agent is distributed as a docker image: [`gatlingcorp/control-plane`](https://hub.docker.com/r/gatlingcorp/control-plane).
-It is configured by a file mounted at `/app/conf/control-plane.conf`.
 
-{{< alert info >}}
+For examples of deployments, see:
+* [Amazon elastic container service]({{< ref "../ecs_deployment" >}})
+* [Kubernetes deployment]({{< ref "../kubernetes_deployment" >}})
+
+### Locations
+
+The locations managed by the control plane are configured by a file mounted at `/app/conf/control-plane.conf`. 
 The configuration file uses the [HOCON format (Human-Optimized Config Object Notation)](https://github.com/lightbend/config/blob/master/HOCON.md):
-{{< /alert >}}
-
-Example with an AWS location (only supported type at the moment):
-{{< include-code "control-plane.conf" bash >}}
 
 Only control plane and locations ID, description and type are transferred to Gatling Enterprise Cloud.
+
+For examples of locations configuration, see:
+* [Configuration of Amazon EC2 locations]({{< ref "../ec2_configuration" >}})
+* [Configuration of Kubernetes locations]({{< ref "../kubernetes_configuration" >}})
 
 ## Managing Control Planes on Gatling Enterprise Cloud
 
