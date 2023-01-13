@@ -150,7 +150,7 @@ In the Container definitions section, click on Add a container.
 Configure:
 
 - Container name: a name of your choice
-- Image: `gatlingcorp/control-plane:<tag>` (where `<tag>` is [the latest version available on DockerHub](https://hub.docker.com/r/gatlingcorp/control-plane/tags))
+- Image: `gatlingcorp/control-plane:latest`
 
 {{< img src="ecs-task-definition-containers-cp-1.png" alt="Configuring the control plane container's main parameters" >}}
 
