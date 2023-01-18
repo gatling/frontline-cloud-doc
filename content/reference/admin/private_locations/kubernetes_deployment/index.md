@@ -97,7 +97,7 @@ spec:
       serviceAccountName: control-plane-service-account
       containers:
         - name: control-plane
-          image: control-plane:latest
+          image: gatlingcorp/control-plane:latest
           volumeMounts:
             - mountPath: /app/conf/
               name: control-plane-conf-volume
