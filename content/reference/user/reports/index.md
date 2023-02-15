@@ -107,6 +107,19 @@ In flat mode, you can click on the title of each column to arrange the data in a
 
 {{< img src="summary.png" alt="Summary" >}}
 
+### Download CSV
+
+In order to download summaries as CSV for later use, you can click the download button on the top right side of the summary
+
+{{< img src="download-summary.png" alt="Download-summary" >}}
+
+CSV files are generated according to the selected **Scenario**
+
+{{< img src="download-summary-select-scenario.png" alt="Download-summary-select-scenario" >}}
+
+When downloading a group level summary, you will receive data for both **Duration** and **Cumulated response time**.
+
+
 ## Generate Shareable Links {#shareable-links}
 
 A shareable link is a link of the current reports which will be accessible to anyone, without having to log in to Gatling Enterprise. To generate a shareable link, click on the *Share* button and choose the expiration date of your link.
