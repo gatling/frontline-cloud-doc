@@ -24,6 +24,10 @@ When connecting to the cluster using HTTPS, if a custom truststore and/or keysto
 control-plane {
   # Control plane token
   token = "cpt_example_c7oze5djp3u14a5xqjanh..."
+  # Control plane token with an environment variable
+  token = ${?CONTROL_PLANE_TOKEN}
+  # Control plane token with a system property
+  token = $?control.plane.token
   # Control plane description (optional)
   description = "my control plane description"
   # Locations configurations
