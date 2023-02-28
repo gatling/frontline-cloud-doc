@@ -1,5 +1,5 @@
 ---
-title: "Configuring Kubernetes Locations"
+title: "Kubernetes Load Generators"
 description: "Load Generators on your private Kubernetes cluster"
 lead: "Private Locations on your Kubernetes cluster"
 date: 2023-01-12T16:46:04+00:00
@@ -13,7 +13,7 @@ To use Kubernetes private locations, the control plane must have access to your 
 If the control plane is launched from outside the cluster, you have to give access to a valid Kubernetes file. See [Organizing Cluster Access Using kubeconfig Files](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/).
 The `.kube` folder can be mounted in `/app`, and absolute path must be set in a `KUBECONFIG` environment variable (e.g. `KUBECONFIG=/app/.kube/config`)
 
-If the control plane is launched from inside the cluster, please refer to our [Kubernetes Control plane deployment documentation]({{< ref "../kubernetes_deployment" >}})
+If the control plane is launched from inside the cluster, please refer to our [Kubernetes Control plane deployment documentation]({{< ref "../../installation/kubernetes" >}})
 
 {{< alert tip >}}
 When connecting to the cluster using HTTPS, if a custom truststore and/or keystore is needed, `KUBERNETES_TRUSTSTORE_FILE`,

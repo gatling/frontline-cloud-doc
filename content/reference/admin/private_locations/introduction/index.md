@@ -1,10 +1,10 @@
 ---
-title: "Configuring Private Locations"
-description: "Load Generators on your private AWS account"
+title: "Introduction"
+description: "Introduction to control plane agent"
 lead: "Private Locations on your AWS account"
 date: 2021-11-07T14:29:04+00:00
 lastmod: 2021-11-07T14:29:04+00:00
-weight: 22051
+weight: 22030
 ---
 
 A location describes where to start load generators:
@@ -35,9 +35,9 @@ Only two outbound domains must be allowed in your network:
 - Download of the Gatling simulation on S3: `eu-west-3.amazonaws.com` on port `443`
 {{< /alert >}}
 
-## Control plane configuration
+## Control plane
 
-### Control plane token
+### Token
 
 Access the private locations section by clicking on the Private locations in the navigation bar (only visible if the feature is activated on your organization).
 
@@ -60,7 +60,7 @@ The status has three possible values:
 - **Up:** the control plane is properly configured, has uploaded the names of its configured private locations, and periodically calls the application to fetch new runs.
 - **Down:** the control plane has been up, but hasn't called the application for a while.
 
-### Control plane configuration
+### Configuration
 
 The locations managed by the control plane are configured by a file.
 The configuration file uses the [HOCON format (Human-Optimized Config Object Notation)](https://github.com/lightbend/config/blob/master/HOCON.md):
@@ -91,10 +91,10 @@ control-plane {
 ```
 
 For examples of private locations configuration, see:
-* [Configuration of Amazon EC2 locations]({{< ref "../ec2_configuration" >}})
-* [Configuration of Kubernetes locations]({{< ref "../kubernetes_configuration" >}})
+* [Configuration of Amazon EC2 locations]({{< ref "../configuration/ec2" >}})
+* [Configuration of Kubernetes locations]({{< ref "../configuration/kubernetes" >}})
 
-### Control plane deployment
+### Installation
 
 The control plane agent is distributed as a docker image: [`gatlingcorp/control-plane`](https://hub.docker.com/r/gatlingcorp/control-plane).
 
@@ -102,9 +102,9 @@ The control plane agent is distributed as a docker image: [`gatlingcorp/control-
 Configuration file is mounted at `/app/conf/control-plane.conf`.
 {{< /alert >}}
 
-For examples of deployments, see:
-* [Amazon elastic container service]({{< ref "../ecs_deployment" >}})
-* [Kubernetes deployment]({{< ref "../kubernetes_deployment" >}})
+For examples of installations, see:
+* [Amazon elastic container service]({{< ref "../installation/ecs" >}})
+* [Kubernetes deployment]({{< ref "../installation/kubernetes" >}})
 
 ## Managing Control Planes on Gatling Enterprise Cloud
 

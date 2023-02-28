@@ -1,5 +1,5 @@
 ---
-title: "Configuring AWS EC2 Locations"
+title: "AWS EC2 Load Generators"
 description: "Load Generators on your private AWS account"
 lead: "Private Locations on your AWS account"
 date: 2023-01-12T16:46:04+00:00
