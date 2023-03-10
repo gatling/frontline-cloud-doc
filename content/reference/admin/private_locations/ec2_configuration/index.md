@@ -49,9 +49,9 @@ control-plane {
       # Subnets
       subnets = ["subnet-a", "subnet-b"]
       # Profile name (optional)
-      profile-name = ""
+      # profile-name = ""
       # IAM Instance profile (optional)
-      iam-instance-profile = ""
+      # iam-instance-profile = ""
       # Custom tags
       tags {
        # ExampleKey = ExampleValue
