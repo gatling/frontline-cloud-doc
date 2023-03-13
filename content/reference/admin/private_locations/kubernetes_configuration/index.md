@@ -41,12 +41,12 @@ control-plane {
       # Certified image configuration
       image {
         type = certified
-        java = 17 # Possible values : "8", "11" or "17"
+        java = latest # Possible values : 8, 11, 17 or latest
       }
       # Custom image configuration
       # image {
       #   type = custom
-      #   image = gatlingcorp/frontline-injector:17
+      #   image = gatlingcorp/classic-openjdk-x86:latest
       # }
       # Clean up finished jobs resources after given time (optional)
       ttl-after-finished = 10 minutes

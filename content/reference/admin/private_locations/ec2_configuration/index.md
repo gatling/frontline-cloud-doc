@@ -33,7 +33,7 @@ control-plane {
       # Certified AMI configuration
       ami {
         type = "certified"
-        java = "17" # Possible values : "8", "11" or "17"
+        java = latest # Possible values : 8, 11, 17 or latest
       }
       # Custom AMI configuration (alternative to certified AMI)
       # ami = {
