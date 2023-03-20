@@ -64,14 +64,15 @@ control-plane {
       }
       # Resources configuration for created pods (optional)
       # We recommend to set both requests and limits to the same values.
+      # https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container
       resources {
         limits {
           # memory = "512Mi"
-          # cpu = "2000m"
+          # cpu = "2.0"
         }
         requests {
           # memory = "512Mi"
-          # cpu = "2000m"
+          # cpu = "2.0"
         }
       }
       # Tolerations (optional)
