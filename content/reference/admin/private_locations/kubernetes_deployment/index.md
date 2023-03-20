@@ -23,7 +23,7 @@ For each namespace configured for a private location, the control plane needs th
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: Role
 metadata:
   name: control-plane-role
   namespace: <namespace>
@@ -55,7 +55,7 @@ metadata:
   namespace: gatling
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: Role
 metadata:
   name: control-plane-role
   namespace: gatling
@@ -68,12 +68,13 @@ rules:
     verbs: ["create"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
   name: control-plane-role-binding
+  namespace: gatling
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
+  kind: Role
   name: control-plane-role
 subjects:
 - kind: ServiceAccount
