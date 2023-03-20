@@ -62,6 +62,18 @@ control-plane {
       environment-variables {
         # ExampleKey = ExampleValue
       }
+      # Resources configuration for created pods (optional)
+      # We recommend to set both requests and limits to the same values.
+      resources {
+        limits {
+          # memory = "512Mi"
+          # cpu = "2000m"
+        }
+        requests {
+          # memory = "512Mi"
+          # cpu = "2000m"
+        }
+      }
       # Tolerations (optional)
       tolerations = [
         {
