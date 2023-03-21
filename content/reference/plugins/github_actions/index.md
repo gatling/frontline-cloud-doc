@@ -3,7 +3,7 @@ title: "GitHub Actions"
 description: "Learn how to configure the Gatling Enterprise GitHub Action and run your simulations."
 lead: "Run your Gatling Enterprise simulations from GitHub Actions."
 date: 2022-01-04T15:00:00+00:00
-lastmod: 2022-01-04T15:00:00+00:00
+lastmod: 2023-03-21T09:00:00+00:00
 weight: 23010
 ---
 
@@ -123,8 +123,8 @@ steps:
       echo "run_id=${{ steps.enterprise-action.outputs.run_id }}"
       echo "reports_url=${{ steps.enterprise-action.outputs.reports_url }}"
       echo "runs_url=${{ steps.enterprise-action.outputs.runs_url }}"
-      echo "runs_status_code=${{ steps.enterprise-action.outputs.runs_status_code }}"
-      echo "runs_status_name=${{ steps.enterprise-action.outputs.runs_status_name }}"
+      echo "run_status_code=${{ steps.enterprise-action.outputs.run_status_code }}"
+      echo "run_status_name=${{ steps.enterprise-action.outputs.run_status_name }}"
       echo "run_assertions=${{ steps.enterprise-action.outputs.run_assertions }}"
 ```
 
@@ -134,9 +134,9 @@ steps:
 
 - `runs_url`: The URL of the runs history page for this simulation.
 
-- `runs_status_name`: The name of the run's final status (e.g. `Successful`, `AssertionsSuccessful`, `AssertionsFailed`, etc.).
+- `run_status_name`: The name of the run's final status (e.g. `Successful`, `AssertionsSuccessful`, `AssertionsFailed`, etc.).
 
-- `runs_status_code`: The code of the run's final status.
+- `run_status_code`: The code of the run's final status.
 
 - `run_assertions`: The results of the run's assertions, as a JSON array.
 
