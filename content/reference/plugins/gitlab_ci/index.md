@@ -185,6 +185,7 @@ Feel free to use different trigger events or to configure the other inputs and o
 
 {{< include-file >}}
 Maven: includes/use-case-build-and-run.maven.md
+Maven Wrapper: includes/use-case-build-and-run.mavenw.md
 Gradle: includes/use-case-build-and-run.gradle.md
 Gradle Wrapper: includes/use-case-build-and-run.gradlew.md
 Sbt: includes/use-case-build-and-run.sbt.md
@@ -196,6 +197,7 @@ This first pipeline is defined in the GitLab repository which contains your Gatl
 
 {{< include-file >}}
 Maven: includes/use-case-separate-build-run-1.maven.md
+Maven Wrapper: includes/use-case-separate-build-run-1.mavenw.md
 Gradle: includes/use-case-separate-build-run-1.gradle.md
 Gradle Wrapper: includes/use-case-separate-build-run-1.gradlew.md
 Sbt: includes/use-case-separate-build-run-1.sbt.md
