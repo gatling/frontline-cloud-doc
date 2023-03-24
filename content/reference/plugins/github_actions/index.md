@@ -163,6 +163,7 @@ Feel free to use different trigger events or to configure the other inputs and o
 
 {{< include-file >}}
 Maven: includes/use-case-build-and-run.maven.md
+Gradle: includes/use-case-build-and-run.gradle.md
 Gradle Wrapper: includes/use-case-build-and-run.gradlew.md
 Sbt: includes/use-case-build-and-run.sbt.md
 {{< /include-file  >}}

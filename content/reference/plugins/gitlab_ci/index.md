@@ -1,18 +1,28 @@
 ---
 title: "Gitlab CI/CD"
-description: "Learn how to configure Gitlab CI/CD to run your simulations on Gatling Enterprise."
-lead: "Run your Gatling Enterprise simulations from Gatling CI."
+description: "Learn how to configure GitLab CI/CD to run your simulations on Gatling Enterprise."
+lead: "Run your Gatling Enterprise simulations from GitLab CI/CD."
 date: 2023-02-17T14:00:00+00:00
-lastmod: 2023-02-17T14:00:00+00:00
+lastmod: 2023-03-23T14:00:00+00:00
 weight: 23020
 ---
 
-We do not yet offer a dedicated Docker image for Gitlab CI/CD, but you can easily run your simulations on Gatling Enterprise from GitLab CI/CD, using either one of the supported build tools or our CI shell script.
+## The Gatling Enterprise Docker runner
 
-This will not create a new Gatling Enterprise simulation, you have to create it using the Gatling Enterprise Dashboard before, or do it using the options provided by our build tools plugins:
+This runner, packaged as a Docker image and [published on Docker Hub](https://hub.docker.com/r/gatlingcorp/enterprise-runner), enables you to start a Gatling Enterprise simulation directly from your GitLab CI/CD pipelines.
+
+This plugin doesn't create a new Gatling Enterprise simulation, you have to create it using the Gatling Enterprise Dashboard before, or do it using the options provided by our build tools plugins:
 - [Maven](https://gatling.io/docs/gatling/reference/current/extensions/maven_plugin/#working-with-gatling-enterprise-cloud)
 - [Gradle](https://gatling.io/docs/gatling/reference/current/extensions/gradle_plugin/#working-with-gatling-enterprise-cloud)
 - [SBT](https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/#working-with-gatling-enterprise-cloud)
+
+Don't forget to check out [GitLab's official documentation](https://docs.gitlab.com/ee/ci/) to learn how to write CI/CD pipelines on GitLab.
+
+## Docker Hub coordinates
+
+The Action is [published on Docker Hub](https://hub.docker.com/r/gatlingcorp/enterprise-runner) with the following coordinates: `gatlingcorp/enterprise-action:1`.
+
+You can check out the latest releases available [from the GitHub project](https://github.com/gatling/enterprise-action/releases). You generally only need to specify the major version you want to use, currently `1`.
 
 ## Pre-requisites
 
@@ -22,55 +32,193 @@ In the following examples, we assume the API Token is available in an environmen
 
 We also assume that you have already [configured a simulation]({{< ref "../../user/simulations" >}}) on Gatling Enterprise. You can copy the simulation ID from the simulations list view. In the following examples, we will show the simulation ID as `00000000-0000-0000-0000-000000000000`.
 
-## Using a build tool plugin
+## Quickstart (minimal pipeline, configuration)
 
-You can build you Simulation, and then run the updated Simulation on Gatling Enterprise, using the `enterpriseRun` command with any of our supported build tools.
+In this example, we configure a workflow which will only start a simulation as already configured and uploaded on Gatling Enterprise. We use the `workflow_dispatch` trigger event, so that we can [run it manually](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow), but feel free to use what works for your use case.
 
-With the `waitForRunEnd=true` option, it will display live metrics until the end of the run, and exit with an error code if the run fails on Gatling Enterprise (e.g. if the run crashes or if the assertions fail).
-
-Configure your CI build to run the command corresponding to the build tool you use. Here are some examples:
-
-{{< include-file >}}
-Maven: includes/run-with-build-tool.maven.md
-Gradle: includes/run-with-build-tool.gradle.md
-Gradle Wrapper: includes/run-with-build-tool.gradlew.md
-Sbt: includes/run-with-build-tool.sbt.md
-{{< /include-file  >}}
-
-## Using a shell script
-
-This script launches an existing simulation on Gatling Enterprise and displays live metrics.
-
-It can be [downloaded here](https://downloads.gatling.io/releases/frontline-ci-script/{{< var ciPluginsVersion >}}/frontline-ci-script-{{< var ciPluginsVersion >}}.zip).
-
-### Shell script requirements
-
-This script runs with:
-- the `bash` shell
-- the `curl` HTTP client, [see here for more information](https://curl.se/)
-- the `jq` JSON processor, [see here for more information](https://stedolan.github.io/jq/)
-
-These tools must be installed on the machine or container where your CI system will execute the script.
-
-### Shell script usage
-
-You need to give 3 parameters to the script:
-
-- Gatling Enterprise url: `https://cloud.gatling.io`.
-- API token: the [API token]({{< ref "../../admin/api_tokens" >}}) will allow the script to authenticate to Gatling Enterprise. The API token needs the Start permission.
-- Simulation ID: the ID of the simulation you want to start. You can get this ID on the [Simulations table]({{< ref "../../user/simulations" >}}), with the {{< icon clipboard >}} icon.
-
-Configure your CI build to call the script, for example::
+Create a file named `.gitlab-ci.yml` in your repository:
 
 ```yaml
-image: ubuntu:latest
-
 stages:
-  - run-gatling-enterprise
+  - load-test
 
 run-gatling-enterprise:
-  stage: run-gatling-enterprise
+  stage: load-test
+  image:
+    name: gatlingcorp/enterprise-runner:1
+    entrypoint: ['']
   script:
-    # Assuming the script is present at the root of the repository
-    - ./start_simulation.sh 'https://cloud.gatling.io' "$GATLING_ENTERPRISE_API_TOKEN" '00000000-0000-0000-0000-000000000000'
+    - gatlingEnterpriseStart
+  variables:
+    # We assume GATLING_ENTERPRISE_API_TOKEN is available,
+    # e.g. configured on the GitLab project
+    SIMULATION_ID: '00000000-0000-0000-0000-000000000000'
+```
+
+Push this to GitLab. The pipeline will run automatically on new commits; you can also run it manually from your GitLab project's CI/CD menu.
+
+## Configuration reference
+
+Several options can be configured with environment variables. The Docker runner also provides several outputs which you can export to access in the following stages of your pipeline.
+
+### Inputs
+
+Example:
+
+```yaml
+stages:
+  - load-test
+
+run-gatling-enterprise:
+  stage: load-test
+  image:
+    name: gatlingcorp/enterprise-runner:1
+    entrypoint: ['']
+  script:
+    - gatlingEnterpriseStart
+  variables:
+    GATLING_ENTERPRISE_API_TOKEN: 'my-api-token' # Typically not hard-coded in the script!
+    SIMULATION_ID: '00000000-0000-0000-0000-000000000000'
+    EXTRA_SYSTEM_PROPERTIES: >
+      {
+        "sys_prop_1":"value 1",
+        "sys_prop_2":42,
+        "sys_prop_3":true
+      }
+    EXTRA_ENVIRONMENT_VARIABLES: >
+      {
+        "ENV_VAR_1":"value 1",
+        "ENV_VAR_2":42,
+        "ENV_VAR_3":true
+      }
+    OVERRIDE_LOAD_GENERATORS: >
+      {
+        "4a399023-d443-3a58-864f-3919760df78b":{"size":1,"weight":60},
+        "c800b6d9-163b-3db7-928f-86c1470a9542":{"size":1,"weight":40}
+      }
+    FAIL_ACTION_ON_RUN_FAILURE: 'true'
+    WAIT_FOR_RUN_END: 'true'
+    OUTPUT_DOT_ENV_FILE_PATH: 'path/to/file.env'
+```
+
+- `GATLING_ENTERPRISE_API_TOKEN` {{< badge danger >}}required{{< /badge >}}: The API token used by the Action to authenticate with Gatling Enterprise.
+
+- `SIMULATION_ID` {{< badge danger >}}required{{< /badge >}}: The ID of the simulation as configured on Gatling Enterprise.
+
+- `EXTRA_SYSTEM_PROPERTIES` {{< badge info >}}optional{{< /badge >}}: Additional Java system properties, will be merged with the simulation's configured system properties. Must be formatted as a JSON object containing the desired key/value pairs. Values can be strings, numbers or booleans.
+
+- `EXTRA_ENVIRONMENT_VARIABLES` {{< badge info >}}optional{{< /badge >}}: Additional environment variables, will be merged with the simulation's configured environment variables. Must be formatted as a JSON object containing the desired key/value pairs. Values can be strings, numbers or booleans.
+
+- `OVERRIDE_LOAD_GENERATORS` {{< badge info >}}optional{{< /badge >}}: Overrides the simulation's load generators configuration. Must be formatted as a JSON object. Keys are the load generator IDs, which can be retrieved [from the public API]({{< ref "../../user/api" >}}) (using the `/pools` route). Weights are optional.
+
+- `FAIL_ACTION_ON_RUN_FAILURE` {{< badge info >}}optional{{< /badge >}} (defaults to `true`): If `true`, the Action will fail if the simulation run ends in an error (including failed assertions). Note: if set to `false` and the simulation ends in an error, some of the outputs may be missing (e.g. there will be no assertion results if the simulation crashed before the end).
+
+- `WAIT_FOR_RUN_END` {{< badge info >}}optional{{< /badge >}} (defaults to `true`): If `true`, the Action will wait for the end of te simulation run on Gatling Enterprise before terminating. Note: if set to `false`, some of the outputs may be missing (there will be no status nor assertion results).
+
+- `OUTPUT_DOT_ENV_FILE_PATH` {{< badge info >}}optional{{< /badge >}} (defaults to `gatlingEnterprise.env`): path to a dotenv file where output values will be written
+
+### Outputs
+
+Outputs are written to a dotenv file, which can then be exported to make the variables available. Check out [the GitLab documentation](https://docs.gitlab.com/ee/ci/variables/#pass-an-environment-variable-to-another-job) for more details on exporting dotenv files. Example:
+
+```yaml
+stages:
+  - load-test
+  - post-load-test
+
+run-gatling-enterprise:
+  stage: load-test
+  image:
+    name: gatlingcorp/enterprise-runner:1
+    entrypoint: ['']
+  script:
+    - gatlingEnterpriseStart
+  variables:
+    SIMULATION_ID: '00000000-0000-0000-0000-000000000000'
+  artifacts:
+    reports:
+      dotenv: 'gatlingEnterprise.env' # Using the default value
+
+print-output:
+  stage: post-load-test
+  image: alpine:latest
+  script: |
+    # Show that we can access the outputs exported by the previous stage
+    echo "RUN_ID=$RUN_ID"
+    echo "REPORTS_URL=$REPORTS_URL"
+    echo "RUNS_URL=$RUNS_URL"
+    echo "RUN_STATUS_CODE=$RUN_STATUS_CODE"
+    echo "RUN_STATUS_NAME=$RUN_STATUS_NAME"
+    echo "RUN_ASSERTIONS=$RUN_ASSERTIONS"
+```
+
+- `RUN_ID`: The ID of the run started by this action.
+
+- `REPORTS_URL`: The URL of the reports page for this run.
+
+- `RUNS_URL`: The URL of the runs history page for this simulation.
+
+- `RUN_STATUS_NAME`: The name of the run's final status (e.g. `Successful`, `AssertionsSuccessful`, `AssertionsFailed`, etc.).
+
+- `RUN_STATUS_CODE`: The code of the run's final status.
+
+- `RUN_ASSERTIONS`: The results of the run's assertions, as a JSON array.
+
+### Logs
+
+Every few seconds, the Docker runner logs to the console output a summary of the run's current status. When the run ends, it logs the status of the run and the results of any assertions. Here's the beginning and end of a very short duration example:
+
+{{< img src="reference_logs_start.png" alt="A run's logs in the GitLab CI/CD console (beginning)" >}}
+
+{{< img src="reference_logs_end.png" alt="A run's logs in the GitLab CI/CD console (end)" >}}
+
+## Sample use cases
+
+### Build and run simulation
+
+This pipeline is defined in the GitLab repository which contains your Gatling simulation script built with one of our build tools plugins. In this example, every time the code on the `main` branch gets updated, we:
+
+- build, package, and upload to Gatling Enterprise the current version of the simulation script
+- run the updated simulation on Gatling Enterprise
+
+Feel free to use different trigger events or to configure the other inputs and outputs for the Action as documented above, according to your own use case.
+
+{{< include-file >}}
+Maven: includes/use-case-build-and-run.maven.md
+Gradle: includes/use-case-build-and-run.gradle.md
+Gradle Wrapper: includes/use-case-build-and-run.gradlew.md
+Sbt: includes/use-case-build-and-run.sbt.md
+{{< /include-file >}}
+
+### Build and update on every push, run on a schedule
+
+This first pipeline is defined in the GitLab repository which contains your Gatling simulation script built with one of our build tools plugins. In this example, every time the code on the `main` branch gets updated, we build, package, and upload to Gatling Enterprise the current version of the simulation script.
+
+{{< include-file >}}
+Maven: includes/use-case-separate-build-run-1.maven.md
+Gradle: includes/use-case-separate-build-run-1.gradle.md
+Gradle Wrapper: includes/use-case-separate-build-run-1.gradlew.md
+Sbt: includes/use-case-separate-build-run-1.sbt.md
+{{< /include-file >}}
+
+This second pipeline may be defined in the same repository or another one. It will only run when started by a pipeline schedule, which you can [configure in your GitLab project](https://docs.gitlab.com/ee/ci/pipelines/schedules.html), for example to run once a week.
+
+```yaml
+workflow:
+  rules:
+    # Execute the pipeline only when scheduled
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+stages:
+  - load-test
+
+run-gatling-enterprise:
+  stage: load-test
+  image:
+    name: gatlingcorp/enterprise-runner:1
+    entrypoint: ['']
+  script:
+    - gatlingEnterpriseStart
+  variables:
+    SIMULATION_ID: '00000000-0000-0000-0000-000000000000'
 ```
