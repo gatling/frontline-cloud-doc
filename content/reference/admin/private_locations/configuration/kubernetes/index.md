@@ -50,7 +50,7 @@ control-plane {
       # Custom image configuration
       # image {
       #   type = custom
-      #   image = gatlingcorp/classic-openjdk-x86:latest
+      #   image = "gatlingcorp/classic-openjdk:latest"
       # }
       # Clean up finished jobs resources after given time (optional)
       ttl-after-finished = 10 minutes
