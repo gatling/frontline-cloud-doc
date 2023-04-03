@@ -2,6 +2,7 @@
 title: "Kubernetes"
 description: "How to install a Gatling Control Plane on Kubernetes, to set up your Private Locations and run load generators in your own Kubernetes cluster"
 lead: "Run a Control Plane on Kubernetes, to set up your Private Locations and run load generators in your own Kubernetes network"
+lastmod: 2023-04-03T12:00:00+00:00
 weight: 22054
 ---
 
@@ -11,7 +12,7 @@ A control plane, installed on a kubernetes cluster with the needed roles will be
 
 To better understand what roles are needed, here's a quick overview of the mechanisms involved when deploying a private location on Kubernetes.
 
-First, the control plane regularly polls the Gatling Enterpise API, and it is notified to deploy a number of instances in a given Kubernetes location.
+First, the control plane regularly polls the Gatling Enterprise API, and it is notified to deploy a number of instances in a given Kubernetes location.
 
 Then, it creates a config map for each namespace of each Kubernetes location requested for this run. 
 The config map includes the load generator's start script, so these scripts don't need to be embedded in the Docker images used for the load generators.

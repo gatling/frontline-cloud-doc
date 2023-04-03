@@ -3,7 +3,7 @@ title: "Introduction"
 description: "Introduction to control plane agent"
 lead: "Private Locations on your AWS account"
 date: 2021-11-07T14:29:04+00:00
-lastmod: 2021-11-07T14:29:04+00:00
+lastmod: 2023-04-03T12:00:00+00:00
 weight: 22030
 ---
 
@@ -96,7 +96,7 @@ For examples of private locations configuration, see:
 
 ### Installation
 
-The control plane agent is distributed as a docker image: [`gatlingcorp/control-plane`](https://hub.docker.com/r/gatlingcorp/control-plane).
+The control plane agent is distributed as a docker image: [`gatlingcorp/control-plane`](https://hub.docker.com/r/gatlingcorp/control-plane). It is available for the `linux/amd64` and `linux/arm64` platforms (Docker will automatically select the correct image variant).
 
 {{< alert info >}}
 Configuration file is mounted at `/app/conf/control-plane.conf`.
