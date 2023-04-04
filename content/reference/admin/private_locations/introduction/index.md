@@ -105,6 +105,7 @@ Configuration file is mounted at `/app/conf/control-plane.conf`.
 
 For examples of installations, see:
 * [Amazon elastic container service]({{< ref "../installation/ecs" >}})
+* [Azure container applications service]({{< ref "../installation/azure" >}})
 * [Kubernetes deployment]({{< ref "../installation/kubernetes" >}})
 
 ## Managing Control Planes on Gatling Enterprise Cloud
