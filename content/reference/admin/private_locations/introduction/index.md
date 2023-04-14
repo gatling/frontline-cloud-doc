@@ -92,6 +92,7 @@ control-plane {
 
 For examples of private locations configuration, see:
 * [Configuration of Amazon EC2 locations]({{< ref "../configuration/ec2" >}})
+* [Configuration of Azure Virtual Machines locations]({{< ref "../configuration/azure" >}})
 * [Configuration of Kubernetes locations]({{< ref "../configuration/kubernetes" >}})
 
 ### Installation

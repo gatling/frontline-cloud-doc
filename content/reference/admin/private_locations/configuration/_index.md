@@ -1,8 +1,9 @@
 ---
 title: "Configuration"
-description: "Load Generators on your private AWS account"
+description: "Load Generators on your private cloud"
 weight: 22031
 ordering:
+- azure
 - ec2
 - kubernetes
 ---
