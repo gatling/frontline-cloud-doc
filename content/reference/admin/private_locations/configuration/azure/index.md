@@ -18,7 +18,6 @@ Credentials can be set through environment variables in your control plane.
 | AZURE_CLIENT_ID       | Client UUID       |
 | AZURE_CLIENT_SECRET   | Client secret key |
 | AZURE_TENANT_ID       | Tenant UUID       |
-| AZURE_SUBSCRIPTION_ID | Subscription UUID |
 
 Check Azure documentation pages to find these values:
 * [Tenant id](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)
