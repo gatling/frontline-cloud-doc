@@ -59,7 +59,8 @@ Select the policies:
       "Action": [
         "ec2:Describe*",
         "ec2:CreateTags",
-        "ec2:RunInstances"
+        "ec2:RunInstances",
+        "iam:PassRole" <1>
       ],
       "Effect": "Allow",
       "Resource": "*"
@@ -67,6 +68,8 @@ Select the policies:
   ]
 }
 ```
+
+<1> Only required when setting an instance profile on Load Generators
 
 If you have configured an IAM instance profile in the Control plane configuration file (with the optional key `iam-instance-profile`), you also need to add the `Action`s: `"iam:GetInstanceProfile"`, `"iam:ListInstanceProfiles"`, and `"iam:PassRole"`.
 
