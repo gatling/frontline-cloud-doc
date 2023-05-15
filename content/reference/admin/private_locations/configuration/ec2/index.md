@@ -56,9 +56,22 @@ control-plane {
       # profile-name = ""
       # IAM Instance profile (optional)
       # iam-instance-profile = ""
-      # Custom tags
+      # Custom tags (optional)
       tags {
-       # ExampleKey = ExampleValue
+       # ExampleKey = "ExampleValue"
+      }
+      # Custom tags for each AWS resource type (optional)
+      # Only resources types mentioned further are managed
+      tags-for {
+        instance {
+          # ExampleKey = "ExampleValue"
+        }
+        volume {
+          # ExampleKey = "ExampleValue"
+        }
+        network-interface {
+          # ExampleKey = "ExampleValue"
+        }
       }
     }
   ]
