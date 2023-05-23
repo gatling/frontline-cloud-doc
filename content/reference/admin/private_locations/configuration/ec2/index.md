@@ -12,6 +12,11 @@ AWS private locations require the control plane to have access to AWS credential
 
 See [the AWS documentation for the Default Credential Provider Chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
 
+{{< alert warning >}}
+AWS EC2 private locations rely on [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) integration.
+If you configure a custom image, make sure it supports cloud-init.
+{{< /alert >}}
+
 ```bash
 control-plane {
   # Control plane token
