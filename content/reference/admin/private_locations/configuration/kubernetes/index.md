@@ -92,6 +92,26 @@ control-plane {
           effect = NoSchedule
         }
       ]
+      
+      # Java configuration (following configuration properties are optional)
+      # System properties (optional)
+      system-properties {
+        "java.net.preferIPv6Addresses" = "true"
+      }
+      # Overwrite JAVA_HOME definition (optional)
+      java-home = "/usr/lib/jvm/zulu17"
+      # JVM Options (optional)
+      # Default ones, that can be overriden with precedence:
+      # [
+      #   "-Xmx4G", 
+      #   "-XX:MaxInlineLevel=20", 
+      #   "-XX:MaxTrivialSize=12", 
+      #   "-XX:+IgnoreUnrecognizedVMOptions", 
+      #   "--add-opens=java.base/java.nio=ALL-UNNAMED", 
+      #   "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED"
+      # ]
+      # Based on your instance configuration, you may want to update Xmx and Xms values.
+      jvm-options = ["-Xmx8G", "-Xms512M"]
     }
   ]
 }
