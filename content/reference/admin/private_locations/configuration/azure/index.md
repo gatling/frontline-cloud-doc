@@ -68,7 +68,8 @@ control-plane {
       # Use "subnets.name" as returned by Azure CLI:
       # az network vnet subnet list --resource-group MyResourceGroup --vnet-name MyVNet
       subnet-name = "default"
-      
+      # Associate a public IP to network interface (optional)
+      associate-public-ip = true
       # Java configuration (following configuration properties are optional)
       # System properties (optional)
       system-properties {
