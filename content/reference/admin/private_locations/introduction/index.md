@@ -41,6 +41,10 @@ Only two outbound domains must be allowed in your network:
 
 Access the private locations section by clicking on the Private locations in the navigation bar (only visible if the feature is activated on your organization).
 
+{{< alert warning >}}
+Only organization system admins can manage private locations.
+{{< /alert >}}
+
 Click on create control plane, and fill a unique identifier. (only lowercase, separated by underscores)
 
 {{< img src="create-control-plane.png" alt="Create control plane" >}}
