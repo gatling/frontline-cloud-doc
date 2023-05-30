@@ -12,10 +12,7 @@ AWS private locations require the control plane to have access to AWS credential
 
 See [the AWS documentation for the Default Credential Provider Chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
 
-{{< alert warning >}}
-AWS EC2 private locations rely on [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) integration.
-If you configure a custom image, make sure it supports cloud-init.
-{{< /alert >}}
+### Control plane configuration file
 
 ```bash
 control-plane {
@@ -102,5 +99,20 @@ control-plane {
   ]
 }
 ```
+
+### Custom AMI requirements
+
+AWS EC2 private locations AMI rely on some dependencies.
+
+So when using a custom AMI, make sure following are available:
+
+- [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) integration.
+- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
+- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 8, 11 and 17 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
+
+{{< alert tip >}}
+Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
+{{< /alert >}}
 
 

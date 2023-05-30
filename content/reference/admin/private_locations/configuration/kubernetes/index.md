@@ -20,6 +20,8 @@ When connecting to the cluster using HTTPS, if a custom truststore and/or keysto
  `KUBERNETES_TRUSTSTORE_PASSPHRASE` and/or `KUBERNETES_KEYSTORE_FILE`, `KUBERNETES_KEYSTORE_PASSPHRASE` environment variables should be set.
 {{< /alert >}}
 
+### Control plane configuration file
+
 ```bash
 control-plane {
   # Control plane token
@@ -116,3 +118,17 @@ control-plane {
   ]
 }
 ```
+
+### Custom image requirements
+
+Kubernetes private locations image rely on some dependencies.
+
+So when using a custom image, make sure following are available:
+
+- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
+- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 8, 11 and 17 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
+
+{{< alert tip >}}
+Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
+{{< /alert >}}
