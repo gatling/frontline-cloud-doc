@@ -88,12 +88,33 @@ Plans view history.
 This section is only available to Organization System Admins.
 {{< /alert >}}
 
+### payment via Stripe
+
 This page shows all available offers for your organization. You can choose the number of credits for your offer. A credit represents a minute of usage of one Gatling load generator.
 
 {{< img src="offers.png" alt="Available Offers" >}}
 
-Click on the **Subscribe now** button in order to buy the desired offer. If you want to change your current offer, or buy the **Corporate** one, please click on **Contact us**.
+Click on the **Subscribe now** button in order to buy the desired offer via stripe. If you want to change your current offer, or buy the **Custom** one, please click on **Contact us**.
 
 Once the payment has been made, you'll be able to see your invoices and update your payment information by clicking on **Consult invoice**.
 
 {{< img src="consult-invoice.png" alt="Consult Invoice" >}}
+
+### payment via AWS Marketplace
+
+After Organization and Admin user of this organization created, 
+you can choose to subscribe to an offer via the [AWS marketplace](https://aws.amazon.com/marketplace/pp/prodview-6bhi2464rfmzq):  
+
+{{<img src="aws_marketplace.png" alt="AWS marketplace offer" >}}
+
+select, among other options, the contract option:
+
+{{<img src="aws_contract_option.png" alt="Contract option" >}}
+
+and click on **Create contract**:
+
+{{<img src="aws_create_contract.png" alt="Create contract" >}}
+
+to finish setup, fill the subscription form with current users and organization information:
+
+{{<img src="aws_subscription_form.png" alt="setup subscription" >}}
