@@ -67,6 +67,27 @@ By clicking on a row, you will see all the details of the credit consumption for
 * **Date** - The day the event took effect.
 * **Credits** - Number of credits gained or used from the event.
 
+### Extra credits
+
+{{< alert warning >}}
+This section is only available to System Admins & payment made by Stripe.
+{{< /alert >}}
+
+When you start to hit the credit limits in your plan:
+
+{{< img src="credit_empty.png" alt="Empty credits" >}}
+
+And you don't want to wait the next filling of credit, you can activate extra credits by clicking button **Edit spending limit**
+
+{{< img src="credit_edit_limit.png" alt="Edit extra credits limit" >}}
+
+And set new extra credit limit.
+
+{{< img src="credit_extra_used.png" alt="Extra credits used" >}}
+
+Now simulations -- you couldn't launch before -- can run consuming extra credits.
+
+
 ## Plans
 
 {{< alert warning >}}
