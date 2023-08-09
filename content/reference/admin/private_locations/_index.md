@@ -6,4 +6,5 @@ ordering:
   - introduction
   - configuration
   - installation
+  - private_packages
 ---
