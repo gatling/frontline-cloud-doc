@@ -58,6 +58,8 @@ control-plane {
       # }
       # Clean up finished jobs resources after given time (optional)
       ttl-after-finished = 10 minutes
+      # Service account used for load generator pods (optional)
+      service-account-name = "myServiceAccount"
       # Labels of initiated resources (optional)
       labels {
         # ExampleKey = ExampleValue
