@@ -54,6 +54,9 @@ control-plane {
       vpc = "vpc-a"
       # Subnets
       subnets = ["subnet-a", "subnet-b"]
+      # Elastic IP addresses (optional)
+      # You will only be able to deploy a number of load generators up to the number of Elastic IP addresses you have configured.
+      # elastic-ips = ["203.0.113.3", "203.0.113.4"]
       # Profile name (optional)
       # profile-name = ""
       # IAM Instance profile (optional)

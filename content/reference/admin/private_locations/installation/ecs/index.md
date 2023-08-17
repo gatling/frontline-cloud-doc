@@ -61,7 +61,9 @@ Select the policies:
         "ec2:CreateTags",
         "ec2:RunInstances",
         "ec2:TerminateInstance",
-        "iam:PassRole" <1>
+        "ec2.AssociateAddress", <1>
+        "ec2:DisassociateAddress", <1>
+        "iam:PassRole" <2>
       ],
       "Effect": "Allow",
       "Resource": "*"
@@ -70,7 +72,8 @@ Select the policies:
 }
 ```
 
-<1> Only required when setting an instance profile on Load Generators
+<1> Only required when setting elastic IP addresses on Load Generators
+<2> Only required when setting an instance profile on Load Generators
 
 If you have configured an IAM instance profile in the Control plane configuration file (with the optional key `iam-instance-profile`), you also need to add the `Action`s: `"iam:GetInstanceProfile"`, `"iam:ListInstanceProfiles"`, and `"iam:PassRole"`.
 
