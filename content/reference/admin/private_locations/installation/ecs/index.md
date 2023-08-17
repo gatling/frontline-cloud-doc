@@ -60,6 +60,7 @@ Select the policies:
         "ec2:Describe*",
         "ec2:CreateTags",
         "ec2:RunInstances",
+        "ec2:TerminateInstance",
         "iam:PassRole" <1>
       ],
       "Effect": "Allow",
