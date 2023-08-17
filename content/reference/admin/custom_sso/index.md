@@ -34,17 +34,26 @@ If your SSO system offers OIDC v1.0 integration, it will typically publish its m
   JWT)
 - the client ID and secret we should use to connect to the SSO
 
+{{< alert info >}}
+You will need to configure a **redirect URI** based on your organization's slug:
+`https://auth.gatling.io/auth/realms/<slug>-realm/broker/<slug>/endpoint`
+
+So for example, for an organization named Gatling Corp, with the slug `helloworld`, result in the following **redirect URI**:
+`https://auth.gatling.io/auth/realms/helloworld-realm/broker/helloworld/endpoint`
+{{< /alert >}}
+
+
 #### Azure Active Directory (Azure AD) using OIDC
 
 We recommend using OIDC to integrate with Azure AD. You will need to create an app registration for Gatling Enterprise, and configure which accounts are allowed to connect. You will then find the metadata URL in Overview > Endpoints > OpenID Connect metadata document, and you can generate a new client secret in Certificates & secrets > Client secrets.
 
-We can then give you our redirect URI, which you will need to configure in Overview > Add a redirect URI.
+You will need to configure the **redirect URI** in Overview > Add a **redirect URI**.
 
 #### Okta using OIDC
 
-We recommend using OIDC to integrate with Okta. You will need to create a new app integration, with sign-in method "OIDC" and application type "Web Application". You can then copy the client ID, client secret and Okta domain (we can find the metadata URL from the domain) for the application integration you just created.
+We recommend using OIDC to integrate with Okta. You will need to create a new app integration, with the sign-in method "OIDC" and application type "Web Application". You can then copy the client ID, client secret and Okta domain (you can find the metadata URL from the domain) for the application integration you just created.
 
-We can then give you our redirect URI, which you will need to edit in the application integration you created.
+You will need to edit in the application integration you created to configure the **redirect URI**.
 
 ### SAML v2.0
 
@@ -63,7 +72,7 @@ See [Google's guide](https://support.google.com/cloud/answer/6158849) on setting
 - select the user type "internal" to only allow users from your organization
 - add `gatling.io` as an authorized domain
 
-You will need to create a client ID of the type "web application", with the authorized redirect URI we will provide you, then send us the client ID and client secret.
+You will need to create a client ID of the type "web application" with the authorized **redirect URI**, then send us the client ID and client secret.
 
 ### GitHub
 
@@ -78,7 +87,7 @@ You will need to generate a new client secret, then send us the client ID and cl
 
 See [GitLab's guide](https://docs.gitlab.com/ee/integration/oauth_provider.html) on setting up an oAuth 2.0 app for a group. Make sure to:
 
-- configure the redirect URI we will provide you
+- configure the **redirect URI**
 - enable the following scopes: `api`, `read_user`, `read_api`
 
-You will need to send us the application ID and secret. We will also need your GitLab group ID to restrict access to users from your group.
+We will need the application ID and secret. We will also need your GitLab group ID to restrict access to users from your group.
