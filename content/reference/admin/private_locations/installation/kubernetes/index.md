@@ -31,7 +31,7 @@ metadata:
 rules:
   - apiGroups: [""]
     resources: ["configmaps"]
-    verbs: ["get", "create", "update", "delete"]
+    verbs: ["create", "get", "patch", "update", "delete"]
   - apiGroups: ["batch"]
     resources: ["jobs"]
     verbs: ["create", "deletecollection"]
@@ -63,7 +63,7 @@ metadata:
 rules:
   - apiGroups: [""]
     resources: ["configmaps"]
-    verbs: ["get", "create", "update", "delete"]
+    verbs: ["create", "get", "patch", "update", "delete"]
   - apiGroups: ["batch"]
     resources: ["jobs"]
     verbs: ["create", "deletecollection"]
