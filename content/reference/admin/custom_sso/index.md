@@ -61,9 +61,22 @@ You will need to edit in the application integration you created to configure th
 If your SSO system supports both OIDC and SAML, we recommend using OIDC.
 {{< /alert >}}
 
-If your SSO system offers SAML v2.0 integration, it will typically publish its Identity Provider (IdP) entity descriptor on a specific URL. To configure the SSO integration, we will need this IdP entity descriptor URL.
+If your SSO system provides SAML v2.0 integration, the Identity Provider entity (IdP) is usually published on a particular URL. 
+If that URL is not publicly accessible, export the metadata containing the information necessary to integrate with the IdP and forward it.
 
-We can then give our Service Provider (SP) descriptor if you need to import it into your SSO system.
+To configure the SSO integration, we will need:
+- the SAML entity descriptor for your Identity Provider
+- the attributes for a user's first name, last name, and email address (they should appear as `ClaimType`s in your IdP's entity descriptor)
+
+{{< alert info >}}
+By default, our system will rely on the subject NameID to uniquely and consistently identify each user. 
+We will also, by default, leave the NameID policy format unspecified (`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`), 
+letting the IdP free to choose how to populate the subject NameID. 
+
+If needed we can rely on another attribute instead of the NameID (it needs to be unique and immutable), or specify a particular NameID policy format.
+{{< /alert >}}
+
+We can then give you our Service Provider (SP) descriptor if you need to import it into your SSO system.
 
 ### Google
 
