@@ -8,4 +8,5 @@ ordering:
   - api_tokens
   - custom_sso
   - private_locations
+  - notifications
 ---
