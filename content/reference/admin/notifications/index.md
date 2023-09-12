@@ -16,6 +16,19 @@ Notifications will be sent as soon as a simulation run ends, and will display:
 - The run result (Successful, Assertions failure, etc.)
 - Assertions results, if you configured any in your simulation
 
+{{< img src="notifications-slack-example-1.png" alt="Slack example 1" >}}
+
+{{< img src="notifications-teams-example-1.png" alt="Teams example 1" >}}
+
+## Preparation
+
+{{< include-file >}}
+Slack: includes/preparation.slack.md
+Teams: includes/preparation.teams.md
+{{< /include-file >}}
+
+## Configuration
+
 Navigate to your organization configuration page, and to the "Notifications" tab.
 
 From there, you will be able to activate and configure notifications for your communication tools:
@@ -24,62 +37,21 @@ From there, you will be able to activate and configure notifications for your co
 
 {{< img src="notifications-configuration-2.png" alt="Notifications Tab 2" >}}
 
-## Slack
-
-{{< img src="notifications-slack-example-1.png" alt="Slack example 1" >}}
-
-### Preparation
-
-Slack notifications are based on Slack webhooks, so you will have to configure one before using it in Gatling Cloud.
-
-Follow [the official Slack documentation](https://api.slack.com/messaging/webhooks) to create one targeting the channel on which you want your notifications.
-
-Keep your new webhook URL for the next step. It will be a URL that looks like the following:
-`https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX`
-
-### Configuration
-
-Click on the toggle to activate notifications for Slack.
+Click on the toggle to activate notifications.
 
 Paste your webhook URL in the text field, then you can test and save it:
 
 {{< img src="notifications-configuration-slack-1.png" alt="Notifications Slack 1" >}}
-
-- The "Test" button sends a hello world message to your webhook before saving it.
-- "Save" persists your configuration. The next simulation runs will send a notification at the end.
-
-To deactivate Slack notifications, click on the toggle, and confirm your choice.
-
-{{< alert warning >}}
-Deactivating notifications deletes the webhook URL from configuration, we do not keep it in our database.
-{{< /alert >}}
-
-## Microsoft Teams
-
-{{< img src="notifications-teams-example-1.png" alt="Teams example 1" >}}
-
-### Preparation
-
-Microsoft Teams notifications are based on Microsoft Teams webhooks, so you will have to configure one before using it in Gatling Cloud.
-
-Follow [the official Microsoft Teams documentation](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook#create-incoming-webhooks-1) to create one targeting the channel on which you want your notifications.
-
-Keep your new webhook URL for the next step. It will be a URL that looks like the following:
-`https://xxxxx.webhook.office.com/xxxxxxxxx`
-
-### Configuration
-
-Click on the toggle to activate notifications for Microsoft Teams.
-
-Paste your webhook URL in the text field; then you can test and save it:
 
 {{< img src="notifications-configuration-teams-1.png" alt="Notifications Teams 1" >}}
 
 - The "Test" button sends a hello world message to your webhook before saving it.
 - "Save" persists your configuration. The next simulation runs will send a notification at the end.
 
-To deactivate Microsoft Teams notifications, click on the toggle, and confirm your choice.
+To deactivate notifications, click on the toggle, and confirm your choice.
 
 {{< alert warning >}}
-Deactivating notifications deletes the webhook URL from configuration, we do not keep it in our database.
+A note about data security:
+- Your webhook URL is ciphered before being stored in our database.
+- Deactivating notifications deletes the webhook URL from configuration, we do not keep it in our database.
 {{< /alert >}}
