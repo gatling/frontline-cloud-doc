@@ -20,6 +20,10 @@ Notifications will be sent as soon as a simulation run ends, and will display:
 
 {{< img src="notifications-teams-example-1.png" alt="Teams example 1" >}}
 
+{{< alert info >}}
+Configuring Notifications is only available to users with the System Admin role. 
+{{< /alert >}}
+
 ## Preparation
 
 {{< include-file >}}
