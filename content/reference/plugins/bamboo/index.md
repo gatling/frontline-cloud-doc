@@ -3,7 +3,7 @@ title: "Bamboo Plugin"
 description: "Learn how to configure the Gatling Enterprise Bamboo plugin and run your simulations."
 lead: "Run your Gatling Enterprise simulations from your Bamboo CI."
 date: 2021-03-08T12:49:49+00:00
-lastmod: 2021-08-05T13:13:30+00:00
+lastmod: 2023-10-11T10:10:00+00:00
 weight: 23050
 ---
 
@@ -43,6 +43,8 @@ Add two new variables:
 Add a new build task called __Gatling Enterprise__. Choose in the Gatling Enterprise Simulation list the simulation you want to use.
 
 {{< img src="configuration-task.png" alt="Task configuration" >}}
+
+This job regularly prints a summary of the run's current status to the build logs. By default, the summary is printed every 5 seconds the first 12 times (i.e. for the first 60 seconds), and then every 60 seconds. You can configure this behavior (or disable it completely) in the job configuration.
 
 ### JUnit reporting
 

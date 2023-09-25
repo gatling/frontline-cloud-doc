@@ -3,7 +3,7 @@ title: "Teamcity Plugin"
 description: "Learn how to configure the Gatling Enterprise TeamCity plugin and run your simulations."
 lead: "Run your Gatling Enterprise simulations from your TeamCity CI."
 date: 2021-03-08T12:50:20+00:00
-lastmod: 2021-08-05T13:13:30+00:00
+lastmod: 2023-10-11T10:10:00+00:00
 weight: 23040
 ---
 
@@ -42,6 +42,8 @@ The [Gatling Enterprise API Token]({{< ref "../../admin/api_tokens" >}}) is need
 Add a new build step called **Gatling Enterprise Launcher**. Choose in the Simulation list the simulation you want to monitor. You need to configure the global properties of the plugin, and create at least a simulation on Gatling Enterprise to do this step.
 
 {{< img src="configuration.png" alt="Configuration" >}}
+
+This step regularly prints a summary of the run's current status to the build logs. By default, the summary is printed every 5 seconds the first 12 times (i.e. for the first 60 seconds), and then every 60 seconds. You can configure this behavior (or disable it completely) in the step configuration.
 
 ### JUnit reporting
 
