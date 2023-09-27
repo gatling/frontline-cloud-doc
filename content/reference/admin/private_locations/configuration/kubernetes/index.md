@@ -103,7 +103,7 @@ control-plane {
         "java.net.preferIPv6Addresses" = "true"
       }
       # Overwrite JAVA_HOME definition (optional)
-      java-home = "/usr/lib/jvm/zulu17"
+      java-home = "/usr/lib/jvm/zulu"
       # JVM Options (optional)
       # Default ones, that can be overriden with precedence:
       # [
