@@ -21,6 +21,8 @@ IDs can be retrieved on table either under kebab menu, or on the right of the ta
 
 Some information before using the public API:
 
+- The `Authorization` header is mandatory. Its value must be `bearer ` concatenated with the value of your ApiToken. Beware of the white space after the bearer prefix.
+- ApiToken must be present in the `Authorization` header after the `bearer ` prefix (exactly `bearer ` with one space)
 - You have to provide the run ID as a query parameter to fetch other run metadata (load generators, remotes, hostnames, scenarios, groups, requests)
 - The `from` and `to` query parameters for the `/series` endpoint are the lower and upper timestamp bounds of the time window you want to query. You can fetch the total run time window from the `/runs` endpoint (`injectStart`, `injectEnd`).
 - The returned percentiles by the API are: min, p25, p50, p75, p80, p85, p90, p95, p99, p999, p9999 and max.
