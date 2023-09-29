@@ -2,7 +2,7 @@
 title: "Kubernetes"
 description: "How to install a Gatling Control Plane on Kubernetes, to set up your Private Locations and run load generators in your own Kubernetes cluster"
 lead: "Run a Control Plane on Kubernetes, to set up your Private Locations and run load generators in your own Kubernetes network"
-lastmod: 2023-04-03T12:00:00+00:00
+lastmod: 2023-09-25T08:15:00+00:00
 weight: 22054
 ---
 
@@ -86,6 +86,7 @@ apiVersion: apps/v1
 kind: Deployment 
 metadata:
   name: control-plane
+  namespace: gatling
 spec:
   replicas: 1 
   selector: 

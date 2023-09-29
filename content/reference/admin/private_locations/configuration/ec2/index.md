@@ -3,11 +3,12 @@ title: "AWS EC2 Load Generators"
 description: "Load Generators on your private AWS account"
 lead: "Private Locations on your AWS account"
 date: 2023-01-12T16:46:04+00:00
-lastmod: 2023-01-12T16:29:04+00:00
-weight: 22052
+lastmod: 2023-10-09T14:42:00+00:00
+weight: 22053
 ---
 
 ## AWS EC2
+
 AWS private locations require the control plane to have access to AWS credentials from the default credential provider chain.
 
 See [the AWS documentation for the Default Credential Provider Chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
@@ -82,10 +83,10 @@ control-plane {
       # Java configuration (following configuration properties are optional)
       # System properties (optional)
       system-properties {
-        "java.net.preferIPv6Addresses" = "true"
+        # ExampleKey = "ExampleValue"
       }
       # Overwrite JAVA_HOME definition (optional)
-      java-home = "/usr/lib/jvm/zulu17"
+      # java-home = "/usr/lib/jvm/zulu"
       # JVM Options (optional)
       # Default ones, that can be overriden with precedence:
       # [
@@ -97,7 +98,7 @@ control-plane {
       #   "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED"
       # ]
       #  Based on your instance configuration, you may want to update Xmx and Xms values.
-      jvm-options = ["-Xmx8G", "-Xms512M"]
+      # jvm-options = ["-Xmx4G", "-Xms512M"]
     }
   ]
 }
@@ -117,5 +118,3 @@ So when using a custom AMI, make sure following are available:
 {{< alert tip >}}
 Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
 {{< /alert >}}
-
-

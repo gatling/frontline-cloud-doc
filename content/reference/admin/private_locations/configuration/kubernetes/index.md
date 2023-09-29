@@ -3,7 +3,7 @@ title: "Kubernetes Load Generators"
 description: "Load Generators on your private Kubernetes cluster"
 lead: "Private Locations on your Kubernetes cluster"
 date: 2023-01-12T16:46:04+00:00
-lastmod: 2023-04-03T12:00:00+00:00
+lastmod: 2023-10-09T14:42:00+00:00
 weight: 22055
 ---
 
@@ -87,23 +87,23 @@ control-plane {
       }
       # Tolerations (optional)
       tolerations = [
-        {
-          key = key1
-          operator = Equal
-          # Value is not needed when effect is Exists (optional)
-          value = value1 
-          # An empty effect matches all effects with key (optional)
-          effect = NoSchedule
-        }
+      #  {
+      #    key = key1
+      #    operator = Equal
+      #    # Value is not needed when effect is Exists (optional)
+      #    value = value1 
+      #    # An empty effect matches all effects with key (optional)
+      #    effect = NoSchedule
+      #  }
       ]
       
       # Java configuration (following configuration properties are optional)
       # System properties (optional)
       system-properties {
-        "java.net.preferIPv6Addresses" = "true"
+        # ExampleKey = ExampleValue
       }
       # Overwrite JAVA_HOME definition (optional)
-      java-home = "/usr/lib/jvm/zulu"
+      # java-home = "/usr/lib/jvm/zulu"
       # JVM Options (optional)
       # Default ones, that can be overriden with precedence:
       # [
@@ -115,7 +115,7 @@ control-plane {
       #   "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED"
       # ]
       # Based on your instance configuration, you may want to update Xmx and Xms values.
-      jvm-options = ["-Xmx8G", "-Xms512M"]
+      # jvm-options = ["-Xmx4G", "-Xms512M"]
     }
   ]
 }

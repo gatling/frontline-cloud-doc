@@ -3,14 +3,16 @@ title: "Azure Load Generators"
 description: "Load Generators on your private Azure account"
 lead: "Private Locations on your Azure account"
 date: 2023-03-31T15:29:00+00:00
-lastmod: 2023-03-31T15:29:00+00:00
+lastmod: 2023-10-09T14:42:00+00:00
 weight: 22053
 ---
 
 ## Azure Virtual Machines
+
 Azure private locations require the control plane to have Azure credentials configured in order to instantiate virtual machines and associated resources.
 
 ### Environment variables
+
 Credentials can be set through environment variables in your control plane.
 
 | name                  | value             |
@@ -73,10 +75,10 @@ control-plane {
       # Java configuration (following configuration properties are optional)
       # System properties (optional)
       system-properties {
-        "java.net.preferIPv6Addresses" = "true"
+        # ExampleKey = ExampleValue
       }
       # Overwrite JAVA_HOME definition (optional)
-      java-home = "/usr/lib/jvm/zulu17"
+      # java-home = "/usr/lib/jvm/zulu"
       # JVM Options (optional)
       # Default ones, that can be overriden with precedence:
       # [
@@ -88,7 +90,7 @@ control-plane {
       #   "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED"
       # ]
       #  Based on your instance configuration, you may want to update Xmx and Xms values.
-      jvm-options = ["-Xmx8G", "-Xms512M"]
+      # jvm-options = ["-Xmx4G", "-Xms512M"]
     }
   ]
 }
