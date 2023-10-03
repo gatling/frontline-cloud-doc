@@ -211,4 +211,4 @@ After a short time, you should see your Control Plane get the "up" status in Gat
 
 {{< img src="ecs-control-plane-status.png" alt="Checking out the Control Plane's status in Gatling Enterprise Cloud" >}}
 
-You can now configure a simulation to run one one or more of this Control Plane's pool!
+You can now configure a simulation to run on one or more of this Control Plane's locations!
