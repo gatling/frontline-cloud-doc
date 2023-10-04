@@ -5,5 +5,6 @@ weight: 22031
 ordering:
 - azure
 - ec2
+- gcp
 - kubernetes
 ---
