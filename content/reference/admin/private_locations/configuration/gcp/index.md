@@ -95,3 +95,35 @@ control-plane {
   ]
 }
 ```
+
+## Internet access for your Load Generators instances
+
+Cloud NAT (Network Address Translation) lets certain resources in Google Cloud create outbound connections to the internet or to other Virtual Private Cloud (VPC) networks. 
+Cloud NAT supports address translation for established inbound response packets only. **It does not allow unsolicited inbound connections.**
+
+More info on [Cloud NAT overview](https://cloud.google.com/nat/docs/overview).
+
+### Instances with no external IP
+
+An instance without an external IP cannot access to internet without a Cloud NAT configured on the network, for the region.
+Load generators must have access to some outbound domains in order to run (see [Private locations introduction]({{< ref "../../introduction" >}})).
+
+In the GCP management console, open the [Cloud NAT](https://console.cloud.google.com/net-services/nat) (or search for "Cloud NAT" in the search bar).
+
+Set the Gateway:
+- name
+- region base on your location zone
+- create a router
+
+{{< img src="cloud-nat-gateway.png" alt="Gateway configuration" >}}
+{{< img src="cloud-nat-router.png" alt="Router configuration" >}}
+
+###  Set static IPs
+
+Cloud NAT gateway can be configured with static IP addresses.
+See limits of concurrent connections with Cloud NAT on [Cloud NAT port reservation](https://cloud.google.com/nat/docs/ports-and-addresses#examples) and 
+make sure to provide enough static IP addresses based on the load you need to generate.
+
+{{< img src="cloud-nat-static-ip.png" alt="Static IP configuration" >}}
+
+
