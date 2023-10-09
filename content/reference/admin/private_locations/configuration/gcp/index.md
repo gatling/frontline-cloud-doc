@@ -43,6 +43,9 @@ control-plane {
       # GCP location name, as listed by GCP CLI:
       # gcloud compute zones list
       zone = "europe-west3-a"
+      # Instance template (alternative to machine)
+      # instance-template = "example-template"
+      # Machine configuration (alternative to instance template)
       machine {
         # Virtual machine type, as listed by GCP CLI:
         # gcloud compute machine-types list --filter="zone:( europe-west3-a )"
