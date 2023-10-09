@@ -144,3 +144,57 @@ After a short time, you should see your Control Plane get the "up" status in Gat
 {{< img src="gcp-control-plane-status.png" alt="Checking out the Control Plane's status in Gatling Enterprise Cloud" >}}
 
 You can now configure a simulation to run on one or more of this Control Plane's locations!
+
+## Troubleshooting
+
+### Deployment failed
+
+It's important to note that, based on your configuration, certain permissions may be missing, leading to deployment failures.
+
+If you encounter the following error within Gatling Enterprise Cloud:
+```
+Control plane 'cp_example' failed to deploy private location 'prl_example' failed to deploy: com.google.api.gax.rpc.PermissionDeniedException: Forbidden
+```
+
+In this scenario, you should establish a connection to the instance where the control plane container is active. 
+Subsequently, you can inspect the container's log by using the command: `docker logs <container-id>`.
+
+Then search for missing permissions exception for the Google Cloud SDK, such as:
+```
+"errors": [
+  {
+    "message": "Required 'compute.instanceTemplates.useReadOnly' permission for 'projects/example/global/instanceTemplates/gatling-template'",
+    "domain": "global",
+    "reason": "forbidden"
+  },
+  {
+    "message": "Required 'compute.images.useReadOnly' permission for 'projects/example/global/images/classic-openjdk-17'",
+    "domain": "global",
+    "reason": "forbidden"
+  },
+  {
+    "message": "Required 'compute.instances.setServiceAccount' permission for 'projects/example/zones/europe-west3-a/instances/unusedName'",
+    "domain": "global",
+    "reason": "forbidden"
+  }
+]
+```
+
+### Control plane is down
+
+Containers take some time to become operational on the VM when deploying containers with konlet.
+To verify the status of the control plane, you can inspect the instance by running the command: `docker ps -a`.
+
+If docker ps displays the konlet container as running, it indicates that the control-plane container has not yet been deployed.
+
+If you do not see any output for an extended period, it's advisable to review the konlet logs using the command: `sudo journalctl -u konlet-startup`.
+
+### Timeout 
+
+Control plane deployed the instances successfully; however, a timeout occurred during the deployment process.
+This is likely due to issues with the load generator initialization script, such as missing requirements on a custom image or lack of internet access.
+
+You can examine these logs directly within containers by executing the command: `sudo journalctl -u google-startup-scripts.service`.
+
+If the instance is stopped, it can be maintained in an operational state by setting debug.keep-load-generator-alive to true in the location configuration. 
+**However, remember to delete it manually when no longer needed.**
