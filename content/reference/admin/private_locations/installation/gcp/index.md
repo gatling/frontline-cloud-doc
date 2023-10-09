@@ -64,6 +64,14 @@ secretmanager.versions.access
 
 {{< img src="role-creation.png" alt="Role creation" >}}
 
+Some permissions may be required based on configuration:
+- `compute.images.useReadOnly` when using custom image
+- `compute.instanceTemplates.useReadOnly` for instance templates
+```
+compute.images.useReadOnly <1>
+compute.instanceTemplates.useReadOnly <2>
+compute.subnetworks.useExternalIp <3>
+```
 ## Service account creation
 
 In the GCP management console, open [Service accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) (or search for "Service Accounts" in the search bar). 
