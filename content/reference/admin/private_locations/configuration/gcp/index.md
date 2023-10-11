@@ -49,6 +49,8 @@ control-plane {
         # Virtual machine type, as listed by GCP CLI:
         # gcloud compute machine-types list --filter="zone:( europe-west3-a )"
         type = "e2-micro"
+        # Configure load generators instances as preemptible or not. (optional, default: false)
+        # preemptible = true
         # Certified image configuration
         image {
           type = "certified"
