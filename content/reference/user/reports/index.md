@@ -3,7 +3,7 @@ title: "Reports"
 description: "Learn how to analyze test reports and discover the slow parts of your application."
 lead: "Analyze your reports and discover the bottlenecks in your application."
 date: 2021-03-10T14:29:43+00:00
-lastmod: 2021-08-05T13:13:30+00:00
+lastmod: 2023-10-12T09:41:48+00:00
 weight: 21090
 ---
 
@@ -20,8 +20,8 @@ The Reports page consists of:
 - [Filter bar]({{< ref "#filter-bar" >}})
 - [Charts area]({{< ref "#charts" >}})
 - [The summary]({{< ref "#summary" >}}) (only for requests and groups tabs)
-- [Public links]({{< ref "#public-links" >}})
-- [Export PDF]({{< ref "#export-pdf" >}})
+- [Public links]({{< ref "#shareable-links" >}})
+- [Export PDF]({{< ref "#print-to-pdf" >}})
 - [Tips]({{< ref "#tips" >}})
 
 {{< img src="reports.png" alt="Reports" >}}
@@ -32,7 +32,7 @@ This bar is a combination of buttons including:
 
 - **Start / Stop**: Start a new run of the simulation, or stop the ongoing run
 - **Share**: Create a [shareable link]({{< ref "#shareable-links" >}}) to share this reports to anyone you want.
-- **Print to PDF**: [Print a PDF]({{< ref "#export-pdf" >}}) of your reports
+- **Print to PDF**: [Print a PDF]({{< ref "#print-to-pdf" >}}) of your reports
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 

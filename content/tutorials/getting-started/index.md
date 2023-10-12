@@ -10,7 +10,7 @@ aliases:
  - sbt
 description: "Learn how to setup Gatling Enterprise for the first time"
 date: 2021-08-30T16:00:00+02:00
-lastmod: 2021-08-30T16:00:00+02:00
+lastmod: 2023-10-12T09:41:48+00:00
 weight: 10010
 ---
 
@@ -167,8 +167,6 @@ If you already know about Gatling and/or you are using a Gradle, Maven or SBT pr
 * [Configuring a SBT project]({{< ref "../../reference/user/package_gen/#sbt-project" >}})
 
 Or, you can download preconfigured sample projects from Gatling Enterprise by clicking on the "Sample simulations" button on the top right in the Simulations page.
-
-Now, you can directly skip to the [generate a package]({{< ref "#generate-package" >}}) section.
 {{< /alert >}}
 
 ## Step 3 - Create a simulation
