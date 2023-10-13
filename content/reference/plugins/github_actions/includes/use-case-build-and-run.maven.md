@@ -27,7 +27,7 @@ jobs:
     steps:
       # Check out your GitHub repository.
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Set up Java and the build tools (including Maven).
       # You can configure other versions of the JDK, as long as they are
@@ -37,7 +37,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: '17'
+          java-version: '21'
           cache: 'maven'
 
       # Build, package, and upload your Gatling project 

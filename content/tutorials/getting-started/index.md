@@ -10,7 +10,7 @@ aliases:
  - sbt
 description: "Learn how to setup Gatling Enterprise for the first time"
 date: 2021-08-30T16:00:00+02:00
-lastmod: 2023-10-12T09:41:48+00:00
+lastmod: 2023-10-13T08:10:39+00:00
 weight: 10010
 ---
 
@@ -18,7 +18,7 @@ In this tutorial, we'll describe every step to help you run your first test with
 
 {{< alert info >}}
 **Requirements**
-* A Java Development Kit (JDK) installed in version 8, 11 or 17. [Azul System's Zulu](https://www.azul.com/downloads/?package=jdk) provides good packages that contain everything you need.
+* A Java Development Kit (JDK) installed in version 8, 11, 17 or 21. [Azul System's Zulu](https://www.azul.com/downloads/?package=jdk) provides good packages that contain everything you need.
 {{< /alert >}}
 
 {{< alert tip >}}

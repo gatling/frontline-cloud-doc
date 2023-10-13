@@ -3,7 +3,7 @@ title: "Kubernetes Load Generators"
 description: "Load Generators on your private Kubernetes cluster"
 lead: "Private Locations on your Kubernetes cluster"
 date: 2023-01-12T16:46:04+00:00
-lastmod: 2023-10-09T14:42:00+00:00
+lastmod: 2023-10-13T08:10:39+00:00
 weight: 22055
 ---
 
@@ -48,7 +48,7 @@ control-plane {
       # They are hosted on Docker Hub, and available for the linux/amd64 and linux/arm64 platforms
       image {
         type = certified
-        java = latest # Possible values : 8, 11, 17 or latest
+        java = latest # Possible values : 8, 11, 17, 21 or latest
       }
       # Custom image configuration
       # You can build your own images from https://github.com/gatling/frontline-injector-docker-image
