@@ -84,6 +84,7 @@ Once it is done, add the private repository configuration section in your [contr
 control-plane {
   repository {
     # S3 Bucket configuration
+    type = "aws"
     bucket = "bucket-name"
     path = "folder/to/upload" # (optional, default: root)
   }
@@ -93,6 +94,28 @@ control-plane {
 This configuration includes the following parameters:
 - **bucket**: The name of the bucket where packages are uploaded to on AWS S3.
 - **path:** The path of a folder in AWS S3 bucket. (optional)
+
+#### GCP Cloud Storage
+
+{{< alert warning >}}
+Control plane with private repository needs GCP service account role with permissions `storage.objects.create`, 
+`storage.objects.delete` and `iam.serviceAccounts.signBlob` on the bucket.
+{{< /alert >}}
+
+```bash
+control-plane {
+  repository {
+    # Cloud Storage Bucket configuration
+    type = "gcp"
+    bucket = "bucket-name"
+    path = "folder/to/upload" # (optional, default: root)
+  }
+}
+```
+
+This configuration includes the following parameters:
+- **bucket**: The name of the bucket where packages are uploaded to on GCP Cloud Storage.
+- **path:** The path of a folder in Cloud Storage bucket. (optional)
 
 ## Usage
 
