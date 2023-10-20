@@ -51,8 +51,6 @@ control-plane {
       security-groups = ["sg-mysecuritygroup"]
       # Instance type
       instance-type = "c5.xlarge"
-      # VPC
-      vpc = "vpc-a"
       # Spot instances (optional, default: false)
       # spot = true
       # Subnets
