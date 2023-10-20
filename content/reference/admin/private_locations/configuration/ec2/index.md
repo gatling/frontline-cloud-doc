@@ -53,6 +53,8 @@ control-plane {
       instance-type = "c5.xlarge"
       # VPC
       vpc = "vpc-a"
+      # Spot instances (optional, default: false)
+      # spot = true
       # Subnets
       subnets = ["subnet-a", "subnet-b"]
       # Elastic IP addresses (optional)
