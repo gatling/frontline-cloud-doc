@@ -60,7 +60,7 @@ Select the policies:
         "ec2:Describe*",
         "ec2:CreateTags",
         "ec2:RunInstances",
-        "ec2:TerminateInstance",
+        "ec2:TerminateInstances",
         "ec2.AssociateAddress", <1>
         "ec2:DisassociateAddress", <1>
         "iam:PassRole" <2>
