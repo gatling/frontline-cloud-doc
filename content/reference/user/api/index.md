@@ -6,6 +6,7 @@ date: 2021-03-08T12:50:24+00:00
 lastmod: 2021-08-05T13:13:30+00:00
 weight: 21110
 toc: false
+swagger-ui: true
 ---
 
 The Gatling Enterprise API server also exposes a public API that you can use to trigger runs or fetch run results and metrics.
