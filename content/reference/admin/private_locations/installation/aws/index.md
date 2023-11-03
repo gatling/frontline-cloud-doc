@@ -1,5 +1,5 @@
 ---
-title: "ECS and Fargate"
+title: "AWS"
 description: "How to install a Gatling Control Plane on AWS using Elastic Container Service (ECS) and Fargate, to set up your Private Locations and run load generators in your own AWS network"
 lead: "Run a Control Plane on AWS using Elastic Container Service (ECS) and Fargate, to set up your Private Locations and run load generators in your own AWS network"
 date: 2021-11-15T16:00:00+00:00

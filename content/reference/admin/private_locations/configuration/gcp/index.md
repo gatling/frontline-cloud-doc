@@ -1,5 +1,5 @@
 ---
-title: "GCP Load Generators"
+title: "GCP"
 description: "Load Generators on your private GCP account"
 lead: "Private Locations on your GCP account"
 date: 2023-10-02T15:29:00+00:00
