@@ -12,7 +12,7 @@ GCP [Compute Engine](https://cloud.google.com/compute/docs) is a computing and h
 In this example:
 - we use **Compute Engine** to configure a service to run the Gatling Control Plane
 - Compute Engine runs our Docker containers on a VM on the **GCP** infrastructure
-- the Control Plane configuration file is loaded from a **[Secret Manager](https://cloud.google.com/secret-manager)**
+- the [Control Plane configuration]({{< ref "../../configuration" >}}) file is loaded from a **[Secret Manager](https://cloud.google.com/secret-manager)**
 
 This is only an example.
 
