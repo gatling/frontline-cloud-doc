@@ -11,7 +11,7 @@ AWS [Elastic Container Service (ECS)](https://aws.amazon.com/ecs/) is a managed 
 
 - we use **Amazon ECS** to configure a service to run the Gatling Control Plane
 - ECS runs our Docker containers on the **AWS Fargate** infrastructure
-- the Control Plane configuration file is loaded from an **AWS S3 bucket**
+- the [Control Plane configuration]({{< ref "../../configuration" >}}) file is loaded from an **AWS S3 bucket**
 
 This is only an example. You could, for instance, use ECS to run containers on Amazon EC2, or mount the configuration file from Amazon EFS.
 

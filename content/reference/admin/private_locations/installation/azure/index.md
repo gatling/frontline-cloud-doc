@@ -49,7 +49,7 @@ Write down the storage account name, you will need it in further steps.
 
 Once again, refer to the [Azure File Share documentation](https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-portal) for details.
 
-In your storage account, let's create a File Share for the control plane configuration file:
+In your storage account, let's create a File Share for the [Control Plane configuration]({{< ref "../../configuration" >}}) file:
 * Access to your storage account page
 * Click on "File shares" in the side menu
 * Click on "File share" creation button in the top menu

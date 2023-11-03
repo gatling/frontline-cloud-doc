@@ -39,7 +39,7 @@ rules:
 
 ### Example
 
-The control plane requires a configuration under `/app/conf/control-plane.conf`, see [control plane configuration]({{< ref "../../introduction#control-plane-configuration-1" >}}).
+The control plane requires a configuration under `/app/conf/control-plane.conf`, see [control plane configuration]({{< ref "../../configuration" >}}).
 
 {{< alert tip >}}
 To do so, we'll create a config map named `control-plane-config` with a file named `control-plane.conf`, which will be mounted on the container:
