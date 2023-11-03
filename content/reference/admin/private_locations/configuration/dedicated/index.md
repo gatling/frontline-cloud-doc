@@ -1,0 +1,134 @@
+---
+title: "Dedicated Machines"
+description: "Deploy Load Generators on dedicated machines that you manage."
+lead: "Deploy Load Generators on dedicated machines that you manage."
+date: 2023-01-12T16:46:04+00:00
+lastmod: 2023-10-13T08:10:39+00:00
+weight: 22055
+---
+
+## Dedicated Machines
+
+You can configure private locations with pre-existing servers. 
+The control plane will be able to use configured dedicated machines as load generators during your simulations.
+
+The control plane must have access to your dedicated machines. Ensure that each host is reachable through SSH on a specific port.
+
+The control plane possesses a private key for establishing connections, while the corresponding public key is shared and configured on every host in the location.
+
+### Host prerequisites
+
+The location host environment must include:
+- Java runtime environment
+- `bash` the GNU Project's shell
+- `jq` a lightweight and flexible command-line JSON processor
+- `curl` command line tool for transferring data with URLs
+- `~/.ssh/authorized_keys` with a control plane public key
+
+### Control plane configuration file
+
+```bash
+control-plane {
+  # Control plane token
+  token = "cpt_example_c7oze5djp3u14a5xqjanh..."
+  # Control plane token with an environment variable
+  token = ${?CONTROL_PLANE_TOKEN}
+  # Control plane token with a system property
+  token = $?control.plane.token
+  # Control plane description (optional)
+  description = "my control plane description"
+  # Locations configurations
+  locations = [
+    {
+      # Private location ID, must be prefixed by prl_, only consist of numbers 0-9, 
+      # lowercase letters a-z, and underscores, with a max length of 30 characters
+      id = "prl_private_location_example"
+      # Private location description (optional)
+      description = "Private Location on Dedicated Machines"
+      # Private location type
+      type = "dedicated"
+      ssh {
+        # SSH user
+        user = "gatling"
+        ## SSH private key
+        private-key {
+          # SSH private key path used to secure connections
+          path = "private/key/path"
+          # SSH private key password (optional, default: none)
+          password = "password"
+           # SSH private key password with an environment variable
+          password = ${?PRIVATE_KEY_PASSWORD}
+        }
+        # SSH port (optional, default: 22)
+        # port = 22
+        # SSH connection timeout (optional, default 15 seconds)
+        # connection-timeout = 15 seconds
+      }
+      # Working directory on hosts, must be executable (optional, default: /tmp)
+      # working-directory = "/tmp
+      
+      # Hosts accessible with the SSH private key, on configured port (hostnames or IP addresses)
+      hosts = [
+        "localhost",
+        "0.0.0.0"
+      ]
+      
+      # Java configuration (following configuration properties are optional)
+      # System properties (optional)
+      system-properties {
+        # ExampleKey = ExampleValue
+      }
+      # Overwrite JAVA_HOME definition (optional)
+      # java-home = "/usr/lib/jvm/zulu"
+      # JVM Options (optional)
+      # Default ones, that can be overriden with precedence:
+      # [
+      #   "-Xmx4G", 
+      #   "-XX:MaxInlineLevel=20", 
+      #   "-XX:MaxTrivialSize=12", 
+      #   "-XX:+IgnoreUnrecognizedVMOptions", 
+      #   "--add-opens=java.base/java.nio=ALL-UNNAMED", 
+      #   "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED"
+      # ]
+      # Based on your instance configuration, you may want to update Xmx and Xms values.
+      # jvm-options = ["-Xmx4G", "-Xms512M"]
+    }
+  ]
+}
+```
+
+{{< alert warning >}}
+Working directory must be executable
+{{< /alert >}}
+
+## Troubleshooting
+
+This section contains tips for troubleshooting common issues with dedicated machines. 
+If you have an issue not covered here, consider posting a question on the [Community Forum](https://community.gatling.io/c/enterprise/6).
+
+### SSH keys
+
+Execute the command `ssh-keygen -t ed25519 -f control-plane` to generate your key pair. _(You have the option to configure a password during this process)_
+
+This will generate the `control-plane` private key and `control-plane.pub` public key in the current directory where the command was executed.
+
+Next, you'll need to configure the authorized keys on the host for a user named, for example, `gatling`.
+
+To configure the authorized keys on the host:
+
+1. Create the authorized_keys file in the gatling/.ssh directory on the host:
+  ```bash
+  touch gatling/.ssh/authorized_keys
+  chmod 600 gatling/.ssh/authorized_keys
+  ```
+
+2. Add the public key to gatling/.ssh/authorized_keys on the host. You can do this either by using the ssh-copy-id command:
+  ```bash
+  ssh-copy-id -i control-plane.pub gatling@host
+  ```
+  Or, manually by appending the public key to the file with:
+  ```bash
+  cat control-plane.pub >> gatling/.ssh/authorized_keys
+  ```
+
+3. Add the private key to the control plane. Refer to your control plane config file for the expected private key file path: for your location, the value of `ssh.private-key.path`.
