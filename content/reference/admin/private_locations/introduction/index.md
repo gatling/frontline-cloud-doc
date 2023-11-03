@@ -108,7 +108,7 @@ Configuration file is mounted at `/app/conf/control-plane.conf`.
 {{< /alert >}}
 
 For examples of installations, see:
-* [Amazon elastic container service]({{< ref "../installation/ecs" >}})
+* [Amazon elastic container service]({{< ref "../installation/aws" >}})
 * [Azure container applications service]({{< ref "../installation/azure" >}})
 * [Kubernetes deployment]({{< ref "../installation/kubernetes" >}})
 

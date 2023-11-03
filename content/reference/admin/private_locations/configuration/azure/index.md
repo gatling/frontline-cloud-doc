@@ -1,5 +1,5 @@
 ---
-title: "Azure Load Generators"
+title: "Azure"
 description: "Load Generators on your private Azure account"
 lead: "Private Locations on your Azure account"
 date: 2023-03-31T15:29:00+00:00
