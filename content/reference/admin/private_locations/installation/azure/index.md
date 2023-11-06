@@ -4,7 +4,6 @@ description: "How to install a Gatling Control Plane on Azure using Container Ap
 lead: "Run a Control Plane on Azure using Container Apps and Azure Files, to set up your Private Locations and run load generators in your own Azure network"
 date: 2023-03-04T16:00:00+00:00
 lastmod: 2023-03-04T16:00:00+00:00
-weight: 22052
 ---
 
 First of all, you should have followed [introduction]({{< ref "../../introduction/" >}}) instructions to configure Gatling Cloud for receiving a new control plane. Please check this section first.

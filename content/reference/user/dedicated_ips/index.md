@@ -4,7 +4,6 @@ description: "Dedicated IP addresses for your locations"
 lead: "Dedicated IP addresses for your locations"
 date: 2021-03-10T14:29:04+00:00
 lastmod: 2021-08-05T13:13:30+00:00
-weight: 21070
 ---
 
 Dedicated IP Addresses allow you to have control over the load generators' IP addresses.

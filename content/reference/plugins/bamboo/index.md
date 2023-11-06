@@ -4,7 +4,6 @@ description: "Learn how to configure the Gatling Enterprise Bamboo plugin and ru
 lead: "Run your Gatling Enterprise simulations from your Bamboo CI."
 date: 2021-03-08T12:49:49+00:00
 lastmod: 2023-10-11T10:10:00+00:00
-weight: 23050
 ---
 
 ## Purpose of this plugin

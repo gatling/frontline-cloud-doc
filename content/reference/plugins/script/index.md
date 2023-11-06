@@ -4,7 +4,6 @@ description: "Learn how to configure other Continuous Integration/Continuous Del
 lead: "Run your Gatling Enterprise simulations from any CI/CD product."
 date: 2021-03-08T12:50:17+00:00
 lastmod: 2023-02-17T14:00:00+00:00
-weight: 23060
 ---
 
 We provide dedicated support for a number of CI tools: [GitHub Actions]({{< ref "../github_actions" >}}), [Gitlab CI]({{< ref "../gitlab_ci" >}}), [Jenkins]({{< ref "../jenkins" >}}), [Teamcity]({{< ref "../teamcity" >}}), [Bamboo]({{< ref "../github_actions" >}}). However, we also document here how to run your simulations on Gatling Enterprise from any other CI products, using either one of the supported build tools or our CI shell script.

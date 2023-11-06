@@ -4,7 +4,6 @@ description: "How to install a Gatling Control Plane on GCP using Compute Engine
 lead: "Run a Control Plane on GCP using Compute Engine, to set up your Private Locations and run load generators in your own GCP network"
 date: 2023-09-03T16:00:00+00:00
 lastmod: 2023-09-03T16:00:00+00:00
-weight: 22053
 ---
 
 GCP [Compute Engine](https://cloud.google.com/compute/docs) is a computing and hosting service that lets you create and run virtual machines on Google infrastructure.

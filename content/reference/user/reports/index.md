@@ -4,7 +4,6 @@ description: "Learn how to analyze test reports and discover the slow parts of y
 lead: "Analyze your reports and discover the bottlenecks in your application."
 date: 2021-03-10T14:29:43+00:00
 lastmod: 2023-10-12T09:41:48+00:00
-weight: 21090
 ---
 
 The reports can be accessed by clicking on the {{< icon chart-area >}} icon in the [simulations table]({{< ref "../simulations#simulations-table" >}}) or in the [runs table]({{< ref "../trends#runs-table" >}}).

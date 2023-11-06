@@ -11,7 +11,6 @@ aliases:
 description: "Learn how to setup Gatling Enterprise for the first time"
 date: 2021-08-30T16:00:00+02:00
 lastmod: 2023-10-13T08:10:39+00:00
-weight: 10010
 ---
 
 In this tutorial, we'll describe every step to help you run your first test with Gatling Enterprise.

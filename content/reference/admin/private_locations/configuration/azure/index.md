@@ -4,7 +4,6 @@ description: "Load Generators on your private Azure account"
 lead: "Private Locations on your Azure account"
 date: 2023-03-31T15:29:00+00:00
 lastmod: 2023-10-13T08:10:39+00:00
-weight: 22053
 ---
 
 ## Azure Virtual Machines

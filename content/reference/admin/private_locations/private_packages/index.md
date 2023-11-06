@@ -4,7 +4,6 @@ description: "How to install and use a private repository on your Control Plane"
 lead: "Store your simulations' packages privately in your infrastructure, and use them with private locations"
 date: 2023-08-09T12:00:00+00:00
 lastmod: 2023-08-09T12:00:00+00:00
-weight: 22033
 ---
 
 # Introduction

@@ -4,7 +4,6 @@ description: "Learn how to access your profile and leave an organization."
 lead: "Account settings"
 date: 2021-03-10T14:29:23+00:00
 lastmod: 2021-08-05T13:13:30+00:00
-weight: 21030
 ---
 
 ## Accessing your profile
