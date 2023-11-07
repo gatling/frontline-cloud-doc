@@ -130,3 +130,23 @@ To configure the authorized keys on the host:
   ```
 
 3. Add the private key to the control plane. Refer to your control plane config file for the expected private key file path: for your location, the value of `ssh.private-key.path`.
+
+### Timeout
+
+If your execution results in a timeout without any additional information, it indicates that the script failed unexpectedly. 
+To investigate this issue, you can configure a location to remain active by using the following settings:
+
+```
+locations = [
+  {
+    id = "prl_dedicated"
+    type = "dedicated"
+    ...
+    debug {
+      keep-load-generator-alive = true
+    }
+  }
+]
+```
+
+Afterward, you can examine the logs via systemd logs using the identifier `gatling` with `journalctl --identifier gatling`.
