@@ -117,6 +117,26 @@ This configuration includes the following parameters:
 - **bucket**: The name of the bucket where packages are uploaded to on GCP Cloud Storage.
 - **path:** The path of a folder in Cloud Storage bucket. (optional)
 
+#### Azure Blob Storage
+
+{{< alert warning >}}
+Control plane with private repository needs to be associate with Azure storage account role `Storage Blob Data Contributor`.
+
+For more information, check [Authenticate to Azure and authorize access to blob data](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-java?tabs=powershell%2Cmanaged-identity%2Croles-azure-portal%2Csign-in-azure-cli#authenticate-to-azure-and-authorize-access-to-blob-data)
+{{< /alert >}}
+
+```bash
+control-plane {
+  repository {
+    # Azure Blob Storage configuration
+    type = "azure"
+    storage-account = "storage-account-name"
+    container = "container-name"
+    path = "folder/to/upload" # (optional, default: root)
+  }
+}
+```
+
 ## Usage
 
 After configuration, restart your control plane to start the server.
