@@ -55,7 +55,7 @@ control-plane {
       # Certified AMI configuration
       image {
         type = "certified"
-        java = "latest" # Possible values : 8, 11, 17, 21 or latest
+        java = "latest" # Possible values : 11, 17, 21 or latest
       }
       # Azure subscription id as returned by Azure CLI:
       # az account show

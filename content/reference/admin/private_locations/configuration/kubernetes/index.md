@@ -46,7 +46,7 @@ control-plane {
       # They are hosted on Docker Hub, and available for the linux/amd64 and linux/arm64 platforms
       image {
         type = certified
-        java = latest # Possible values : 8, 11, 17, 21 or latest
+        java = latest # Possible values : 11, 17, 21 or latest
       }
       # Custom image configuration
       # You can build your own images from https://github.com/gatling/frontline-injector-docker-image
@@ -127,7 +127,7 @@ So when using a custom image, make sure following are available:
 
 - [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
 - [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
-- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 8, 11 and 17 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
 
 {{< alert tip >}}
 Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).

@@ -19,10 +19,10 @@ The control plane possesses a private key for establishing connections, while th
 ### Host prerequisites
 
 The location host environment must include:
-- Java runtime environment
 - `bash` the GNU Project's shell
-- `jq` a lightweight and flexible command-line JSON processor
-- `curl` command line tool for transferring data with URLs
+- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
+- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
 - `~/.ssh/authorized_keys` with a control plane public key
 
 ### Control plane configuration file
