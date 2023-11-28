@@ -9,7 +9,7 @@ ordering:
 cascade:
   variables:
     gatlingVersion: "3.9.5"
-    ciPluginsVersion: "1.17.1"
+    ciPluginsVersion: "1.17.3"
     grafanaPluginVersion: "1.16.5"
   docsRepo:
     url: https://github.com/gatling/frontline-cloud-doc/blob/main/content
