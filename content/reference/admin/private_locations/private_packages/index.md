@@ -137,6 +137,34 @@ control-plane {
 }
 ```
 
+#### Filesystem Storage
+This option allows the storage of simulations directly on the control-plane filesystem.
+```bash
+  repository = {
+    # Filesystem configuration
+    type = "filesystem"
+    # Directory to store your private packages
+    directory = "/data/gatling-repository"
+    upload {
+      # Directory to temporarily store your incoming simulation during the upload process
+      directory = "/tmp" # (optional, default: /tmp)
+    }
+    location {
+      # URL of your control-plane from your private locations
+      download-base-url = "http://www.example.com:8080"
+    }
+  }
+```
+
+{{< alert warning >}}
+Please note that the optional `upload.directory` configuration, which defaults to /tmp, will be used to temporarily store your incoming simulation during the upload process.
+Once the upload is complete, the file will be stored in your configured directory (`/data/gatling-repository` in the provided example).
+{{< /alert >}}
+
+This configuration includes the following parameters:
+- **directory**: The directory where the simulations will be stored.
+- **location.download-base-url**: The access URL for the control-plane. This URL will be provided to the load-generators so that they can download your simulations. 
+
 ## Usage
 
 After configuration, restart your control plane to start the server.
