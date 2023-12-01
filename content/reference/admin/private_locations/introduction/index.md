@@ -93,9 +93,11 @@ control-plane {
 ```
 
 For examples of private locations configuration, see:
-* [Configuration of Amazon EC2 locations]({{< ref "../configuration/ec2" >}})
-* [Configuration of Azure Virtual Machines locations]({{< ref "../configuration/azure" >}})
-* [Configuration of Kubernetes locations]({{< ref "../configuration/kubernetes" >}})
+* [Configuration of Amazon EC2 locations]({{< ref "../aws/configuration" >}})
+* [Configuration of Azure Virtual Machines locations]({{< ref "../azure/configuration" >}})
+* [Configuration of GCP Compute Engine locations]({{< ref "../gcp/configuration" >}})
+* [Configuration of Kubernetes locations]({{< ref "../kubernetes/configuration" >}})
+* [Configuration of Dedicated Machines locations]({{< ref "../dedicated/configuration" >}})
 
 ### Installation
 
@@ -106,9 +108,11 @@ Configuration file is mounted at `/app/conf/control-plane.conf`.
 {{< /alert >}}
 
 For examples of installations, see:
-* [Amazon elastic container service]({{< ref "../installation/aws" >}})
-* [Azure container applications service]({{< ref "../installation/azure" >}})
-* [Kubernetes deployment]({{< ref "../installation/kubernetes" >}})
+* [Amazon elastic container service]({{< ref "../aws/installation" >}})
+* [Azure container applications service]({{< ref "../azure/installation" >}})
+* [GCP Compute Engine service]({{< ref "../gcp/installation" >}})
+* [Kubernetes deployment]({{< ref "../kubernetes/installation" >}})
+* [Docker container deployment]({{< ref "../dedicated/installation" >}})
 
 ## Managing Control Planes on Gatling Enterprise Cloud
 

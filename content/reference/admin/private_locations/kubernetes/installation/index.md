@@ -1,9 +1,9 @@
 ---
-title: "Kubernetes"
+title: "Installation"
 description: "How to install a Gatling Control Plane on Kubernetes, to set up your Private Locations and run load generators in your own Kubernetes cluster"
 lead: "Run a Control Plane on Kubernetes, to set up your Private Locations and run load generators in your own Kubernetes network"
 lastmod: 2023-09-25T08:15:00+00:00
-weight: 22054
+weight: 220340
 ---
 
 ## Introduction
@@ -39,7 +39,7 @@ rules:
 
 ### Example
 
-The control plane requires a configuration under `/app/conf/control-plane.conf`, see [control plane configuration]({{< ref "../../configuration" >}}).
+The control plane requires a configuration under `/app/conf/control-plane.conf`, see [control plane configuration]({{< ref "../configuration" >}}).
 
 {{< alert tip >}}
 To do so, we'll create a config map named `control-plane-config` with a file named `control-plane.conf`, which will be mounted on the container:

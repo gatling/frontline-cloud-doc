@@ -1,17 +1,17 @@
 ---
-title: "Docker"
+title: "Installation"
 description: "How to install a Gatling Control Plane on Docker, to set up your Private Locations and run load generators"
 lead: "Run a Control Plane on Docker, to set up your Private Locations and run load generators"
 date: 2021-11-15T16:00:00+00:00
 lastmod: 2021-11-15T16:00:00+00:00
-weight: 22052
+weight: 220360
 ---
 
 [Docker](https://www.docker.com/) is a tool for running applications in containers.
 
 In this example:
 - we use **Docker** to configure a docker service to run the Gatling Control Plane
-- the [Control Plane configuration]({{< ref "../../configuration" >}}) is mounted as a volume
+- the [Control Plane configuration]({{< ref "../../introduction#configuration" >}}) is mounted as a volume
 
 ## Control Plane service
 
@@ -31,7 +31,7 @@ services:
 ```
 
 The `/etc/control-plane` directory must include a file named `control-plane.conf`. 
-This file should contain the [Control Plane configuration]({{< ref "../../configuration" >}}).
+This file should contain the [Control Plane configuration]({{< ref "../../introduction#configuration" >}}).
 
 Additionally, the `/etc/control-plane` directory may also include a LogBack configuration file named `logback.xml`.
 
