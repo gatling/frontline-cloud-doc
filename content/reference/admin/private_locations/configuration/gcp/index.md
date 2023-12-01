@@ -7,17 +7,34 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 22054
 ---
 
-## GCP Virtual Machines
+## Permissions
+
 GCP private locations require the control plane to have GCP access rights configured in order to instantiate virtual machines.
 
-### Service account
+GCP private locations require the control plane to have credentials configured in order to instantiate virtual machines and associated resources.
+
 Access rights can be set through a service account associated with your control plane.
 
 Check GCP and Gatling documentation pages for more details:
 * [GCP Service account](https://cloud.google.com/iam/docs/service-account-overview)
 * [Gatling installation guide]({{< ref "../../installation/gcp/#service-account" >}})
 
-### Control plane configuration file
+## System requirements
+
+GCP private locations rely on some dependencies.
+
+So when using a custom image, make sure following are available:
+
+- [cloud-init](https://cloud.google.com/compute/docs/instances/startup-scripts/linux) integration.
+- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
+- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
+
+{{< alert tip >}}
+Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
+{{< /alert >}}
+
+## Control plane configuration file
 
 ```bash
 control-plane {
@@ -97,21 +114,6 @@ control-plane {
   ]
 }
 ```
-
-### Custom image requirements
-
-GCP private locations rely on some dependencies.
-
-So when using a custom image, make sure following are available:
-
-- [cloud-init](https://cloud.google.com/compute/docs/instances/startup-scripts/linux) integration.
-- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
-- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
-- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
-
-{{< alert tip >}}
-Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
-{{< /alert >}}
 
 ## Internet access for your Load Generators instances
 

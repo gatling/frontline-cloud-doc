@@ -7,15 +7,13 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 22053
 ---
 
-## Azure Virtual Machines
-
-### Permissions
+## Permissions
 
 Azure private locations require the control plane to have credentials configured in order to instantiate virtual machines and associated resources.
 
 Those can be set through environment variables in your control plane or via [Azure RBAC](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview). Select the most appropriated method depending on your infrastructure, or check our [installation guide]({{< ref "../../installation/azure" >}})  for deployment with [Azure Container Apps](https://azure.microsoft.com/en-us/products/container-apps).
 
-#### Environment variables
+### Environment variables
 
 | name                  | value             |
 | --------------------- | ----------------- |
@@ -28,7 +26,22 @@ Check Azure documentation pages to find these values:
 * [Client id and secret](https://learn.microsoft.com/en-us/answers/questions/834401/hi-i-want-my-client-id-and-client-secret-key)
 * [Subscription id](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id)
 
-### Control plane configuration file
+## System requirements
+
+Azure private locations rely on some dependencies.
+
+So when using a custom image, make sure following are available:
+
+- [cloud-init](https://learn.microsoft.com/en-us/azure/virtual-machines/custom-data) integration.
+- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
+- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
+
+{{< alert tip >}}
+Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
+{{< /alert >}}
+
+## Control plane configuration file
 
 ```bash
 control-plane {
@@ -95,18 +108,3 @@ control-plane {
   ]
 }
 ```
-
-### Custom image requirements
-
-Azure private locations rely on some dependencies.
-
-So when using a custom image, make sure following are available:
-
-- [cloud-init](https://learn.microsoft.com/en-us/azure/virtual-machines/custom-data) integration.
-- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
-- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
-- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
-
-{{< alert tip >}}
-Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
-{{< /alert >}}
