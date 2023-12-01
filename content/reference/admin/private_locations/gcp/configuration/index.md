@@ -1,10 +1,10 @@
 ---
-title: "GCP"
+title: "Configuration"
 description: "Load Generators on your private GCP account"
 lead: "Private Locations on your GCP account"
 date: 2023-10-02T15:29:00+00:00
 lastmod: 2023-10-13T08:10:39+00:00
-weight: 22054
+weight: 220331
 ---
 
 ## Permissions
@@ -17,7 +17,7 @@ Access rights can be set through a service account associated with your control 
 
 Check GCP and Gatling documentation pages for more details:
 * [GCP Service account](https://cloud.google.com/iam/docs/service-account-overview)
-* [Gatling installation guide]({{< ref "../../installation/gcp/#service-account" >}})
+* [Gatling installation guide]({{< ref "../installation/#service-account" >}})
 
 ## System requirements
 

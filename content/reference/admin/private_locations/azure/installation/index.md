@@ -1,10 +1,10 @@
 ---
-title: "Azure"
+title: "Installation"
 description: "How to install a Gatling Control Plane on Azure using Container Apps"
 lead: "Run a Control Plane on Azure using Container Apps and Azure Files, to set up your Private Locations and run load generators in your own Azure network"
 date: 2023-03-04T16:00:00+00:00
 lastmod: 2023-03-04T16:00:00+00:00
-weight: 22052
+weight: 220320
 ---
 
 First of all, you should have followed [introduction]({{< ref "../../introduction/" >}}) instructions to configure Gatling Cloud for receiving a new control plane. Please check this section first.
@@ -49,7 +49,7 @@ Write down the storage account name, you will need it in further steps.
 
 Once again, refer to the [Azure File Share documentation](https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-portal) for details.
 
-In your storage account, let's create a File Share for the [Control Plane configuration]({{< ref "../../configuration" >}}) file:
+In your storage account, let's create a File Share for the [Control Plane configuration]({{< ref "../configuration" >}}) file:
 * Access to your storage account page
 * Click on "File shares" in the side menu
 * Click on "File share" creation button in the top menu
@@ -72,7 +72,7 @@ Upload your configuration file in your new File Share in order to make it availa
 
 You should see your control plane configuration file in the File Share.
 
-Please refer to [Azure private locations configuration]({{< ref "../../configuration/azure/" >}}) for more details about the configuration file.
+Please refer to [Azure private locations configuration]({{< ref "../configuration" >}}) for more details about the configuration file.
 
 ## Container App
 
@@ -139,7 +139,7 @@ A managed identity will be automatically assigned to your application instances 
 
 #### Option 2: environment variables
 
-You can directly set environment variables needed for Azure private locations during application creation. Please refer to [Azure private locations configuration]({{< ref "../../configuration/azure/" >}}) for more details.
+You can directly set environment variables needed for Azure private locations during application creation. Please refer to [Azure private locations configuration]({{< ref "../configuration/" >}}) for more details.
 
 You can also set it later from your application page if you need.
 
