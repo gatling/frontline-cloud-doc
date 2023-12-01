@@ -1,10 +1,10 @@
 ---
-title: "Dedicated Machines"
+title: "Configuration"
 description: "Deploy Load Generators on dedicated machines that you manage."
 lead: "Deploy Load Generators on dedicated machines that you manage."
 date: 2023-01-12T16:46:04+00:00
 lastmod: 2023-10-13T08:10:39+00:00
-weight: 22055
+weight: 220361
 ---
 
 ## Permissions

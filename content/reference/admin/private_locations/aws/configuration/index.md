@@ -1,10 +1,10 @@
 ---
-title: "AWS"
+title: "Configuration"
 description: "Load Generators on your private AWS account"
 lead: "Private Locations on your AWS account"
 date: 2023-01-12T16:46:04+00:00
 lastmod: 2023-10-13T08:10:39+00:00
-weight: 22052
+weight: 220311
 ---
 
 ## Permissions

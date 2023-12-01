@@ -1,17 +1,17 @@
 ---
-title: "Azure"
+title: "Configuration"
 description: "Load Generators on your private Azure account"
 lead: "Private Locations on your Azure account"
 date: 2023-03-31T15:29:00+00:00
 lastmod: 2023-10-13T08:10:39+00:00
-weight: 22053
+weight: 220321
 ---
 
 ## Permissions
 
 Azure private locations require the control plane to have credentials configured in order to instantiate virtual machines and associated resources.
 
-Those can be set through environment variables in your control plane or via [Azure RBAC](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview). Select the most appropriated method depending on your infrastructure, or check our [installation guide]({{< ref "../../installation/azure" >}})  for deployment with [Azure Container Apps](https://azure.microsoft.com/en-us/products/container-apps).
+Those can be set through environment variables in your control plane or via [Azure RBAC](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview). Select the most appropriated method depending on your infrastructure, or check our [installation guide]({{< ref "../installation" >}})  for deployment with [Azure Container Apps](https://azure.microsoft.com/en-us/products/container-apps).
 
 ### Environment variables
 

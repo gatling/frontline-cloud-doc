@@ -1,10 +1,10 @@
 ---
-title: "GCP"
+title: "Installation"
 description: "How to install a Gatling Control Plane on GCP using Compute Engine, to set up your Private Locations and run load generators in your own GCP network"
 lead: "Run a Control Plane on GCP using Compute Engine, to set up your Private Locations and run load generators in your own GCP network"
 date: 2023-09-03T16:00:00+00:00
 lastmod: 2023-09-03T16:00:00+00:00
-weight: 22053
+weight: 220330
 ---
 
 GCP [Compute Engine](https://cloud.google.com/compute/docs) is a computing and hosting service that lets you create and run virtual machines on Google infrastructure.
@@ -12,7 +12,7 @@ GCP [Compute Engine](https://cloud.google.com/compute/docs) is a computing and h
 In this example:
 - we use **Compute Engine** to configure a service to run the Gatling Control Plane
 - Compute Engine runs our Docker containers on a VM on the **GCP** infrastructure
-- the [Control Plane configuration]({{< ref "../../configuration" >}}) file is loaded from a **[Secret Manager](https://cloud.google.com/secret-manager)**
+- the [Control Plane configuration]({{< ref "../configuration" >}}) file is loaded from a **[Secret Manager](https://cloud.google.com/secret-manager)**
 
 This is only an example.
 
@@ -30,7 +30,7 @@ skip if you already have a secret you want to use.
 In the GCP management console, open the [Secret Manager](https://console.cloud.google.com/security/secret-manager) (or search for "Secret Manager" in the search bar). 
 Set the right project and click **CREATE SECRET**.
 
-Choose a name for the secret, and upload the [Control Plane configuration]({{< ref "../../configuration/gcp" >}})
+Choose a name for the secret, and upload the [Control Plane configuration]({{< ref "../configuration" >}})
 
 Configure other options as preferred.
 
