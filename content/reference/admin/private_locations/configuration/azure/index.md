@@ -9,11 +9,13 @@ weight: 22053
 
 ## Azure Virtual Machines
 
-Azure private locations require the control plane to have Azure credentials configured in order to instantiate virtual machines and associated resources.
+### Permissions
 
-### Environment variables
+Azure private locations require the control plane to have credentials configured in order to instantiate virtual machines and associated resources.
 
-Credentials can be set through environment variables in your control plane.
+Those can be set through environment variables in your control plane or via [Azure RBAC](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview). Select the most appropriated method depending on your infrastructure, or check our [installation guide]({{< ref "../../installation/azure" >}})  for deployment with [Azure Container Apps](https://azure.microsoft.com/en-us/products/container-apps).
+
+#### Environment variables
 
 | name                  | value             |
 | --------------------- | ----------------- |
