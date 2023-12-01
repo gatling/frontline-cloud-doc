@@ -98,6 +98,21 @@ control-plane {
 }
 ```
 
+### Custom image requirements
+
+GCP private locations rely on some dependencies.
+
+So when using a custom image, make sure following are available:
+
+- [cloud-init](https://cloud.google.com/compute/docs/instances/startup-scripts/linux) integration.
+- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
+- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
+
+{{< alert tip >}}
+Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
+{{< /alert >}}
+
 ## Internet access for your Load Generators instances
 
 Cloud NAT (Network Address Translation) lets certain resources in Google Cloud create outbound connections to the internet or to other Virtual Private Cloud (VPC) networks. 
