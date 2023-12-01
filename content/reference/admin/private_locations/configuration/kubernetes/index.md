@@ -7,7 +7,8 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 22055
 ---
 
-## Kubernetes
+## Permissions
+
 To use Kubernetes private locations, the control plane must have access to your Kubernetes cluster.
 
 If the control plane is launched from outside the cluster, you have to give access to a valid Kubernetes file. See [Organizing Cluster Access Using kubeconfig Files](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/).
@@ -20,7 +21,21 @@ When connecting to the cluster using HTTPS, if a custom truststore and/or keysto
  `KUBERNETES_TRUSTSTORE_PASSPHRASE` and/or `KUBERNETES_KEYSTORE_FILE`, `KUBERNETES_KEYSTORE_PASSPHRASE` environment variables should be set.
 {{< /alert >}}
 
-### Control plane configuration file
+## System requirements
+
+Kubernetes private locations image rely on some dependencies.
+
+So when using a custom image, make sure following are available:
+
+- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
+- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
+
+{{< alert tip >}}
+Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
+{{< /alert >}}
+
+## Control plane configuration file
 
 ```bash
 control-plane {
@@ -118,17 +133,3 @@ control-plane {
   ]
 }
 ```
-
-### Custom image requirements
-
-Kubernetes private locations image rely on some dependencies.
-
-So when using a custom image, make sure following are available:
-
-- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
-- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
-- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
-
-{{< alert tip >}}
-Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
-{{< /alert >}}

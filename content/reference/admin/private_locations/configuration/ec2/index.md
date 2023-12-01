@@ -7,13 +7,29 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 22052
 ---
 
-## AWS EC2
+## Permissions
 
 AWS private locations require the control plane to have access to AWS credentials from the default credential provider chain.
 
 See [the AWS documentation for the Default Credential Provider Chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
 
-### Control plane configuration file
+## System requirements
+
+AWS EC2 private locations rely on some dependencies.
+
+So when using a custom image, make sure following are available:
+
+- [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) integration.
+- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
+- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
+- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
+
+{{< alert tip >}}
+Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
+{{< /alert >}}
+
+
+## Control plane configuration file
 
 ```bash
 control-plane {
@@ -101,18 +117,3 @@ control-plane {
   ]
 }
 ```
-
-### Custom AMI requirements
-
-AWS EC2 private locations AMI rely on some dependencies.
-
-So when using a custom AMI, make sure following are available:
-
-- [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) integration.
-- [jq](https://jqlang.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
-- [curl](https://curl.se/download.html) a command line tool and library for transferring data with URLs
-- [Java runtime environment](https://openjdk.org/install/): OpenJDK 64bits LTS versions: 11, 17 or 21 (see [Gatling prerequisites](https://gatling.io/docs/gatling/tutorials/installation/#java-version))
-
-{{< alert tip >}}
-Learn how to tune the OS for more performance, configure the open files limit, the kernel and the network [here](https://gatling.io/docs/gatling/reference/current/core/operations/).
-{{< /alert >}}
