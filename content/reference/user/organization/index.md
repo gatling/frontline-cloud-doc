@@ -117,9 +117,6 @@ This page shows all available offers for your organization. You can choose the n
 
 Click on the **Subscribe now** button in order to buy the desired offer via stripe. If you want to change your current offer, or buy the **Custom** one, please click on **Contact us**.
 
-Once the payment has been made, you'll be able to see your invoices and update your payment information by clicking on **Consult invoice**.
-
-{{< img src="consult-invoice.png" alt="Consult Invoice" >}}
 
 ### payment via AWS Marketplace
 
@@ -139,3 +136,12 @@ and click on **Create contract**:
 to finish setup, fill the subscription form with current users and organization information:
 
 {{<img src="aws_subscription_form.png" alt="setup subscription" >}}
+
+## Billing
+After the first payment, you can access invoices and update payment information by clicking on the **Customer portal** button in the **Billing** tab. 
+
+{{< img src="customer-portal.png" alt="Customer portal" >}}
+
+{{< alert info >}}
+If you subscribe through the AWS marketplace, your billing information and invoices are available through AWS.
+{{< /alert >}}
