@@ -29,7 +29,12 @@ Private Packages are based on Private Locations. You can not use them with manag
 
 ## Infrastructure
 
-Currently, Private Packages can be integrated with either AWS S3 or GCP Cloud Storage repositories.
+Currently, Private Packages support the following underlying storages:
+
+* AWS S3
+* GCP Cloud Storage
+* Azure Blob Storage
+* the Control Plane host filesystem
 
 {{< alert info >}}
 Before going further, ensure that your repository is ready to hold your packages.
