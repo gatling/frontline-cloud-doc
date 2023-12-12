@@ -1,5 +1,5 @@
 ---
-title: "Using the Gatling Enterprise No-Code Generator"
+title: "No-Code Quickstart"
 menutitle: "Getting started with the no-code generator"
 lead: "Learn how to write your first test with the Gatling no-code generator"
 slug: "no-code"
@@ -7,31 +7,31 @@ description: "Learn how to set up Gatling Enterprise for the first time"
 weight: 10010
 ---
 
-This tutorial describes step-by-step instructions for running your first test with Gatling Enterprise step-by-step.
+This tutorial describes step-by-step instructions for running your first simulation with Gatling Enterprise.
 
 {{< alert info >}}
 **Requirements**
-* A Gatling Enterprise Cloud account. Sign up for a [free trial(https://cloud.gatling.io)] if you don't already have an account.
+* A Gatling Enterprise Cloud account. Sign up for a [free trial](https://cloud.gatling.io) if you don't already have an account.
 {{< /alert >}}
 
 ## Inroduction
 The Gatling no-code generator is the fastest way to discover load testing and how it can improve your application, microservice, or API. The no-code generator is a graphical user interface that lets you:
-- setup your scenario,
-- setup the virtual user injection profile,
-- (optional) define acceptance criteria,
-- select a testing location.
+- [setup your scenario](#setup-your-scenario),
+- [setup the virtual user injection profile](#setup-the-injection-profile),
+- (optional) [define acceptance criteria](#define-acceptance-criteria-optional),
+- [select a testing location](#select-the-testing-location).
 
 Once you start your simulation, the load testing data are displayed in real-time. The following guide assists you in writing and launching your first load test. To keep learning about Gatling and load testing, see these helpful resources:
 - [Gatling Community](https://community.gatling.io)
 - [Gatling Academy](https://gatling.io/academy/)
 
 ## Access Gatling Enterprise Cloud
-To access the Gatling no-code generator: 
+To access the Gatling no-code generator:
 1. Navigate to https://cloud.gatling.io in your web browser.
-2. Login or register if you don't have an account. When you log in, you arrive on the user homepage. 
-3. Click on **Create a new NO CODE simulation** in the Simulation runs pane.
+2. Login or register if you don't have an account. 
+3. Click on **Create a new NO CODE simulation** in the _Simulation runs_ pane on the landing page. <!--TO BE Confirmed-->
 
-The no-code generator is divided into 4 steps and a live code interpretation in Java, Scala, and Kotlin. The code pane lets you see how changes in the simulation settings can be written in your preferred programming language.  
+The no-code generator is divided into 4 steps with a dynamically updated code example in Java, Scala, and Kotlin. The code example lets you see how changes in the simulation settings can be written in your preferred programming language.  
 
 ## Setup your scenario
 Setting up a scenario requires defining the user request(s) and any pauses between the user request(s). For this tutorial, we use the Gatling sample website https://computer-database.gatling.io to demonstrate load testing with the no-code generator. To set up the scenario, click **Test sample website** under the _Your website URL_ heading. 
@@ -39,9 +39,9 @@ Setting up a scenario requires defining the user request(s) and any pauses betwe
 
 ## Setup the injection profile
 The second step in creating a no-code simulation is setting up the injection profile. This is where you have the most options for describing the test. There are 3 broad categories of tests:
-- Capacity tests tell you how your application performs as resource demand increases.
-- Stress tests tell you how your application performs when there is a rapid and transient increase in resource demand.
-- Soak tests tell you how your application performs with a regular load over a long period of time (e.g., test for memory leaks). 
+- **Capacity tests** tell you how your application performs as resource demand increases.
+- **Stress tests** tell you how your application performs when there is a rapid and transient increase in resource demand.
+- **Soak tests** tell you how your application performs with a regular load over a long period of time (e.g., test for memory leaks). 
 
 Following the test type, inputs describe the test duration and the user injection profile. For this tutorial:
 1. Select _Capacity test_.
