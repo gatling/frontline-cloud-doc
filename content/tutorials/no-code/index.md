@@ -29,7 +29,7 @@ Once you start your simulation, the load testing data are displayed in real-time
 To access the Gatling no-code generator:
 1. Navigate to https://cloud.gatling.io in your web browser.
 2. Login or register if you don't have an account. 
-3. Click on **Create a new NO CODE simulation** in the _Simulation runs_ pane on the landing page. <!--TO BE Confirmed-->
+3. Click on **Create a simulation without coding** in the _Latest simulation runs_ pane on the landing page. 
 
 The no-code generator is divided into 4 steps with a dynamically updated code example in Java, Scala, and Kotlin. The code example lets you see how changes in the simulation settings can be written in your preferred programming language.  
 
