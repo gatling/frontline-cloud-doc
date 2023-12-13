@@ -31,7 +31,7 @@ To access the Gatling no-code generator:
 2. Login or register if you don't have an account. 
 3. Click on **Create a simulation without coding** in the _Latest simulation runs_ pane on the landing page. 
 
-The no-code generator is divided into 4 steps with a dynamically updated code example in Java, Scala, and Kotlin. The code example lets you see how changes in the simulation settings can be written in your preferred programming language.  
+The no-code generator is divided into 4 steps with a dynamically updated code example in Java, Scala, and Kotlin. The code example shows you how the resulting simulation can be written in your preferred programming language.  
 
 ## Setup your scenario
 Setting up a scenario requires defining the user request(s) and any pauses between the user request(s). For this tutorial, we use the Gatling sample website https://computer-database.gatling.io to demonstrate load testing with the no-code generator. To set up the scenario, click **Test sample website** under the _Your website URL_ heading. 
