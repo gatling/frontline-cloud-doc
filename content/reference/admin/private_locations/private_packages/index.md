@@ -81,6 +81,8 @@ This configuration includes the following parameters:
 
 {{< alert warning >}}
 Control plane with private repository needs AWS permissions `s3:PutObject`, `s3:DeleteObject` and `s3:GetObject` on the bucket.
+
+To download a private package, the location requires outbound connection access to `https://<bucket>.s3.<region>.amazonaws.com`.
 {{< /alert >}}
 
 Once it is done, add the private repository configuration section in your [control plane configuration]({{< ref "../introduction" >}}) file:
@@ -105,6 +107,8 @@ This configuration includes the following parameters:
 {{< alert warning >}}
 Control plane with private repository needs GCP service account role with permissions `storage.objects.create`, 
 `storage.objects.delete` and `iam.serviceAccounts.signBlob` on the bucket.
+
+To download a private package, the location requires outbound connection access to `https://storage.googleapis.com/<bucket>`.
 {{< /alert >}}
 
 ```bash
@@ -126,8 +130,9 @@ This configuration includes the following parameters:
 
 {{< alert warning >}}
 Control plane with private repository needs to be associate with Azure storage account role `Storage Blob Data Contributor`.
-
 For more information, check [Authenticate to Azure and authorize access to blob data](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-java?tabs=powershell%2Cmanaged-identity%2Croles-azure-portal%2Csign-in-azure-cli#authenticate-to-azure-and-authorize-access-to-blob-data)
+
+To download a private package, the location requires outbound connection access to `https://<storage-account>>.blob.core.windows.net/<container>`
 {{< /alert >}}
 
 ```bash
@@ -143,6 +148,11 @@ control-plane {
 ```
 
 #### Filesystem Storage
+
+{{< alert warning >}}
+To download a private package, the location requires outbound connection access to configured `download-base-url`.
+{{< /alert >}}
+
 This option allows the storage of simulations directly on the control-plane filesystem.
 ```bash
   repository = {
