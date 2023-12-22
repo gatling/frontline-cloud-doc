@@ -31,10 +31,10 @@ Those instances will send stats through the API gateway as well.
 
 {{< alert info >}}
 Only two outbound domains must be allowed in your network:
-- The API Gateway: `api.gatling.io` on port `443`
-- Download of the Gatling simulation on S3:
-  - `cloud-probes-eu-west-3.s3.eu-west-3.amazonaws.com` on port `443`
-  - `frontline-cloud-prod-eu-west3.s3.eu-west-3.amazonaws.com` on port `443`
+- The API Gateway: `https://api.gatling.io`
+- Download of the Gatling simulation on AWS S3:
+  - `https://cloud-probes-eu-west-3.s3.eu-west-3.amazonaws.com`
+  - `https://frontline-cloud-prod-eu-west3.s3.eu-west-3.amazonaws.com`
 {{< /alert >}}
 
 ## Control plane
