@@ -85,17 +85,20 @@ control-plane {
       environment-variables {
         # ExampleKey = ExampleValue
       }
-      # Resources configuration for created pods (optional)
-      # We recommend to set both requests and limits to the same values.
+      # Resources configuration for created pods (optional).
       # https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container
+      # Even though this configuration is optional (when undefined, the default values for your cluster will be used),
+      # we STRONGLY recommend using specifications that are equal or above to the following values.
+      # We also recommend to set both requests and limits to the same values.
+      # 
       resources {
         limits {
-          # memory = "512Mi"
-          # cpu = "2.0"
+          # memory = "1Gi"
+          # cpu = "4.0"
         }
         requests {
-          # memory = "512Mi"
-          # cpu = "2.0"
+          # memory = "1Gi"
+          # cpu = "4.0"
         }
       }
       # Tolerations (optional)
