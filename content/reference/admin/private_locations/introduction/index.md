@@ -90,6 +90,7 @@ control-plane {
       description = "Private location optional description"
       # Private location provider specification
       # ...
+    }
   ]
 }}
 ```
