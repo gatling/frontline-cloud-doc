@@ -31,7 +31,7 @@ Click Create bucket.
 
 {{< img src="ecs-s3-configuration.png" alt="Configuring the S3 bucket" >}}
 
-You can then upload your Control Plane configuration file to the bucket.
+You can then upload your [Control Plane configuration]({{< ref "../configuration" >}}) file to the bucket.
 
 ## IAM role
 
@@ -39,169 +39,179 @@ We need an IAM role which will allow an ECS task to:
 
 - download the Control Plane's configuration file stored in an S3 bucket
 - spawn new load generators on EC2 when running a simulation
+- when IAM profile configured, allow the Control Plane to pass role 
 
-In the AWS management console, from the Services menu, open IAM (or search for "IAM" in the search bar). Click on Access management > Roles, and then on Create role.
+### Policies
 
-Choose the "AWS service" entity type, and the "Elastic Container Service Task" use case, then click Next.
+In the AWS management console, from the Services menu, open IAM (or search for "IAM" in the search bar). 
+Click on Access management > Policies, and then on Create policy.
 
-{{< img src="ecs-iam-role-1.png" alt="Choosing to create an IAM role for an Elastic Container Service Task use case" >}}
-
-Select the policies:
-
-- `AmazonS3ReadOnlyAccess` (or you can create a custom policy based on this one, to only allow access to the specific S3 bucket where you stored the Control Plane configuration)
-- You can use `AmazonEC2FullAccess` for testing, but you will most likely want to create a more restrictive policy with only the privileges needed to spawn load generator instances on EC2:
-
-```json
+`GatlingControlPlaneConfSidecarPolicy` allows sidecar to download [Control Plane configuration]({{< ref "../configuration" >}}) from S3.
+```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": [
-        "ec2:Describe*",
-        "ec2:CreateTags",
-        "ec2:RunInstances",
-        "ec2:TerminateInstances",
-        "ec2:AssociateAddress", <1>
-        "ec2:DisassociateAddress", <1>
-        "iam:PassRole" <2>
-      ],
-      "Effect": "Allow",
-      "Resource": "*"
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3:::{BucketName}/{ObjectName}"
+        }
+    ]
 }
 ```
 
-<1> Only required when setting elastic IP addresses on Load Generators
-<2> Only required when setting an instance profile on Load Generators
-
-If you have configured an IAM instance profile in the Control plane configuration file (with the optional key `iam-instance-profile`), you also need to add the `Action`s: `"iam:GetInstanceProfile"`, `"iam:ListInstanceProfiles"`, and `"iam:PassRole"`.
-
-Then click Next.
-
-Enter a name for the role. Add a description and tags if you want. Click on Create role.
-
-{{< img src="ecs-iam-role-2.png" alt="Reviewing the IAM role to create" >}}
-
-## ECS cluster
-
 {{< alert info >}}
-This section shows how to create a new ECS cluster, skip if you already have a cluster you want to use.
+Replace `{BucketName}` with the bucket where you uploaded the [Control Plane configuration]({{< ref "../configuration" >}}) and `{ObjectName}` with the name of the entry in the bucket.
 {{< /alert >}}
 
-In the AWS management console, from the Services menu, open Elastic Container Service (or search for "ECS" in the search bar). Click on Create Cluster. To run your containers on Fargate, choose a Networking Only cluster.
+`GatlingControlPlaneEc2Policy` allows the Control Plane to deploy a load generator on EC2.
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "ec2:Describe*",
+                "ec2:CreateTags",
+                "ec2:RunInstances",
+                "ec2:TerminateInstances",
+                "ec2:AssociateAddress",
+                "ec2:DisassociateAddress"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
+```
 
-{{< img src="ecs-cluster-template.png" alt="Choosing a Networking Only cluster template" >}}
+{{< alert tip >}}
+Next policy is only required when you configured some iam-instance-profile on AWS private location in [Control Plane configuration]({{< ref "../configuration" >}}).
 
-Then enter a cluster name (and any custom tags you may want) and click on Create.
-
-{{< img src="ecs-cluster-configuration.png" alt="Configuring the cluster name and tags" >}}
-
-## ECS Task definition
-
-{{< alert info >}}
-Task definitions are versioned. When creating a new task definition, you create its revision 1. When you want to modify it, you need to create a new revision.
+IAM Instance Profile on AWS private location allow to assign that role to all load generator instances spawned for that private location
 {{< /alert >}}
 
-In the AWS management console, from the Services menu, open Elastic Container Service (or search for "ECS" in the search bar). Click on Amazon ECS > Task Definitions, then on Create new Task Definition.
+`GatlingControlPlaneIAMPolicy` allows the Control Plane to pass an IAM instance profile role to a deployed a load generator on EC2.
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "iam:PassRole"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:iam::{Account}:role/{RoleNameWithPath}"
+            ]
+        }
+    ]
+}
+```
+{{< alert info >}}
+The resources are the Amazon Resource Names (ARN) of the IAM instance-profile roles you configured on some of your private locations.
+{{< /alert >}}
 
-Select the "Fargate" launch type compatibility and click on Next step.
+### Role 
 
-{{< img src="ecs-task-definition-type.png" alt="Choosing the Fargate launch type compatibility" >}}
+Create a role `GatlingControlPlaneRole` that will be the Task IAM role: the permissions granted in the IAM role are assumed by the containers running in the task.
+{{< img src="ecs-iam-task-role.png" alt="IAM task role with policies" >}}
 
-Configure:
+## Amazon Elastic Container Service (ECS)
 
-- Task definition name: a name of your choice for this task definition
-- Task role: the IAM role we created earlier
-- Operating system family: Linux
-- Task execution role: the ecsTaskExecutionRole automatically created by AWS (or an equivalent custom role)
-- Task size: the minimum values (0.5 GB of RAM and 0.25 vCPU) should be enough
+### Tasks
 
-{{< img src="ecs-task-definition-configuration-1.png" alt="Configuring the task definition's main parameters" >}}
+Go to **Amazon Elastic Container Service**, under Task definitions, click on **Create a new task definition > Create new task definition with JSON**.
 
-### Shared volume
+Use the following JSON for the Amazon ECS Task, but first replace the following values:
+* Replace `{BucketName}` with the bucket where you uploaded the Control Plane Configuration, and `{ObjectName}` with the name of the entry in the bucket.
+* Replace `{GatlingControlPlaneRole ARN}`  with the ARN of the previously created GatlingControlPlaneRole . (ARN can be copied to the clipboard from the role page, IAM > Roles > GatlingControlPlaneRole )
+* Replace `{ecsTaskExecutionRole}`  with the ARN of the AWS default role ecsTaskExecutionRole. (ARN can be copied to clipboard from the role page, IAM > Roles > ecsTaskExecutionRole)
 
-In the Volumes section, add a volume with a name of your choice and the "Bind mount" volume type.
+```json
+{
+    "family": "gatling-control-plane-task",
+    "containerDefinitions": [
+        {
+            "name": "conf-loader-side-car",
+            "image": "amazon/aws-cli",
+            "cpu": 0,
+            "portMappings": [],
+            "essential": false,
+            "entryPoint": [
+                "aws",
+                "s3",
+                "cp",
+                "s3://{BucketName}/{ObjectName}",
+                "/app/conf/control-plane.conf"
+            ],
+            "environment": [],
+            "mountPoints": [
+                {
+                    "sourceVolume": "control-plane-conf",
+                    "containerPath": "/app/conf",
+                    "readOnly": false
+                }
+            ],
+            "volumesFrom": [],
+            "readonlyRootFilesystem": false
+        },
+        {
+            "name": "control-plane",
+            "image": "gatlingcorp/control-plane:latest",
+            "cpu": 0,
+            "portMappings": [],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [
+                {
+                    "sourceVolume": "control-plane-conf",
+                    "containerPath": "/app/conf",
+                    "readOnly": true
+                }
+            ],
+            "volumesFrom": [],
+            "dependsOn": [
+                {
+                    "containerName": "conf-loader-side-car",
+                    "condition": "SUCCESS"
+                }
+            ],
+            "workingDirectory": "/app/conf"
+        }
+    ],
+    "taskRoleArn": "{GatlingControlPlaneRole ARN}",
+    "executionRoleArn": "{ecsTaskExecutionRole}",
+    "networkMode": "awsvpc",
+    "volumes": [
+        {
+            "name": "control-plane-conf",
+            "host": {}
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072"
+}
+```
 
-{{< img src="ecs-task-definition-configuration-2.png" alt="Configuring the task definition's volume" >}}
+### Cluster and service
 
-### Side-car container (configuration loader)
+Create a cluster named `gatling-control-plane-cluster`.
 
-In the Container definitions section, click on Add a container.
+{{< img src="ecs-cluster.png" alt="Cluster creation" >}}
 
-Configure:
+In that cluster, create a service named `gatling-control-plane-service`.
 
-- Container name: a name of your choice
-- Image: `amazon/aws-cli`
+Keep the configuration as default, and update deployment configuration with:
+* **Family:** `gatling-control-plane-task`
+* **Revision:** Latest (and only) one
 
-{{< img src="ecs-task-definition-containers-side-car-1.png" alt="Configuring the side car container's main parameters" >}}
-
-In the Environment section:
-
-- Essential : no
-- Entry point: `aws,s3,cp,s3://<bucket name>/<file name>.conf,/app/conf/control-plane.conf` (replace the origin bucket name and file name with the values you used; the destination file *must* be `/app/conf/control-plane.conf`)
-- Working directory: `/app/conf`
-
-{{< img src="ecs-task-definition-containers-side-car-2.png" alt="Configuring the side car container's environment parameters" >}}
-
-In the Storage and logging section, select the Mount point's Source volume (choose the volume created earlier) and enter its Container path: `/app/conf`.
-
-{{< img src="ecs-task-definition-containers-side-car-3.png" alt="Configuring the side car container's volume mount point" >}}
-
-Click Add to add this container to the task definition.
-
-### Control plane container
-
-In the Container definitions section, click on Add a container.
-
-Configure:
-
-- Container name: a name of your choice
-- Image: `gatlingcorp/control-plane:latest`
-
-{{< img src="ecs-task-definition-containers-cp-1.png" alt="Configuring the control plane container's main parameters" >}}
-
-In the Startup dependency ordering section, add a dependency:
-
-- Container name: the name you chose for the side-car container
-- Condition: COMPLETE
-
-{{< img src="ecs-task-definition-containers-cp-2.png" alt="Configuring the control plane container's startup dependency" >}}
-
-In the Storage and logging section, select the Mount point's Source volume (choose the volume created earlier) and enter its Container path: `/app/conf`. You can set it to read only too if desired.
-
-{{< img src="ecs-task-definition-containers-cp-3.png" alt="Configuring the control plane container's volume mount point" >}}
-
-Click Add to add this container to the task definition, the click Create to create the task definition.
-
-## ECS Service
-
-In the AWS management console, from the Services menu, open Elastic Container Service (or search for "ECS" in the search bar). Click on Amazon ECS > Clusters, then on the name of your cluster. In the Services tab, click on Create.
-
-Configure:
-
-- Launch type: FARGATE
-- Operating system family: Linux
-- Task definition: choose the task definition you created earlier
-- Service name: a name of your choice for this service
-- Number of tasks: 1 (to run a single instance of the control plane container)
-
-You can modify other settings if needed for your use case, but the defaults will work. Then click Next step.
-
-{{< img src="ecs-service-1.png" alt="Configuring the service's main parameters (part 1)" >}}
-{{< img src="ecs-service-2.png" alt="Configuring the service's main parameters (part 2)" >}}
-
-Choose the VPC, subnet(s) and security group to use for your control plane container. They **must** allow outbound connections to `api.gatling.io` on port `443`, so that the control plane can retrieve tasks to execute. The other parameters are not relevant to this type of task definition. Click Next step.
-
-{{< img src="ecs-service-3.png" alt="Configuring the service's network parameters" >}}
-
-You do not need to enable auto scaling for this. Click Next step.
-
-{{< img src="ecs-service-4.png" alt="Configuring the service's auto scaling parameters" >}}
-
-Review your service configuration and click Create service.
-
-The service will automatically start; you should see it in your ECS cluster's Services tab. If you click on the service and check its Tasks tab, you should see the task's status change as it starts. It will show the status "RUNNING" once the Control Plane container has started.
+{{< img src="ecs-service.png" alt="Service creation" >}}
 
 ## Your Control Plane is up and running!
 

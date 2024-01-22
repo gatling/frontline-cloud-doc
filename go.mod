@@ -2,4 +2,4 @@ module github.com/gatling/frontline-cloud-doc
 
 go 1.21
 
-require github.com/gatling/gatling.io-doc-theme v0.0.0-20231206144356-6f49dd99a348 // indirect
+require github.com/gatling/gatling.io-doc-theme v0.0.0-20240119100559-ba77e1992ca1 // indirect
