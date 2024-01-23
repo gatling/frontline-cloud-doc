@@ -14,7 +14,7 @@ weight: 21040
 Gatling Enterprise deploys packages containing your compiled Simulations and resources. Those packages have to be generated
 upstream, using one of the methods below, before you can run them with Gatling Enterprise.
 
-Gatling Enterprise is compatible with Gatling version from 3.3 to 3.8 included.
+Gatling Enterprise is compatible with Gatling version from 3.5 to 3.10 included.
 
 {{< alert tip >}}
 If you go to the [Simulations page]({{< ref "../simulations" >}}) in the Gatling Enterprise Cloud app, you can click on
