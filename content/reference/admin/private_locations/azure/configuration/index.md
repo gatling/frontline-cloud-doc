@@ -7,6 +7,16 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 220321
 ---
 
+## Instance Specifications
+
+We recommend that you use for your own load generators instances with at least 4 cores.
+
+As a result, we recommend using `Standard_A4_v2` instances or larger.
+
+You might want to tune the `Xmx` JVM options to half of the physical memory.
+See `jvm-options` configuration below.
+If you don't, the JVM will use a max heap size of 1/4th of the physical memory.
+
 ## Permissions
 
 Azure private locations require the control plane to have credentials configured in order to instantiate virtual machines and associated resources.
@@ -66,7 +76,7 @@ control-plane {
       region = "westeurope"
       # Virtual machine size, as listed by Azure CLI:
       # az vm list-sizes --location "westeurope"
-      size = "Standard_A1"
+      size = "Standard_A4_v2"
       # Certified AMI configuration
       image {
         type = "certified"

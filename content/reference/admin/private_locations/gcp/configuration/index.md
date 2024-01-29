@@ -7,6 +7,18 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 220331
 ---
 
+## Instance Specifications
+
+We recommend that you use for your own load generators instances with at least 4 cores.
+
+As Gatling load tests tend to be CPU bound, we recommend using instances of the "Compute Optimized" family.
+
+As a result, we recommend using `c3-highcpu-4` instances or larger.
+
+You might want to tune the `Xmx` JVM options to half of the physical memory.
+See `jvm-options` configuration below.
+If you don't, the JVM will use a max heap size of 1/4th of the physical memory.
+
 ## Permissions
 
 GCP private locations require the control plane to have GCP access rights configured in order to instantiate virtual machines.
@@ -63,7 +75,7 @@ control-plane {
       machine {
         # Virtual machine type, as listed by GCP CLI:
         # gcloud compute machine-types list --filter="zone:( europe-west3-a )"
-        type = "e2-micro"
+        type = "c3-highcpu-4"
         # Configure load generators instances as preemptible or not. (optional, default: false)
         # preemptible = true
         # Certified image configuration

@@ -34,7 +34,7 @@ Those instances will send stats through the API gateway as well.
 ### Network
 
 {{< alert info >}}
-You network must allow the following outbound domains:
+Your network must allow the following outbound domains:
 - the Gatling Cloud API Gateway: `https://api.gatling.io`
 - The AWS S3 domains used to download Gatling libraries:
   - `https://cloud-probes-eu-west-3.s3.eu-west-3.amazonaws.com`

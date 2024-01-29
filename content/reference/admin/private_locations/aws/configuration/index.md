@@ -7,6 +7,20 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 220311
 ---
 
+## Instance Specifications
+
+We recommend that you use for your own load generators instances with at least 4 cores.
+
+As Gatling load tests tend to be CPU bound, we recommend using instances of the "Compute Optimized" family.
+
+From our findings, it seems that Intel CPUs perform better than AMD and ARM Graviton ones when it comes to TLS.
+
+As a result, we recommend using `c6i.xlarge` instances or larger.
+
+You might want to tune the `Xmx` JVM options to half of the physical memory.
+See `jvm-options` configuration below.
+If you don't, the JVM will use a max heap size of 1/4th of the physical memory.
+
 ## Permissions
 
 AWS private locations require the control plane to have access to AWS credentials from the default credential provider chain.

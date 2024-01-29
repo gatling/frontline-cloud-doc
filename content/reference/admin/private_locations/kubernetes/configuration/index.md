@@ -7,6 +7,18 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 220341
 ---
 
+## Instance Specifications
+
+We recommend that you use for your own load generators pods with at least 4 cores. See CPU requests and limits configuration below.
+
+You might want to tune the `Xmx` JVM options to half of the memory request.
+See `jvm-options` configuration below.
+If you don't, the JVM will use a max heap size of 1/4th of the physical memory.
+
+Also, if you're deploying your load generators in the same cluster as the application under test,
+we recommend that you isolate the load generators on their dedicated nodes, using taints and tolerations.
+See `tolerations` configuration below.
+
 ## Permissions
 
 To use Kubernetes private locations, the control plane must have access to your Kubernetes cluster.

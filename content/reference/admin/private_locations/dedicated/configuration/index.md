@@ -7,6 +7,14 @@ lastmod: 2023-10-13T08:10:39+00:00
 weight: 220361
 ---
 
+## Instance Specifications
+
+We recommend that you use instances with at least 4 cores for your own load generators.
+
+You might want to tune the `Xmx` JVM options to half of the physical memory.
+See `jvm-options` configuration below.
+If you don't, the JVM will use a max heap size of 1/4th of the physical memory.
+
 ## Permissions
 
 You can configure private locations with pre-existing servers. 
