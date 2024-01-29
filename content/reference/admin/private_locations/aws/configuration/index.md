@@ -102,9 +102,8 @@ control-plane {
       # Overwrite JAVA_HOME definition (optional)
       # java-home = "/usr/lib/jvm/zulu"
       # JVM Options (optional)
-      # Default ones, that can be overriden with precedence:
+      # Default ones, that can be overridden with precedence:
       # [
-      #   "-Xmx4G", 
       #   "-XX:MaxInlineLevel=20", 
       #   "-XX:MaxTrivialSize=12", 
       #   "-XX:+IgnoreUnrecognizedVMOptions", 
