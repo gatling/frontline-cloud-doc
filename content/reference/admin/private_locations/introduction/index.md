@@ -29,15 +29,17 @@ The control plane will periodically poll our API gateway to find out if a new si
 If so, it will start new instances (based on the locations configurations) and start the simulation run on them. 
 Those instances will send stats through the API gateway as well.
 
+## Control plane
+
+### Network
+
 {{< alert info >}}
-Only two outbound domains must be allowed in your network:
-- The API Gateway: `https://api.gatling.io`
-- Download of the Gatling simulation on AWS S3:
+You network must allow the following outbound domains:
+- the Gatling Cloud API Gateway: `https://api.gatling.io`
+- The AWS S3 domains used to download Gatling libraries:
   - `https://cloud-probes-eu-west-3.s3.eu-west-3.amazonaws.com`
   - `https://frontline-cloud-prod-eu-west3.s3.eu-west-3.amazonaws.com`
 {{< /alert >}}
-
-## Control plane
 
 ### Token
 
