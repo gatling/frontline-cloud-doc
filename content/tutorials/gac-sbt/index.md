@@ -1,5 +1,5 @@
 ---
-title: "Gatling as Code with Maven"
+title: "Gatling as Code with sbt"
 description: "Setup tutorial"
 lead: "Set up your project for automatic configuration of your simulation in Gatling Enterprise."
 date: 2024-01-31T18:30:00+02:00
@@ -9,32 +9,31 @@ private: true
 ---
 
 {{<alert tip>}}
-If you need a package to test this, you can use the following one: [`gatling-maven-plugin-demo-java`](https://github.com/gatling/gatling-maven-plugin-demo-java)
+If you need a package to test this, you can use the following one: [`gatling-sbt-plugin-demo`](https://github.com/gatling/gatling-sbt-plugin-demo)
 {{</alert>}}
 # Configuration
 
-## 1. Edit your `pom.xml` file
+## 1. Edit your `plugins.sbt` file
 
- * In `project.properties`, make sure you use the following version:
-   ```xml
-   <gatling-maven-plugin.version>4.8.0-M1</gatling-maven-plugin.version>
+ * In `addSbtPlugin`, make sure you use the following version:
+   ```scala
+   addSbtPlugin("io.gatling" % "gatling-sbt" % "4.8.0-M1")
    ```
 
 
 ## 2. Create your Gatling configuration
 
-Add a new directory at the root of your project: `.gatling` (sibling of your `pom.xml` file).
+Add a new directory at the module's `baseDir`: `.gatling`.
 
 Create a new file `.gatling/package.conf`.
 
 ```console
-.
+module-baseDir
 ├── .gatling/
 │   └── package.conf
-├── src/
-│   ├── main/
-│   └── test/
-└── pom.xml
+└── src/
+    ├── main/
+    └── test/
 ```
 
 This file is in [`HOCON` format (Human-Optimized Config Object Notation)](https://github.com/lightbend/config/blob/main/HOCON.md), which means you can also write `JSON` if you prefer.
@@ -120,33 +119,26 @@ gatling.enterprise {
 (package configuration, package upload, simulations configuration)
 
 {{<alert tip>}}
-Ensure you referenced the API token for your [maven extension](https://docs.gatling.io/gatling/reference/current/extensions/maven_plugin/#api-tokens).
+Ensure you referenced the API token for your [sbt plugin](https://docs.gatling.io/gatling/reference/current/extensions/sbt_plugin/#api-tokens).
 
 To create an API token: [documentation]({{<ref "../../reference/admin/api_tokens">}})
 (must have the **Configure** role).
 {{</alert>}}
 
-Use the following command when using Maven:
+Use the following command when using sbt:
 
-`mvn gatling:enterpriseUpload`
+`sbt Gatling / enterpriseUpload`
 
-Or the following if you’re using the provided wrapper:
-
-`./mvnw gatling:enterpriseUpload`
-
-A successful upload results in the following:
+A successful upload results in the following (here with demo project):
 
 ```bash
-[INFO] Package configuration file detected, applying it.
-[INFO] Package id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-[INFO] Package uploaded
-[INFO] Package successfully uploaded
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  x.xxx s
-[INFO] Finished at: yyyy-MM-ddThh:mm:ss+01:00
-[INFO] ------------------------------------------------------------------------
+sbt Gatling / enterpriseUpload
+[info] Generating Gatling Enterprise package <module-baseDir>/gatling-sbt-plugin-demo/target/gatling/gatling-sbt-plugin-demo-gatling-enterprise-<version>.jar
+[info] Package configuration file detected, applying it.
+[info] Package id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+[info] Package uploaded
+[success] Successfully upload package
+[success] Total time: x s, completed MMM dd, yyyy, hh:mm:ss
 ```
 
 If you encounter any problems, please contact our support team.
