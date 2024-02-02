@@ -17,7 +17,7 @@ If you need a package to test this, you can use the following one: [`gatling-mav
 
  * In `project.properties`, make sure you use the following version:
    ```xml
-   <gatling-maven-plugin.version>4.8.0-M1</gatling-maven-plugin.version>
+   <gatling-maven-plugin.version>4.8.0</gatling-maven-plugin.version>
    ```
 
 
