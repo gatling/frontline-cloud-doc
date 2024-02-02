@@ -17,7 +17,7 @@ If you need a package to test this, you can use the following one: [`gatling-sbt
 
  * In `addSbtPlugin`, make sure you use the following version:
    ```scala
-   addSbtPlugin("io.gatling" % "gatling-sbt" % "4.8.0-M1")
+   addSbtPlugin("io.gatling" % "gatling-sbt" % "4.8.0")
    ```
 
 
