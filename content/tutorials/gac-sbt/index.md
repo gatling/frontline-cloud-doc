@@ -38,6 +38,16 @@ module-baseDir
 
 This file is in [`HOCON` format (Human-Optimized Config Object Notation)](https://github.com/lightbend/config/blob/main/HOCON.md), which means you can also write `JSON` if you prefer.
 
+{{<alert tip>}}
+Managed location name must be an available region (see list in example file below).
+
+Private location name must be an id configured in your control plane ([see documentation]({{<ref "../../reference/admin/private_locations/introduction/#configuration">}})).
+{{</alert>}}
+
+{{<alert warning>}}
+Mixing managed and private locations is not supported by Gatling Enterprise. Ensure all your locations are either managed or private for a given simulation.
+{{</alert>}}
+
 ```bash
 gatling.enterprise {
   # The name of the package (Mandatory)
@@ -62,6 +72,10 @@ gatling.enterprise {
     # Locations configuration (mandatory)
     # Map of objects "key1" {...}, "key2" {...}, "key3"{...}
     locations {
+      # Mixing managed and private locations is not supported.
+      # Ensure all your locations are either managed or private for a given simulation.
+
+      # Managed location:
       # Configuration by region
       # Available regions:
       #  - "US West - N. California"
@@ -82,6 +96,17 @@ gatling.enterprise {
         ## (total sum of all locations MUST be 100 for a simulation)
         # weight = 100
       }
+
+      ## Private location:
+      ## The name must be an id configured in your control plane
+      
+      # "prl_example" {
+      #   # Amount of load generators in this location (mandatory)
+      #   size = 1
+      #   ## Weight of this location (optional)
+      #   ## (total sum of all locations MUST be 100 for a simulation)
+      #   # weight = 100
+      # }
     }
 
     # Configure specific parameters for this simulation (optional)
