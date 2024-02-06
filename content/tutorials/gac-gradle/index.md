@@ -1,7 +1,7 @@
 ---
-title: "Gatling as Code with Gradle"
+title: "Gatling Deployment Descriptor with Gradle"
 description: "Setup tutorial"
-lead: "Set up your project for automatic configuration of your simulation in Gatling Enterprise."
+lead: "Set up your gradle project for automatic configuration of your simulations in Gatling Enterprise."
 date: 2024-01-31T18:30:00+02:00
 lastmod: 2024-02-01T11:00:00+00:00
 weight: 2090700
