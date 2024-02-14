@@ -36,10 +36,10 @@ If your SSO system offers OIDC v1.0 integration, it will typically publish its m
 
 {{< alert info >}}
 You will need to configure a **redirect URI** based on your organization's slug:
-`https://auth.gatling.io/auth/realms/<slug>-realm/broker/<slug>/endpoint`
+`https://auth.gatling.io/auth/realms/<slug>/broker/oidc/endpoint`
 
 So for example, for an organization named Gatling Corp, with the slug `helloworld`, result in the following **redirect URI**:
-`https://auth.gatling.io/auth/realms/helloworld-realm/broker/helloworld/endpoint`
+`https://auth.gatling.io/auth/realms/helloworld/broker/oidc/endpoint`
 {{< /alert >}}
 
 
